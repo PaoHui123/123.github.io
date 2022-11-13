@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+    <!-- 引入代码高亮的主题css -->
+    <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+    <!-- 引入代码样式代码 -->
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <!-- 引入目录代码样式 -->
+    <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>git</title>
+    <style>
+
+    </style>
+
+</head>
+
+<div>
+
+
+
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>html框架</h3>
+            </li>
+            <li><a href="#" class="aside_a">1111</a></li>
+            <li><a href="#" class="aside_a">1111</a></li>
+        </ul>
+        <span>目录</span>
+        <ol class="js-toc"></ol>
+    </div>
+    
+
+
+    <div class="zhuTi js-toc-content">
+        
+
+
+        <h2>配置邮箱-姓名</h2>
+        <div>
+            1. 需要再用命令, 配置下, 你本机提交任何仓库时, 你的提交信息
+            <br>2. 无论哪个项目/哪个仓库, 你都要表明你的<span class="red">身份名字</span>和<span class="red">邮箱</span>
+            <br>3. 命令格式如下: ==中文自己看情况换==
+            <pre><code>
+git         config      --global     user.name    "名字双引号，中文英文都可以"   按回车
+git         config      --global     user.email   "双引号，写邮箱地址"          按回车
+            </code></pre>
+            <p>查看是否配置成功</p>
+            <pre><code>
+git      config      --list
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+
+
+
+        <h2>创建git版本库-初始化</h2>
+        <div>
+            <p>1. 我们新建一个文件夹 / 现有的文件夹 是git仓库吗? 不是!!!</p>
+            <p>因为没有 .git 文件夹, 所以没有被git管理</p>
+            <br>
+            <P>2. 新文件夹 / 现有文件夹, 可以运行如下命令, 得到.git文件夹, 即可让git开始准备管理</P>
+                <pre><code>
+# 初始化 git 仓库, 产物: .git 文件夹 (所在文件夹"内"被管理)
+git init
+                </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>放到暂存区中</h2>
+        <div>
+            <pre><code>
+# 语法
+git add 要暂存的文件名
+
+# (了解) 将index.html 添加到暂存区
+git add index.html
+
+# 将css目录下一切添加到暂存区
+git add css
+
+# 一次性把所有变化文件, 放入暂存区
+git add .
+
+# 提交的内容说明
+git commit -m '提交的内容说明'
+            </code></pre>
+        </div>
+
+        <h2>查看所有提交的日志记录</h2>
+        <div>
+            <pre><code>
+# 查看所有提交的日志记录
+git log
+
+# 当我们的日志越来越多, 可能想要简化查看
+git log --oneline
+            </code></pre>
+        </div>
+
+        <h2>查看修改了那些文件</h2>
+        <div>
+            <pre><code>
+# 查看修改了那些文件
+git status
+            </code></pre>
+        </div>
+
+        <h2>git回退</h2>
+        <div>
+            1. 我们玩游戏, 突然感觉没玩好, 想要回到上次存档的记录重新来? 可以!!
+            <br>2. 代码写到后面发现, 最近这2天的需求写错了, 回到2天前? 可以!!
+            <br>3. 但是以上的回退前提, 你前面确实commit存档过 (而且存到的.git文件夹要存在)
+            <br>4. 回退命令语法如下, 中文看情况写
+            <pre><code>
+# git回退
+git reset --hard 版本号
+
+# 尝试回退到 a3bcab2 这次记录上
+git reset --hard a3bcab2
+            </code></pre>
+        </div>
+
+        <h2>查看版本号</h2>
+        <div>
+            每次的版本号随机生成
+            <pre><code>
+# 查看版本号
+git log --oneline
+            </code></pre>
+        </div>
+
+
+        <h2>查看 git 所有的操作记录, 包括你的reset记录</h2>
+        <div>
+            <pre><code>
+git reflog
+            </code></pre>
+            <br>
+        </div>
+
+
+        <h2>查看Head标记</h2>
+        <div>
+            <p>HEAD 是头指针, 可以指向标记现在工作区所在的记录</p>
+        </div>
+
+
+        <h2>git忽略文件</h2>
+        <div>
+            1. 有的时候, 我们某些文件/文件夹, 不想让git进行跟踪管理
+            <br>2. 这种场景下, 我们需要在.git文件夹隔壁, 来个叫做 <span class="red">.gitignore</span> (固定名字)的忽略文件, 并写入忽略规则
+            <br>3. 可以编写如下这些规则
+            <pre><code>
+# 忽略某个指定文件
+password.txt
+
+# 忽略文件夹
+css
+
+# 忽略文件夹下的某个文件
+css/index.js
+
+# 忽略文件夹下某类文件
+css/*.js
+            </code></pre>
+        </div>
+
+
+        <h2>分支创建的命令和特点</h2>
+        <h2>创建分支</h2>
+        <div>
+            <p></p>
+            <pre><code>
+# 创建分支
+git branch 分支名
+            </code></pre>
+        </div>
+
+        <h2>查看现在这个.git版本库里所有分支</h2>
+        <div>
+            <p>可以运行命令查看现在这个.git版本库里所有分支</p>
+            <pre><code>
+# 查看当前版本库所有分支
+git branch
+# 绿色带*代表, 你现在所处的分支           
+            </code></pre>
+        </div>
+
+        <h2>切换分支</h2>
+        <div>
+            <p>==注意: 第一次创建并切换到此分支==, 这里你会发现master分支上的所有代码(和当前节点所有提交记录) 都被复制了过来, 在这个基础上, 接着往后开发就行, 不是你的页面不同碰!!</p>
+            <pre><code>
+# 切换分支命令
+git checkout 分支名                
+            </code></pre>
+        </div>
+
+        <h2>切换到分支</h2>
+        <div>
+            <p>1. 当我们某个分支的业务开发完毕以后呢, 我们可以把分支里写好的代码, 合并到主分支/其他分支上
+                <br>2. 首先, 切换到你要合并到的目标分支上, 这里以master主分支为例
+            </p>
+            <pre><code>
+# 切换分支
+git checkout master
+            </code></pre>
+        </div>
+
+        <h2>合并分支命令</h2>
+        <div>
+            <pre><code>
+# 把目标分支名下的所有记录, 合并到当前分支下
+git merge 目标分支名                                
+            </code></pre>
+        </div>
+        
+
+        <h2>分支冲突</h2>
+        <div>
+            <p>出现分支冲突,与人商量</p>
+        </div>
+
+
+        <h2>删除分支</h2>
+        <div>
+            <p>1. 假如注册功能开发完毕, 代码已经合并到master分支上, 我们无需reg分支</p>
+            <pre><code>
+git branch -d 分支名
+            </code></pre>
+            <p>如果你当前分支代码 还有没合并到别的分支的, 则会报错</p>
+        </div>
+
+        <h2>git全局配置-删除</h2>
+        <div>
+            <pre><code>
+# 1. git全局配置删除命令
+# user.name 可以视情况删除哪个自己选
+git config --unset --global user.name
+            </code></pre>
+        </div>
+
+
+        <h2>vscode中文件右侧标记</h2>
+        <div>
+            <p>一般打开一个包含git仓库的文件夹时, 会有这些标记</p>
+            <pre><code>
+右侧没有标记的时候为“未修改” 或 此文件/文件夹, 被git忽略不跟踪变化
+M为“已修改”
+A为“已添加”
+D为“已删除”
+R为“已重命名”
+C为“已复制”
+U为“已更新但为融合”
+            </code></pre>
+        </div>
+
+
+        <h2>git restore 目标文件</h2>
+        <div>
+            <p>git还原 (会把"工作区"恢复到上次提交的时候), 并删除刚写的所有代码(无法找回)</p>
+            <p>非常危险</p>
+        </div>
+
+
+        <h2>git版本回退更多</h2>
+        <div>
+            <pre><code>
+# 除了找到对应版本号之外, 我们还可以用内置的代号
+# 回退到 "最近一次提交" (但是要注意如果你已经回退了, 是回不到未来的, 回到未来需要指定
+版本号数字字母)
+git reset --hard head~0
+# 回退到 "上一次提交"
+git reset --hard head~1
+# 回退到 "上上次提交"
+git reset --hard head~2
+# 想退多少次, 先用git log --oneline 打印后根据注释信息, 自己数下回退几次 head~后面写几
+
+
+以上命令还有个写法
+# 回退到 "上一次提交"
+git reset --hard head^
+# 回退到 "上上次提交"
+git reset --hard head^^
+# 如果回退的太远, 一百个往前, 你不能写一百个^吧, 还是写head~个数吧
+            </code></pre>
+        </div>
+
+
+
+
+        <h2>git版本回退-更优解</h2>
+        <div>
+            <p>reset其实会把未来的丢失掉, 如果推到远程仓库可能会有问题 (看下面情况做吧), 但是其实保证大家维护的同一个项目工程都是最新代码即可</p>
+            <p>比reset更好用的revert</p>
+            <p>如果已经有A -> B -> C，想回到B：</p>
+            <p>方法一：reset到B，丢失C：</p>
+            <p>A -> B</p>
+            <p>方法二：再提交一个revert反向修改，变成B：</p>
+            <p>A -> B -> C -> B</p>
+            <p>C还在，但是两个B是重复的</p>
+            <p>看你的需求，也许C就是瞎提交错了（比如把密码提交上去了），必须reset</p>
+            <p>如果C就是修改，现在又要改回来，将来可能再改成C，那你就revert</p>
+        </div>
+
+
+
+        <h2>git常用忽略配置</h2>
+        <div>
+            <pre><code>
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+mock
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+            </code></pre>
+        </div>
+
+
+
+        <h2>Gitee</h2>
+
+        <h3>1.为了把本地项目（被git管理）放在公共平台（开源）</h3>
+
+        <h3>配置SSH公钥私钥</h3>
+        <p>**ssh-keygen -t rsa -b 4096 -C "写自己注册gitee邮箱地址"       提前改好再复制到你的黑窗口**</p>
+
+        <h2>新建远程仓储</h2>
+
+        <h2>设置开源</h2>
+
+        <h2>在本地项目设置 与远程仓储的关联</h2>
+
+        <h2>来到本地电脑 下 要推送这个项目 黑窗口里面 输入下面命令</h2>
+        <pre><code>
+git  remote   add     origin           SSH地址
+     配置远程   新增    给远程地址起别名   远程仓库地址
+        </code></pre>
+
+        <h2>推送本地项目到远程仓库</h2>
+        <div>
+            <pre><code>
+git push  -u  origin     master
+    推送      远程地址别名  主分支
+            </code></pre>
+        </div>
+
+        <h2>总结</h2>
+        <div>
+            <pre><code>
+* 新电脑：
+
+  * 安装git软件
+  * 配置个人信息：做一次就行！
+
+  ```
+  git config --global user.name  "用户名"
+  git config --global user.email "邮箱地址"
+  ```
+
+* 学会申请gitee:把本地生成公钥私钥，配置给个人gitee空间；（对gitee个人空间有操作权，所有项目）
+
+---
+
+
+
+* 项目初始化开始：初始化一个空git仓库  `git init`
+* 项目开发：
+  * 添加文件到暂存区 `git add .`
+  * 本地项目文件夹配置 忽略文件  .gitignore 
+  * 把暂存区记录添加到git仓库   `git commit -m "本次提交的备注，一定要写"`
+* 远程：
+  * 新建远程仓库
+  * 回到本地设置关联：`git remote add origin SSH地址`   （对于项目来讲，关联一次就OK）
+  * 把本地所有记录 推送到远程 
+    * 第一次：`git push -u origin master`
+    * 后续：`git push`
+  * 新人：
+    * 到了公司，先让组长给发一个 成员邀请链接！成为私有仓库的开发人员；
+    * 克隆远程仓库到本地  `git clone SSH地址`（注意黑窗口的地址和项目地址不一样）
+    * 进入项目：`cd 项目文件夹  `  （不是git命令）
+* 全体人员push：
+  * 1、组长和组员都有项目了！
+  * 2、创建新分支：`git branch 分支名`
+  * 3、切换到分支  `git checkout 分支名`
+  * 4、继续开发代码，形成commit记录点，只是存在当前分支上
+  * 5、测试代码，通过；
+  * 6、回到业务分支上  master分支；合并`git merge 分支名`
+    * 冲突了怎么办？解决冲突！删除符号，再提交！（出现几率非常小！）
+    * 真实：各自完成自己单独功能和页面（相互之间不影响）解释下为什么要合并！
+  * 7、是不是相当于在master 上华丽添加了一个功能；
+  * 8、推送到远程 `git push `
+
+* 全体人员pull: 
+
+  * 1、git pull 本地项目和远程进行同步； 在认定master主分支上pull；你自己代码在你自己分支上！
+  * 2、远程没有更新`Already up to date.`  本地和远程是一样记录点！
+  * **也就是上传代码之前    先保证在主分支上拿到最新代码再合并分支
+            </code></pre>
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+
+    <!-- 引入js文件 -->
+    <script src="./js/html.js"></script>
+
+    <!-- 浏览器读取less文件的js -->
+    <script src="../lib/less.js"></script>
+
+
+
+    <!-- 引入代码高亮的js文件 -->
+    <script src="../lib/highlight/highlight.min.js"></script>
+    <!-- highlight使用方式:   -->
+    <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+    <!-- 类名不写语言默认自动识别 -->
+
+    <!-- 初始化代码高亮 -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <!-- 引入代码显示行数的js文件 -->
+    <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+    <!-- 初始化代码显示高度 -->
+    <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+    <!-- 自动生成目录 -->
+    <script src="../lib/dist/tocbot.min.js"></script>
+    <script type="text/javascript">
+        //目录生成初始化
+        tocbot.init({
+            // 在何处呈现目录。
+            tocSelector: '.js-toc',
+
+            // 在何处获取标题以构建目录。
+            contentSelector: '.js-toc-content',
+
+            // 要在内容选择器元素内获取哪些标题。
+            headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+            //对于内容中相对或绝对位置的容器内的标题。
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+
+</body>
+
+</html>

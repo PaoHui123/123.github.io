@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 样式 -->
+  <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+  <!-- 引入代码高亮的主题css -->
+  <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+  <!-- 引入代码样式代码 -->
+  <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+  <!-- 引入目录代码样式 -->
+  <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+  <title>less</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="aside">
+    <div class="setup">
+      <div class="left">一直显示目录</div>
+      <div class="center"></div>
+      <div class="right">
+          <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+          <label class="switch_on" id="switch_btn">
+              <input type="checkbox" checked="checked">
+              <span class="input"></span>
+          </label>
+      </div>
+  </div>
+    <div class="one1">
+      <sapan>菜<br>单</sapan>
+    </div>
+    <ul class="aside1 ">
+      <li>
+        <h3>html框架</h3>
+        <li><a href="#BootStrap" class="aside_a">BootStrap</a></li>
+        <li><a href="#BootStrapShiYongHBuZhou" class="aside_a">BootStrap使用步骤</a></li>
+        <li><a href="#BootStrapShanGeXiTong" class="aside_a">BootStrap栅格系统</a></li>
+        <li><a href="#zhuyi" class="aside_a">方法</a></li>
+        <li><a href="#BootStrapTable" class="aside_a">全局样式:布局类：表格</a></li>
+        <li><a href="#BootStrapAnNiu" class="aside_a">全局样式 美化内容类：按钮</a></li>
+        <li><a href="#BootStrapInput" class="aside_a">全局样式 布局类：表单</a></li>
+        <li><a href="#BootStrapFuZhu" class="aside_a">全局样式 布局类：辅助类 对齐方式</a></li>
+        <li><a href="#BootStrapXiangYingShi" class="aside_a">全局样式 布局类：响应式工具</a></li>
+        <li><a href="#BootStrapZuJian" class="aside_a">组件</a></li>
+        <li><a href="#BootStrap_ziTiTuBiao" class="aside_a">字体图标</a></li>
+        <li><a href="#BootStrap_chaJian" class="aside_a">BootStrap插件的使用</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+        <li><a href="#BootStrap" class="aside_a">2</a></li>
+      </li>
+    </ul>
+    <span>目录</span>
+    <ol class="js-toc"></ol>
+  </div>
+
+  <div class="zhuTi js-toc-content">
+
+
+
+    <div>
+      字体图标： 展示是图片，本质是文字
+      <br>在页面中展示小图标，代替一部分精灵图的作用
+      <br>icomoon.io
+      <br>iconfont.cn
+      
+    </div>
+
+    <h4>less： css预编译工具、 插件：easy less，生成css文件</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td>注释</td>
+        <td>
+            单行：ctrl + / 不会出现在css中 //
+          <br>块级：shift + alt + a 会出现在css中 /**/
+        </td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>嵌套</td>
+        <td>元素选择层级问题<br>.父级选择器 {.子级选择器}</td>
+        <td> &: 不生成后代，生成 交集选择器</td>
+      </tr>
+      <tr>
+        <td>导入 </td>
+        <td>@import "路径"<br>@import url(路径)</td>
+        <td>将less文件复制到某个less文件中<br>注意：如果是less文件，可以省略 .less</td>
+      </tr>
+      <tr>
+        <td>导出</td>
+        <td>// out: 路径<br>./css/ => 导出到 当前下的css文件夹下<br>../css/index => 导出到 上一级 css文件夹下 更名为 index.css</td>
+        <td>自定义less文件的导出位置<br>在less文件的第一行使用 单行注释<br>文件夹路径后面必须加/，否则导出的文件就会是路径名</td>
+      </tr>
+      <tr>
+        <td>禁止导出</td>
+        <td>// out: false</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>less变量</td>
+        <td>定义变量 @变量名: 值;<br>使用变量 div {color: @变量名;}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>less运算<br>加减乘除</td>
+        <td></td>
+        <td>如width:200px+5<br>除运算，需要在括号里如：（30px/2）</td>
+      </tr>
+      <tr>
+        <td>&: </td>
+        <td>代表当前选择器，不会生成后代选择器，通常配合伪类使用</td>
+        <td>也可以不写&，但是要写在标签的下面</td>
+      </tr>
+    </table>
+    <div style="font-size: 30px;">
+      <a href="https://less.bootcss.com/" target="_blank">手册：https://less.bootcss.com/</a>
+      </div>
+    <br><br><br>
+
+    <div id="BootStrap">BootStrap</div>
+    <p>中文官网: https://www.bootcss.com/</p>
+
+
+    <h4>BootStrap使用步骤</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapShiYongHBuZhou">BootStrap使用步骤</caption>
+      <tr>
+        <th>步骤</th>
+        <th>方法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>引入： BootStrap提供的CSS代码</td>
+        <td>link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.css"</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>调用类：使用BootStrap提供的样式</td>
+        <td>container：响应式布局版心类</td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>BootStrap栅格系统</h4>
+    <p>
+      栅格化是指将整个网页的宽度分成若干等份
+    <br> BootStrap3默认将网页分成12等份
+    </p>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapShanGeXiTong">BootStrap栅格系统</caption>
+      <tr>
+        <th></th>
+        <th>超小屏幕</th>
+        <th>小屏幕</th>
+        <th>中等屏幕</th>
+        <th>大屏幕</th>
+      </tr>
+      <tr>
+        <td>响应断点</td>
+        <td> &gt;768px</td>
+        <td>>=768px</td>
+        <td>>=992px</td>
+        <td>>=1200px</td>
+      </tr>
+      <tr>
+        <td>别名</td>
+        <td>xs</td>
+        <td>sm</td>
+        <td>md</td>
+        <td>lg</td>
+      </tr>
+      <tr>
+        <td>容器宽度</td>
+        <td>100%</td>
+        <td>750%</td>
+        <td>970%</td>
+        <td>1170%</td>
+      </tr>
+      <tr>
+        <td>类前缀</td>
+        <td>col-xs-*</td>
+        <td>col-sm-*</td>
+        <td>col-md-*</td>
+        <td>col-lg-*</td>
+      </tr>
+      <tr>
+        <td>列数</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>列间距</td>
+        <td>30px</td>
+        <td>30px</td>
+        <td>30px</td>
+        <td>30px</td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <div>
+      <p>.container是 Bootstrap 中专门提供的类名，所有应用该类名的盒子，默认已被指定宽度且居中。</p>
+      <p>.container-fluid也是 Bootstrap 中专门提供的类名，所有应用该类名的盒子，宽度均为 100%。</p>
+      <p>分别使用.row类名和 .col类名定义栅格布局的行和列。</p>
+    </div>
+    <div>
+      <p>注意</p>
+      <p>1. container类自带间距15px;
+         <br>2. row类自带间距-15px</p>
+    </div>
+    <br><br><br>
+
+
+    <h4>全局样式:布局类：表格</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapTable">布局类：表格</caption>
+      <tr>
+        <th>功能</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>table : 基本类名, 初始化表格默认样式</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table-bordered : 边框线</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table-striped : 隔行变色</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table-hover : 鼠标悬停效果</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>table-responsive : 表格宽溢出滚动</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>全局样式 美化内容类：按钮</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapAnNiu">美化内容类：按钮</caption>
+      <tr>
+        <th>功能</th>
+        <th>按钮样式</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>btn : 基准样式</td>
+        <td rowspan="4">
+          <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+              <td>(默认样式)Default</td>
+            </tr>
+            <tr>
+              <td>（首选项）Primary</td>
+            </tr>
+            <tr>
+              <td>(成功)Success</td>
+            </tr>
+            <tr>
+              <td>(一般信息)info</td>
+            </tr>
+            <tr>
+              <td>(警告)Warning</td>
+            </tr>
+            <tr>
+              <td>(危险)Danger</td>
+            </tr>
+            <tr>
+              <td>(链接)Link</td>
+            </tr>
+          </table>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>btn-info; btn-success : 设置按钮背景色</td>
+        <td></td>
+        <!-- <td></td> -->
+      </tr>
+      <tr>
+        <td>btn-block : 设置按钮为块元素</td>
+        <td></td>
+        <!-- <td></td> -->
+      </tr>
+      <tr>
+        <td>btn-lg; btn-sm; btn-xs : 设置按钮大小</td>
+        <td></td>
+        <!-- <td></td> -->
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>全局样式 布局类：表单</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapInput">布局类：表单</caption>
+      <tr>
+        <th>功能</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>form-control : 设置表单元素input, select, textarea的样式</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>checkbox 和 radio : 设置复选框和单选框的样式</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>form-inline : 设置表单元素水平排列</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>disabled : 设置表单禁用状态样式</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>input-lg; input-sm, input-sm : 设置表单元素的大小</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>全局样式 布局类：辅助类</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapFuZhu">布局类：辅助类</caption>
+      <tr>
+        <th>功能</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>pull-right : 强制元素右浮动</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>pull-left : 强制元素左浮动</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>clearfix : 清除浮动元素的影响</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>text-left文 : 本左对齐</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>text-right : 文本右对齐</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>text-center : 文本居中对齐</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>center-block : 块元素居中</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>全局样式 布局类：响应式工具（不同屏幕尺寸隐藏或显示页面内容）</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapXiangYingShi">布局类：响应式工具（不同屏幕尺寸隐藏或显示页面内容）</caption>
+      <tr>
+        <th> </th>
+        <th>超小屏幕<span><br>手机（ &lt;768px）</span></th>
+        <th>小屏幕<span><br>手机（>=768px）</span></th>
+        <th>中等屏幕<span><br>手机（>=992px）</span></th>
+        <th>大屏幕<span><br>手机（>=1200px）</span></th>
+      </tr>
+      <tr>
+        <td>.visible-xs-*</td>
+        <td>可见</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+      </tr>
+      <tr>
+        <td>.visible-sm-*</td>
+        <td>隐藏</td>
+        <td>可见</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+      </tr>
+      <tr>
+        <td>.visible-md-*</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+        <td>可见</td>
+        <td>隐藏</td>
+      </tr>
+      <tr>
+        <td>.visible-lg-*</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+        <td>隐藏</td>
+        <td>可见</td>
+      </tr>
+      <tr>
+        <td>.hidden-xs</td>
+        <td>隐藏</td>
+        <td>可见</td>
+        <td>可见</td>
+        <td>可见</td>
+      </tr>
+      <tr>
+        <td>.hidden-sm</td>
+        <td>可见</td>
+        <td>隐藏</td>
+        <td>可见</td>
+        <td>可见</td>
+      </tr>
+      <tr>
+        <td>.hidden-md</td>
+        <td>可见</td>
+        <td>可见</td>
+        <td>隐藏</td>
+        <td>可见</td>
+      </tr>
+      <tr>
+        <td>.hidden-lg</td>
+        <td>可见</td>
+        <td>可见</td>
+        <td>可见</td>
+        <td>隐藏</td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>BootStrap组件</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrapZuJian">列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>Glyphicons字体图标</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrap_ziTiTuBiao">Glyphicons字体图标</caption>
+      <tr>
+        <th>Glyphicons字体图标的使用步骤</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>1.HTML页面引入BootStrap样式文件</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2.准备字体文件 (注意路径)</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3.空标签调用对应类名（glyphicon  图标类）</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>BootStrap插件的使用</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption id="BootStrap_chaJian">BootStrap插件的使用</caption>
+      <tr>
+        <th>步骤</th>
+        <th>方法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>引入BootStrap样式</td>
+        <td>
+          &lt; script src="./js/jquery.js">&lt;/script><br>
+          &lt; script src="./bootstrap.min.js">&lt;/script>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>引入js文件：jQuery.js + BootStrap.min.js</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>复制HTML结构, 并适当调整结构或内容</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+    <h4>标题</h4>
+    <table border="3" cellspacing="0" cellpadding="3">
+      <caption>列表</caption>
+      <tr>
+        <th>功能</th>
+        <th>用法</th>
+        <th>备注</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <br><br><br>
+
+    
+
+
+
+
+
+
+
+
+    
+  </div>
+
+
+
+
+
+  <pre>
+    <code>
+      &lt;div&gt;你好，世界&lt;/div&gt;
+      <div>你好，地球</div>
+    </code>
+</pre>
+
+
+<script>
+
+</script>
+
+<!-- 引入js文件 -->
+<script src="./js/html.js"></script>
+
+<!-- 浏览器读取less文件的js -->
+<script src="../lib/less.js"></script>
+
+
+
+<!-- 引入代码高亮的js文件 -->
+<script src="../lib/highlight/highlight.min.js"></script>
+<!-- highlight使用方式:   -->
+<!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+<!-- 类名不写语言默认自动识别 -->
+
+<!-- 初始化代码高亮 -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<!-- 引入代码显示行数的js文件 -->
+<script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+<!-- 初始化代码显示高度 -->
+<script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+<!-- 自动生成目录 -->
+<script src="../lib/dist/tocbot.min.js"></script>
+<script type="text/javascript">
+  //目录生成初始化
+  tocbot.init({
+    // 在何处呈现目录。
+    tocSelector: '.js-toc',
+
+    // 在何处获取标题以构建目录。
+    contentSelector: '.js-toc-content',
+
+    // 要在内容选择器元素内获取哪些标题。
+    headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+    //对于内容中相对或绝对位置的容器内的标题。
+    hasInnerContainers: true,
+  });
+  </script>
+
+
+  
+
+
+</body>
+
+</html>

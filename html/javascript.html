@@ -1,0 +1,6020 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 样式 -->
+  <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+  <!-- 引入代码高亮的主题css -->
+  <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+  <!-- 引入代码样式代码 -->
+  <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+  <!-- 引入目录代码样式 -->
+  <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+  <title>js基础</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  btn.disabled禁用
+  e事件流
+  e.target可以得到子元素标签 触发谁就是谁
+
+  e.stopPropagation() 阻止冒泡
+
+  e.preventDefault() 阻止默认行为
+
+  e.target.tagName可以获取大写的子标签名
+  <br>click()  //模拟点击
+
+  <p class="red">documentElement 属性可返回文档的根节点(不会)
+  </p>
+    dom.style.cssText="" //修改元素节点的css样式
+
+
+
+
+
+
+  <div class="aside">
+    <div class="setup">
+      <div class="left">一直显示目录</div>
+      <div class="center"></div>
+      <div class="right">
+          <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+          <label class="switch_on" id="switch_btn">
+              <input type="checkbox" checked="checked">
+              <span class="input"></span>
+          </label>
+      </div>
+  </div>
+    <div class="one1">
+      <sapan>菜<br>单</sapan>
+    </div>
+    <ul class="aside1 ">
+      <li>
+        <h3>javascript</h3>
+      </li>
+      <li><a href="#" class="aside_a">2</a></li>
+      <li><a href="#" class="aside_a">2</a></li>
+    </ul>
+    <span>目录</span>
+    <ol class="js-toc"></ol>
+  </div>
+
+
+
+
+  <div class="zhuTi js-toc-content">
+
+
+    <h2>js书写位置</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>js书写位置</caption>
+        <tr>
+          <th>内部script</th>
+          <th>外部script</th>
+          <th>行内script（了解）</th>
+        </tr>
+        <tr>
+          <td>body里面（/body上面）</td>
+          <td>需要用script src引入</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>js注释</h2>
+    <div>
+      <div>// ctrl+/ 单行注释<br>/* shift+alt+a 多行注释 */</div>
+      <br><br><br>
+    </div>
+
+    <h2>js结束符</h2>
+    <div>
+      <div>;号 可写可不写</div>
+      <br>
+      <br>
+    </div>
+
+    <h2>输出语法</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>输出语法</caption>
+        <tr>
+          <th>方法</th>
+          <th>语法</th>
+          <th>场景</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>document.write("我是测试内容")</td>
+          <td>可以输出html标签,css样式</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>alert()</td>
+          <td>警告弹窗</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>console.log</td>
+          <td>控制台输出</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>prompt('请输入一些内容')</td>
+          <td>带输入框的弹窗<br>文字是提示信息</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+    <h2>变量</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>变量</caption>
+        <tr>
+          <th></th>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>声明变量</td>
+          <td>let 变量名</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>声明变量</td>
+          <td>const 变量名<br>const 声明的值不能更改，而且const声明变量的时候需要里面进行初始化<br>但是对于引用数据类型，const声明的变量，里面存的不是 值，不是值，不是值，是 地址。</td>
+          <td>const 优先，尽量使用const</td>
+          <td>const 语义化更好
+            <br> 很多变量我们声明的时候就知道他不会被更改了，那为什么不用 const呢？
+            <br> 实际开发中也是，比如react框架，基本const
+          </td>
+        </tr>
+        <tr>
+          <td>声明变量</td>
+          <td>var 变量名</td>
+          <td>先排除，老派写法，问题很多，可以淘汰掉…</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>变量赋值</td>
+          <td></td>
+          <td>如:let=a a=30</td>
+          <td>把右侧的数据装入左侧容器中</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>常量</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>常量</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>const</td>
+          <td>const a=3.13</td>
+          <td>常量的数值不会改变</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>数组</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>数组</caption>
+        <tr>
+          <th>步骤</th>
+          <th>解释</th>
+          <th>用法</th>
+          <th>如</th>
+          <th>注意</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>存着很多变量</td>
+          <td>[]</td>
+          <td>let 数组名=['张三','李四','王五']</td>
+          <td>数组是按顺序保留的，每个数组都右一个编号<br>位置编号：索引或下标 <br>从0开始是第一个数组</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>获取数组中的变量</td>
+          <td>数组名[下标]</td>
+          <td>arr[2]</td>
+          <td>arr是数组名，2是第三个数</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>更新数组内的变量</td>
+          <td>数组名[下标]=要更新的量</td>
+          <td>arr[2]=88</td>
+          <td>arr是数组名，2是第三个数，88是更新的第三个变量</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>数组长度</td>
+          <td>console.log(数组名.length)</td>
+          <td></td>
+          <td>最大下标=长度减-1</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>数组</h3>
+    <div>
+      <p>(Array)是一种可以按顺序保存数据的数据类型</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>数组</caption>
+        <tr>
+          <th>定义</th>
+          <th>用法</th>
+          <th>备注</th>
+          <th>备注2</th>
+        </tr>
+        <tr>
+          <td>声明数组(字面量)</td>
+          <td>let 数组名=[数据1，数据2,...,数据n]</td>
+          <td>let name=['小明','小刚','小红']</td>
+          <td>数组是按顺序保存，所以每个数据都有自己的编号
+            <br>计算机中的编号从0开始，所以小明的编号为0，小刚编号为1，以此类推
+            <br>在数组中，数据的编号也叫索引或下标
+            <br>数组可以存储任意类型的数据
+          </td>
+        </tr>
+        <tr>
+          <td>声明变量(构造函数)</td>
+          <td>let 数组名=new array(数据1，数据2,...,数据n)</td>
+          <td>let name=new array('小明','小刚','小红')</td>
+          <td>数组是按顺序保存，所以每个数据都有自己的编号
+            <br>计算机中的编号从0开始，所以小明的编号为0，小刚编号为1，以此类推
+            <br>在数组中，数据的编号也叫索引或下标
+            <br>数组可以存储任意类型的数据
+          </td>
+        </tr>
+        <tr>
+          <td>取值语法</td>
+          <td>数组名[下标]</td>
+          <td>let names=['小明','小刚','小李']<br>names[0]//小明<br>names[小刚]</td>
+          <td>通过下标取数据
+            <br>取出来是什么类型的，就根据这种类型特点来访问
+          </td>
+        </tr>
+        <tr>
+          <td>元素</td>
+          <td></td>
+          <td>数组中保存的每个数据都叫数组元素</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>下标</td>
+          <td></td>
+          <td>数组中数据的编号</td>
+          <td>console.log(nanes[1])</td>
+        </tr>
+        <tr>
+          <td>长度</td>
+          <td>length </td>
+          <td>数组中数据的个数，通过数组的length属性获得</td>
+          <td>console.log(nanes.lenght)</td>
+        </tr>
+        <tr>
+          <td>遍历数组</td>
+          <td>用循环把数组中每个元素都访问到,一般会用for循环遍历</td>
+          <td>for(let i=0;i&lt;数组名.length;i++){数组名[i]}</td>
+          <td>
+            <pre><code>
+let nams=[10,20,30,40,50]
+for(let i=0;i&lt;nums.length;i++){
+  document.while(nums[i])
+}
+              </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>操作数组</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>操作数组</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+          <th>语法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td rowspan="2">新增数组</td>
+          <td>数组名.push()</td>
+          <td>将一个或多个元素添加到数组的末尾，并返回该数组的新长度 (重点)</td>
+          <td>arr.push(元素1,...元素n)</td>
+          <td>let arr=['red','green']
+            <br>arr.push('pink','black')
+            <br>console.log(arr)//red,green,pink,black
+          </td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>数组名.unshift(新增的内容)</td>
+          <td>将一个或多个元素添加到数组的开头，并返回该数组的新长度</td>
+          <td>arr.unshift(元素1,...元素n)</td>
+          <td>let arr=['red','green']
+            <br>arr.unshift('pink','black')
+            <br>console.log(arr)//pink,black,red,green,
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3">删除数组</td>
+          <td>数组名.pop()</td>
+          <td>法从数组中删除最后一个元素，并返回该元素的值</td>
+          <td>arr.pop()</td>
+          <td>let arr=['red','green']
+            <br>arr.pop()
+            <br>console.log(arr)//red
+          </td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>数组名.shift() </td>
+          <td>从数组中删除第一个元素，并返回该元素的值</td>
+          <td>arr.shift</td>
+          <td>let arr=['red','green']
+            <br>arr.shift()
+            <br>console.log(arr)//green
+          </td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>数组名.splice(start,deleteCount)</td>
+          <td>删除指定元素,添加指定元素</td>
+          <td>arr.splice(起始位置,删除几个元素,'添加数组1','添加数组2','添加数组3')</td>
+          <td>arr.splice(3,0,'aa','bb')//第一个数是从第几个下标开始删除，第二个数是删除几个,第三个是要添加的数组</td>
+        </tr>
+        <tr>
+          <td>map 迭代数组</td>
+          <td>数组.map(function(item,index){console.log(item);console.log(index);})</td>
+          <td>map 可以处理数据，并且<span class="red">返回新的数组</span>。
+            <br><br><span class="red">map 也称为映射。</span>映射是个术语，指两个元素的集之间元素相互“对应”的关系
+          </td>
+          <td>
+            <pre class="k300"><code>
+const arr=['pink','red','blue']
+arr.map(function (item,index) {
+  console.log(item);
+   //item 得到 数组元素 'pink'  'red'  'blue'
+  console.log(index);
+   //index 得到 索引号 0 1 2
+})
+            </code></pre>
+          </td>
+          <td>
+            <pre  class="k300"><code>
+const arr=['pink','red','blue']
+arr.map(function (item,index) {
+  console.log(item);
+   //item 得到 数组元素 'pink'  'red'  'blue'
+  console.log(index);
+   //index 得到 索引号 0 1 2
+  return item+'老师'
+})
+console.log(newArr);
+            </code></pre>
+            <br>
+            <pre  class="k300"><code>
+const arr=['pink','red','blue']
+const newArr=arr.map(function (item,i) {
+  // console.log(item); //数组元素  ’red
+  // console.log(i);  //下标
+  return item+'老师'
+})
+console.log(newArr)
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>join方法</td>
+          <td></td>
+          <td>join() 方法用于把数组中的所有元素转换一个字符串</td>
+          <td>
+            <pre class="k300"><code>
+const arr=['pink老师','red老师','blue老师']
+console.log(arr.join(''));
+  //pink老师red老师blue老师
+
+  //参数：数组元素是通过参数里面指定的分隔符进行分隔的
+            </code></pre>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>遍历数组 forEach 方法</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>遍历数组 forEach 方法</caption>
+        <tr>
+          <th>概念</th>
+          <th>语法</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数<br>遍历数组的每个元素</td>
+          <td>被遍历的数组.forEach(funtion (当前数组元素，当前元素索引号){//函数体})</td>
+          <td>
+            <pre class="k400"><code>
+const arr=['pink','red','green']
+arr.forEach(function (item,index) {
+  console.log(`当前数组元素是：${item}`)//依次打印数组每一个元素
+  console.log(`当前数组元素的索引是：${index}`)//以此打印数组每一个元素的索引
+})
+            </code></pre>
+          </td>
+          <td>1. forEach 主要是遍历数组
+            <br>2. 参数当前数组元素是必须要写的， 索引号可选。
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>筛选数组 filter 方法</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>语法</th>
+          <th>返回值</th>
+          <th>参数</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素</td>
+          <td>筛选数组符合条件的元素，并返回筛选之后元素的新数组</td>
+          <td>被遍历的数组.filter(function(currentValue,index){return 筛选条件})</td>
+          <td>返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组</td>
+          <td>currentValue 必须写， index 可选</td>
+          <td>
+            <pre><code>
+const score=[10,50,3,40,33]
+const re=score.filter(function (item) {
+  return item>30
+})
+console.log(re);//[50,40,33]
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>Array</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>说明</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>Array</td>
+          <td>Array 是内置的构造函数，用于创建数组</td>
+          <td></td>
+          <td>
+            <pre><code>
+const arr=new Array(3,5)
+console.log(arr)//[3,5]
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>arr.forEach</td>
+          <td>遍历数组</td>
+          <td>不返回，用于不改变值，经常用于查找打印输出值</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>arr.filter</td>
+          <td>过滤数组</td>
+          <td>筛选数组元素，并生成新数组</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>arr.map</td>
+          <td>迭代数组</td>
+          <td>返回新数组，新数组里面的元素是处理之后的值，经常用于处理数据</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>arr.reduce</td>
+          <td>累计器</td>
+          <td>返回函数累计处理的结果，经常用于求和等</td>
+          <td>
+            <pre class="k400"><code>
+//基本语法   起始值可以省略，如果写就作为第一次累计的起始值
+arr.reduce(function(){},起始值)
+            </code></pre>
+            <br>
+            <pre class="k400"><code>
+arr.reduce(function(累计值,当前元素 [,索引值][,原数组]){},起始值)
+//累计值参数：
+//1. 如果有起始值，则以起始值为准开始累计， 累计值 = 起始值
+//2. 如果没有起始值， 则累计值以数组的第一个数组元素作为起始值开始累计
+//3. 后面每次遍历就会用后面的数组元素 累计到 累计值 里面 （类似求和里面的 sum ）
+            </code></pre>
+            <br>
+            <pre class="k400"><code>
+//求和运算
+const arr=[1,5,9]
+const count=arr.reduce((prev,item)=>prev+item)
+console.log(count);
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br>
+    </div>
+
+
+    <h3>数组常见方法-其他方法</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>数组常见方法-其他方法</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>实例方法join</td>
+          <td>数组元素拼接为字符串，返回字符串</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法find</td>
+          <td>查找元素，返回符合测试条件的第一个数组元素值，如果没有 (ppt没有写完)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法every</td>
+          <td>检测数组所有元素是否都符合条件，如果所有元素都 (ppt没有写完)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法some</td>
+          <td>检测数组中的元素是否满足指定条件，如果数组中有元素满足条件(ppt没有写完)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法concat</td>
+          <td>合并两个数组，返回新数组</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法sort</td>
+          <td>对原数组单元值排序</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法splice</td>
+          <td>删除或替换原数组单元</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法reverse</td>
+          <td>反转数组</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法findIndex</td>
+          <td>查找元素的索引值</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法静态方法 Array.from()</td>
+          <td>伪数组转换为真数组</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+
+    <h2>数据类型</h2>
+    <div>
+      <div>isnun:判断是否是数值型</div>
+
+
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>基本数据类型</caption>
+        <tr>
+          <th>类型</th>
+          <th>用法</th>
+          <th>备注1</th>
+          <th>备注2</th>
+          <th>备注3</th>
+        </tr>
+        <tr>
+          <td>数字类型</td>
+          <td>number</td>
+          <td>可以是整数、小数、正数、负数</td>
+          <td>JS 是弱数据类型，变量到底属于那种类型，只有赋值之后，我们才能确认
+            <br>Java是强数据类型 例如 int a = 3 必须是整数
+          </td>
+          <td>
+            <table border="3" cellspacing="0" cellpadding="3">
+              <caption>算术运算符</caption>
+              <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>优先级</th>
+                <th>计算圆的面积</th>
+                <th>计算错误</th>
+              </tr>
+              <tr>
+                <td>+</td>
+                <td>求和</td>
+                <td rowspan="5">先乘除后加减，有括号先算括号里面的</td>
+                <td rowspan="5">变量 3.14* r * r</td>
+                <td rowspan="5">NaN<br>代表一个计算错误。它是一个不正确的或者一个未定义的数学操作所得到的结果</td>
+              </tr>
+              <tr>
+                <td>-</td>
+                <td>求差</td>
+                <!-- <td></td> -->
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>求积</td>
+                <!-- <td></td> -->
+              </tr>
+              <tr>
+                <td>/</td>
+                <td>求商</td>
+                <!-- <td></td> -->
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>取余数</td>
+                <!-- <td></td> -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>字符串型</td>
+          <td>string</td>
+          <td>通过单引号（ ''） 、双引号（ ""）或反引号( ` ) 包裹的数据都叫字符串
+            <br>
+            单引号/双引号可以互相嵌套，但是不以自已嵌套自已（口诀：外双内单，或者外单内双）
+            <br>
+            必要时可以使用转义符 \，输出单引号或双引号
+          </td>
+          <td>
+            <p>字符串拼接</p>
+            + 运算符 可以实现字符串的拼接。
+            <br>口诀：数字相加，字符相连
+          </td>
+          <td>
+            <table border="3" cellspacing="0" cellpadding="3">
+              <caption>模板字符串</caption>
+              <tr>
+                <th>场景</th>
+                <th>语法</th>
+                <th>备注</th>
+              </tr>
+              <tr>
+                <td>拼接字符串和变量
+                  <br>在没有它之前，要拼接变量比较麻烦
+                </td>
+                <td> `` (反引号)
+                  <br>在英文输入模式下按键盘的tab键上方那个键（1左边那个键）
+                  <br>内容拼接变量时，用 ${ } 包住变量
+                </td>
+                <td>console.log('大家好，我叫${name},今年${age}岁')</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>布尔型</td>
+          <td>boolean</td>
+          <td>true（真）<br>false（假）</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>未定义型</td>
+          <td>undefined</td>
+          <td>未定义是比较特殊的类型，只有一个值 undefined。</td>
+          <td>只声明变量，不赋值的情况下，变量的默认值为 undefined，一般很少【直接】为某个变量赋值为 undefined。</td>
+          <td rowspan="2">
+            null 和 undefined 区别：
+            <br>undefined 表示没有赋值
+            <br>null 表示赋值了，但是内容为空
+          </td>
+        </tr>
+        <tr>
+          <td>空类型</td>
+          <td>null</td>
+          <td>JavaScript 中的 null 仅仅是一个代表“无”、“空”或“值未知”的特殊值</td>
+          <td></td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+
+    </div>
+
+
+    <h2>检测数据类型</h2>
+    <div>
+      <p>typeof type类型 of谁的</p>
+      <br>
+      <p>用法:1.typeof xxx。2.typeof(xxx)</p>
+      <br><br><br>
+    </div>
+
+    <h2>类型转换之隐式转换</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>类型转换之隐式转换</caption>
+        <tr>
+          <th>定义</th>
+          <th>规则</th>
+          <th>缺点</th>
+          <th>技巧</th>
+          <th>如</th>
+        </tr>
+        <tr>
+          <td>某些运算符被执行时，系统内部自动将数据类型进行转换，这种转换称为隐式转换。</td>
+          <td>+ 号两边只要有一个是字符串，都会把另外一个转成字符串
+            <br>除了+以外的算术运算符 比如 - * / 等都会把数据转成数字类型
+          </td>
+          <td>转换类型不明确，靠经验才能总结</td>
+          <td>+号作为正号解析可以转换成数字型
+            <br>任何数据和字符串相加结果都是字符串
+          </td>
+          <td>
+            <table border="3" cellspacing="0" cellpadding="3">
+              <tr>
+                <td>console.log(11+11)</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>console.log('11'+11)</td>
+                <td>1111</td>
+              </tr>
+              <tr>
+                <td>console.log(11-11)</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>console.log('11'-11)</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>console.log(1*1)</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>console.log('1'*1)</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>console.log(typeof '123')</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>console.log(typeof ='123')</td>
+                <td>number</td>
+              </tr>
+              <tr>
+                <td>console.log(+'11'+11)</td>
+                <td>22</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>类型转换之显式转换之数字型</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>显式转换之数字型</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+          <th>备注2</th>
+        </tr>
+        <tr>
+          <td>Number(数据) 首字母大小</td>
+          <td>转成数字类型
+            <br>如果字符串内容里有非数字，转换失败时结果为 NaN（Not a Number）即不是一个数字
+            <br>NaN也是number类型的数据，代表非数字
+          </td>
+          <td>Number("1000")</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>parseInt(数据)</td>
+          <td>只保留整数</td>
+          <td>parseInt('1.99')</td>
+          <td rowspan="2">变量中有其他字符也可以转化，但只保留数字</td>
+        </tr>
+        <tr>
+          <td>parseFloat(数据)</td>
+          <td>可以保留小数</td>
+          <td>parseFloat(2.99)</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>类型转换之显式转换之字符型</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>显式转换之字符型</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>String(数据)</td>
+          <td></td>
+          <td>let one=999<br>let two=String(one)</td>
+        </tr>
+        <tr>
+          <td>变量.toString(进制) </td>
+          <td></td>
+          <td>let one=999<br>let two=one.toString()</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>转换为Boolean型之显示转换</h2>
+    <div>
+      <p style="color: red;">记忆： ''、0、undefined、null、false、NaN 转换为布尔值后都是false, 其余则为 true</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>转换为Boolean型之显示转换</caption>
+        <tr>
+          <th>方法</th>
+          <th>结果</th>
+          <th>方法</th>
+          <th>结果</th>
+        </tr>
+        <tr>
+          <td>console.log(false&&20)</td>
+          <td>false</td>
+          <td>console.log(false||20)</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>console.log(5 < 3&&20)</td>
+          <td>false</td>
+          <td>console.log(5 < 3||20)</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>console.log(undefined && 20)</td>
+          <td>undefined</td>
+          <td>console.log(undefined||20)</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>console.log(null&&20)</td>
+          <td>null</td>
+          <td>console.log(null||20)</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>console.log(0&&20)</td>
+          <td>0</td>
+          <td>console.log(0||20)</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>console.log(10&&20)</td>
+          <td>20</td>
+          <td>console.log(10||20)</td>
+          <td>10</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>转换为Boolean型之隐式转换</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>转换为Boolean型之隐式转换</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td colspan="2">有字符串的加法 “” + 1 ，结果是 “1”</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td colspan="2">减法 - （像大多数数学运算一样）只能用于数字，它会使空字符串 "" 转换为 0 </td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td colspan="2">null 经过数字转换之后会变为 0 </td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td colspan="2">undefined 经过数字转换之后会变为 NaN</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>console.log("" - 1)</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>console.log('ping老师' - 1)</td>
+          <td>NaN</td>
+        </tr>
+        <tr>
+          <td>console.log(null + 1)</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>console.log(undefined + 1)</td>
+          <td>NaN</td>
+        </tr>
+        <tr>
+          <td>console.log(NaN + 1)</td>
+          <td>NaN</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+    <h2>赋值运算符</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>赋值运算符</caption>
+        <tr>
+          <th>用法</th>
+          <th>功能</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>将等号右边的值赋予给左边, 要求左边必须是一个容器</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>+=</td>
+          <td rowspan="5">
+            += 出现是为了简化代码, 比如让 let num = 10 ，num 加5 怎么写呢？
+            <br>num += 5
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>-=</td>
+          <td></td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>*=</td>
+          <td></td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>/=</td>
+          <td></td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>%=</td>
+          <td></td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>一元运算符及三元运算符</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>一元运算符及三元运算符</caption>
+        <tr>
+          <th></th>
+          <th>概念</th>
+          <th>用法</th>
+          <th>如</th>
+        </tr>
+        <tr>
+          <td>一元运算符</td>
+          <td>众多的 JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符</td>
+          <td>正负号</td>
+          <td>let num=1<br>num += 1</td>
+        </tr>
+        <tr>
+          <td>三元又能算符</td>
+          <td>其实是比 if 双分支 更简单的写法，可以使用 三元表达式</td>
+          <td>? 与 : 配合使用</td>
+          <td>条件？满足条件执行的代码:不满足条件执行的代码</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h2>自增与自减</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>自增与自减</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>自增</td>
+          <td>++</td>
+          <td>让变量的值 +1</td>
+        </tr>
+        <tr>
+          <td>自减</td>
+          <td>--</td>
+          <td>让变量的值 -1</td>
+        </tr>
+        <tr>
+          <td>前置自增（单独使用）</td>
+          <td>let num=1<br> ++num</td>
+          <td rowspan="2">单独使用没有区别</td>
+        </tr>
+        <tr>
+          <td>后置自增（单独使用）</td>
+          <td>let num=1<br> num++</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>前置自增（复合使用）</td>
+          <td>前置自增：先自加再使用（记忆口诀：++在前 先加）</td>
+          <td>let i=10
+            <br>console.log(++i +20 )
+            <br>结果是31
+            <br>i自加1，再把i的值推入位置
+          </td>
+        </tr>
+        <tr>
+          <td>后置自增（复合使用）</td>
+          <td>后置自增：先使用再自加（记忆口诀：++在后 后加）</td>
+          <td>let i=10
+            <br>console.log(i++ +20 )
+            <br>结果是30
+            <br>先把i的值推入位置，然后i自增1
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>比较运算符</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>比较运算符</caption>
+        <tr>
+          <th>符号</th>
+          <th>功能</th>
+          <th>备注</th>
+          <th>备注2</th>
+        </tr>
+        <tr>
+          <td> &gt; </td>
+          <td>左边是否大于右边</td>
+          <td rowspan="8"> 比较结果为boolean类型，即只会得到 true 或 false</td>
+          <td rowspan="8">字符串比较，是比较的字符对应的ASCII码
+            <br>NaN不等于任何值，包括它本身,涉及到"NaN“ 都是false
+            <br>尽量不要比较小数，因为小数有精度问题
+            <br> 不同类型之间比较会发生隐式转换,最终把数据隐式转换转成number类型再比较
+          </td>
+        </tr>
+        <tr>
+          <td> &lt; </td>
+          <td>左边是否小于右边</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td> &gt;=</td>
+          <td>左边是否大于或等于右边</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td> &lt;=</td>
+          <td>左边是否小于或等于右边</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>单等是赋值</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>==</td>
+          <td>左右两边值是否相等</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>===</td>
+          <td>左右两边是否类型和值都相等</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>!=</td>
+          <td> 左右两边是否不等</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>!==</td>
+          <td> 左右两边是否不全等</td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>逻辑运算符</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>逻辑运算符</caption>
+        <tr>
+          <th>符号</th>
+          <th>名称</th>
+          <th>日常读法</th>
+          <th>特点</th>
+          <th>口诀</th>
+        </tr>
+        <tr>
+          <td>&&</td>
+          <td>逻辑与</td>
+          <td>并且</td>
+          <td>符号两边都为true，结果才为true </td>
+          <td>一假则假</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>逻辑或 </td>
+          <td>或者</td>
+          <td>符号两边有一个，true就为true</td>
+          <td>一真则真</td>
+        </tr>
+        <tr>
+          <td>!</td>
+          <td>逻辑非</td>
+          <td>取反</td>
+          <td>true变false，false变true</td>
+          <td>真变假，假变真</td>
+        </tr>
+        <tr>
+          <td colspan="5">判断一个变量 num 是否大于5且小于10怎么写:num > 5 && num <&lt; 10</td>
+              <!-- <td></td> -->
+              <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>逻辑运算符里的短路</h2>
+    <div>
+      <p>短路：只存在于 && 和 || 中，当满足一定条件会让右边代码不执行</p>
+      <p>原因：通过左边能得到整个式子的结果，因此没必要再判断右边</p>
+      <p>运算结果：无论 && 还是 || ，运算结果都是最后被执行的表达式值，一般用在变量赋值</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>逻辑运算符里的短路</caption>
+        <tr>
+          <th>符号</th>
+          <th>短路条件</th>
+        </tr>
+        <tr>
+          <td>&&</td>
+          <td>左边为false就短路</td>
+        </tr>
+        <tr>
+          <td>||</td>
+          <td>左边为true就短路</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>运算符优先级</h2>
+    <div>
+      <p>一元运算符里面的逻辑非优先级很高,逻辑与比逻辑或优先级高</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>运算符优先级</caption>
+        <tr>
+          <th>优先级</th>
+          <th>运算符</th>
+          <th>顺序</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>小括号</td>
+          <td>（）</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>一元运算符</td>
+          <td>++ -- !</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>算数运算符</td>
+          <td>先* / 后+-</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>关系运算符</td>
+          <td>大于，小于，大于等于，小于等于</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>相等运算符</td>
+          <td>== != === !==</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>逻辑运算符</td>
+          <td>先&& 后||</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>赋值运算符</td>
+          <td>=</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>逗号运算符</td>
+          <td>,</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h2>if语句</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>类型</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>但分支</td>
+          <td>if(条件){满足条件要执行的代码}</td>
+          <td>括号内的条件为true时，进入大括号里执行代码
+            <br>小括号内的结果若不是布尔类型时，会发生隐式转换转为布尔类型
+            <br>如果大括号只有一个语句，大括号可以省略，但是，俺们不提倡这么做~
+          </td>
+        </tr>
+        <tr>
+          <td>双分支</td>
+          <td>if(条件){满足条件要执行的代码}else{不满足条件要执行的代码}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>多分枝</td>
+          <td>if(条件1){代码1}else if(条件2){代码2}else{代码n}</td>
+          <td>先判断条件1，若满足条件1就执行代码1，其他不执行
+            <br>若不满足则向下判断条件2，满足条件2执行代码2，其他不执行
+            <br>若依然不满足继续往下判断，依次类推
+            <br>若以上条件都不满足，执行else里的代码n
+            <br>注：可以写N个条件，但这里演示只写2个
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h2>switch语句</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>释义</th>
+          <th>用法</th>
+          <th>注意事项</th>
+        </tr>
+        <tr>
+          <td>找到跟小括号里数据全等的case值，并执行里面对应的代码
+            <br>若没有全等 === 的则执行default里的代码
+            <br>例：数据若跟值2全等，则执行代码2
+          </td>
+          <td>switch(数据){<br>case 值1:<br>代码1<br>break<br>case 值2:<br>代码2<br>break<br>default:<br>代码n<br>break}</td>
+          <td>1. switch case语句一般用于等值判断,不适合于区间判断
+            <br>2. switch case一般需要配合break关键字使用 没有break会造成case穿透
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>while 循环</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>while 循环</caption>
+        <tr>
+          <th>基本语句</th>
+          <th>释义</th>
+          <th>三大要素</th>
+        </tr>
+        <tr>
+          <td>while(循环条件){要重复执行的代码}</td>
+          <td>跟if语句很像，都要满足小括号里的条件为true才会进入 循环体 执行代码
+            <br>while大括号里代码执行完毕后不会跳出，而是继续回到小括号里判断条件是否满足，若满足又执行大括号里的代码，然后再回到
+            小括号判断条件，直到括号内条件不满足，即跳出
+          </td>
+          <td>1. 变量起始值
+            <br>2. 终止条件（没有终止条件，循环会一直执行，造成死循环）
+            <br>3. 变量变化量（用自增或者自减）
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>循环退出</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>循环退出</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>区别</th>
+        </tr>
+        <tr>
+          <td>continue</td>
+          <td>结束本次循环，继续下次循环</td>
+          <td rowspan="2">continue 退出本次循环，一般用于排除或者跳过某一个选项的时候, 可以使用continue
+            <br>break 退出整个循环，一般用于结果已经得到, 后续的循环不需要的时候可以使用
+          </td>
+        </tr>
+        <tr>
+          <td>break</td>
+          <td>跳出所在的循环</td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>for 循环-基本使用</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption> for 循环-基本使用</caption>
+        <tr>
+          <th>作用</th>
+          <th>好处</th>
+          <th>代码</th>
+        </tr>
+        <tr>
+          <td>重复执行代码</td>
+          <td>把声明起始值、循环条件、变化值写到一起，让人一目了然，它是最常使用的循环形式</td>
+          <td>for(变量的起始值;终止条件;变量变化量){循环体}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">退出循环</td>
+          <td>continue</td>
+          <td>退出本次循环，一般用于排除或者跳过某一个选项的时候, 可以使用continue</td>
+        </tr>
+        <tr>
+          <td>break</td>
+          <td>退出整个for循环，一般用于结果已经得到, 后续的循环不需要的时候可以使用</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td rowspan="2">了解</td>
+          <td>while(true) </td>
+          <td>来构造“无限”循环，需要使用break退出循环。</td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>for(;;) </td>
+          <td>也可以来构造“无限”循环，同样需要使用break退出循环。</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <div>for循环和while循环有什么区别呢：<br>
+      当如果明确了循环的次数的时候推荐使用for循环
+      <br>当不明确循环的次数的时候推荐使用while循环
+    </div>
+
+    <h2>for 循环嵌套</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>for 循环嵌套</caption>
+        <tr>
+          <th>用法</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>for(外部声明记录循环的次数;循环条件;变化值){for(内部声明记录循环次数的变量;循环条件;变化值){循环体}}</td>
+          <td>一个循环里再套一个循环，一般用在for循环里</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h2>function</h2>
+    <h3>函数使用</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数使用</caption>
+        <tr>
+          <th>函数的声明语法</th>
+          <th>例</th>
+          <th>函数名命名规范</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>function 函数名() {函数体}</td>
+          <td>function sayHi(){document.while('hai~~')}</td>
+          <td> 和变量命名基本一致
+            <br>尽量小驼峰式命名法
+            <br>前缀应该为动词
+            <br>命名建议：常用动词约定
+          </td>
+          <td>
+            <table border="3" cellspacing="0" cellpadding="3">
+              <caption>函数名命名规范</caption>
+              <tr>
+                <th>动词</th>
+                <th>含义</th>
+              </tr>
+              <tr>
+                <td>can</td>
+                <td>判断是否可执行某个动作</td>
+              </tr>
+              <tr>
+                <td>has</td>
+                <td>判断是否含义某个值</td>
+              </tr>
+              <tr>
+                <td>is</td>
+                <td>判断是否是某个值</td>
+              </tr>
+              <tr>
+                <td>get</td>
+                <td>获取某个值</td>
+              </tr>
+              <tr>
+                <td>set</td>
+                <td>设置某个值</td>
+              </tr>
+              <tr>
+                <td>load</td>
+                <td>加载某些数据</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br><br>
+    </div>
+
+
+    <h3>函数调用</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数调用</caption>
+        <tr>
+          <th>方法</th>
+          <th>例</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>函数名()</td>
+          <td>sayHi()</td>
+          <td>函数可以调用多次，每次调用都执行一次</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h3>函数传参</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>作用</th>
+          <th>用法</th>
+          <th>例</th>
+          <th>参数列表</th>
+        </tr>
+        <tr>
+          <td>声明语法</td>
+          <td>function 函数名(参数列表){函数体}</td>
+          <td>function getSum(num1,num2){document.while(num1+num2)}</td>
+          <td>传入数据列表
+            <br>声明这个函数需要传入几个数据
+            <br>多个数据用逗号隔开
+          </td>
+        </tr>
+        <tr>
+          <td>调用语法</td>
+          <td>函数名(传递的参数列表)</td>
+          <td>getSum(10,20)</td>
+          <td>调用函数时，需要传入几个数据就写几个，用逗号隔开</td>
+        </tr>
+        <tr>
+          <td>形参</td>
+          <td colspan="3">声明函数时写在函数名右边小括号里的叫形参（形式上的参数）</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>实参</td>
+          <td colspan="3">调用函数时写在函数名右边小括号里的叫实参（实际上的参数）</td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>函数返回值</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数返回值</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>return 数据(变量、函数)</td>
+          <td>return 20<br>return x+y</td>
+          <td>在函数体中使用 return 关键字能将内部的执行结果交给函数外部使用
+            <br>return 后面代码不会再被执行，会立即结束当前函数，所以 return 后面的数据不要换行写
+            <br>return函数可以没有 return，这种情况函数默认返回值为 undefined
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>作用域</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>作用域</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>全局作用域</td>
+          <td>作用于所有代码执行的环境(整个 script 标签内部)或者一个独立的 js 文件</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>局部作用域</td>
+          <td>作用于函数内的代码环境，就是局部作用域。 因为跟函数有关系，所以也称为函数作用域。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>全局变量</td>
+          <td>函数外部let 的变量</td>
+          <td>全局变量在任何区域都可以访问和修改</td>
+        </tr>
+        <tr>
+          <td>局部变量</td>
+          <td>函数内部let的变量</td>
+          <td>局部变量只能在当前函数内部访问和修改</td>
+        </tr>
+        <tr>
+          <td>变量有一个坑， 特殊情况：</td>
+          <td colspan="2">如果函数内部，变量没有声明，直接赋值，也当全局变量看，但是强烈不推荐<br>但是有一种情况，函数内部的形参可以看做是局部变量。</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <td>变量的访问原则</td>
+          <td colspan="2">只要是代码，就至少有一个作用域
+            <br>写在函数内部的局部作用域
+            <br>如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域
+            <br>
+            <p style="color: red;">访问原则：在能够访问到的情况下 先局部， 局部没有在找全局</p>
+          </td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h3>函数作用域-高级</h3>
+    <div>
+      <p>作用域（scope）规定了变量能够被访问的“范围”，离开了这个“范围”变量便不能被访问，</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>作用域</caption>
+        <tr>
+          <th colspan="2">局部作用域</th>
+          <th>全局作用域</th>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <p style="font-size: 20px; text-align:center">函数作用域</p>
+              <br>
+              <p>在函数内部声明的变量只能在函数内部被访问，外部无法直接访问</p>
+              <p>总结：</p>
+              <p>1. 函数内部声明的变量，在函数外部无法被访问</p>
+              <p>2. 函数的参数也是函数内部的局部变量</p>
+              <p>3. 不同函数内部声明的变量无法互相访问</p>
+              <p>4. 函数执行完毕后，函数内部的变量实际被清空了</p>
+              <pre class="k300"><code>
+function getSum() {
+  //函数内部是函数作用域 属于局部变量
+  const num=10
+}
+console.log(num);
+//此处报错 函数外部不能使用局部作用域变量
+              </code></pre>
+            </div>
+          </td>
+          <td>
+            <div>
+              <p style="font-size: 20px; text-align:center">块作用域</p>
+              <br>
+              <p>在 JavaScript 中使用 { } 包裹的代码称为代码块，代码块内部声明的变量外部将【有可能】无法被访问。</p>
+              <p>总结：</p>
+              <p>1. let 声明的变量会产生块作用域，var 不会产生块作用域</p>
+              <p>2. const 声明的常量也会产生块作用域</p>
+              <p>3. 不同代码块之间的变量无法互相访问</p>
+              <p>4. 推荐使用 let 或 const</p>
+              <pre class="k300"><code>
+for (let t = 0; t <=6; t++) {
+  // t只能在改代码块中被访问
+  console.log(t);//正常
+}
+//超出了t的作用域
+console.log(7)// 报错
+              </code></pre>
+            </div>
+          </td>
+          <td>
+            <div>
+              <p>script 标签 和 .js 文件 的【最外层】就是所谓的全局作用域，在此声明的变量在函数内部也可以被访问。</p>
+              <p>全局作用域中声明的变量，任何其它作用域都可以被访问</p>
+              <p>注意：</p>
+              <p>1. 为 window 对象动态添加的属性默认也是全局的，不推荐！</p>
+              <p>2. 函数中未使用任何关键字声明的变量为全局变量，不推荐！！！</p>
+              <p>3. 尽可能少的声明全局变量，防止全局变量被污染</p>
+              <pre class="k300"><code>
+//全局作用域
+//全局作用域下声明了num变量
+const num=10
+function fn() {
+  //函数内部可以使用这个全局作用域
+  console.log(num);
+}
+//此处为全局作用域
+              </code></pre>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>作用域链</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>作用域链</caption>
+        <tr>
+          <th>功能</th>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <h6>作用域链本质上是底层的<span class="red">变量查找机制</span>。</h6>
+              <p>在函数被执行时，<span class="red">会优先查找当前</span>函数作用域中查找变量</p>
+              <p>如果当前作用域查找不到则会依次<span class="red">逐级查找父级作用域</span>直到全局作用域</p>
+            </div>
+            <div>
+              <h6>总结：</h6>
+              <p>1. 嵌套关系的作用域串联起来形成了作用域链</p>
+              <p>2. 相同作用域链中按着从小到大的规则查找变量</p>
+              <p>3. 子作用域能够访问父作用域，父级作用域无法访问子级作用域</p>
+            </div>
+            <pre><code>
+//全局作用域
+let a=1
+let b=2
+//局部作用域
+function f() {
+  let a=1
+  //局部作用域
+  function g() {
+    a=2
+    console.log(a);
+  }
+  g() //调用g
+}
+f() //调用f
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h3>匿名函数:没有名字的函数</h3>
+    <div>
+      <div>将匿名函数赋值给一个变量，并且通过变量名称进行调用 我们将这个称为<span style="color: red;">函数表达式</span></div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>匿名函数</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>语法</td>
+          <td>let fn=function(){函数体}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>调用</td>
+          <td>fn()</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>立即执行函数<br>场景介绍: 避免全局变量之间的污染</td>
+          <td>方式1：(funtion (){console.log(11)})()
+            <br>方式2：(function (){console.log(11)}())
+          </td>
+          <td>多个立即执行函数要用 ; 隔开，要不然会报错</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>参数默认值</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>参数默认值</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>x=x||0</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>箭头函数</h2>
+    <div>
+      <p>引入箭头函数的目的是更简短的函数写法并且不绑定this，箭头函数的语法比函数表达式更简洁</p>
+      <p>使用场景：箭头函数更适用于那些本来<span class="red">需要匿名函数的地方</span></p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>箭头函数-语法</caption>
+        <tr>
+          <th>语法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>基本写法</td>
+          <td>
+            <pre><code>
+//普通函数
+const fn = function () {
+  console.log('我是普通函数')
+}
+fn()
+            </code></pre>
+            <br>
+            <pre><code>
+//箭头函数
+const fn = () =>{
+  console.log('俺是箭头函数');
+}
+fn()
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>只有一个参数可以省略小括号</td>
+          <td>
+            <pre><code>
+//普通函数
+const fn=function(x){
+  return x+x
+}
+console.log(fn(1)); // 2
+            </code></pre>
+            <br>
+            <pre><code>
+//箭头函数
+const fn = x => {
+  return x + x
+}
+console.log(fn(1)) //2
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>如果函数体只有一行代码，可以写到一行上，并且无需写 return 直接返回值</td>
+          <td>
+            <pre><code>
+//普通函数
+const fn=function(){
+  return x+y
+}
+console.log(fn(1,2)); //3
+            </code></pre>
+            <br>
+            <pre><code>
+//箭头函数
+const fn=(x,y)=>x+y
+console.log(fn(1,2)) //3
+            </code></pre>
+            <br>
+            <pre><code>
+//更简洁的语法
+const form=document.querySelector("form")
+form.addEventListener('click',ev=>e.preventDdfault())
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>加括号的函数体返回对象字面量表达式</td>
+          <td>
+            <pre><code>
+const fn1=uname =>({uname:uname})
+console.log(fn1('pink老师'));
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <p>1. 箭头函数属于表达式函数，因此不存在函数提升</p>
+            <p>2. 箭头函数只有一个参数时可以省略圆括号 ()</p>
+            <p>3. 箭头函数函数体只有一行代码时可以省略花括号 {}，并自动做为返回值被返回</p>
+            <p>4. 加括号的函数体返回对象字面量表达式</p>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>箭头函数参数</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>箭头函数参数</caption>
+        <tr>
+          <td>1. 普通函数有arguments 动态参数
+            <br>2. 箭头函数没有 arguments 动态参数，但是有 剩余参数 ..args
+          </td>
+          <td>
+            <pre><code>
+const getSum=(...arge)=>{
+  let sum=0
+  for (let i = 0; i < args.length; i++) {
+    sum += args[i]
+  }
+  return sum //注意函数体有多行代码需要return
+}
+console.log(getSum(1,2,3))// 6
+            </code></pre>
+          </td>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>箭头函数 this</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td><span class="red">箭头函数不会创建自己的this</span>,它只会从自己的作用域链的上一层沿用this。</td>
+          <td>
+            <pre><code>
+console.log(this) //此处为window
+const sayHi=function(){
+  console.log(this) //普通函数指向调用者 此处为window
+}
+btn.addEventListener('click',function () {
+  console.log(this) // 当前this指向btn
+})
+            </code></pre>
+            <br>
+            <pre><code>
+console.log(this) //此处为window
+//箭头函数
+const sayHi=()=>{
+  console.log(this) //箭头函数此处为window
+}
+btn.addEventListener("click",()=>{
+  console.log(this); //当前this指向window
+})
+            </code></pre>
+            <br>
+            <pre><code>
+const user={
+  name:'小明',
+  //改箭头函数中的this 为函数声明环境中 this 一致
+  walk:()=>{
+    console.log(this) //指向window 不是user
+  }
+}
+user.walk()
+            </code></pre>
+            <br>
+            <pre><code>
+const user={
+  name:'小明',
+  sleep:function(){
+    console.log(this) //指向 user
+    const fn=()=>{
+      console.log(this) //指向user 改箭头函数的this与sleep中的this一致
+    }
+    //调用箭头函数
+    fn()
+  }
+}
+user.sleep()
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>在开发中【使用箭头函数前需要考虑函数中 this 的值】，事件回调函数使用箭头函数时，this 为全局的 window，因此
+            <br><span class="red">DOM事件回调函数为了简便，还是不太推荐使用箭头函数</span>
+          </td>
+          <td>
+            <pre><code>
+//DOM节点
+const but=document.querySelector('btn')
+
+//箭头函数 此时this指向了window
+but.addEventListener('click',()=>[
+  console.log(this)
+])
+
+//普通函数 此时this指向了DOM对象
+but.addEventListener('click',function () {
+  console.log(this);
+})
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+
+
+    <h2>对象</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>对象</caption>
+        <tr>
+          <th>什么是对象？</th>
+          <th>对象有什么特点？</th>
+        </tr>
+        <tr>
+          <td>对象是一种数据类型
+            <br>无序的数据的集合
+          </td>
+          <td>无序的数据的集合
+            <br>可以详细的描述描述某个事物
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>对象的使用</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>对象的使用</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>例如</th>
+        </tr>
+        <tr>
+          <td>对象声明语法</td>
+          <td>let 对象名={}<br>let 对象名= new Object()</td>
+          <td>let person={}</td>
+        </tr>
+        <tr>
+          <td>对象有属性和方法组成</td>
+          <td> 属性：信息或叫特征（名词）。 比如 手机尺寸、颜色、重量等…<br>方法：功能或叫行为（动词）。 比如 手机打电话、发短信、玩游戏…</td>
+          <td>let 对象名={属性名：属性值，方法名：函数}</td>
+        </tr>
+        <tr>
+          <td>属性</td>
+          <td>属性和值用 ; 隔开
+            <br>多个属性用，逗号隔开
+          </td>
+          <td>let obj={uname:'pink',age:18,}</td>
+        </tr>
+        <tr>
+          <td>属性-查</td>
+          <td>语法：对象名.属性</td>
+          <td>let obj={user-name:'pink',age:18,}console.log(obj['user-name'])</td>
+        </tr>
+        <tr>
+          <td>属性-查(对于多词属性或则 - 等属性，点操作就不能用了。)<br>对象[‘属性’] 方式， 单引号和双引号都阔以<br>也可以用于其他正常属性，比如：[]语法里面的值如果不添加引号
+            默认会当成变量解析<br>总结：没有必要的时候直接使用点语法, 在需要解析变量的时候使用 [] 语法</td>
+          <td>语法：对象名[属性]</td>
+          <td>let obj={uname:'pink',age:18,}console.log(obj.age)</td>
+        </tr>
+        <tr>
+          <td>属性-改</td>
+          <td>语法：对象名.属性 = 新值 </td>
+          <td>let obj={uname:'pink',age:18,gender:'女',} obj.green='男' console.log(obj)</td>
+        </tr>
+        <tr>
+          <td>属性-增</td>
+          <td>语法：对象名.新属性 = 新值</td>
+          <td>let obj={uname:'pink',age:18,} obj.add='武汉黑马' console.log(obj)</td>
+        </tr>
+        <tr>
+          <td>属性-删</td>
+          <td>语法：delete 对象名.属性</td>
+          <td>let obj={uname:'pink',age:18,} delete obj.age console.log(obj)</td>
+        </tr>
+        <tr>
+          <td><span class="red">改</span>和<span class='red'>增</span>语法一样，判断标准就是对象有没有这个属性，<span
+              class='red'>没有就是新增，有就是改</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>对象中的方法</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>对象中的方法</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>let person={name:'andy,sayHi:function(形参){document.while('hi')}'}</td>
+          <td>
+            1. 方法是由方法名和函数两部分构成，它们之间使用 : 分隔
+            <br>2. 多个属性之间使用英文 , 分隔
+            <br>3. 方法是依附在对象中的函数
+            <br>4. 方法名可以使用 "" 或 ''，一般情况下省略，除非名称遇到特殊符号如空格、中横线等
+          </td>
+          <td>person.sayHi(实参)</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>遍历对象</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>遍历对象</caption>
+        <tr>
+          <th>对象</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>let obj={uname:"andy",age:18,sex:"男"}</td>
+          <td>for(let k in obj){console.log(k) console.log(obj[k])}</td>
+          <td>
+            一般不用这种方式遍历数组、主要是用来遍历对象
+            <br>for in语法中的 k 是一个变量, 在循环的过程中依次代表对象的属性名
+            <br>由于 k 是变量, 所以必须使用 [ ] 语法解析
+            <br>一定记住： <span class="red">k</span> 是获得对象的<span class="red">属性名</span>， <span class="red">对象名[k]</span> 是获得
+            <span class="red">属性值</span>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>内置对象-Math</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>内置对象-Math</caption>
+        <tr>
+          <td>介绍</td>
+          <td>Math对象是JavaScript提供的一个“数学”对象</td>
+        </tr>
+        <tr>
+          <td>作用</td>
+          <td>提供了一系列做数学运算的方法</td>
+        </tr>
+      </table>
+
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>内置对象-Math</caption>
+        <tr>
+          <th>方法</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>Math.random</td>
+          <td>生成0-1之间的随机数（包含0不包括1）</td>
+        </tr>
+        <tr>
+          <td>Math.ceil</td>
+          <td>向上取整</td>
+        </tr>
+        <tr>
+          <td>Math.floor</td>
+          <td>向下取整</td>
+        </tr>
+        <tr>
+          <td>Math.max</td>
+          <td>找最大数</td>
+        </tr>
+        <tr>
+          <td>Math.min</td>
+          <td>找最小数</td>
+        </tr>
+        <tr>
+          <td>Math.pow</td>
+          <td>幂运算</td>
+        </tr>
+        <tr>
+          <td>Math.abs</td>
+          <td>绝对值</td>
+        </tr>
+      </table>
+      <br><br><br>
+
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>内置对象-Math(生成任意范围随机数)</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>生成0-10的随机数</td>
+          <td>Math.floor(Math.random() * (10 + 1))</td>
+        </tr>
+        <tr>
+          <td>生成5-10的随机数</td>
+          <td>Math.floor(Math.random() * (5 + 1)) + 5</td>
+        </tr>
+        <tr>
+          <td>生成N-M之间的随机数</td>
+          <td>Math.floor(Math.random() * (M - N + 1)) + N</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>深入对象</h2>
+    <div>
+      <p></p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>深入对象</caption>
+        <tr>
+          <th>用法</th>
+          <th>用法</th>
+          <th>备注</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>构造函数
+            <br>1. 它们的命名以大写字母开头。
+            <br>2. 它们只能由 "new" 操作符来执行。
+          </td>
+          <td>是一种特殊的函数，主要用来初始化对象</td>
+          <td>使用场景：常规的 {...} 语法允许创建一个对象。比如我们创建了佩奇的对象，继续创建乔治的对象还需要重新写一遍，此时可以<span class="red">通过构造函数来快速创建多个类似的对象。</span>
+          </td>
+          <td>
+            <pre class="k300"><code>
+//普通函数
+//创建佩奇的对象
+const Peppa={
+  name:'佩奇',
+  age:'6',
+  gender:'女',
+}
+
+//创建乔治的对象
+const George={
+  name:'乔治',
+  age:'3',
+  gender:'男',
+}
+
+//创建猪妈妈的对象
+const Mum={
+  name:'猪妈妈',
+  age:'30',
+  gender:'女',
+}
+
+//创建猪爸爸的对象
+const Dad={
+  name:'祝爸爸',
+  age:'32',
+  gender:'男',
+}
+
+
+
+//构造函数创建对象
+function Pig(name,age,gender) {
+  this.name=name
+  this.age=age
+  this.gender=gender
+}
+const Peppa=new Pig('佩奇','6','女')//创建佩奇对象
+const George=new Pig('乔治','3','男')//创建乔治对象
+const Mum=new Pig('猪妈妈','30','女')//创建猪妈妈对象
+const Dad=new Pig('猪妈妈','32','男')//创建猪爸爸对象
+console.log(Peppa);//{name:"佩奇"，age:'6',gener:'女'}
+
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>构造函数语法：大写字母开头的函数</td>
+          <td>
+            创建构造函数
+            <pre><code>
+//1.创建构造函数
+function Pig(name) {
+  this.name=name
+}
+//2.new 关键字调用函数
+//new Pig('佩奇')
+//接收创建对象
+const peppa=new Pig('佩奇')
+console.log(peppa)//{name:'佩奇'}
+            </code></pre>
+          </td>
+          <td>
+            说明：
+            <br>1. 使用 new 关键字调用函数的行为被称为实例化
+            <br>2. 实例化构造函数时没有参数时可以省略 ()
+            <br>3. 构造函数内部无需写return，返回值即为新创建的对象
+            <br>4. 构造函数内部的 return 返回的值无效，所以不要写return
+            <br>5. new Object（） new Date（） 也是实例化构造函数
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            1. 构造函数的作用是什么？怎么写呢？
+            <br> 构造函数是来快速<span class="red">创建多个</span>类似的对象
+            <br> 大写字母开头的函数
+            <br>2. new 关键字调用函数的行为被称为？
+            <br> 实例化
+            <br>3. 构造函数内部需要写return吗，返回值是什么？
+            <br>不需要
+            <br>构造函数自动返回创建的新的对象
+          </td>
+          <!-- <td></td>
+          <td></td>
+          <td></td> -->
+        </tr>
+        <tr>
+          <td colspan="4">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>实例化执行过程</td>
+          <td>
+            说明：
+            <br>1. 创建新对象
+            <br>2. 构造函数this指向新对象
+            <br>3. 执行构造函数代码，修改this，添加新的属性
+            <br>4. 返回新对象
+          </td>
+          <td>
+            <pre><code>
+//1.创建构造函数
+function Pig(name) {
+  this.name=name
+}
+//2.new 关键字调用函数
+//new Pig('佩奇')
+//接收创建对象
+const peppa=new Pig('佩奇')
+console.log(peppa)//{name:'佩奇'}
+            </code></pre>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>深入对象-实例成员&静态成员</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>实例成员&静态成员</th>
+          <th>概念</th>
+          <th>说明</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>实例成员</td>
+          <td>通过构造函数创建的对象称为实例对象，实例对象中的属性和方法称为实例成员。</td>
+          <td>
+            说明：
+            <br>1. 实例对象的属性和方法即为实例成员
+            <br>2. 为构造函数传入参数，动态创建结构相同但值不同的对象
+            <br>3. 构造函数创建的实例对象彼此独立互不影响。
+          </td>
+          <td>
+            <pre><code>
+//构造函数
+function Person() {
+  //构造函数内部的this 就是实例对象
+  //实例对象中动态添加属性
+  this.name='小明'
+  //实例对象动态添加方法
+  this.sayHi=function(){
+    console.log('大家好');
+  }
+}
+
+//实例化， p1是实例化对象
+//p1 实际就是 构造函数内部的this
+const p1=new Person()
+console.log(p1);
+console.log(p1.name);//访问实例对象
+p1.sayHi()//调用实例对象
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>静态成员</td>
+          <td>构造函数的属性和方法被称为静态成员</td>
+          <td>
+            说明：
+            <br>1. 构造函数的属性和方法被称为静态成员
+            <br>2. 一般公共特征的属性或方法静态成员设置为静态成员
+            <br>3. 静态成员方法中的 this 指向构造函数本身
+          </td>
+          <td>
+            <pre><code>
+//构造函数
+function Person(name,age) {
+  //省略实例成员
+}
+//静态属性
+Person.eyes=2
+Person.arms=2
+//静态方法
+Person.walk=function(){
+  console.log('人会走路');
+  //this指向Person
+  console.log(this.eyes);
+}
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>深入对象-实例成员&静态成员</h2>
+    <div>
+      <p>字符串、数值、布尔、等基本类型也都有专门的构造函数，这些我们称为包装类型。</p>
+      <p>引用类型:Object，Array，RegExp，Date 等</p>
+      <p>包装类型:String，Number，Boolean 等</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>内置构造函数</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>Object</td>
+          <td>Object 是内置的构造函数，用于创建普通对象。</td>
+          <td>
+            <pre><code>
+//通过构造函数创建普通对象
+const user=new Object({name:'小明',age:15})
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Object.keys</td>
+          <td>静态方法获取对象中所有属性（键）<br>返回的是一个数组</td>
+          <td>
+            <pre><code>
+const o={name:"佩奇",age:6}
+//获取对象的所有键，并且返回是一个数组
+const arr=Object.keys(o)
+console.log(arr)//['name','age']
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Object.values</td>
+          <td>静态方法获取对象中所有属性值<br>返回的是一个数组</td>
+          <td>
+            <pre><code>
+const o={name:'佩奇',age:6}
+// 获取对象的所有值，并且返回是一个数组
+const arr=Object.values(o)
+console.log(arr);//['佩奇'，6]
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Object.assign</td>
+          <td>静态方法常用于对象拷贝</td>
+          <td>
+            <pre><code>
+//拷贝对象 把o拷贝给obj
+const o={name:'佩奇',age:6}
+const obj={}
+Object.assign(obj,o)
+console.log(obj)//{name:'佩奇'，age:6}
+            </code></pre>
+            <br>
+            <pre><code>
+//经常使用的场景给对象添加属性
+//给o新增属性
+const o={name:'佩奇',age:6}
+Object.assign(o,{gender:'女'})
+console.log(oo)//{name:'佩奇',age:6,gender:'女'}
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>数据类型</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>数据类型</caption>
+        <tr>
+          <th>功能</th>
+          <th>概念</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>简单类型<br>(基本数据类型)<br>(值类型)</td>
+          <td>string ，number，boolean，undefined，null</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>复杂类型<br>引用类型</td>
+          <td>通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>堆栈空间</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>堆栈空间</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>栈（操作系统）：</td>
+          <td>由操作系统自动分配释放存放函数的参数值、局部变量的值等。其操作方式类似于数据结构中的栈；</td>
+          <td>简单数据类型存放到栈里面</td>
+        </tr>
+        <tr>
+          <td>堆（操作系统）</td>
+          <td>存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收。</td>
+          <td>引用数据类型存放到堆里面</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>内存分配</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>内存分配</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>简单类型的内存分配</td>
+          <td>值类型变量的数据直接存放在变量（栈空间）中</td>
+          <td>值类型（简单数据类型）： string ，number，boolean，undefined，null</td>
+        </tr>
+        <tr>
+          <td>复杂类型的内存分配</td>
+          <td>引用类型变量（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</td>
+          <td>引用类型（复杂数据类型）：通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>Web APIs</h2>
+    <div>
+      <div>
+        <p style="font-size: 50px;"> 什么是DOM</p>
+        <p>DOM（Document Object Model——文档对象模型）是用来呈现以及与任意 HTML 或 XML文档交互的API</p>
+        <p>白话文：DOM是浏览器提供的一套专门用来 操作网页内容 的功能</p>
+      </div>
+      <div>
+        <p style="font-size: 30px;">DOM树是什么</p>
+        <p>将 HTML 文档以树状结构直观的表现出来，我们称之为文档树或 DOM 树</p>
+        <p>描述网页内容关系的名词</p>
+        <p>作用：文档树直观的体现了标签与标签之间的关系</p>
+      </div>
+      <div>
+        <p style="font-size: 30px;"> DOM对象（重要）</p>
+        <p>DOM对象：浏览器根据html标签生成的 JS对象</p>
+        <p>所有的标签属性都可以在这个对象上面找到</p>
+        <p>修改这个对象的属性会自动映射到标签身上</p>
+        <p>DOM的核心思想</p>
+        <p>把网页内容当做对象来处理</p>
+        <p>document 对象</p>
+        <p>是 DOM 里提供的一个对象</p>
+        <p>所以它提供的属性和方法都是用来访问和操作网页内容的</p>
+        <p>网页所有内容都在document里面</p>
+      </div>
+      <br><br>
+    </div>
+
+
+    <h2>获取DOM对象</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>获取DOM对象:<span class="red">css选择器必须是字符串，必须加引号</span></caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>参数</th>
+          <th>返回值</th>
+          <th>能直接操作修改吗?</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td rowspan="2">根据CSS选择器来获取DOM元素</td>
+          <td>document.querySelector('css选择器')</td>
+          <td rowspan="2">包含一个或多个有效的CSS选择器 字符串</td>
+          <td>CSS选择器匹配的<span class="red">第一个元素</span>,一个 HTMLElement对象。
+            <br>如果没有匹配到，则返回null。
+          </td>
+          <td>能直接操作修改</td>
+          <!-- <td></td> -->
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>document.querySelectorAll('css选择器')</td>
+          <!-- <td></td> -->
+          <td>CSS选择器匹配的 <span class="red">NodeList 对象集合</span></td>
+          <td>不可以， 只能通过遍历的方式一次给里面的元素做修改</td>
+          <td>得到的是一个<span class="red">伪数组</span>：
+            <br>有长度有索引号的数组
+            <br>但是<span class="red">没有 pop() push() 等数组方法</span>
+            <br>想要得到里面的每一个对象，则需要遍历（for）的方式获得。
+            <br>哪怕只有一个元素，通过querySelectAll() 获取过来的也是一个伪数组，里面只有一个元素而已
+          </td>
+        </tr>
+        <tr>
+          <td>根据id获取一个元素</td>
+          <td>document.getElementById('nav')</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>根据标签获取一类元素 获取页面所有的div</td>
+          <td>document.getElementsByTagName("div")</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>根据类名获取元素 获取页面所有类名为w元素</td>
+          <td>document.getElementsByClassName('w')</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>操作元素内容</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>操作元素内容</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>元素innerText 属性</td>
+          <td>
+            将文本内容添加/更新到任意标签位置
+            <br>显示纯文本，不解析标签
+          </td>
+          <td>
+            const info=document.querySelector('.info')
+            <br>info.innerText='哈喽'
+          </td>
+        </tr>
+        <tr>
+          <td>元素.innerHTML 属性</td>
+          <td>将文本内容添加/更新到任意标签位置
+            <br>会解析标签，多标签建议使用模板字符
+          </td>
+          <td> const info=document.querySelector('.info')
+            <br>info.innerHTmL='哈喽 &lt;strong>刘德华 &lt;/strong>'
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>操作元素常用属性</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>操作元素常用属性</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>用法</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>操作html元素属性</td>
+          <td>对象.属性=值</td>
+          <td>还可以通过 JS 设置/修改标签元素属性，比如通过 src更换 图片
+            <br> 最常见的属性比如： href、title、src 等\
+          </td>
+          <td> const pic=document.querySelector('img')<br>pic.src='./images/b02.jpg'</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>通过 style 属性操作CSS</td>
+          <td>对象.style.样式属性=值</td>
+          <td>1.修改样式通过style属性引出
+            <br>2. 如果属性有-连接符，需要转换为<span class="red">小驼峰</span>命名法
+            <br>3. 赋值的时候，需要的时候不要忘记加<span class="red">css单位</span>
+          </td>
+          <td>const box=document.querySelector('.box')<br>box.style.width='200px'</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>操作类名(className) 操作CSS</td>
+          <td>元素.className='active'<br>//(active是类名)</td>
+          <td>1. 由于class是关键字, 所以使用className去代替
+            <br>2. className是使用<span class="red">新值换旧值</span>, 如果需要添加一个类,需要保留之前的类名
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="4">classList 操作类控制CSS</td>
+          <td>元素.classList.add('类名')<br>添加一个类</td>
+          <td rowspan="2">classList 是追加和删除不影响以前类名</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>元素.classList.remove('类名')<br>删除一个类</td>
+          <!-- <td></td> -->
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>元素.classList.toggle('类名')<br>切换一个类</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>元素.classList.contains('类名')<br>判断是否有这个类，返回布尔值</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>操作表单元素 属性</h2>
+    <div>
+      <p>表单属性中添加就有效果,移除就没有效果,一律使用布尔值表示 如果为true 代表添加了该属性 如果是false 代表移
+        除了该属性
+      </p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>操作表单元素 属性</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td>获取: DOM对象.属性名<br>设置: DOM对象.属性名 = 新值</td>
+          <td>表单.value='用户名'<br>表单.type='password'</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>自定义属性</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>自定义属性</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td> 在html5中推出来了专门的<span class="red">data-</span>自定义属性
+            <br> 在标签上一律以data-开头
+            <br> 在DOM对象上一律以<span class="red">dataset对象</span>方式获取
+          </td>
+          <td>class='box' data-id-'10'<br>console.log(对象.dataset.id)</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>定时器-间歇函数</h2>
+    <div>
+      <p> 作用：每隔一段时间调用这个函数
+        <br> 间隔时间单位是毫秒
+      </p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>定时器-间歇函数</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>开启定时器</td>
+          <td>setInterval(函数,间隔时间)</td>
+          <td>function repeat(){console.log("1")}<br>setInterval(repeat,1000)</td>
+        </tr>
+        <tr>
+          <td>关闭定时器</td>
+          <td>let 变量名=setInterval(函数，间隔时间)<br>clearInterval(变量名)</td>
+          <td>let timer=setInterval(function(){console.log('1')}<br>clearInterval(timer)</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>定时器-延时函数(一次性函数)</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>定时器-延时函数(一次性函数)</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>开启延迟函数</td>
+          <td>setTimeout(回调函数，等待的毫秒数)</td>
+          <td>setTimeout 仅仅只执行一次，所以可以理解为就是把一段代码延迟执行, 平时省略window</td>
+        </tr>
+        <tr>
+          <td>清除延时函数</td>
+          <td>let time=setTimeout(回调函数，等待的毫秒数)<br>clearTimeout(time)</td>
+          <td>延时器需要等待,所以后面的代码先执行
+            <br>每一次调用延时器都会产生一个新的延时器
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>事件监听</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>事件监听</caption>
+        <tr>
+          <td>语法</td>
+          <td colspan="2">元素对象.addEventListener('事件类型',要执行的函数)</td>
+          <!-- <th>备注</th> -->
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3">三要素</td>
+          <td>事件源</td>
+          <td>那个dom元素被事件触发了，要获取dom元素</td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>事件类型(事件类型要加引号)</td>
+          <td>用什么方式触发，比如鼠标单击 click、鼠标经过 mouseover 等</td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>事件调用的函数</td>
+          <td>要做什么事</td>
+        </tr>
+        <tr>
+          <td rowspan="2">事件监听版本</td>
+          <td>DOM L0
+            <br>事件源.on事件 = function() { }
+          </td>
+          <td rowspan="2">区别：
+            <br>on方式会被覆盖，addEventListener方式可绑定多次，拥有事件更多特性，推荐使用
+          </td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>DOM L2
+            <br>事件源.addEventListener(事件， 事件处理函数)
+          </td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>事件类型</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>事件类型</caption>
+        <tr>
+          <th>事件</th>
+          <th>触发方式</th>
+          <th>用法</th>
+          <!-- <th>备注</th> -->
+        </tr>
+        <tr>
+          <td>鼠标事件</td>
+          <td>鼠标触发</td>
+          <td>click 鼠标点击
+            <br>mouseenter 鼠 标 经 过
+            <br>mouseleave 鼠标离开
+            <br>mouseover 和 mouseout 会有冒泡效果
+          </td>
+        </tr>
+        <tr>
+          <td>焦点事件</td>
+          <td>表单获得光标</td>
+          <td>focus 获得焦点
+            <br>blur 失去焦点
+          </td>
+        </tr>
+        <tr>
+          <td>键盘事件</td>
+          <td>键盘触发</td>
+          <td>Keydown 键盘按下触发
+            <br>Keyup 键盘抬起触发
+          </td>
+        </tr>
+        <tr>
+          <td>文本事件</td>
+          <td>表单输入触发</td>
+          <td>input 用户输入事件</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>获取事件对象</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>如何获取</td>
+          <td>在事件绑定的回调函数的第一个参数就是事件对象
+            <br>一般命名为event、ev、e
+          </td>
+          <td>元素.addEventListener('click',function(e){})</td>
+        </tr>
+        <tr>
+          <td>部分常用属性</td>
+          <td>
+
+            <table border="3" cellspacing="0" cellpadding="3">
+              <caption>列表</caption>
+              <tr>
+                <th>属性</th>
+                <th>功能</th>
+                <th>备注</th>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>获取当前的事件类型</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>clientX/clientY</td>
+                <td>获取光标相对于浏览器可见窗口左上角的位置</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>offsetX/offsetY</td>
+                <td>获取光标相对于当前DOM元素左上角的位置</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>key</td>
+                <td>用户按下的键盘键的值
+                  <br>现在不提倡使用keyCode
+                </td>
+                <td></td>
+              </tr>
+            </table>
+
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>环境对象</h2>
+    <div>
+      <p>环境对象：指的是函数内部特殊的<span class="red">变量 this</span> ，它代表着当前函数运行时所处的环境</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>环境对象</caption>
+        <tr>
+          <th>功能</th>
+          <th>作用</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>弄清楚this的指向，可以让我们代码更简洁</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>函数的调用方式不同，this 指代的对象也不同</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>【谁调用， this 就是谁】 是判断 this 指向的粗略规则</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>直接调用函数，其实相当于是 window.函数，所以 this 指代 window</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>回调函数</h2>
+    <div>
+      <p>如果将函数 A 做为参数传递给函数 B 时，我们称函数 A 为回调函数</p>
+      <p>function fn(){console.log("我是回调函数")}<br>setInterval(fn,1000)</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>事件流</h2>
+    <h2>事件捕获</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>事件捕获</caption>
+        <tr>
+          <th>概念</th>
+          <th>代码</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>从DOM的根元素开始去执行对应的事件 (从外到里)</td>
+          <td>DOM.addEventListener(事件类型，事件处理函数，是否执行捕获机制)</td>
+          <td>addEventListener第三个参数传入 true 代表是捕获阶段触发（很少使用）
+            <br>若传入false代表冒泡阶段触发，默认就是false
+            <br>若是用 L0 事件监听，则只有冒泡阶段，没有捕获
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>事件冒泡与阻止冒泡</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>事件冒泡与阻止冒泡</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>事件冒泡</td>
+          <td>简单理解：当一个元素触发事件后，会依次向上调用所有父级元素的 同名事件
+            <br> 事件冒泡是默认存在的
+            <br> L2事件监听第三个参数是 false，或者默认都是冒泡
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>阻止冒泡</td>
+          <td>事件对象.stopPropagation()</td>
+          <td>son.addEventListener("click",<span class="red">function(e)</span>{alert('儿子') <br><span
+              class="red">e</span>.stopPropagation()})</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>阻止元素默认行为</h2>
+    <div>
+      <p>e.preventDdfault()</p>
+
+    </div>
+
+
+    <h2>解绑事件</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>解绑事件</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>on事件方式</td>
+          <td>直接使用null覆盖偶就可以实现事件的解绑</td>
+          <td>btn.onclick=function(){alert('点错了')}<br>btn.onclick=null</td>
+        </tr>
+        <tr>
+          <td>addEventListener方式</td>
+          <td>removeEventListener(事件类型, 事件处理函数, [获取捕获或者冒泡阶段])</td>
+          <td>function
+            fn(){alert('点击了')}<br>btn.addEventListener('click',fn)//绑定事件<br>btn.removeEventListener('click',fn)//解绑事件<br><br>匿名函数无法解绑
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>事件委托</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <td>优点</td>
+          <td>减少注册次数，可以提高程序性能</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>原理</td>
+          <td>事件委托其实是利用事件冒泡的特点。(给父元素注册事件，当我们触发子元素的时候，会冒泡到父元素身上，从而触发父元素的事件)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实现</td>
+          <td>事件对象.target. tagName 可以获得真正触发事件的元素</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>例子</td>
+          <td>let ul=docuwent.querySelector('ul')<br>ul.addEventListener('click',
+            function(e){if(e.target.tagName==='LI'){this.style.color='pink'}}) 执行父级点击事件</td>
+          <td>事件对象.target.tagName<br>转换为大写</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>页面加载事件</h2>
+    <div>
+      <p>加载外部资源（如图片、外联CSS和JavaScript等）<span class="red">加载完毕时</span>触发的事件</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>事件名</th>
+          <th>资源加载完毕方式</th>
+          <th>资源加载完毕方式语法</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>load</td>
+          <td>监听页面所有资源加载完毕</td>
+          <td>给 window 添加 load 事件</td>
+          <td>window.addEventListener('load',function(){//执行的操作})</td>
+          <td>不光可以监听整个页面资源加载完毕，也可以针对某个资源绑定load事件</td>
+        </tr>
+        <tr>
+          <td>DOMContentLoaded</td>
+          <td>监听页面DOM加载完毕</td>
+          <td>给 document 添加 DOMContentLoaded 事件</td>
+          <td>document.addEventListener('DOMContentLoaded',function(){//执行的操作})</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>页面滚动事件</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>事件名</th>
+          <th>作用</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>scroll</td>
+          <td>监听整个页面滚动</td>
+          <td>window.addEventListener('scroll',function(){//执行的操作})</td>
+          <td>给 window 或 document 添加 scroll 事件
+            <br> 监听某个元素的内部滚动直接给某个元素加即可
+          </td>
+        </tr>
+        <tr>
+          <td>scrollLeft<br>scrollTop</td>
+          <td>获取被卷去的大小
+            <br>获取元素内容往左、往上滚出去看不到的距离
+            <br>这两个值是可读写的
+          </td>
+          <td>document.addeventListener('scroll',function(){console.log(this.scrolltop)})</td>
+          <td>尽量在scroll事件里面获取被卷去的距离</td>
+        </tr>
+        <tr>
+          <td>window.addeventListener('scroll',function(){const n = document.documentElement.scrolltop console.log(n))})
+          </td>
+          <td>显示页面向上滚动的距离</td>
+          <td>document.documentElement HTML 文档返回对象为HTML元素
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>页面滚动事件-滚动到指定的坐标</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>滚动到指定的坐标</caption>
+        <tr>
+          <th>语法</th>
+          <th>功能</th>
+          <th>例如</th>
+        </tr>
+        <tr>
+          <td>元素.scrollTo(x, y)</td>
+          <td>scrollTo() 方法可把内容滚动到指定的坐标</td>
+          <td>window.scrllTo(x,1000)</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>页面尺寸事件</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>页面尺寸事件</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>resize</td>
+          <td>窗口尺寸改变的时候触发事件</td>
+          <td>检测屏幕宽度<br><br><br>
+            <pre><code>
+window.addEventLisrener('resize',function(){
+  let w=document.documentElent.clientWidth
+  console.log(w)
+})
+              </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>clientWidth</td>
+          <td>获取元素的可见部分宽高</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>clientHeight</td>
+          <td>获取元素的可见部分宽高</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>元素尺寸于位置</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>方法</th>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>获取宽高</td>
+          <td>offsetWidth和offsetHeight</td>
+          <td>获取元素的自身宽高、包含元素自身设置的宽高、padding、border</td>
+          <td>获取的是可视宽高, 如果盒子是隐藏的,获取的结果是0</td>
+        </tr>
+        <tr>
+          <th>获取位置</th>
+          <td>offsetLeft和offsetTop 注意是只读属性</td>
+          <td>获取元素距离自己定位父级元素的左、上距离</td>
+          <td>以带有定位的父级为准</td>
+        </tr>
+        <tr>
+          <th>获取位置</th>
+          <td>element.getBoundingClientRect()</td>
+          <td>方法返回元素的大小及其相对于视口的位置</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>元素尺寸于位置-尺寸总结</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>元素尺寸于位置-尺寸总结</caption>
+        <tr>
+          <th>属性</th>
+          <th>作用</th>
+          <th>说明</th>
+        </tr>
+        <tr>
+          <td>scrollLeft和scrollTop</td>
+          <td>被卷去的头部和左侧</td>
+          <td>配合页面滚动来用，可读写</td>
+        </tr>
+        <tr>
+          <td>clientWidth 和 clientHeight</td>
+          <td>获得元素宽度和高度</td>
+          <td>不包含border,margin，滚动条 用于js获取元素大小，只读属性</td>
+        </tr>
+        <tr>
+          <td>offsetWidth和offsetHeight</td>
+          <td>获得元素宽度和高度</td>
+          <td>包含border、padding，滚动条等，只读</td>
+        </tr>
+        <tr>
+          <td>offsetLeft和offsetTop</td>
+          <td>获取元素距离自己定位父级元素的左、上距离</td>
+          <td>获取元素位置的时候使用，只读属性</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>日期对象</h2>
+    <div>
+      <p>在代码中发现了 new 关键字时，一般将这个操作称为实例化</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>日期对象</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>获得当前时间</td>
+          <td>const date =new Date()</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>获得指定时间</td>
+          <td>const date =new Date('2008-8-8')</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>获得年份</td>
+          <td>getFullYear()</td>
+          <td>获取四位年份</td>
+        </tr>
+        <tr>
+          <td>获得月份</td>
+          <td>getMonth()</td>
+          <td>取值为 0 ~ 11 </td>
+        </tr>
+        <tr>
+          <td>获取月份中的每一天</td>
+          <td>getDate() </td>
+          <td>不同月份取值也不相同</td>
+        </tr>
+        <tr>
+          <td>获取星期</td>
+          <td>getDay() </td>
+          <td>取值为 0 ~ 6</td>
+        </tr>
+        <tr>
+          <td>获取小时</td>
+          <td>getHours()</td>
+          <td>取值为 0 ~ 23</td>
+        </tr>
+        <tr>
+          <td>获取分钟</td>
+          <td>getMinutes() </td>
+          <td>取值为 0 ~ 59</td>
+        </tr>
+        <tr>
+          <td>获取秒</td>
+          <td>getSeconds() </td>
+          <td>取值为 0 ~ 59</td>
+        </tr>
+        <tr>
+          <td>时间戳</td>
+          <td>使用 getTime() 方法</td>
+          <td>
+            <pre><code>
+const date=new Date()
+console.log(date.getTime())
+              </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>获取秒</td>
+          <td>简写 +new Date()</td>
+          <td>
+            <pre><code>const.log(+new Date())</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>获取秒</td>
+          <td>使用 Date.now()<br>只能得到当前的时间戳，</td>
+          <td>
+            <pre><code>const.log(Date.now())</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>转换公式</td>
+          <td>
+            <pre><code>
+d = parseInt(总秒数/ 60/60 /24); // 计算天数
+h = parseInt(总秒数/ 60/60 %24); // 计算小时
+m = parseInt(总秒数 /60 %60 ); // 计算分数
+s = parseInt(总秒数%60); // 计算当前秒数
+              </code></pre>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>节点操作</h2>
+    <div>
+      <p>1. 什么是DOM 节点？
+        <br> DOM树里每一个内容都称之为节点
+        <br>2. DOM节点的分类？
+        <br> 元素节点 比如 div标签
+        <br> 属性节点 比如 class属性
+        <br> 文本节点 比如标签里面的文字
+        <br>3. 我们重点记住那个节点？
+        <br> 元素节点
+        <br> 可以更好的让我们理清标签元素之间的关系
+      </p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption> 查找节点</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>说明</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td rowspan="2">子节点查找</td>
+          <td>childNodes</td>
+          <td>获得所有子节点、包括文本节点（空格、换行）、注释节点等</td>
+          <td></td>
+        </tr>
+        <tr>
+          <!-- <td></td> -->
+          <td>children 属性</td>
+          <td>仅获得所有元素节点
+            <br>返回的还是一个伪数组
+          </td>
+          <td>父元素.children</td>
+        </tr>
+        <tr>
+          <td> 下一个兄弟节点</td>
+          <td>nextElementSibling 属性</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>上一个兄弟节点</td>
+          <td>previousElementSibling 属性</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+    <h2>增加节点</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>增加节点</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>概念</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>创建节点</td>
+          <td>document.createElement('标签名')</td>
+          <td>即创造出一个新的网页元素，再添加到网页内，一般先创建节点，然后插入节点</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>追加节点<br>插入到父元素的最后一个子元素</td>
+          <td>父元素.appendChild(要插入的元素)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>追加节点<br>插入到父元素中某个子元素的前面</td>
+          <td>父元素.insertBefore(要插入的元素，在那个元素前面)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>克隆节点<br>复制一个原有的节点,把复制的节点放入到指定的元素内部</td>
+          <td>元素.cloneNode(布尔值)</td>
+          <td>cloneNode会克隆出一个跟原标签一样的元素，括号内传入布尔值
+            <br>若为true，则代表克隆时会包含后代节点一起克隆
+            <br>若为false，则代表克隆时不包含后代节点
+            <br>默认为false
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>删除节点</td>
+          <td>父元素.removeChild(要删除的元素)</td>
+          <td></td>
+          <td>如不存在父子关系则删除不成功
+            <br>删除节点和隐藏节点（display:none） 有区别的： 隐藏节点还是存在的，但是删除，则从html中删除节点
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>移动端常见事件</h2>
+    <div>
+      <p>触屏事件 touch（也称触摸事件），Android 和 IOS 都有。</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>触屏touch事件</th>
+          <th>说明</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>touchstart</td>
+          <td>手指触碰到一个dom元素时触发</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>touchmove</td>
+          <td>手指在一个dom元素上滑动时触发</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>touchend</td>
+          <td>手指从一个dom元素上移开时触发</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>重绘和回流</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>浏览器是如何进行界面渲染的</caption>
+        <tr>
+          <td>解析（Parser）HTML，生成DOM树(DOM Tree)</td>
+        </tr>
+        <tr>
+          <td>同时解析（Parser） CSS，生成样式规则 (Style Rules)</td>
+        </tr>
+        <tr>
+          <td>根据DOM树和样式规则，生成渲染树(Render Tree)</td>
+        </tr>
+        <tr>
+          <td>进行布局 Layout(回流/重排):根据生成的渲染树，得到节点的几何信息（位置，大小）</td>
+        </tr>
+        <tr>
+          <td>进行绘制 Painting(重绘): 根据计算和获取的信息进行整个页面的绘制</td>
+        </tr>
+        <tr>
+          <td>Display: 展示在页面上</td>
+        </tr>
+      </table>
+      <br>
+    </div>
+
+
+    <h3>重绘和回流</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <td>回流(重排)</td>
+          <td>当 Render Tree 中部分或者全部元素的尺寸、结构、布局等发生改变时，浏览器就会重新渲染部分或全部文档的过程称为 回流。</td>
+          <td rowspan="2">重绘不一定引起回流，而回流一定会引起重绘。</td>
+          <td rowspan="2">会导致回流（重排）的操作：
+            <br>页面的首次刷新
+            <br>浏览器的窗口大小发生改变
+            <br>元素的大小或位置发生改变
+            <br>改变字体的大小
+            <br>内容的变化（如：input框的输入，图片的大小）
+            <br>激活css伪类 （如：:hover）
+            <br>脚本操作DOM（添加或者删除可见的DOM元素）
+            <br><br>简单理解影响到布局了，就会有回流
+          </td>
+        </tr>
+        <tr>
+          <td>重绘</td>
+          <td>由于节点(元素)的样式的改变并不影响它在文档流中的位置和文档布局时(比如：color、background-color、outline等), 称为重绘。</td>
+          <!-- <td></td> -->
+        </tr>
+      </table>
+      <br>
+    </div>
+    <div>
+      <br>// 浏览器渲染机制？如何渲染出来页面？
+      <br>// 重排 重绘？
+
+      <br>// 答：第一次渲染
+      <br>// html结构 解析为 dom树
+      <br>// css样式 解析为 样式规则
+      <br>// dom树 和 样式规则 匹配下，生成渲染树！
+      <br>// 接下来就是重排：根据渲染树，得到每个盒子的几何信息（大小位置）
+      <br>// 最后就是重绘:根据得到几何信息，进行页面绘制！
+
+      <br>// 后续操作：
+      <br>// 如果进行操作有可能导致页面某些元素几何信息变化，导致回流（重排）！
+      <br>// 进行操作不是改变几何信息，比如颜色变了，只需要重绘！
+
+      <br>// 最后：
+      <br>// 重绘不一定引起回流（重排），而回流(重排)一定会引起重绘
+    </div>
+
+
+    <h2>BOM(浏览器对象模型)</h2>
+    <div>
+      <div>
+        <br>BOM(Browser Object Model ) 是浏览器对象模型
+        <br>window对象是一个全局对象，也可以说是JavaScript中的顶级对象
+        <br>像document、alert()、console.log()这些都是window的属性，基本BOM的属性和方法都是window的。
+        <br>所有通过var定义在全局作用域中的变量、函数都会变成window对象的属性和方法
+        <br>window对象下的属性和方法调用的时候可以省略window
+      </div>
+    </div>
+
+
+
+
+
+    <h2>JS执行机制(事件循环)</h2>
+    <div>
+      <div>
+        1、JavaScript 是一门单线程语言. 单线程可能会出现阻塞的情况，所js分了同步任务和异步任务。
+        <br>2、同步和异步任务分别进入不同的执行环境，同步的进入主线程，即主执行栈，异步的进入 任务队列。
+        <br>3、主线程内的任务执行完毕为空，会去 任务队列 读取对应的任务，推入主线程执行。 上述过程的不断重复就是我们说的 Event Loop (事件循环)。
+      </div>
+      <br><br><br>
+    </div>
+
+
+    <h2>location对象：拆分并保存了 URL 地址的各个组成部分</h2>
+    <div>
+      <p>location 的数据类型是对象，它拆分并保存了 URL 地址的各个组成部分</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>location对象</caption>
+        <tr>
+          <th>属性</th>
+          <th>方法</th>
+          <th>备注</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>href</td>
+          <td></td>
+          <td>获取完整的 URL 地址，对其赋值时用于地址的跳转</td>
+          <td>
+            <pre><code>
+//可以得到当前的url地址
+console.log(location.href)
+
+//可以通过js方式跳转到目标地址
+location.href = "https://www.baidu.com/"
+              </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td></td>
+          <td>获取地址中携带的参数，符号 ？后面部分</td>
+          <td>
+            <pre><code>
+console.log(location.search)
+              </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>hash</td>
+          <td></td>
+          <td>获取地址中的啥希值，符号 # 后面部分</td>
+          <td>
+            <pre><code>
+console.log(location.hash)
+              </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>reload</td>
+          <td>用来刷新当前页面，传入参数 true 时表示强制刷新</td>
+          <td>
+            <pre><code>
+<button>点击刷新</button>
+let but=document.querySelector("button")
+  but.addEventListener("click",function () {
+  location.reload(true)
+  //强制刷新 类似ctrl + f5
+})
+              </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+    <h2>navigator对象：记录了浏览器自身的相关信息</h2>
+    <div>
+      <p></p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>navigator的数据类型是对象，该对象下记录了浏览器自身的相关信息</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>userAgent</td>
+          <td>通过 userAgent 检测浏览器的版本及平台</td>
+          <td>
+            <pre><code>
+  // 检测 userAgent（浏览器信息）
+!(function () {
+  const userAgent = navigator.userAgent
+  // 验证是否为Android或iPhone
+  const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+  const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+
+                
+  // 如果是Android或iPhone，则跳转至移动站点
+  if (android || iphone) {
+    location.href = 'http://m.itcast.cn'
+  }
+})()
+              </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>histroy对象：主要管理历史记录， 该对象与浏览器地址栏的操作相对应，如前进、后退、历史记录等</h2>
+    <div>
+      <p>history 的数据类型是对象，主要管理历史记录， 该对象与浏览器地址栏的操作相对应，如前进、后退、历史记录等</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>histroy对象</caption>
+        <tr>
+          <th>histroy对象方法</th>
+          <th>作用</th>
+        </tr>
+        <tr>
+          <td>back()</td>
+          <td>可以后退功能</td>
+        </tr>
+        <tr>
+          <td>forward()</td>
+          <td>前进功能</td>
+        </tr>
+        <tr>
+          <td>go(参数)</td>
+          <td>前进后退功能,参数如果是1前进一个页面 如果是-1后退一个页面</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>本地存储</h2>
+    <div>
+      <p> 1、数据存储在用户浏览器中
+        <br> 2、设置、读取方便、甚至页面刷新不丢失数据
+        <br> 3、容量较大，sessionStorage和localStorage约 5M 左右
+      </p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>本地存储分类- localStorage</caption>
+        <tr>
+          <th>分类</th>
+          <th>特性</th>
+          <th>语法</th>
+        </tr>
+        <tr>
+          <td>localStorage</td>
+          <td>作用: 可以将数据永久存储在本地(用户的电脑), 除非手动删除，否则关闭页面也会存在
+            <br>特性：
+            <br>可以多窗口（页面）共享（同一浏览器可以共享）
+            <br>以键值对的形式存储使用
+          </td>
+          <td rowspan="2">
+            <table border="3" cellspacing="0" cellpadding="3">
+              <tr>
+                <th>功能</th>
+                <th>用法</th>
+              </tr>
+              <tr>
+                <td>删除数据</td>
+                <td>localStorage.removeItem(key)</td>
+              </tr>
+              <tr>
+                <td>获取数据</td>
+                <td>localStorage.getItem(key)</td>
+              </tr>
+              <tr>
+                <td>存储数据</td>
+                <td>localStorage.setItem(key, value)</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>sessionStorage</td>
+          <td>特性：
+            <br>生命周期为关闭浏览器窗口
+            <br>在同一个窗口(页面)下数据可以共享
+            <br>以键值对的形式存储使用
+            <br>用法跟localStorage 基本相同
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+    <h3>存储复杂数据类型</h3>
+    <div>
+      <p>本地只能存储字符串,无法存储复杂数据类型</p>
+      <p>需要将复杂数据类型转换成JSON字符串,在存储到本地</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>存储复杂数据类型</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>将复杂数据类型转换成JSON字符串,在存储到本地</td>
+          <td>JSON.stringify(复杂数据类型)</td>
+          <td>
+            <pre><code>
+const goods={
+  name:"小米10",
+  price:1999
+}
+  localStorage.setItem('goods',JSON.stringify(goods))
+            </code></pre>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>把取出来的字符串转换为对象</td>
+          <td>JSON.parse(JSON字符串)</td>
+          <td>
+            <pre><code>
+const obj=JSON.parse(localStorage.getItem('goods'))
+console.log(obj);
+              </code></pre>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>正则表达式</h2>
+    <div>
+      <p> 正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式。在 JavaScript中，正则表达式也是对象</p>
+      <p>正则表达式有什么作用？ 1.表单验证（匹配） 2.过滤敏感词（替换） 3.字符串中提取我们想要的部分（提取）</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>语法</caption>
+        <tr>
+          <th>方法</th>
+          <th>语法</th>
+          <th>作用</th>
+          <th>例如</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td>定义正则表达式语法<br>其中 / / 是正则表达式字面量</td>
+          <td>const 变量名 = /表达式/</td>
+          <td>
+            <pre><code>
+const reg = /表达式/
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>test()</td>
+          <td>regObj.text(被检测的字符串)</td>
+          <td>用来查看正则表达式与指定的字符串是否匹配<br><br>判断是否有符合规则的字符串<br><br>如果正则表达式与指定的字符串匹配 ，返回true，否则false</td>
+          <td>
+            <pre class="k400"><code>
+//要检测的字符串
+const str ='IT培训，前端开发培训，IT培训课程，web前端培训，java培训，人工智能培训'
+//1.定义正则表达式，检测规则
+const reg=/前端/
+//2.检测方法
+console.log(reg.test(str)); //true
+//如果正则表达式与指定的字符串匹配 ，返回true，否则false
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>exec()</td>
+          <td>regObj.exec(被检测的字符串)</td>
+          <td>检索（查找）符合规则的字符串<br><br>在一个指定字符串中执行一个搜索匹配</td>
+          <td>
+            <pre class="k400"><code>
+//要检测的字符串
+const str ='IT培训，前端开发培训，IT培训课程，web前端培训，java培训，人工智能培训'
+//1.定义正则表达式，检测规则
+const reg=/前端/
+//2.检测方法
+console.log(reg.exec(str)); //返回的是数组
+//如果匹配成功，exec() 方法返回一个数组，否则返回null
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>元字符</h3>
+    <div>
+      <p>是一些具有特殊含义的字符，可以极大提高了灵活性和强大的匹配功能。</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>边界符</caption>
+        <tr>
+          <th>边界符</th>
+          <th>说明</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>^</td>
+          <td>表示匹配行首的文本(以谁开始)</td>
+          <td rowspan="2">如果 ^ 和 $ 在一起，表示必须是精确匹配。</td>
+        </tr>
+        <tr>
+          <td>$</td>
+          <td>表示匹配行尾的文本(以谁结束)</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <pre><code>
+console.log(/哈/.text('哈'));//true
+console.log(/二哈/.text('二哈'));//true
+console.log(/二哈/.text('很二哈哈'));//true
+
+// ^ 开头
+console.log(/^二哈/.text('很二哈哈'));//false
+console.log(/^二哈/.text('二哈很傻'));//true
+
+// $ 结尾
+console.log(/^二哈$/.text('二哈很傻'));//false
+console.log(/^二哈$/.text('二哈二哈'));//false
+console.log(/^二哈$/.text('二哈'));//true
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>元字符-量词</h3>
+    <div>
+      <p>量词用来 设定某个模式出现的次数</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>元字符-量词</caption>
+        <tr>
+          <th>量词</th>
+          <th>说明</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>重复零次或更多次</td>
+          <td rowspan="6">逗号左右两侧千万不要出现空格</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>重复一次或更多次</td>
+        </tr>
+        <tr>
+          <td>?</td>
+          <td>重复零次或一次</td>
+        </tr>
+        <tr>
+          <td>{n}</td>
+          <td>重复n次</td>
+        </tr>
+        <tr>
+          <td>{n,}</td>
+          <td>重复n次或多次</td>
+        </tr>
+        <tr>
+          <td>{n,m}</td>
+          <td>重复n到m次</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <pre><code>
+// * 表示重复0次或更多次
+console.log(/^哈*$/.test(''));//true
+console.log(/^哈*$/.test('哈'));//true
+console.log(/^哈*$/.test('哈哈哈'));//true
+
+// + 表示重复1次或更多次
+console.log(/^哈+$/.test(''));//false
+console.log(/^哈+$/.test('哈'));//true
+console.log(/^哈+$/.test('哈哈哈'));//true
+
+// ? 表示重复0次或者1次
+console.log(/^哈?$/.test(''));//true
+console.log(/^哈?$/.test('哈'));//true
+console.log(/^哈?$/.test('哈哈哈'));//false
+
+//重复n次
+console.log(/^哈{2}$/.test(''));//false
+console.log(/^哈{2}$/.test('哈'));//false
+console.log(/^哈{2}$/.test('哈哈'));//true
+console.log(/^哈{2}$/.test('哈哈哈'));//false
+
+// {n,} 是 >=n 的意思
+console.log(/^哈{2,}$/.test(''));//false
+console.log(/^哈{2,}$/.test('哈'));//false
+console.log(/^哈{2,}$/.test('哈哈'));//true
+console.log(/^哈{2,}$/.test('哈哈哈'));//true
+
+// {n,m}  是 次数 >=n  <=m 的意思  注意：逗号左右千万不要有空格
+console.log(/^哈{2,4}$/.test(''));//false
+console.log(/^哈{2,4}$/.test('哈'));//false
+console.log(/^哈{2,4}$/.test('哈哈'));//true
+console.log(/^哈{2,4}$/.test('哈哈哈'));//true
+console.log(/^哈{2,4}$/.test('哈哈哈哈'));//true
+console.log(/^哈{2,4}$/.test('哈哈哈哈哈'));//false
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>元字符-字符类</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>元字符-字符类</caption>
+        <tr>
+          <th>功能</th>
+          <th>说明</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>[ ]</td>
+          <td>匹配字符集合</td>
+          <td>
+            <pre><code>
+//后面的字符串只要包含 abc 中任意一个字符，都返回 true
+console.log(/[abc]/.test('andy'));  //true
+console.log(/[abc]/.test('body'));  //true
+console.log(/[abc]/.test('cry'));   //true
+console.log(/[abc]/.test('die'));   //false
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>[a-z]</td>
+          <td>表示 a 到 z 26个英文字母都可以</td>
+          <td rowspan="3">
+            <pre><code>
+console.log(/^[a-z]$/.test('c')) //true
+
+腾讯QQ号: ^[1-9][0-9]{4,}$  //腾孙QQ号从10000开始
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>[a-zA-Z]</td>
+          <td>表示大小写都可以</td>
+        </tr>
+        <tr>
+          <td>[0-9]</td>
+          <td>表示 0~9 的数字都可以</td>
+        </tr>
+        <tr>
+          <td>[ ] 里面加上 ^ 取反符号</td>
+          <td>比如：<br>[^a-z] 匹配除了小写字母以外的字符</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>.</td>
+          <td>匹配除换行符之外的任何单个字符</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>元字符-字符类-预定义</h3>
+    <div>
+      <p>预定义：指的是 某些常见模式的简写方式。</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>预定义</caption>
+        <tr>
+          <th>预定类</th>
+          <th>说明</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>\d</td>
+          <td>匹配0-9之间的任一数字,相当于[0-9]</td>
+          <td rowspan="6">
+            <pre><code>
+//日期格式
+const stu=/^\d{4}-\d{1,2}-\d{1,2}/
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>\D</td>
+          <td>匹配所有0-9以外的字符,相当于[^0-9]</td>
+        </tr>
+        <tr>
+          <td>\w</td>
+          <td>匹配任意的字母,数字和下划线,相当于[A-Za-z0-9]</td>
+        </tr>
+        <tr>
+          <td>\W</td>
+          <td>除所有字母、数字和下划线以外的字符,相当于[^A-Za-z0-9]</td>
+        </tr>
+        <tr>
+          <td>\s</td>
+          <td>匹配空格(包括换行符、制表符、空格符等),相当于[\t\r\n\v\f]</td>
+        </tr>
+        <tr>
+          <td>\S</td>
+          <td>匹配非空格的字符,相当于[^\t\r\n\v\f]</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>修饰符</h3>
+    <div>
+      <p>修饰符约束正则执行的某些细节行为，如是否区分大小写、是否支持多行匹配等</p>
+      <p>/表达式/修饰符</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>修饰符</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td> i 是单词 ignore 的缩写，</td>
+          <td>正则匹配时字母不区分大小写</td>
+          <td>
+            <pre><code>
+console.log(/a/i.test('a'))  //true
+console.log(/a/i.test('A'))  //true
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>g 是单词 global 的缩写</td>
+          <td>匹配所有满足正则表达式的结果</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>替换 replace 替换</td>
+          <td>
+            <pre><code>
+字符串.replace(/正则表达式/,'替换的文本')
+            </code></pre>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+    <h2>垃圾回收机制</h2>
+    <h3>垃圾回收机制介绍</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>垃圾回收机制介绍</caption>
+        <tr>
+          <th>什么是垃圾回收机制？</th>
+          <th>什么是内存泄漏？</th>
+          <th>内存的生命周期是什么样的？</th>
+        </tr>
+        <tr>
+          <td>简称 GC<br>JS中内存的分配和回收都是自动完成的，内存在不使用的时候会被垃圾回收器<span class="red">自动回收</span></td>
+          <td>不再用到的内存，没有及时释放，就叫做内存泄漏</td>
+          <td>
+            <p>内存分配、内存使用、内存回收</p>
+            <p>全局变量一般不会回收； 一般情况下局部变量的值, 不用了, 会被自动回收掉</p>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>JS垃圾回收机制算法</h3>
+    <div>
+      <p>所谓垃圾回收, 核心思想就是如何判断内存是否已经不再会被使用了, 如果是, 就视为垃圾, 释放掉</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>JS垃圾回收机制算法</caption>
+        <tr>
+          <th>引用计数</th>
+          <th>标记清除法</th>
+        </tr>
+        <tr>
+          <td>
+            <p>IE采用的引用计数算法, 定义“内存不再使用”的标准很简单，就是看一个对象是否有指向它的引用。</p>
+            <p>算法：</p>
+            <p>1. 跟踪记录每个值被引用的次数</p>
+            <p>2. 如果这个值的被引用了一次，那么就记录次数1</p>
+            <p>3. 多次引用会累加。</p>
+            <p>4. 如果减少一个引用就减1。</p>
+            <p>5. 如果引用次数是0 ，则释放内存。</p>
+            <br><br>
+            <pre><code>
+const person = {
+  age: 18,
+  name: 'pink老师'
+}
+const p = person
+person = 1
+p = null
+            </code></pre>
+            <p>由上面可以看出，引用计数算法是个简单有效的算法。
+              <br>但它却存在一个致命的问题：嵌套引用。
+              <br>如果两个对象相互引用，尽管他们已不再使用，垃圾回收器不会进行回收，导致内存泄露。
+            </p>
+          </td>
+          <td>
+            <p>现代的浏览器已经不再使用引用计数算法了。</p>
+            <p>现代浏览器通用的大多是基于标记清除算法的某些改进算法，总体思想都是一致的。</p>
+            <p>核心：</p>
+            <p>1. 标记清除算法将“不再使用的对象”定义为“无法达到的对象”。</p>
+            <p>2. 就是从根部（在JS中就是全局对象）出发定时扫描内存中的对象。 凡是能从根部到达的对象，都是还需要使用的。</p>
+            <p>3. 那些无法由根部出发触及到的对象被标记为不再使用，稍后进 行回收。</p>
+          </td>
+          <br><br>
+          <pre><code>
+function fn() {
+  let o1 = {}
+  let o2 = {}
+  o1.a = o2
+  o2.a = o1
+  return '引用计数无法回收'
+  }
+fn()
+          </code></pre>
+          <p>根部已经访问不到，所以自动清除</p>
+        </tr>
+        <tr>
+          <td>
+            <h6>引用计数</h6>
+            <pre><code>
+function fn() {
+  let o1 = {}
+  let o2 = {}
+  o1.a = o2
+  o2.a = o1
+  return '引用计数无法回收'
+  }
+fn()
+            </code></pre>
+            <p>因为他们的引用次数永远不会是0。这样的相互引用如果说很大量的存在就会导致大量的内存泄露</p>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>闭包</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>概念</th>
+          <th>闭包作用</th>
+          <th>闭包应用</th>
+        </tr>
+        <tr>
+          <td>一个函数对周围状态的引用捆绑在一起，内层函数中访问到其外层函数的作用域<br>闭包 = 内层函数 + 外层函数的变量</td>
+          <td>封闭数据，提供操作，外部也可以访问函数内部的变量</td>
+          <td>实现数据的私有</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <pre><code>
+function outer() {
+  let i=1
+  function fn() {
+    console.log(i);
+  }
+  return fn
+}
+const fun=outer()
+fun()  //1
+//外层函数使用内部函数的变量
+            </code></pre>
+          </td>
+          <td>
+            <pre><code>
+function fn() {
+  let count=1
+  function fun() {
+    count++
+    console.log(`函数被调用${count}次`);
+  }
+  return fun
+}
+const result=fn()
+result()  //2
+result()  //3
+
+//这样实现了数据私有，无法直接修改count
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>变量提升</h2>
+    <div>
+      <p>注意：</p>
+      <p>1. 变量在未声明即被访问时会报语法错误</p>
+      <p>2. 变量在var声明之前即被访问，变量的值为 undefined</p>
+      <p>3. let/const 声明的变量不存在变量提升</p>
+      <p>4. 变量提升出现在相同作用域当中</p>
+      <p>5. <span class="red">实际开发中推荐先声明再访问变量</span></p>
+      <br><br><br>
+    </div>
+
+
+    <h2>函数提升</h2>
+    <div>
+      <p>函数提升与变量提升比较类似，是指函数在声明之前即可被调用。</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数提升</caption>
+        <tr>
+          <th>总结</th>
+        </tr>
+        <tr>
+          <td>1. 函数提升能够使函数的声明调用更灵活</td>
+        </tr>
+        <tr>
+          <td>2. 函数表达式不存在提升的现象</td>
+        </tr>
+        <tr>
+          <td>3. 函数提升出现在相同作用域当中</td>
+        </tr>
+        <tr>
+          <td>
+            <pre><code>
+//不存在函数提升现象
+bar()//错误
+let bar=function(){
+  console.log("函数表达式不存在提升现象");
+}
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>函数参数-动态参数</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数参数-动态参数</caption>
+        <tr>
+          <th>功能</th>
+          <th>语法</th>
+          <th>总结</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>动态参数</td>
+          <td><span class="red">arguments</span> 是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参</td>
+          <td>1. arguments 是一个<span class="red">伪数组，只存在于函数中</span><br>2. arguments 的作用是动态获取函数的实参<br>3.
+            可以通过for循环依次得到传递过来的实参</td>
+          <td>
+            <pre><code>
+//求和函数 计算所有参数的和
+function sum() {
+  let s=0
+  for (let i = 0; i < arguments.length; i++) {
+    s += arguments[i]
+  }
+  console.log(s);
+}
+//调用求和函数
+sum(5,10)//两个参数
+sum(1,2,4)//三个函数
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>函数参数-剩余参数</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>函数参数-剩余参数</caption>
+        <tr>
+          <th>语法</th>
+          <th>作用</th>
+          <th>总结</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>...函数名</td>
+          <td>剩余参数允许我们将一个不定数量的参数表示为一个数组</td>
+          <td>1. ... 是语法符号，置于最末函数形参之前，用于获取<span class="red">多余</span>的实参
+            <br>2. 借助 ... 获取的剩余实参，是个<span class="red">真数组</span>
+            <br>开发中，还是提倡多使用 剩余参数。
+          </td>
+          <td>
+            <pre><code>
+function getSum(...other) {
+  // other 得到[1,2,3]
+  console.log(other);
+}
+getSum(1,2,3)
+            </code></pre>
+            <br>
+            <pre><code>
+function config(baseURL, ...other) {
+  console.log(baseURL) //得到 'http://baidu.com'
+  console.log(other) //得到 ['get','json']
+}
+config('http://baidu.com','get','json')
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <p>2. 展开运算符和剩余参数有什么区别？
+        <br>展开运算符主要是 数组展开
+        <br>剩余参数 在函数内部使用
+      </p>
+      <br><br><br>
+    </div>
+
+
+    <h2>展开运算符</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>展开运算符(…)</td>
+          <td>将一个数组进行展开<br>典型运用场景： 求数组最大值(最小值)、合并数组等</td>
+          <td>
+            <pre><code>
+const arr=[1,5,3,8,2]
+//console.log(...arr);  //1 5 3 8 2
+console.log(Math.max(...arr));  //8
+console.log(Math.min(...arr));  //1
+            </code></pre>
+            <br>
+            <pre><code>
+//合并数组
+const arr1=[1,2,3]
+const arr2=[4,5,6]
+const arr3=[...arr1, ...arr2]
+console.log(arr3); //[1,2,3,4,5,6]
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>展开运算符 or 剩余参数</td>
+          <td>剩余参数：函数参数使用，得到真数组
+            <br>展开运算符：数组中使用，数组展开
+          </td>
+          <td>
+            <pre><code>
+function getSum(...other) {
+  // other 得到[1，2，3]
+  console.log(other);
+}
+getSum(1,2,3)
+            </code></pre>
+            <br>
+            <pre><code>
+const arr=[1,5,3,8,2]
+console.log(...arr); //1,5,3,8,2
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <p>2. 展开运算符和剩余参数有什么区别？
+        <br>展开运算符主要是 数组展开
+        <br>剩余参数 在函数内部使用
+      </p>
+      <br><br><br>
+    </div>
+
+
+
+
+
+
+
+    <h2>解构赋值-数组解构</h2>
+    <div>
+      <p>数组解构是将数组的单元值快速批量赋值给一系列变量的简洁语法。</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>解构赋值-数组解构</caption>
+        <tr>
+          <td colspan="3">
+            <pre><code>
+const [max,min,avg]=[100,60,80]
+console.log(max);//最大值 100
+console.log(min);//最小值 60
+console.log(avg);//
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <th>基本语法</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td>1. 赋值运算符 = 左侧的 [] 用于批量声明变量，右侧数组的单元值将被赋值给左侧的变量
+            <br>2. 变量的顺序对应数组单元值的位置依次进行赋值操作
+          </td>
+          <td>
+            <pre><code>
+//同时将数组单元值 1 2 3 以此赋值给变量a b c
+const [a,b,c]=[1,2,3]
+console.log(a);//1
+console.log(b);//2
+console.log(c);//3
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>典型应用交互2个变量</td>
+          <td>
+            <pre><code>
+let a=1
+let b=3;//这里必须有分号
+[b,a]=[a,b]
+console.log(a) //3
+console.log(b) //1
+            </code></pre>
+            <br>
+            <pre><code>
+let arr=[2,6,4,3,5,1]
+//1. 外层循环控制  趟数  循环4次  arr.length-1
+for (let i = 0; i < arr.length-1; i++) {
+  //2. 里层的循环 控制一趟交换的次数 arr.length-i -1次序
+  for (let j = 0; j < arr.length-1; j++) {
+    // 交换两个变量
+    //arr[j]  arr[j+1]
+    if (arr[j]>arr[j+1]) {
+      [arr[j+1],arr[j]]=[arr[j],arr[j+1]]
+    }
+  }
+}
+console.log(arr)
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>典型应用交互2个变量<br>js 前面必须加分号情况</td>
+          <td>
+            1. 立即执行函数
+            <pre><code>
+                (function t() { })();
+                //或者
+                ;(function t() { })()
+            </code></pre>
+            <br>
+            2. 数组解构
+            <pre><code>
+//[b,a]=[a,b]
+;[b,a]=[a,b]
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>变量多 单元值少的情况：多余的变量将被赋值为 undefined</td>
+          <td>
+            <pre><code>
+const [a,b,c,d]=['小米','苹果','华为']
+console.log(a) //小米
+console.log(b) ////苹果
+console.log(c) //华为
+console.log(d) //undefined
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>变量少 单元值多的情况：</td>
+          <td>
+            <pre><code>
+const [a,b,c]=['小米','苹果','华为','魅族']
+console.log(a) //小米
+console.log(b) ////苹果
+console.log(c) //华为
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>利用剩余参数解决变量少 单元值多的情况：剩余参数返回的还是一个数组</td>
+          <td>
+            <pre><code>
+const [a,b, ...tel]=['小米','苹果','华为','魅族','格力']
+console.log(a) //小米
+console.log(b) ////苹果
+console.log(tel) //['华为','魅族','格力']
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>防止有undefined传递单元值的情况，可以设置默认值：<br>允许初始化变量的默认值，且只有单元值为 undefined 时默认值才会生效</td>
+          <td>
+            <pre><code>
+const [a='手机',b='华为']=['小米']
+console.log(a)//小米
+console.log(b)//华为
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>按需导入，忽略某些返回值</td>
+          <td>
+            <pre><code>
+//按需导入忽略某些值
+const [a,,c,d]=['小米','苹果','华为','隔离']
+console.log(a);//小米
+console.log(c);//华为
+console.log(d);//隔离
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>支持多维数组的结构</td>
+          <td>
+            <pre><code>
+const [a,b]=['苹果',['小米','华为']]
+console.log(a);//苹果
+console.log(b);//['小米','华为']
+            </code></pre>
+            <br>
+            <pre><code>
+const [a,[b,c]]=['苹果',['小米','华为']]
+console.log(a);//苹果
+console.log(b);//小米
+console.log(c);//华为
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>对象解构</h2>
+    <div>
+      <p>对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法</p>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>基本语法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>1. 赋值运算符 = 左侧的 {} 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量
+            <br>2. 对象属性的值将被赋值给与属性名相同的变量
+            <br>3. 注意解构的变量名不要和外面的变量名冲突否则报错
+            <br>4.对象中找不到与变量名一致的属性时变量值为 undefined
+          </td>
+          <td>
+            <pre><code>
+//普通函数
+const user={
+  name:"小明",
+  age:18
+}
+//批量声明变量 name age
+//同时将数组单元值 小明 18 以此赋值给变量 name age
+const {name,age}=user
+console.log(name);//小明
+console.log(age);//18
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>.给新的变量名赋值：可以从一个对象中提取变量并同时修改新的变量名</td>
+          <td>
+            <pre><code>
+//普通函数
+const user={
+  name:"小明",
+  age:18
+}
+//
+const { name:uname,age}=user
+console.log(uname);// 小明
+console.log(age);//18
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>数组对象解构</td>
+          <td>
+            <pre><code>
+const pig=[
+  {
+  name:'佩奇',
+  age:6
+  }
+]
+const [{name,age}]=pig
+console.log(name,age);
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>多级对象解构</td>
+          <td>
+            <pre><code>
+const people=[{
+  name:'佩奇',
+  family:{
+    mother:'猪妈妈',
+    father:'猪爸爸',
+    sister:'乔治'
+  },
+  age:6
+}]
+
+const [{name, family:{mother,father,sister}}]=people
+console.log(name);//佩奇
+console.log(mother);//猪妈妈
+console.log(father);//猪爸爸
+console.log(sister);//乔治
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+
+
+
+
+    <h2>String</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>String</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td colspan="3">
+            在 JavaScript 中的字符串、数值、布尔具有对象的使用特征，如具有属性和方法
+            <pre><code>
+//字符串类型
+const str='hello worId'
+//统计字符的长度 （字符数量）
+console.log(str.length);
+//数值类型
+const price=12.345
+//保留两位小数
+price.toFixed(2)
+            </code></pre>
+            之所以具有对象特征的原因是字符串、数值、布尔类型数据是 JavaScript 底层使用 Object 构造函数“包装”来的，被称为<span class="red">包装类型。</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>实例属性length</td>
+          <td>用来获取字符串的长度</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法split('分隔符')</td>
+          <td>用来将字符串拆分成数组</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法substring(需要截取的第一个字符串的索引[,结束的索引值])</td>
+          <td>用于字符串截取</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法startsWith(检测字符串[,检测位置索引号])</td>
+          <td>检测是否以某字符开头</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法includes(搜索的字符串[,检测位置索引号])</td>
+          <td>判断一个字符串是否包含在另一个字符串中，根据情况返回true或false</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法toUpperCase</td>
+          <td>用于将字母转换成大写</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法toLowerCase</td>
+          <td>用于将字母转换成小写</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法indexOf</td>
+          <td>是否包含某字符串</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法endsWith</td>
+          <td>检测是否以某字符结尾</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法replace</td>
+          <td>用于替换字符串，支持正则匹配</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>实例方法match</td>
+          <td>用于查找字符串，支持正则匹配</td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>Number</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>Number</caption>
+        <tr>
+          <th>功能</th>
+        </tr>
+        <tr>
+          <td>
+            Number 是内置的构造函数，用于创建数值
+            <br>常用方法：
+            <br>toFixed() 设置保留小数位的长度
+            <pre><code>
+//数值类型
+const price=12.345
+//保留两位小数 四舍五入
+console.log(price.toFixed(2));  //12.35
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>面向对象编程</h2>
+    <div>
+      <p>面向对象的特性：封装性,继承性,多态性</p>
+    </div>
+
+    <h2>构造函数</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>构造函数</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td>
+            <p>封装是面向对象思想中比较重要的一部分，js面向对象可以通过构造函数实现的封装。</p>
+            <p>同样的将变量和函数组合到了一起并能通过 this 实现数据的共享，所不同的是借助构造函数创建出来的实例对象之间是彼此不影响的</p>
+            <p>封装是面向对象思想中比较重要的一部分，js面向对象可以通过构造函数实现的封装。</p>
+            <p>面向对象编程的特性：比如封装性、继承性等，可以借助于构造函数来实现</p>
+          </td>
+          <td>
+            <pre><code>
+function Star(uname,age){
+  this.uname=uname
+  this.age=age
+  this.sing=function(){
+    console.log('我会唱歌');
+  }
+}
+//实例对象，获得构造函数中封装的所有逻辑
+const ldh= new Star('刘德华',18)
+const zxy= new Star('张学友',19)
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+    <h2>原型</h2>
+    <div>
+      <div>
+        <br>1.构造函数通过原型分配的函数是所有对象所 共享的。
+        <br>2.JavaScript 规定，<span class="red">每一个构造函数都有一个 prototype 属性，</span>指向另一个对象，所以我们也称为原型对象
+        <br>3.这个对象可以挂载函数，对象实例化不会多次创建原型上函数，节约内存
+        <br>4.<span class="red">我们可以把那些不变的方法，直接定义在 prototype 对象上，这样所有对象的实例就可以共享这些方法。</span>
+        <br>5.<span class="red">构造函数和原型对象中的this 都指向 实例化的对象</span>
+        <pre><code>
+function Star(uname,age) {
+  this.unaem=uname
+  this.age=age
+}
+
+console.log(Star.prototype)//返回一个对象常委原型对象
+Star.prototype.sing=function(){
+  console.log('我会唱歌');
+}
+
+const ldh=new Star('刘德华',18)
+const zxy=new Star('张学友',19)
+console.log(ldh.sing===zxy.sing);  //结果是true 说明两个函数一样，共享
+        </code></pre>
+      </div>
+      <h4>原型- this指向</h4>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>原型- this指向</caption>
+        <tr>
+          <th>功能</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>构造函数和原型对象中的this 都指向 实例化的对象</td>
+          <td>
+            <pre><code>
+let that
+function Person(name){
+  this.name=name
+  this=this
+}
+const o=new Person()
+console.log(that===0);
+            </code></pre>
+            <br>
+            <pre><code>
+let that
+function Person(name){
+  this.name=name
+}
+Person.prototype.sing=function(){
+  that=this
+}
+const o=new Person()
+o.sing()
+console.log(that===o);  //true 
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>constructor 属性</h2>
+    <div>
+      <p>在哪里？ 每个原型对象里面都有个constructor 属性（constructor 构造函数）</p>
+      <p>作用：该属性指向该原型对象的构造函数， 简单理解，就是指向我的爸爸，我是有爸爸的孩子</p>
+      <br>
+      <p>使用场景：
+        <br>如果有多个对象的方法，我们可以给原型对象采取对象形式赋值.
+        <br>但是这样就会覆盖构造函数原型对象原来的内容，这样修改后的原型对象 constructor 就不再指向当前构造函数了
+        <br>此时，我们可以在修改后的原型对象中，添加一个 constructor 指向原来的构造函数
+      </p>
+      <pre><code>
+function Star(name){
+  this.name = name
+}
+Star.prototype={
+  sing :function(){console.log('唱歌');},
+  dance:function(){console.log('跳舞');}
+}
+console.log(Star.prototype.constructor); // 指向Object
+      </code></pre>
+      <br>
+      <pre><code>
+function Star(name){
+  this.name = name
+}
+Star.prototype={
+  //手动利用constructor  指回Star构造函数
+  constructor:Star,
+  sing :function(){console.log('唱歌');},
+  dance:function(){console.log('跳舞');}
+}
+console.log(Star.prototype.constructor); // 指向Star      
+      </code></pre>
+    </div>
+
+
+    <h2>对象原型</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>对象原型</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>注意</th>
+        </tr>
+        <tr>
+          <td><span class="red">对象都会有一个属性 __proto__ 指向构造函数的 prototype 原型对象</span>，之所以我们对象可以使用构造函数
+            prototype原型对象的属性和方法，就是因为对象有 __proto__ 原型的存在。</td>
+          <td><img src="./images/2022-11-02 203000.png" alt="" style="width: 400px;"></td>
+          <td>
+            注意：
+            <br>__proto__ 是JS非标准属性
+            <br>[[prototype]]和__proto__意义相同
+            <br>用来表明当前实例对象指向哪个原型对象prototype
+            <br>__proto__对象原型里面也有一个 constructor属性，<span class="red">指向创建该实例对象的构造函数</span>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <br>
+        <p>总结</p>
+        <p>
+          1. prototype是什么？哪里来的？
+          <br> 原型（原型对象）
+          <br> 构造函数都自动有原型
+          <br>2. constructor属性在哪里？作用干啥的？
+          <br>prototype原型和对象原型__proto__里面都有
+          <br>都指向创建实例对象/原型的构造函数
+          <br>3. __proto__属性在哪里？指向谁？
+          <br>在实例对象里面
+          <br>指向原型 prototype
+        </p>
+      </div>
+      <br><br><br>
+    </div>
+
+
+    <h2>原型继承</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>原型继承</caption>
+        <tr>
+          <th>①</th>
+          <th>②</th>
+          <th>③</th>
+        </tr>
+        <tr>
+          <td><img src="./images/2022-11-05 095103.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095252.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095350.png" alt="" class="k300"></td>
+        </tr>
+        <tr>
+          <th>④</th>
+          <th>⑤</th>
+          <th>⑥</th>
+        </tr>
+        <tr>
+          <td><img src="./images/2022-11-05 095540.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095625.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095658.png" alt="" class="k300"></td>
+        </tr>
+        <tr>
+          <th>⑦</th>
+          <th>⑧</th>
+          <th>⑨</th>
+        </tr>
+        <tr>
+          <td><img src="./images/2022-11-05 095815.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095834.png" alt="" class="k300"></td>
+          <td><img src="./images/2022-11-05 095852.png" alt="" class="k300"></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>原型链</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>原型链</caption>
+        <tr>
+          <td>概念</td>
+          <td>基于原型对象的继承使得不同构造函数的原型对象关联在一起，并且这种关联的关系是一种链状的结构，我们将原型对象的链状结构关系称为原型链</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><img src="./images/2022-11-05 130329.png" alt="" class="k500"></td>
+        </tr>
+        <tr>
+          <td>原型链-查找规则</td>
+          <td>
+            ① 当访问一个对象的属性（包括方法）时，首先查找这个对象自身有没有该属性。
+            <br>② 如果没有就查找它的原型（也就是 __proto__指向的 prototype 原型对象）
+            <br>③ 如果还没有就查找原型对象的原型（Object的原型对象）
+            <br>④ 依此类推一直找到 Object 为止（null）
+            <br>⑤ __proto__对象原型的意义就在于为对象成员查找机制提供一个方向，或者说一条路线
+            <br>⑥ 可以使用 instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>深浅拷贝</h2>
+    <h3>深浅拷贝-浅拷贝</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>深浅拷贝-浅拷贝</caption>
+        <tr>
+          <th>功能</th>
+          <th>常见方法</th>
+          <th>例子</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>浅拷贝和深拷贝只针对引用类型<br>拷贝的是地址</td>
+          <td>1. 拷贝对象：Object.assgin() / 展开运算符 {...obj} 拷贝对象
+            <br><br>2.拷贝数组：Array.prototype.concat() 或者 [...arr]
+          </td>
+          <td>
+            <pre><code>
+//一个pink对象
+const pink={
+  name:'pink老师',
+  age:18
+}
+const red={}
+Object.assign(red,pink)
+console.log(red); //{name:'pink老师'，age:'18'}
+red.name='red老师'
+console.log(red); //{name:'red老师'，age:'18'}
+// 不会影响pink对象
+console.log(pink); //{name:'pink老师'，age:'18'}
+            </code></pre>
+            <br>
+            <pre><code>
+const pink={
+  name:'pink老师',
+  age:18,
+  famliy:{
+    mother:'pink老师'
+  }
+}
+const red={}
+Object.assign(red,pink)
+console.log(red);//{name:'pink老师'，age:18}
+red.name='red老师'
+// 更改对象里面的 family 还是会有影响的
+red.famliy.mother='red妈妈'
+console.log(red);//{name:'red老师'，age:18}
+// 不会影响pink对象
+console.log(pink);//{name:'pink老师'，age:18}
+            </code></pre>
+          </td>
+          <td>如果是简单数据类型拷贝值，引用数据类型拷贝的是地址 (简单理解： 如果是单层对象，没问题，如果有多层就有问题)</td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>深浅拷贝-深拷贝</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>深浅拷贝-深拷贝</caption>
+        <tr>
+          <th>功能</th>
+          <th>常见方法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>
+            首先浅拷贝和深拷贝只针对引用类型
+            <br><br>深拷贝：拷贝的是对象，不是地址
+          </td>
+          <td>1.通过递归实现深拷贝</td>
+          <td>
+            <div>
+              函数递归：
+              <br><span class="red">如果一个函数在内部可以调用其本身，那么这个函数就是递归函数</span>
+              <br>简单理解:函数内部自己调用自己, 这个函数就是递归函数
+              <br>递归函数的作用和循环效果类似
+              <br>由于递归很容易发生“栈溢出”错误（stack overflow），所以<span class="red">必须要加退出条件 return</span>
+            </div>
+            利用递归函数实现 setTimeout 模拟 setInterval效果
+            <pre><code>
+//递归函数         
+let num=1
+function fn() {
+  console.log('我要打印6次');
+  if (num>=6) {
+    return
+  }
+  num++
+  fn() //函数内部调用自己
+}
+fn()
+            </code></pre>
+            <br>
+            <pre><code>
+const o={}
+function deepCopy(newObj,oldObj) {
+  for(let k in oldObj){
+    if (oldObj[k] instanceof Array) {
+      newObj[k]=[]
+      deepCopy(newObj[k],oldObj[k])
+    }else if (oldObj[k] instanceof Object) {
+      newObj[k]={}
+      deepCopy(newObj[k],oldObj[k])
+    }
+    else{
+      newObj[k]=oldObj[k]
+    }
+  }
+}
+            </code></pre>
+            <br>
+            <pre><code>
+const o={}
+function deepCopy(newObj,oldObj) {
+  for (let k in oldObj) {
+    newObj[k]=oldObj[k]
+  }
+}
+deepCopy(o,obj)
+            </code></pre>
+            <br>
+            <pre><code>
+const o={}
+function deepCopy(newObj,oldObj) {
+  for(let k in oldObj){
+    if(oldObj[k] instanceof Array){
+      newObj[k]={}
+      deepCopy(newObj[k],oldObj[k])
+    }else if(oldObj[k] instanceof Object){
+      newObj[k]={ }
+      deepCopy(newObj[k],oldObj[k])
+    }
+    else{
+      newObj[k]=oldObj[k]
+    }
+  }
+}
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>2. js库lodash里面cloneDeep内部实现了深拷贝</td>
+          <td>
+            <pre><code>
+const obj={
+  uname:'pink',
+  age:18,
+  hoppy:['篮球','足球'],
+  family:{
+    baby:'小pink'
+  }
+}
+// 语法： _.cloneDeep(要被克隆的对象)
+const o = _.cloneDeep(obj)
+console.log(o);
+o.family.baby='老pink'
+console.log(obj);
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>3. 通过JSON.stringify()实现</td>
+          <td>
+            <pre><code>
+const obj={
+  uname:'pink',
+  age:18,
+  hobby:['篮球','足球'],
+  family:{
+    boby:'小pink'
+  }
+}
+const o=JSON.parse(JSON.stringify(obj))
+console.log(o);
+o.family.boby='老pink'
+console.log(obj);
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>异常处理</h2>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>异常处理</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>throw 抛出异常信息，程序也会终止执行</td>
+          <td>
+            总结：
+            <br>1. throw 抛出异常信息，程序也会终止执行
+            <br>2. throw 后面跟的是错误提示信息
+            <br>3. Error 对象配合 throw 使用，能够设置更详细的错误信息
+            <br><br>
+            <br>1. 抛出异常我们用那个关键字？它会终止程序吗？
+            <br> throw 关键字
+            <br> 会中止程序
+            <br>2. 抛出异常经常和谁配合使用？
+            <br> Error 对象配合 throw 使用
+          </td>
+          <td>
+            <pre><code>
+function counter(x,y) {
+  if(!x || !y){
+    throw new Error('参数不能为空')
+  }
+  return x+y
+}
+counter()
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>try/catch 捕获错误信息</td>
+          <td>
+            我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息） try 试试 catch 拦住 finally 最后
+            <br><br>
+            总结：
+            <br>1. try...catch 用于捕获错误信息
+            <be>2. 将预估可能发生错误的代码写在 try 代码段中
+              <br>3. 如果 try 代码段中出现错误后，会执行 catch 代码段，并截获到错误信息
+              <br>4. finally 不管是否有错误，都会执行
+          </td>
+          <td>
+            <pre><code>
+function foo() {
+    try{
+      //查找dom节点
+      const p=document.querySelector('p')
+      p.style.color='red'
+  } catch (error) {
+    // try 代码段中执行有错误时，会执行 catch 代码段
+    // 查看错误信息
+    console.log(error,message);
+    // 终止代码继续执行
+    return
+  }
+  finally{
+    alert('执行')
+  }
+  console.log('如果出现错误，我的语句不会执行');
+}
+foo()
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>debugger</td>
+          <td>我们可以通过try / catch 捕获错误信息（浏览器提供的错误信息）</td>
+          <td>
+            <pre><code>
+const arr=[1,3,5]
+const newArr=arr.map((item,index)=>{
+  debugger
+  console.log(item);//当前元素
+  console.log(index);//当前元素的索引号
+  return item+10  //让当前元素+10
+})
+console.log(newArr);//[11,13,15]
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>this指向</h2>
+    <h3>this指向-普通函数</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>this指向-普通函数</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td>普通函数的调用方式决定了 this 的值，即【谁调用 this 的值指向谁】
+            <br>普通函数没有明确调用者时 this 值为 window，严格模式下没有调用者时 this 的值为 undefined
+          </td>
+          <td>
+            <pre><code>
+//普通函数
+function sayHi() {
+  console.log(this);
+}
+//函数表达式
+const sayHello=function(){
+  console.log(this);
+}
+//函数的调用方式决定了this的值
+sayHi() //window
+window.sayHi()
+            </code></pre>
+            <br>
+            <pre><code>
+//普通对象
+const user={
+  name:'小明',
+  walk:function(){
+    console.log(this);
+  }
+}
+//动态为 user 添加方法
+user.sayHi=sayHi
+user.sayHello=sayHello
+//函数调用方式，决定了this的值
+user.sayHi()
+user.sayHello()
+            </code></pre>
+            <br>
+            <pre><code>
+'use strict'
+function fn() {
+  console.log(this); //undefined
+}
+fn()
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>this指向-箭头函数</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>this指向-箭头函数</caption>
+        <tr>
+          <td colspan="3">
+            <div>
+              箭头函数中的 this 与普通函数完全不同，也不受调用方式的影响，事实上箭头函数中并不存在 this ！
+              <br>1. 箭头函数会默认帮我们绑定外层 this 的值，所以在箭头函数中 this 的值和外层的 this 是一样的
+              <br>2.箭头函数中的this引用的就是最近作用域中的this
+              <br>3.向外层作用域中，一层一层查找this，直到有this的定义
+            </div>
+            <pre><code>
+console.log(this); //此处为 window
+//箭头函数
+const sayHi=function(){
+  console.log(this); //改箭头函数中的 this 为函数声名环境中 this 一致
+}
+            </code></pre>
+            <br>
+            <pre><code>
+const user={
+  name:'小明',
+  //改箭头函数中的 this 为函数声名环境中 this 一致
+  walk:()=>{
+    console.log(this);
+  }
+}
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td>注意情况1</td>
+          <td>在开发中【使用箭头函数前需要考虑函数中 this 的值】，事件回调函数使用箭头函数时，this 为全局的 window
+            <br>因此DOM事件回调函数如果里面需要DOM对象的this，则不推荐使用箭头函数
+          </td>
+          <td>
+            <pre><code>
+//dom节点
+const btn=document.querySelector('.btn')
+//箭头函数 此时this指向window
+btn.addEventListener('click',()=>{
+  console.log(this);
+})
+//普通函数 此时 this 指向了dom对象
+btn.addEventListener('click',function(){
+  console.log(this);
+})
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>注意情况2</td>
+          <td>同样由于箭头函数 this 的原因，基于原型的面向对象也不推荐采用箭头函数</td>
+          <td>
+            <pre><code>
+function Person() {
+}
+Person.prototype.walk=()=>{
+  console.log('人都要走路...');
+  console.log(this);
+}
+const p1=new Person()
+p1.walk()
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            总结：
+            <br>1. 函数内不存在this，沿用上一级的
+            <br>2.不适用
+            <br>构造函数，原型函数，dom事件函数等等
+            <br>3. 适用
+            <br>需要使用上层this的地方
+            <br>4. 使用正确的话，它会在很多地方带来方便，后面我们会大量使用慢慢体会
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>改变this</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>改变this</caption>
+        <tr>
+          <th>功能</th>
+          <th>作用</th>
+          <th>语法</th>
+          <th>例子</th>
+        </tr>
+        <tr>
+          <td>call()</td>
+          <td>调用函数，并可以改变被调用函数里面的this指向</td>
+          <td>
+            <pre><code>fun.call(thisArg, arg1, arg2, ...)</code></pre>
+            <br>thisArg：在 fun 函数运行时指定的 this 值
+            <br>arg1，arg2：传递的其他参数
+            <br>返回值就是函数的返回值，因为它就是调用函数
+          </td>
+          <td>
+            <pre><code>
+const obj={
+  name:'pink'
+}
+function fn() {
+  console.log(this); //指向 obj {name:'pink'}
+}
+fn.call(obj)
+            </code></pre>
+            <br>
+            <pre><code>
+const obj={
+  name:'pink'
+}
+function fn(x,y) {
+  console.log(this); //指向obj {name:'pink'}
+  console.log(x+y); //传递过来的参数相加
+}
+fn.call(obj, 1,2)
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>apply()</td>
+          <td>法调用函数，同时指定被调用函数中 this 的值</td>
+          <td>
+            <pre><code>fun.apply(thisArg, [argsArray])</code></pre>
+            <br>thisArg：在fun函数运行时指定的 this 值
+            <br>argsArray：传递的值，必须包含在<span class="red">数组</span>里面
+            <br>返回值就是函数的返回值，因为它就是调用函数
+            <br>因此 apply 主要跟数组有关系，比如使用 Math.max() 求数组的最大值
+          </td>
+          <td>
+            <pre><code>
+//求和函数
+function counter(x,y) {
+  return x+y
+}
+//调用 counter 函数，并传入函数
+let result=counter.apply(null,[5,10])
+console.log(result);
+            </code></pre>
+            <br>
+            <pre><code>
+// 求数组最大值
+const arr=[3,5,2,9]
+console.log(Math.max.apply(null,arr)); // 9 利用apply
+console.log(Math.max(...arr)); // 9 利用展开运算符
+            </code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>bind()</td>
+          <td>bind() 方法不会调用函数。但是能改变函数内部this 指向</td>
+          <td>
+            <pre><code>fun.bind(thisArg, arg1, arg2, ...)</code></pre>
+            thisArg：在 fun 函数运行时指定的 this 值
+            <br>arg1，arg2：传递的其他参数
+            <br>返回由指定的 this 值和初始化参数改造的 原函数拷贝 （新函数）
+            <br>因此当我们只是想改变 this 指向，并且不想调用这个函数的时候，可以使用 bind，比如改变定时器内部的this指向.
+          </td>
+          <td>
+            <pre><code>
+                // 普通函数
+                function sayHi() {
+                  console.log(this);
+                }
+                let user={
+                  name:'小明',
+                  age:'18'
+                }
+                // 调用 bind 指向this的值
+                let sayHello=sayHi.bind(user)
+                //调用使用 bind 创建的新函数
+                sayHello()
+            </code></pre>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h3>call apply bind 总结</h3>
+    <div>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>call apply bind 总结</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+        </tr>
+        <tr>
+          <td>相同点</td>
+          <td>都可以改变函数内部的this指向.</td>
+        </tr>
+        <tr>
+          <td>区别点</td>
+          <td>
+            call 和 apply 会调用函数, 并且改变函数内部this指向.
+            <br>call 和 apply 传递的参数不一样, call 传递参数 aru1, aru2..形式 apply 必须数组形式[arg]
+            <br><span class="red">bind 不会调用函数, 可以改变函数内部this指向</span>
+          </td>
+        </tr>
+        <tr>
+          <td>主要应用场景:</td>
+          <td>
+            call 调用函数并且可以传递参数
+            <br>apply 经常跟数组有关系. 比如借助于数学对象实现数组最大值最小值
+            <br><span class="red">bind 不调用函数,但是还想改变this指向. 比如改变定时器内部的this指向.</span>
+          </td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <h2>节流（throttle）</h2>
+    <div>
+      <div>
+        所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数
+        <br>开发使用场景 – 小米轮播图点击效果 、 鼠标移动、页面尺寸缩放resize、滚动条滚动 就可以加节流
+        <br>假如一张轮播图完成切换需要300ms， 不加节流效果，快速点击，则嗖嗖嗖的切换
+        <br>加上节流效果， 不管快速点击多少次， 300ms时间内，只能切换一张图片。
+      </div>
+    </div>
+
+
+    <h2>防抖（debounce）</h2>
+    <div>
+      <p>所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间</p>
+    </div>
+    <div>
+      1. 节流和防抖的区别是？
+      <br> 节流: 就是指连续触发事件但是在 n 秒中只执行一次函数,比如
+      <br>可以利用节流实现 1s之内 只能触发一次鼠标移动事件
+      <br>防抖：如果在 n 秒内又触发了事件，则会重新计算函数执行时间
+      <br>2. 节流和防抖的使用场景是？
+      <br>节流: 鼠标移动，页面尺寸发生变化，滚动条滚动等开销比较大的情况下
+      <br>防抖: 搜索框输入，设定每次输入完毕n秒后发送请求，如果期间还有输入，则从新计算时间
+    </div>
+
+
+
+    <div>
+      <h4>标题</h4>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+    <div>
+      <h4>标题</h4>
+      <table border="3" cellspacing="0" cellpadding="3">
+        <caption>列表</caption>
+        <tr>
+          <th>功能</th>
+          <th>用法</th>
+          <th>备注</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <br><br><br>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <script>
+    
+
+
+  </script>
+
+  <!-- 引入js文件 -->
+  <script src="./js/html.js"></script>
+
+  <!-- 浏览器读取less文件的js -->
+  <script src="../lib/less.js"></script>
+
+
+
+  <!-- 引入代码高亮的js文件 -->
+  <script src="../lib/highlight/highlight.min.js"></script>
+  <!-- highlight使用方式:   -->
+  <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+  <!-- 类名不写语言默认自动识别 -->
+
+  <!-- 初始化代码高亮 -->
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+  <!-- 引入代码显示行数的js文件 -->
+  <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+  <!-- 初始化代码显示高度 -->
+  <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+  <!-- 自动生成目录 -->
+  <script src="../lib/dist/tocbot.min.js"></script>
+  <script type="text/javascript">
+    //目录生成初始化
+    tocbot.init({
+      // 在何处呈现目录。
+      tocSelector: '.js-toc',
+
+      // 在何处获取标题以构建目录。
+      contentSelector: '.js-toc-content',
+
+      // 要在内容选择器元素内获取哪些标题。
+      headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+      //对于内容中相对或绝对位置的容器内的标题。
+      hasInnerContainers: true,
+    });
+  </script>
+</body>
+
+</html>

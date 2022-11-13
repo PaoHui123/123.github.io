@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+  <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+  <!-- 引入代码高亮的主题css -->
+  <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+  <!-- 引入代码样式代码 -->
+  <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+  <!-- 引入目录代码样式 -->
+  <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>html</title>
+    <style>
+       
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>html框架</h3>
+            </li>
+            <li><a href="#htmlGuJia" class="aside_a">html骨架</a></li>
+            <li><a href="#hueiZong" class="aside_a">html骨架2</a></li>
+            <li><a href="#wenBenGeShiHuaBiaoQian" class="aside_a">文本化格式标签</a></li>
+            <li><a href="#h1-h6BiaoTi" class="aside_a">h1-h6标题标签</a></li>
+            <li><a href="#duanLuo" class="aside_a">段落</a></li>
+            <li><a href="#huanHang" class="aside_a">换行</a></li>
+            <li><a href="#qingXie" class="aside_a">倾斜</a></li>
+            <li><a href="#jiaCu" class="aside_a">加粗</a></li>
+            <li><a href="#shanChuXian" class="aside_a">删除线</a></li>
+            <li><a href="#xiXian" class="aside_a">细线</a></li>
+            <li><a href="#luJing" class="aside_a">路径<br>绝对路径<br>相对路径</a></li>
+            <li><a href="#tuXiang" class="aside_a">图像标签</a></li>
+            <li><a href="#yinPin" class="aside_a">音频标签</a></li>
+            <li><a href="#shiPin" class="aside_a">视频标签</a></li>
+            <li><a href="#chaoLianJie" class="aside_a">超链接</a></li>
+            <li><a href="#teShuZiFu" class="aside_a">特殊字符<br>字符实体</a></li>
+            <li><a href="#biaoGe" class="aside_a">表格</a></li>
+            <li><a href="#wuXuLieBiao" class="aside_a">无序列表</a></li>
+            <li><a href="#youXuLieBiao" class="aside_a">有序列表</a></li>
+            <li><a href="#ziDingYiLieBiao" class="aside_a">自定义列表</a></li>
+            <li><a href="#biaoDanYu" class="aside_a">表单域</a></li>
+            <li><a href="#biaoDanKongJian" class="aside_a">表单元素<br>表单控件</a></li>
+            <li><a href="#inputYuanSu" class="aside_a">input表单元素</a></li>
+            <li><a href="#buttonAnNiu" class="aside_a">按钮</a></li>
+            <li><a href="#fuXuanKuang" class="aside_a">复选框<br>多选框</a></li>
+            <li><a href="#wenJianShangChuan" class="aside_a">文件上传</a></li>
+            <li><a href="#wenBenKuang" class="aside_a">文本框</a></li>
+            <li><a href="#souSuoKuang" class="aside_a">搜素框</a></li>
+            <li><a href="#miMaKuang" class="aside_a">密码框</a></li>
+            <li><a href="#danXuanKuang" class="aside_a">单选框</a></li>
+            <li><a href="#tiJiaoAnNiu" class="aside_a">提交按钮</a></li>
+            <li><a href="#chongZhiAnNiu" class="aside_a">重置按钮</a></li>
+            <li><a href="#imageAnNiu" class="aside_a">图像按钮</a></li>
+            <li><a href="#buttonAnNiu2" class="aside_a">button(按钮)</a></li>
+            <li><a href="#buttonAnNiu3" class="aside_a">提交按钮</a></li>
+            <li><a href="#buttonAnNiu4" class="aside_a">重置按钮</a></li>
+            <li><a href="#buttonAnNiu5" class="aside_a">普通按扭</a></li>
+            <li><a href="#labelBiaoQian" class="aside_a">label标签</a></li>
+            <li><a href="#xiaLaLieBiao" class="aside_a">下拉列表</a></li>
+            <li><a href="#wenBenYu" class="aside_a">textarea(文本域)</a></li>
+            <li><a href="#NoYuYiHua" class="aside_a">没有语义化标签</a></li>
+            <li><a href="#YuYiHua" class="aside_a">语义化标签</a></li>
+        </ul>
+        <span>目录</span>
+    <ol class="js-toc"></ol>
+    </div>
+
+
+    <div class="zhuTi js-toc-content">
+
+        <h4>html骨架</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="htmlGuJia">html骨架</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td> &lt; !DOCTYPE html &gt; </td>
+                <td>文档类型声明，告诉浏览器该网页的 HTML版</td>
+                <td>DOCTYPE需要写在页面的第一行，不属于HTML标签</td>
+            </tr>
+            <tr>
+                <td> &lt; html lang="zh-CN" &gt; </td>
+                <td>认识网页使用的语言</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> &lt; meta charset="utf-8" &gt; </td>
+                <td>标识 网页 使用的字符编码</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> title </td>
+                <td>网页标题标签</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> description </td>
+                <td>网页描述标签</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> keywords </td>
+                <td>网页关键词标签</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> &lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon" &gt; </td>
+                <td>ico图标</td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>html骨架2</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="hueiZong">html汇总</caption>
+            <thead>
+                <tr>
+                    <th>标签</th>
+                    <th>描述</th>
+                    <th>注释</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ctrl+/</td>
+                    <td>注释单行</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ctrl+Shift+/</td>
+                    <td>多行注释</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>head</td>
+                    <td>头</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>body</td>
+                    <td>身体</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>lang</td>
+                    <td>告诉浏览器该网站的语言</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>meta charset</td>
+                    <td>万国码</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>网页标题</td>
+                    <td>title标签不仅可以用在图片上还可以用在文字等其他标签上</td>
+                </tr>
+                <tr>
+                    <td>style</td>
+                    <td>网页样式</td>
+                    <td>写在hade里面</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h4>文本化格式标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="wenBenGeShiHuaBiaoQian">文本化格式标签</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>注释</th>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="h1-h6BiaoTi">h1</td>
+                    <td>1级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td>h2</td>
+                    <td>2级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td>h3</td>
+                    <td>3级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td>h4</td>
+                    <td>4级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td>h5</td>
+                    <td>5级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td>h6</td>
+                    <td>6级标题</td>
+                    <td>标题大小</td>
+                </tr>
+                <tr>
+                    <td id="duanLuo">p</td>
+                    <td>段落</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="huanHang">br</td>
+                    <td>换行</td>
+                    <td>单标签</td>
+                </tr>
+                <tr>
+                    <td id="qingXie">em</td>
+                    <td>倾斜</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>i</td>
+                    <td>倾斜</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="jiaCu">strong</td>
+                    <td>加粗</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>b</td>
+                    <td>加粗</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="shanChuXian">del</td>
+                    <td>删除线</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>s</td>
+                    <td>删除线</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ins</td>
+                    <td>删除线</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>u</td>
+                    <td>删除线</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="xiXian">hr</td>
+                    <td>细线（水平线）</td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>路径</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="luJing">路径</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/</td>
+                    <td>下一路径</td>
+                    <td>相对路径</td>
+                </tr>
+                <tr>
+                    <td>../</td>
+                    <td>上一路径</td>
+                    <td>相对路径</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>绝对路径</td>
+                    <td>指绝对位置或完整的网络地址（绝对路径与相对路径的斜杆不一样）</td>
+                </tr>
+                <tr>
+                    <td>./</td>
+                    <td>当前路径</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+
+        <h4>图像标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="tuXiang">图像标签</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>img</td>
+                    <td>图像</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>属性值</th>
+                                <th>属性值描述</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>src</td>
+                                    <td>src是&lt;img标签的必须属性，用于指定图像文件的路径和文件名&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>alt</td>
+                                    <td>图像不能显示是显示的文本</td>
+                                </tr>
+                                <tr>
+                                    <td>title</td>
+                                    <td>鼠标放在图像上显示的文字</td>
+                                </tr>
+                                <tr>
+                                    <td>width</td>
+                                    <td>图像的宽度</td>
+                                </tr>
+                                <tr>
+                                    <td>height</td>
+                                    <td>图像高度</td>
+                                </tr>
+                                <tr>
+                                    <td>border</td>
+                                    <td>图像边框的粗细</td>
+                                </tr>
+                                <tr>
+                                    <td>vertical-align: middle;</td>
+                                    <td>清除图片底部缝隙</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+        <h4>音频标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="yinPin">音频标签</caption>
+            <thead>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>音频标签</td>
+                    <td>audio</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>常见属性</caption>
+                            <thead>
+                                <th>描述</th>
+                                <th>标签</th>
+                                <th>注释</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>音频路径</td>
+                                    <td>src</td>
+                                </tr>
+                                <tr>
+                                    <td>显示播放控件</td>
+                                    <td>controls</td>
+                                </tr>
+                                <tr>
+                                    <td>自动播放（部分浏览器不支持）</td>
+                                    <td>autoplay</td>
+                                </tr>
+                                <tr>
+                                    <td>循环播放</td>
+                                    <td>loop</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        • 音频标签目前支持三种格式：MP3、Wav、Ogg
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>视频标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="shiPin">视频标签</caption>
+            <thead>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>视频标签</td>
+                    <td>video</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>常见属性</caption>
+                            <thead>
+                                <th>描述</th>
+                                <th>标签</th>
+                                <th>注释</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>视频路径</td>
+                                    <td>src</td>
+                                </tr>
+                                <tr>
+                                    <td>显示播放控件</td>
+                                    <td>controls</td>
+                                </tr>
+                                <tr>
+                                    <td>自动播放（谷歌浏览器中需配合muted实现静音播放）</td>
+                                    <td>autoplay</td>
+                                </tr>
+                                <tr>
+                                    <td>循环播放</td>
+                                    <td>loop</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        • 音频标签目前支持三种格式：MP4 、WebM 、Ogg
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+
+
+        <h4>超链接</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="chaoLianJie">超链接</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a</td>
+                    <td>跳转页面</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>属性值</th>
+                                <th>属性值描述</th>
+                                <th>备注</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>href</td>
+                                    <td>跳转目标</td>
+                                    <td>必写</td>
+                                </tr>
+                                <tr>
+                                    <td>target</td>
+                                    <td>目标窗口弹出方式</td>
+                                    <td>
+                                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                            <thead>
+                                                <th>属性值</th>
+                                                <th>描述</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>_self</td>
+                                                    <td>默认值</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>_blank</td>
+                                                    <td>在新窗口打开</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#</td>
+                                    <td>空连接</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>下载链接</td>
+                                    <td>地址链接时文件</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>描点链接</td>
+                                    <td>链接到当前页面的某个位置 属性为#名字。<br>如：&lt;a href="#tw0"&gt;第二集&lt;a
+                                        /&gt;,目标位置加id属性，如：&lt;h3
+                                        id=two&gt;第二集&lt;/h3&gt;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>当href的链接为js代码时并且js代码为空时，并不会回到顶部，也不会刷新页面<br>如：href=javascript:;</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <h4>特殊字符（字符实体）</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="teShuZiFu">特殊符号（字符实体）</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>字符代码</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>空格</td>
+                    <td>nbsp;</td>
+                    <td rowspan="13">字符代码前加 & 符号<br>代码后必须加 ;</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>小于</td>
+                    <td>lt;</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>大于</td>
+                    <td>gt;</td>
+                </tr>
+                <tr>
+                    <td>&amp;</td>
+                    <td>并且</td>
+                    <td>amp;</td>
+                </tr>
+                <tr>
+                    <td>&yen;</td>
+                    <td>人民币</td>
+                    <td>yen;</td>
+                </tr>
+                <tr>
+                    <td>&copy;</td>
+                    <td>版权</td>
+                    <td>copy;</td>
+                </tr>
+                <tr>
+                    <td>&reg;</td>
+                    <td>注册商标</td>
+                    <td>reg;</td>
+                </tr>
+                <tr>
+                    <td>&deg;</td>
+                    <td>摄氏度</td>
+                    <td>deg;</td>
+                </tr>
+                <tr>
+                    <td>&plusmn;</td>
+                    <td>正负号</td>
+                    <td>plusmn;</td>
+                </tr>
+                <tr>
+                    <td>&times;</td>
+                    <td>乘号</td>
+                    <td>times;</td>
+                </tr>
+                <tr>
+                    <td>&divide;</td>
+                    <td>除号</td>
+                    <td>divide;</td>
+                </tr>
+                <tr>
+                    <td>&sup2;</td>
+                    <td>平方</td>
+                    <td>sup2;</td>
+                </tr>
+                <tr>
+                    <td>&sup3;</td>
+                    <td>立方</td>
+                    <td>sup3;</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <h4>表格</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="biaoGe">表格</caption>
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>table</td>
+                    <td>定义表格标签</td>
+                    <td>
+                        <table border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>属性名</th>
+                                <th>属性值</th>
+                                <th>描述</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>align</td>
+                                    <td>left、center、right</td>
+                                    <td>规定表格相对周围元素的对应方式</td>
+                                </tr>
+                                <tr>
+                                    <td>border</td>
+                                    <td>1或""</td>
+                                    <td>是否拥有边框，默认为"",表示没有</td>
+                                </tr>
+                                <tr>
+                                    <td>cellpadding</td>
+                                    <td>像素值</td>
+                                    <td>规定单元边沿与其他内容之间的空白，默认为1</td>
+                                </tr>
+                                <tr>
+                                    <td>cellspacing</td>
+                                    <td>像素值</td>
+                                    <td>单元格之间的空白，默认2</td>
+                                </tr>
+                                <tr>
+                                    <td>width</td>
+                                    <td>像素值或百分比</td>
+                                    <td>表格宽度</td>
+                                </tr>
+                                <tr title="边框合并" style="color: green;">
+                                    <td>border-collapse：collapse；</td>
+                                    <td>(边框合并)<br>让相邻表格边框进行合并，得到细线边框效果</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>caption</td>
+                    <td>表格的标题</td>
+                    <td>必须紧随table标签</td>
+                </tr>
+                <tr>
+                    <td>tr</td>
+                    <td>定义表格行</td>
+                    <td>必须在table里面</td>
+                </tr>
+                <tr>
+                    <td>th</td>
+                    <td>表头</td>
+                    <td>居中，加粗</td>
+                </tr>
+                <tr>
+                    <td>td</td>
+                    <td>表格中的单元格</td>
+                    <td>必须在tr里面<br>td标签可以包含任何内容</td>
+                </tr>
+                <tr>
+                    <td>rowspan</td>
+                    <td>跨行合并单元格</td>
+                    <td rowspan="2">目标单元格<br> 跨行：最上侧单元格为目标单元格，写合并代码 <br>跨列：最左侧单元格为目标单元格，写合并代码
+                        <br>合并单元格步骤：1.先确定跨行还是跨列，2.找到单元格，写上合并方式=合并单元格数量。比如：&lt;td
+                        colspan="2"&gt;&lt;/td&gt;。3.删除多余的单元格
+                    </td>
+                </tr>
+                <tr>
+                    <td>colspan</td>
+                    <td>跨列合并单元格</td>
+                </tr>
+                <tr title="不重要，可以省略不写" style="background-color: rgb(43, 71, 42);">
+                    <td>thead</td>
+                    <td>表格的头部</td>
+                    <td>thead里面必须有tr标签</td>
+                </tr>
+                <tr title="不重要，可以省略不写" style="background-color: rgb(43, 71, 42);">
+                    <td>tbody</td>
+                    <td>表格的主体</td>
+                    <td>tbody里面必须有tr</td>
+                </tr>
+                <tr title="不重要，可以省略不写" style="background-color: rgb(43, 71, 42);">
+                    <td>tfoot</td>
+                    <td>表格的尾部</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <h4>列表标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>列表标签</caption>
+            <thead>
+                <th>无序列表</th>
+                <th>有序列表</th>
+                <th>自定义列表</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <table border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>标签</th>
+                                <th>描述</th>
+                                <th>注释</th>
+                                <th>如</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="wuXuLieBiao">ul</td>
+                                    <td>无序列表</td>
+                                    <td>ul里面只能有li<br>li不能有标签或文字<br>li可以放任何标签或文字<br>在css中line-style:none;:去除点</td>
+                                    <td>&lt;ul&gt;<br>
+                                        &lt;li&gt;列表1&lt;/li&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;/ul&gt;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>标签</th>
+                                <th>描述</th>
+                                <th>注释</th>
+                                <th>如</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="youXuLieBiao">ol</td>
+                                    <td>有序列表</td>
+                                    <td>ol里面只能有li<br>li不能有标签或文字<br>li可以放任何标签或文字<br>在css中line-style:none;:去除点</td>
+                                    <td>&lt;ol&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;/ol&gt;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table border="3" cellspacing="0" cellpadding="3" width="">
+                            <thead>
+                                <th>标签</th>
+                                <th>描述</th>
+                                <th>如</th>
+                                <th>备注</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="ziDingYiLieBiao">dl</td>
+                                    <td>自定义列表</td>
+                                    <td rowspan="3">
+                                        &lt;dl&gt;<br>&lt;dt&gt;名字&lt;/dt&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;li&gt;列表1&lt;/li&gt;<br>&lt;/dl&gt;
+                                    </td>
+                                    <td>dl标签中只允许包含dt/dd标签</td>
+                                </tr>
+                                <tr>
+                                    <td>dt</td>
+                                    <td>定义项目或名字</td>
+                                    <td>dt/dd标签可以包含任意内容</td>
+                                </tr>
+                                <tr>
+                                    <td>dd</td>
+                                    <td>描述项目或名字</td>
+                                    <td>dt/dd标签可以包含任意内容</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+        <div>
+            <h4>表单 表单的作用：收集用户信息</h4>
+            <span>
+                <h4>表单域</h4>
+                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                    <caption id="biaoDanYu">表单 表单的作用：收集用户信息</caption>
+                    <thead>
+                        <th>标签</th>
+                        <th>描述</th>
+                        <th>备注</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>form</td>
+                            <td>把它范围内的表单信息提交给服务器</td>
+                            <td>
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <thead>
+                                        <th>常用属性</th>
+                                        <th>属性值</th>
+                                        <th>作用</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>action</td>
+                                            <td>url地址</td>
+                                            <td>用于指定接收并处理表单数据服务器程序的url地址</td>
+                                        </tr>
+                                        <tr>
+                                            <td>method</td>
+                                            <td>get/post</td>
+                                            <td>用于表单数据的提交方式，其取值为get或post</td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>名称</td>
+                                            <td>用于指定表格的名称，以区分同一个页面中的多个表单域</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </span>
+
+            <span>
+                <h4>表单控件（也叫表单元素） 作用:在表单域中定义的各种表单元素</h4>
+                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                    <caption biaoDanKongJian>表单控件（也叫表单元素） 作用:在表单域中定义的各种表单元素</caption>
+                    <thead>
+                        <th>标签</th>
+                        <th>描述</th>
+                        <th>属性</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="inputYuanSu">input</td>
+                            <td>输入表单元素</td>
+                            <td>
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <thead>
+                                        <th>属性</th>
+                                        <th>属性值</th>
+                                        <th>描述</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="buttonAnNiu">
+                                            <td rowspan="11">type</td>
+                                            <td>button</td>
+                                            <td>配合value定义按钮内容,定义可点击按钮（用于通过JavaScript启动脚本）</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="fuXuanKuang">checkbox</td>
+                                            <td>定义复选框(多选框) name必须相同，才可以实现复选</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="wenJianShangChuan">file</td>
+                                            <td>定义输入字段和“浏览”按钮，供文件上传</td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>hidden</td>
+                                            <td>定义隐藏的输入字段<br>疑似问题</td>
+                                        </tr> -->
+                                        <tr>
+                                            <td>image</td>
+                                            <td>定义图像形式的提交按钮</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="miMaKuang">password</td>
+                                            <td>定义密码字段，该字段中的字符被掩码</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="danXuanKuang">radio</td>
+                                            <td>定义单选按钮 name必须相同，才可以实现单选</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="chongZhiAnNiu">reset</td>
+                                            <td>定义重置按钮，重置按钮会清楚表单中的所有数据</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tiJiaoAnNiu">submit</td>
+                                            <td>定义提交按钮，把表单数据发送到服务器</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="wenBenKuang">text</td>
+                                            <td>文本框： 定义单行的输入字段，用户可以在其中输入文本，默认宽度为20个字符 placeholder 提示文本</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="souSuoKuang">search</td>
+                                            <td>搜索框 天生自带box-sizing 自动內减</td>
+                                        </tr>
+                                        <tr>
+                                            <td>placeholder（占位符）</td>
+                                            <td>输入框里的提示文本</td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>由用户定义</td>
+                                            <td>定义input元素名称</td>
+                                        </tr>
+                                        <tr>
+                                            <td>value</td>
+                                            <td>由用户定义</td>
+                                            <td>规定input元素值 用于提交数据（存储数据）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>checked</td>
+                                            <td>checked</td>
+                                            <td>规定此input元素加载时应当选中(默认选中)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>maxlength</td>
+                                            <td>正整数</td>
+                                            <td>规定输入字段中的字符的最大值</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>button</td>
+                            <td>按钮</td>
+                            <td>
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <caption id="buttonAnNiu2">type属性值</caption>
+                                    <tr>
+                                        <th>属性值</th>
+                                        <th>说明</th>
+                                    </tr>
+                                    <tr>
+                                        <td id="buttonAnNiu3">submit</td>
+                                        <td>提交按钮，点击之后提交数据给后端服务器</td>
+                                    </tr>
+                                    <tr>
+                                        <td buttonAnNiu4>reset</td>
+                                        <td>重置按钮，点击之后恢复表单默认值</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="buttonAnNiu5">button</td>
+                                        <td>普通按钮，默认无功能，之后配合js添加功能</td>
+                                    </tr>
+                                </table>
+                                <p>谷歌浏览器中button默认是提交按钮</p>
+                                <p>button标签是双标签，更便于包裹其他内容：文字、图片等</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </span>
+
+            <span>
+                <h4>label</h4>
+                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                    <caption id="labelBiaoQian">label</caption>
+                    <thead>
+                        <th>标签</th>
+                        <th>描述</th>
+                        <th>备注</th>
+                        <th>用法</th>
+                        <th>如</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>label</td>
+                            <td>元素定义标注</td>
+                            <td>绑定一个表单元素，点击时会自动将光标或焦点选择到对应的表单元素上，以增强用户体验<br>label标签里必须有for属性，input标签里必须有id属性</td>
+                            <td>
+                                <p>使用方法①：</p>
+                                <p>1. 使用label标签把内容（如：文本）包裹起来</p>
+                                <p>2. 在表单标签上添加id属性</p>
+                                <p>3. 在label标签的for属性中设置对应的id属性值</p>
+                                <p>使用方法②：</p>
+                                <p>1. 直接使用label标签把内容（如：文本）和表单标签一起包裹起来</p>
+                                <p>2. 需要把label标签的for属性删除即</p>
+                            </td>
+                            <td>&lt;label for="sex2"&gt;男&lt;/label&gt;<br>&lt;input type="radio" name="sex"
+                                id="sex2"&gt;<br><br>或<br><br>&lt;label&gt;&lt;input type="radio"
+                                name="sex"&gt;男&lt;/label&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </span>
+
+            <span>
+                <h4>select 下拉表单元素</h4>
+                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                    <caption id="xiaLaLieBiao">select 下拉列表</caption>
+                    <thead>
+                        <th>标签</th>
+                        <th>描述</th>
+                        <th>备注</th>
+                        <th>如</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>select</td>
+                            <td>下拉表单元素</td>
+                            <td>中必须包含一对</td>
+                            <td rowspan="2">
+                                在&lt;option&gt;中定义 selected="selkected"时，当前选项为默认选中项
+                                <pre><code>
+&lt;select&gt;
+    &lt;option&gt;选项1&lt;/option&gt;
+    &lt;option&gt;选项2&lt;/option&gt;
+    &lt;option&gt;选项3&lt;/option&gt;
+    &lt;option&gt;选项4&lt;/option&gt;
+&lt;/select&gt;
+                                    </code></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>option</td>
+                            <td>下拉菜单的每一项</td>
+                            <td>selected：下拉菜单的默认选中</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </span>
+
+            <span>
+                <h4>文本域元素 多行文本输入</h4>
+                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                    <caption id="wenBenYu">文本域元素 多行文本输入</caption>
+                    <thead>
+                        <th>标签</th>
+                        <th>描述</th>
+                        <th>备注</th>
+                        <th>如</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>textarea</td>
+                            <td>文本域元素,多行文本输入</td>
+                            <td>textarea标签里面可以显示默认显示元素<br>cols="每行中的字符数" ，rows="显示的行数" <br>实际开发中不会使用，都是在css中改变大小
+                            </td>
+                            <td>&lt;textarea name="" id="" cols="30" rows="10"&gt;默认反馈文字&lt;/textarea&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </span>
+            </span>
+        </div>
+
+
+
+        <h3>没有语义化标签</h3>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <thead id="NoYuYiHua">
+                <th>标签</th>
+                <th>描述</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>div</td>
+                    <td>盒子，用来布局装内容的</td>
+                    <td>一行只能用一个div标签 大盒子</td>
+                </tr>
+                <tr>
+                    <td>span</td>
+                    <td>盒子，用来布局装内容的</td>
+                    <td>一行可以显示多个span标签 小盒子</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+        <h4>语义化标签</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="YuYiHua">语义化标签</caption>
+            <tr>
+                <th>标签名</th>
+                <th>语义</th>
+            </tr>
+            <tr>
+                <td>header</td>
+                <td>网页头部</td>
+            </tr>
+            <tr>
+                <td>nav</td>
+                <td>网页导航栏</td>
+            </tr>
+            <tr>
+                <td>footer</td>
+                <td>网页底部</td>
+            </tr>
+            <tr>
+                <td>aside</td>
+                <td>网页侧边栏</td>
+            </tr>
+            <tr>
+                <td>section</td>
+                <td>网页区块</td>
+            </tr>
+            <tr>
+                <td>article</td>
+                <td>网页文章</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+    </div>
+
+
+
+
+    <pre>
+        <code>
+          &lt;div&gt;你好，世界&lt;/div&gt;
+          <div>你好，地球</div>
+          <div>你好，地球</div>
+          <div>你好，地球</div>
+          <div>你好，地球</div>
+          <h4>语义化标签</h4>
+          <table>
+              <caption id="YuYiHua">语义化标签</caption>
+            <tr>
+
+            </tr>
+          </table>
+          <br><br><br>
+        </code>
+    </pre>
+    <pre>
+        <code>
+            <div>你好，地球</div>
+        </code>
+    </pre>
+
+
+    <script>
+
+
+
+    </script>
+
+     <!-- 引入js文件 -->
+  <script src="./js/html.js"></script>
+
+  <!-- 浏览器读取less文件的js -->
+  <script src="../lib/less.js"></script>
+
+
+
+  <!-- 引入代码高亮的js文件 -->
+  <script src="../lib/highlight/highlight.min.js"></script>
+  <!-- highlight使用方式:   -->
+  <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+  <!-- 类名不写语言默认自动识别 -->
+
+  <!-- 初始化代码高亮 -->
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+  <!-- 引入代码显示行数的js文件 -->
+  <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+  <!-- 初始化代码显示高度 -->
+  <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+  <!-- 自动生成目录 -->
+  <script src="../lib/dist/tocbot.min.js"></script>
+  <script type="text/javascript">
+    //目录生成初始化
+    tocbot.init({
+      // 在何处呈现目录。
+      tocSelector: '.js-toc',
+
+      // 在何处获取标题以构建目录。
+      contentSelector: '.js-toc-content',
+
+      // 要在内容选择器元素内获取哪些标题。
+      headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+      //对于内容中相对或绝对位置的容器内的标题。
+      hasInnerContainers: true,
+    });
+  </script>
+
+
+
+</body>
+
+</html>

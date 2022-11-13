@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+    <!-- 引入代码高亮的主题css -->
+    <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+    <!-- 引入代码样式代码 -->
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <!-- 引入目录代码样式 -->
+    <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>ajax</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>html框架</h3>
+            </li>
+            <li><a href="#" class="aside_a">1111</a></li>
+            <li><a href="#" class="aside_a">1111</a></li>
+        </ul>
+        <span>目录</span>
+        <ol class="js-toc"></ol>
+    </div>
+    
+
+
+    <div class="zhuTi js-toc-content">
+        <h2>客户端</h2>
+        <div>
+            <p>概念：在前端开发中，客户端特指“Web 浏览器”。</p>
+            <p>作用：将互联网世界中的 Web 资源加载、并呈现到浏览器窗口中供用户使用。/p>
+            <br><br><br>
+        </div>
+
+        <h2>服务器</h2>
+        <div>
+            <p>概念：服务器是提供服务的设备。</p>
+            <p>作用：在上网过程中，服务器专门负责存放资源和对外提供服务</p>
+        <br><br><br>
+        </div>
+
+        <h2>客户端与服务器通信的过程</h2>
+        <div>
+            <p>客户端与服务器之间的通信过程，分为<span class="red">请求 - 响应</span>两个步骤。其中：</p>
+            <p><span class="red">请求的概念</span>：客户端通过网络去找服务器<span class="red">要资源</span>的过程，叫做“<span class="red">请求</span>”</p>
+            <p><span class="red">响应的概念</span>：服务器把资源通过网络<span class="red">发送给客户端</span>的过程，叫做“<span>响应</span>”</p>
+            <br><br><br>
+        </div>
+
+
+        <h2>URL 地址</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>URL 地址</caption>
+                <tr>
+                    <th>名称</th>
+                    <th>概念</th>
+                    <th>作用</th>
+                    <th>图例</th>
+                </tr>
+                <tr>
+                    <td>URL 地址</td>
+                    <td>URL 地址用来表示服务器上每个资源的确切访问路径。</td>
+                    <td></td>
+                    <td>
+                        <br>一个标准的 URL 地址主要由以下 4 个部分构成：
+                        <br>
+                        <img src="./images/2022-11-09 095846.png" alt="" class="k400"></td>
+                    </tr>
+                <tr>
+                    <td>URL 地址 - 协议（protocol）</td>
+                    <td>协议是网络协议的简称，用来保证通信的双方能读懂彼此发送过来的消息内容</td>
+                    <td>通信的双方，共同遵守 http 网络协议。<span class="red">好处</span>：保证能<span class="red">读懂对方</span>发送过来的消息内容。</td>
+                    <td><img src="./images/2022-11-09 100239.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>URL 地址 - 主机名（hostname）</td>
+                    <td>主机名用来标识互联网中服务器的唯一性。</td>
+                    <td>好处：通过<span class="red">主机名</span>，可以保证客户端在万千的服务器中，<span class="red">找到自己想访问的那台服务器</span>！</td>
+                    <td><img src="./images/2022-11-09 113948.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>URL 地址 - 端口号（port）</td>
+                    <td>端口号是 <span class="red">0 - 65535</span> 之间的整数，它的主要作用是表示一台计算机中的特定进程所提供的服务。</td>
+                    <td>只有 :<span class="red">80 端口</span>可以被简写！！！</td>
+                    <td><img src="./images/2022-11-09 114207.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>URL 地址 - 路径（path）</td>
+                    <td>路径用来表示资源在服务器上具体的存放位置。</td>
+                    <td></td>
+                    <td><img src="./images/2022-11-09 114344.png" alt="" class="k400"></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>什么是ajax</h2>
+        <div>
+            <p>Ajax 是浏览器中的技术：用来实现客户端网页请求服务器的数据。</p>
+            <p>它的英文全称是 Asynchronous Javascript And XML，简称 Ajax。</p>
+            <p><a href="http://www.axios-js.com/">中文官网地址</a></p>
+            <p><a href="https://www.npmjs.com/package/axios">英文官网地址</a></p>
+        </div>
+
+
+        <h2>URL 编码</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>URL 编码</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>在 URL 地址中不允许出现中文、空格等特殊字符，因此浏览器会自动对 URL 地址内的中文进行转换处理。</td>
+                    <td></td>
+                    <td>
+                        <pre class="k400"><code>
+// 未转换前的URL地址包含中文
+ http://www.liulongbin.top:3009/api/getbooks？=bookname=西游记
+
+ // 未转换前的URL地址包含中文
+ http://www.liulongbin.top:3009/api/getbooks？=bookname=%E%D%I%J%G%S%G
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>encodeURI()</td>
+                    <td>编码</td>
+                    <td>
+                        <pre><code>
+encodeURI('西')//输出字符串 "%E8%A5%BF"
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>decodeURI()</td>
+                    <td>解码</td>
+                    <td>
+                        <pre><code>
+decodeURI('%E8%A5%BF')//输出字符串 "西"
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+        <h2>result 是 axios 套壳的结果</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>result 是 axios 套壳的结果</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>result 是 axios 套壳的结果</td>
+                    <td>服务器端响应给 axios 的<span class="red">原始数据</span>，被 axios 在外面“<span class="red">套了一层壳</span>”，示意图如下</td>
+                    <td><img src="./images/2022-11-09 144430.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>在函数的形参中使用解构赋值</td>
+                    <td>使用解构赋值，可以轻松地获取到 axios 请求回来的真实数据。示例代码如下：</td>
+                    <td>
+                        <pre class="k400"><code>
+axios({
+    method: 'GET',
+    url: 'http://www.liulongbin.top:3009/api/getbooks'
+}).then(({ data: res }) => {
+    // 从 .then(fn) 回调函数的形参中，解构赋值出 data 属性，重命名为 res
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+
+        <h2>使用 Ajax 请求数据的 5 种方式</h2>
+        <div>
+            <p>客户端浏览器在请求服务器上的数据时，根据<span class="red">操作性质</span>的不同，可以分为以下 5 种常见的操作：</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>使用 Ajax 请求数据的 5 种方式</caption>
+                <tr>
+                    <th>序号</th>
+                    <th>请求方式</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>POST </td>
+                    <td>向服务器<span class="red">新增</span>数据</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>GET</td>
+                    <td>从服务器<span class="red">获取</span>数据</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>DELETE</td>
+                    <td><span class="red">删除</span>服务器上的数据</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>PUT</td>
+                    <td>更新服务器上的数据（侧重于<span class="red">完整更新</span>：例如更新用户的完整信息）</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>PATCH</td>
+                    <td>更新服务器上的数据（侧重于<span class="red">部分更新</span>：例如只更新用户的手机号）</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+        <h2>get 的基础语法</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>get 的基础语法</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>axios 的基础语法</td>
+                    <td></td>
+                    <td>
+                        <pre><code>
+axios({
+    method: '请求的类型',
+    url: '请求的URL地址'
+    }).then((result) => {
+    // .then 用来指定请求成功之后的回调函数
+    // 形参中的 result 是请求成功之后的结果
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>基于 axios 发起 GET 请求</td>
+                    <td></td>
+                    <td>
+                        <pre><code>
+axios({
+    method:'get',
+    url: "http://www.liulongbin.top:3009/api/getbooks",
+}).then((result)=>{
+    console.log(result);
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GET 请求的查询参数</td>
+                    <td>如果想<span class="red">指定查询的条件</span>，可以通过 <span class="red">params</span> 选项来指定<span class="red">查询的参数</span></td>
+                    <td>
+                        <pre><code>
+axios({
+    //发起get请求
+    method:'get',
+    //指定请求的url地址
+    url: "http://www.liulongbin.top:3009/api/getbooks",
+    //查询的函数
+    params: {
+        id:1
+    }
+}).then((result)=>{
+    //请求成功之后回调函数
+    console.log(result);
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>在 GET 请求中携带多个查询参数</td>
+                    <td>如果要携带多个参数，只需要在 params 对象中指定多个查询参数项即可</td>
+                    <td>
+                        <pre><code>
+axios.get({
+    url:'http://www.liulongbin.top:3009/api/getbooks',
+    params:{
+        id:1,
+        bookname:'love', 
+    },
+})
+.then(res => {
+    console.log(res)
+})
+.catch(err => {
+    console.error(err); 
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr style="background-color: yellow;">
+                    <td>查询参数的本质</td>
+                    <td>在使用 Ajax 发起 GET 请求时，data 中的参数，会以 ?键=值 的形式拼接到 URL 地址的末尾。</td>
+                    <td><span class="red">?</span> 后面的都是<span class="red">查询参数</span>，查询参数的<span class="red">键和值</span>之间使用 <span class="red">=</span> 进行分隔</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+
+        <h2>基于 axios 发起 POST 请求</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>基于 axios 发起 POST 请求</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>基于 axios 发起 POST 请求</td>
+                    <td>
+                        使用 axios 发起 POST 请求时，只需要将 <span class="red">type 属性</span>的值设置为 '<span class="red">POST</span>' 即可：
+                        <br>data是要提交的数据
+                    </td>
+                    <td>
+                        <pre><code>
+axios.post({
+    url:'http://www.liulongbin.top:3009/api/addbook',
+    data:{
+        bookname:'水浒传',
+        author:'施耐庵',
+        publisher:'上海图书出版社',
+    }
+})
+.then(res => {
+    console.log(res)
+})
+.catch(err => {
+    console.error(err); 
+})
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>GET 和 POST 提交数据的区别</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>GET 和 POST 提交数据的区别</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>结论</th>
+                </tr>
+                <tr>
+                    <td>GET 请求只能在 URL 中携带少量的数据</td>
+                    <td rowspan="2">POST 为了能够提交大量的数据，所以<span class="red">没有把数据拼接到 URL 的末尾</span>；而是放到了独立的“<span class="red">请求体</span>”中。</td>
+                </tr>
+                <tr>
+                    <td>POST 请求适合用来提交大量的数据</td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>请求报文 & 响应报文</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>请求报文 & 响应报文</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>什么是请求报文和响应报文</td>
+                    <td>
+                        客户端与服务器通信的过程是基于<span class="red">请求</span>与<span class="red">响应</span>的。其中：
+                        <br><span class="red">⚫ 请求报文</span>规定了客户端<span class="red">以什么格式</span>把数据<span class="red">发送</span>给服务器
+                        <br><span class="red">⚫ 响应报文</span>规定了服务器<span class="red">以什么格式</span>把数据<span class="red">响应</span>给客户端
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>请求报文 - 格式</td>
+                    <td><span class="red">请求报文</span>由<span class="red">请求行</span>（request line）、<span class="red">请求头部</span>（ header ）、<span class="red">空行</span> 和 <span class="red">请求体</span> 4 个部分组成。图示如下</td>
+                    <td><img src="./images/2022-11-09 150758.png" alt="" class="k400"></td>
+                    <td>
+                        注意：
+                        <br>⚫ 在浏览器中，<span class="red">GET 请求</span>比较特殊，它<span class="red">只有</span>请求头，<span class="red">没有请求体</span>。
+                        <br>⚫ 在浏览器中，POST、PUT、PATCH、DELETE 请求既有请求头，又有请求体。
+                    </td>
+                </tr>
+                <tr>
+                    <td>响应报文 - 格式</td>
+                    <td><span class="red">响应报文</span>由<span class="red">状态行</span>、<span class="red">响应头部</span>、<span class="red">空行</span> 和 <span class="red">响应体</span> 4 个部分组成。图示如下：</td>
+                    <td><img src="./images/2022-11-09 151232.png" alt="" class="k400"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>http 响应状态码</h2>
+        <div>
+            <p>概念：http 响应状态码（Status Code）由三位数字组成，用来标识<span class="red">响应成功与否</span>的状态。</p>
+            <p>作用：客户端浏览器根据响应状态码，即可判断出这次 http 请求是<span class="red">成功还是失败</span>了。</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>http 响应状态码</caption>
+                <tr>
+                    <td colspan="3"><img src="./images/2022-11-09 151929.png" alt=""></td>
+                </tr>
+                <tr>
+                    <th>状态码</th>
+                    <th>状态码描述</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>OK</td>
+                    <td>请求成功。</td>
+                </tr>
+                <tr>
+                    <td>201</td>
+                    <td>Created</td>
+                    <td>资源在服务器端已成功创建。</td>
+                </tr>
+                <tr>
+                    <td>304</td>
+                    <td>Not Modified</td>
+                    <td>资源在客户端被缓存，响应体中不包含任何资源内容！</td>
+                </tr>
+                <tr>
+                    <td>400</td>
+                    <td>Bad Request</td>
+                    <td>客户端的请求方式、或请求参数有误导致的请求失败！</td>
+                </tr>
+                <tr style="color: red;">
+                    <td>401</td>
+                    <td>Unauthorized</td>
+                    <td>客户端的用户身份认证未通过，导致的此次请求失败！</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>Not Found</td>
+                    <td>客户端请求的资源地址错误，导致服务器无法找到资源！</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>Internal Server Error</td>
+                    <td>服务器内部错误，导致的本次请求失败！</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>http <span class="red">响应</span>状态码 Vs <span class="red">业务</span>状态码</h2>
+        <div>
+            <p>正确区分<span class="red">响应状态码</span>和<span class="red">业务状态码</span>的不同，是保证使用 Ajax 不迷茫的必要前提。</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>http 响应状态码 Vs 业务状态码</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>1. 所处的位置不同</td>
+                    <td>
+                        ⚫ 在<span class="red">响应头</span>的<span class="red">状态行</span>中所包含的状态码，叫做“<span class="red">响应状态码</span>”
+                        <br>⚫ 在<span class="red">响应体</span>的<span class="red">数据中</span>所包含的状态码，叫做“<span class="red">业务状态码</span>”
+                    </td>
+                    <td><img src="./images/2022-11-09 152747.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>2. 表示的结果不同</td>
+                    <td>
+                        ⚫ 响应状态码只能表示<span class="red">这次请求</span>的成功与否（成功地失败了）
+                        <br>⚫ 业务状态码用来表示<span class="red">这次业务处理的</span>成功与否
+                    </td>
+                    <td><img src="./images/2022-11-09 152916.png" alt="" class="k400"></td>
+                </tr>
+                <tr>
+                    <td>3. 通用性不同</td>
+                    <td>⚫ 响应状态码是由 <span class="red">http 协议规定的，具有通用性</span>。每个不同的状态码都有其标准的含义，不能乱用。
+                        <br>⚫ 业务状态码是<span class="red">后端程序员自定义的，不具有通用性</span>。
+                    </td>
+                    <td><img src="./images/2022-11-09 153105.png" alt="" class="k400"></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>接口的概念</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>接口的概念</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>接口的概念</td>
+                    <td>
+                        使用 Ajax 请求数据时，<span class="red">被请求的 URL 地址</span>，就叫做<span class="red">数据接口</span>（简称：接口或 API 接口）。
+                        <br>同时，每个接口必须有对应的<span class="red">请求方式</span>。例如：
+                        <br>⚫ http://www.liulongbin.top:3009/api/getbooks 获取图书列表的接口(GET 请求)
+                        <br>⚫ http://www.liulongbin.top:3009/api/addbook 添加图书的接口（POST 请求）
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>接口文档的概念</td>
+                    <td>接口文档就是接口的使用说明书，它是我们调用接口的依据。</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>接口文档的格式</td>
+                    <td>
+                        <a href="https://www.showdoc.com.cn/ajaxapi?page_id=3753563065735122">请参考一个现成的接口文档</a>
+                        <table border="3" cellspacing="0" cellpadding="3">
+                            <caption>接口的描述信息</caption>
+                            <tr>
+                                <th>组成部分</th>
+                                <th>说明</th>
+                            </tr>
+                            <tr>
+                                <td>接口名称</td>
+                                <td>接口的名称，用来快速区分每个接口的作用。如：登录接口、添加图书接口</td>
+                            </tr>
+                            <tr>
+                                <td>接口 URL</td>
+                                <td>客户端发起 Ajax 调用此接口时，请求的 URL 地址</td>
+                            </tr>
+                            <tr>
+                                <td>请求方式 </td>
+                                <td>接口的请求方式，如：GET、POST、PUT、DELETE 等</td>
+                            </tr>
+                            <tr>
+                                <td>请求参数</td>
+                                <td>请求此接口时，需要发送到服务器的查询参数或请求体</td>
+                            </tr>
+                            <tr>
+                                <td>返回示例</td>
+                                <td>当接口请求成功后，服务器响应回来的数据的基本格式</td>
+                            </tr>
+                            <tr>
+                                <td>返回参数说明</td>
+                                <td>接口响应结果的详细描述</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>接口测试工具</td>
+                    <td>接口测试工具能让我们在不写任何代码的情况下，对接口进行调用和测试，从而检查接口能否被正常访问。</td>
+                    <td><a href="https://www.postman.com/downloads/">官方下载地址</a></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>form 表单</h2>
+        <h2>表单的三个组成部分</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>表单的三个组成部分</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>表单标签</td>
+                    <td>HTML 的 &lt;form&gt; 就是表单标签，它是一个“<span class="red">容器</span>”，用来将页面上指定的区域划定为表单区域：</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>表单域</td>
+                    <td>
+                        表单域提供了<span class="red">采集用户信息的渠道</span>，常见的表单域有：input、textarea、select 等。
+                        <br>每个表单域必须包含 <span class="red">name</span> 属性，否则用户填写的信息无法被采集到！
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>表单按钮</td>
+                    <td>
+                        当表单数据填写完毕后，用户点击表单按钮，会触发表单的提交操作，从而把采集到的数据提交给服务器
+                        <p>注意：
+<br>① <span class="red">type="submit"</span> 表示提交按钮的意思
+<br>② type 属性的默认值就是 submit，因此 type="submit" 可以省略不写</p>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>&lt;form&gt; 标签的属性一览表</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption> &lt;form&gt; 标签的属性一览表 </caption>
+                <tr>
+                    <th>属性</th>
+                    <th>可选值</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>action</td>
+                    <td>接口的 url 地址</td>
+                    <td>把表单采集到的数据，提交到哪个接口中</td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td>GET 或 POST</td>
+                    <td>数据的提交方式（默认值为 GET）</td>
+                </tr>
+                <tr>
+                    <td>enctype</td>
+                    <td>application/x-www-form-urlencoded
+                        <br>multipart/form-data
+                        <br>text/plain（很少用）
+                    </td>
+                    <td>
+                        数据的编码格式。具体指的是：
+                        <br>把表单数据提交给服务器之前，如何对将要提交的数据进行编码
+                        <br>（默认值 <span class="red">application/x-www-form-urlencoded</span>）
+                    <br>enctype 属性<span class="red">只能搭配 POST</span> 提交方式一起使用；如果是 GET 提交，则 enctype 没有意义！
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>form 表单 enctype 三个可选值之间的区别</h2>
+        <div>
+            <p>只有 <span class="red">method</span> 属性的值等于 <span class="red">POST</span> 时，<span class="red">才有必要设置 enctype 属性</span>。它的属性可选值有三个：</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>enctype 三个可选值之间的区别</caption>
+                <tr>
+                    <th>属性值</th>
+                    <th>是否常用</th>
+                    <th>应用场景</th>
+                </tr>
+                <tr>
+                    <td>application/x-www-form-urlencoded</td>
+                    <td>是</td>
+                    <td>表单中不包含文件上传的场景，适用于普通数据的提交</td>
+                </tr>
+                <tr>
+                    <td>multipart/form-data</td>
+                    <td>是</td>
+                    <td>表单中包含上传文件的场景</td>
+                </tr>
+                <tr>
+                    <td>text/plain</td>
+                    <td>否</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>form 表单以 GET 方式提交表单数据</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>form 表单以 GET 方式提交表单数据</caption>
+                <tr>
+                    <td colspan="3">在 &lt;form&gt; 标签上，通过 <span class="red">action</span> 属性指定<span class="red">提交的 URL 地址</span>，通过 <span class="red">method</span> 属性指定提交的方式为 <span class="red">GET</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>
+<form action="http://www.liulongbin.top:3009/api/form" method="get">
+    <div>
+        <span>用户名</span>
+        <input type="text" name="username" autocomplete="off">
+    </div>
+    <div>
+        <span>密码：</span>
+        <input type="text" name="password">
+    </div>
+    <button>提交</button>
+</form>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>注意：由于 method 属性的<span class="red">默认值</span>就是 GET，因此上述的 method="GET" 可以<span class="red">被省略</span>！</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>form 表单以 POST 方式提交表单数据</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>form 表单以 POST 方式提交表单数据</caption>
+                <tr>
+                    <td>在 &lt;form&gt; 标签上，通过 <span class="red">action</span> 属性指定提交的 URL 地址，通过 <span class="red">method</span> 属性指定提交的方式为 <span class="red">POST</span>，并通过<span class="red">enctype</span> 属性指定数据的编码方式为 <span class="red">application/x-www-form-urlencoded</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>
+<form action="http://www.liulongbin.top:3009/api/form"
+      method="post"
+      enctype="application/x-www-form-urlencoded">
+    <div>
+        <span>用户名</span>
+        <input type="text" name="username" autocomplete="off">
+    </div>
+    <div>
+        <span>密码：</span>
+        <input type="text" name="password">
+    </div>
+    <button>提交</button>
+</form>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>注意：由于 enctype 的<span class="red">默认值</span>就是 application/x-www-form-urlencoded，因此上述的 enctype <span class="red">可以被省略</span>！</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>form 表单 通过 Ajax 提交表单数据</h2>
+        <p>通过 Ajax 提交表单采集到的数据，可以<span class="red">防止</span>表单默认提交行为导致的页面跳转问题，提高用户的体验</p>
+        <br><br><br>
+
+        <h2>
+            form 表单 jQuery 的 <span class="red">serialize()</span> 函数
+            <br><span class="red">一次性获取到表单中采集的数据</span>
+        </h2>
+        <div>
+            <p>jQuery 的 serialize() 函数能够<span class="red">一次性获取到表单中采集的数据</span>，它的语法格式如下：</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>一次性获取到表单中采集的数据</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>语法</th>
+                    <th>例子</th>
+                    <th>注意</th>
+                </tr>
+                <tr>
+                    <td>serialize()</td>
+                    <td>
+                        <pre><code>
+$('表单元素的选择器').serialize()
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre class="k400"><code>
+axios({
+    url:'http://www.liulongbin.top:3009/api/form',
+    method:'post',
+    data:$('#formlogin').serialize()
+    //调用serialize()函数，可以一次性获取表单中的所有数据
+    //得到的值为一个字符串 username=admin&password=666
+})
+.then(({data:res}) => {
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                    <td>在使用 serialize() 函数快速获取表单数据时，<span class="red">必须为每个表单域添加 name 属性</span></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>axios 请求方法的别名</h2>
+        <div>
+            <p>在实际开发中，常用的 5 种请求方式分别是：GET、POST、PUT、PATCH、DELETE</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>axios.get(url[, config])</td>
+                    <td>axios.get() 可以方便快捷地发起 GET 请求</td>
+                    <td>
+                        <pre><code>
+//不带查询参数
+axios.get('http://www.liulongbin.top:3009/api/get').then(res => {
+    console.log(res)
+})
+
+//带查询参数
+axios.get('http://www.liulongbin.top:3009/api/get',{
+    params:{name:'zs',age:20}
+}).then(res => {
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>axios.delete(url[, config])</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>axios.post(url[, data[, config]])</td>
+                    <td> axios.post() 可以方便快捷地发起 POST 请求</td>
+                    <td>
+                        <pre><code>
+//不带查询参数
+axios.get('http://www.liulongbin.top:3009/api/post').then(res => {
+    console.log(res)
+})
+
+//带查询参数
+axios.get('http://www.liulongbin.top:3009/api/post',{
+    params:{name:'zs',age:30}
+}).then(res => {
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>axios.put(url[, data[, config]])</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>axios.patch(url[, data[, config]])</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>全局配置请求根路径</h2>
+        <div>
+            <p>在 url 地址中，<span class="red">协议://域名:端口</span> 对应的部分叫做“请求根路径”</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>全局配置请求根路径</caption>
+                <tr>
+                    <th>语法</th>
+                    <th>例子</th>
+                </tr>
+                <tr>
+                    <td>axios.defaults.baseURL = '请求根路径'</td>
+                    <td>
+                        <pre><code>
+//全局请求根路径
+axios.defaults.baseURL = 'http://www.liulongbin.top:3009'
+//调用接口时，只提供具体的路径即可
+axios.get('/api/get')
+.then(res => {
+    console.log(res)
+})
+//调用接口时，只提供具体的路径即可
+axios.post('/api/get',{name:'1s',age:'30'})
+.then(res => {
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>请求拦截器</h2>
+        <h2>响应拦截器</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>请求拦截器 and 响应拦截器</caption>
+                <tr >
+                    <td colspan="3">
+                        拦截器（interceptors）用来<span class="red">全局拦截</span> axios 的<span class="red">每一次请求与响应</span>。
+                        <br>好处：可以把每个请求中，某些<span class="red">重复性的业务代码</span>封装到拦截器中，提高代码的复用性。
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <img src="./images/2022-11-10 195356.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>请求拦截器</td>
+                    <td>service.interceptors.request.use</td>
+                    <td>
+                        <pre class="k500"><code>
+// 请求拦截器
+service.interceptors.request.use(
+  (confid) => { //confid参数是本次请求的配置
+  // 在发送请求之前进行一些操作
+    const token = store.getters.token   //获取组件里的token
+    confid.headers.Authorization = 'Bearer ' + token  
+    return confid  //本次请求的配置信息,会发送到后台服务器
+  },
+  (error) => {
+   // 对请求错误做些什么
+    return Promise.reject(error)
+  }
+)
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>响应拦截器</td>
+                    <td>service.interceptors.response.use</td>
+                    <td>
+                        <pre class="k500"><code>
+//响应拦截器                            
+service.interceptors.response.use(
+  (response) => {  //response参数是本次服务器响应的数据
+   // 对响应数据做点什么
+    // 1.将axios返回的数据解一层壳
+    const res = response.data
+    // 2.统一处理错误的响应
+    const { message, success } = res  //经过解构后的ajax数据
+    if (!success) {  
+      Message.error(message)          //登录失败提示信息
+      return Promise.reject(new Error(message))
+    }
+    return res
+  },
+  (error) => {
+    // 当服务器返回的错误信息是 401 10002时退出登录
+    if (error.response.status === 401 || error.response.data.code === 10002) {
+      Message.error('会话过期已退出登录')
+      store.dispatch('user/logout') // 清空用户数据(token)
+      router.push('/login') // 跳转回登录页面
+    } else {
+      console.dir(error) // 便于调试
+      Message.error(error.res.message) // 提示错误消息
+    }
+    return Promise.reject(error)
+    return Promise.reject(error)
+  }
+)
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>FormData 文件上传</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>FormData</caption>
+                <tr>
+                    <th>概念</th>
+                    <td><sapn class="red">FormData</sapn> 是浏览器提供的一个 <sapn class="red">WebAPI</sapn>，它以<sapn class="red">键值对</sapn>的方式存储数据。</td>
+                </tr>
+                <tr>
+                    <th>作用</th>
+                    <td>FormData 配合 Ajax 技术，能够向服务器发送 <sapn class="red">multipart/form-data</sapn> 格式的请求体数据</td>
+                </tr>
+                <tr>
+                    <th>典型应用场景</th>
+                    <td>FormData + Ajax 技术实现<sapn class="red">文件上传</sapn>的功能</td>
+                </tr>
+                <tr>
+                    <th>注意</th>
+                    <td>Ajax 实现文件上传的时候，<sapn class="red">请求体</sapn>的<sapn class="red">编码格式</sapn>必须是 <sapn class="red">multipart/form-data</sapn></td>
+                </tr>
+                <tr>
+                    <th>FormData 的基本用法</th>
+                    <td>
+                        <pre><code>
+FormData 是一个构造函数，new FormData() 即可得到 FormData 对象：
+const fd = new FormData() // 创建一个空白的 FormData 对象，里面没有包含任何数据。
+
+调用 FormData 对象的 append(键, 值) 方法，可以向空白的 FormData 中追加键值对数据，其中：
+1.键表示数据项的名字，必须是字符串
+2.值表示数据项的值，可以是任意类型的数据
+
+fd.append('username', '张三') // 键是 username，值是字符串类型
+fd.append('age', 20) // 键是 age， 值是数字类型
+fd.append('avatar', 图片文件) // 键是 avatar， 值是文件类型
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <th>发送普通的 FormData 数据</th>
+                    <td>
+                        FormData + axios 向服务器提交普通的数据（不包含文件上传）
+                        <pre><code>
+//1.创建一个空白的FormData对象，里面没有宝航任何数据
+const fd=new FormData()
+// 2.向fd中追加两个数据
+fd.append('username','张三')
+fd.append('age','20')
+// 3.用ajax把fd格式的数据发送到服务器
+axios.post('http://www.liulongbin.top:3009/api/formdata',fd)
+.then(res => {
+    console.log(res)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <th>结合 FormData 实现头像上传思路</th>
+                    <td>主要的实现步骤：
+                        <br>① 使用文件选择器选择图片文件
+                        <br>② 把用户选择的文件存入 FormData 对象
+                        <br>③ 使用 axios 把 FormData 发送给服务器
+                        <br>④ 模拟文件选择器的点击事件
+                    </td>
+                </tr>
+                <tr>
+                    <th>头像上传 - 使用文件选择器选择图片文件</th>
+                    <td>
+                        <pre><code>
+// 1. 监听“文件选择器”的 change 事件
+$('#iptFile').on('change', function (e) {
+    // 2. 获取到用户选择的文件列表 FileList {0: File, length: 1}
+    const files = e.target.files
+    // 3. 判断用户是否选择了文件
+    if (files.length === 0) return
+    // 4.1 创建 FormData 对象
+    const fd = new FormData()
+    // 4.2 添加键值对数据，值是用户选择的文件
+    fd.append('avatar', files[0])
+    // TODO：通过 ajax 把 fd 对象发送给服务器
+    uploadAvatar(fd)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <th>头像上传 - 封装 uploadAvatar 函数</th>
+                    <td>
+                        <pre><code>
+// 上传头像的方法
+function uploadAvatar(fd) {
+    // 1. 发起 POST 请求，把 fd 对象发送给服务器
+    axios.post('http://www.liulongbin.top:3009/api/upload/avatar', fd).then(({ data: res }) => {
+        // 2. 如果业务状态码等于 200，证明头像上传成功
+            if (res.code === 200) {
+            // 3. 为头像的 img 设置 src 地址
+            $('.thumb').attr('src', 'http://www.liulongbin.top:3009' + res.url)
+        }
+    })
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <th>头像上传 - 模拟文件选择器的点击事件</th>
+                    <td>
+                        <pre><code>
+// 模拟“文件选择器”的点击事件
+$('#btnChoose').on('click', function () {
+    // 获取到文件选择器的 jQuery 对象，并调用其原型上的 click 方法
+    $('#iptFile').click()
+})
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>是数据交换格式</h2>
+        <div>
+            <p>数据交换格式，就是服务器端与客户端之间数据传输的格式。</p>
+            <p>两种数据交换格式：① XML（很少用） ② JSON（主流）</p>
+<img src="./images/2022-11-10 213835.png" alt="" class="k500">
+            <br><br><br>
+        </div>
+
+
+
+
+
+        <h2>XMLHttpRequest</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>XMLHttpRequest</caption>
+                <tr>
+                    <td colspan="3">
+                        <p>XMLHttpRequest是浏览器<span class="red">内置的一个构造函数</span></p>
+                        <p>作用：基于 new 出来的 XMLHttpRequest 实例对象，可以<span class="red">发起 Ajax 的请求</span>。</p>
+                        <p>axios 中的 axios.<span class="red">get()</span>、axios.<span class="red">post()</span>、<span class="red">axios()</span> 方法，都是<span class="red">基于</span> XMLHttpRequest（简称：<span class="red">XHR</span>） 封装出来的！</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>使用 XMLHttpRequest 发起 GET 请求</td>
+                    <td>主要的 4 个实现步骤：
+                        <br>① 创建 xhr 对象
+                        <br>② 调用 xhr.open() 函数
+                        <br>③ 调用 xhr.send() 函数
+                        <br>④ 监听 load 事件
+                    </td>
+                    <td>
+                        <img src="./images/2022-11-10 212126.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>发起 GET 请求时携带查询参数</td>
+                    <td>可以在请求的 URL 地址后面通过 ? 的形式携带<span>查询参数</span>。</td>
+                    <td>
+                        <pre><code>
+const xhr=new XMLHttpRequest()
+xhr.addEventListener('load',function () {
+    console.log(xhr.response);
+})
+//url 地址后面，通过？拼接“查询参数”
+xhr.open('GET','http://www.liulongbin.top:3009/api/get?name=zs&age=20')
+xhr.send()
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>使用 XMLHttpRequest 发起 POST 请求，</td>
+                    <td></td>
+                    <td>
+                        <pre><code>
+const xhr=new XMLHttpRequest()
+xhr.addEventListener('load',function () {
+    console.log(xhr.response);
+})
+//指定请求的方式为post
+//url 地址后面，通过？拼接“查询参数”
+xhr.open('post','http://www.liulongbin.top:3009/api/post?name=zs&age=20')
+xhr.send()
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>使用 XMLHttpRequest 发起 POST 请求，并携带请求体数据</td>
+                    <td>当需要携带请求体数据时，需要进行额外的两步操作：
+                        <br>① 在 xhr.<span class="red">open()</span> 之后，调用 <span class="red">xhr.setRequestHeader() </span>函数，指定<span class="red">请求体的编码格式</span>
+                        <br>② 在 xhr.<span class="red">send()</span> 中，指定要提交的<span class="red">请求体数据</span>
+                    </td>
+                    <td>
+                        <pre><code>
+const xhr=new XMLHttpRequest()
+xhr.addEventListener('load',function () {
+    console.log(xhr.response);
+})
+//指定请求的方式为post
+//url 地址后面，通过？拼接“查询参数”
+xhr.open('post','http://www.liulongbin.top:3009/api/post')
+xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+xhr.send('city=北京&location=顺义') //指定请求的数据
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>JSON</h2>
+        <div>
+            <p>JSON（全称：JavaScript Object Notation）是一种数据交换格式，它本质上是用字符串的方式来表示对象或数组类</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>JSON</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>对象格式的 JSON 数据</td>
+                    <td>
+                        对象格式的 JSON 数据，最外层使用 <span class="red">{ }</span> 进行包裹，内部的数据为 <span class="red">key: value 的键值对</span>结构。其中：
+                        <br>① key 必须使用<span class="red">英文的双引号</span>进行包裹
+                        <br>② value 的值只能是<span class="red">字符串、数字、布尔值、null、数组、对象</span>类型（可选类型只有这 6 种）
+                    </td>
+                    <td>
+                        <pre><code>
+const user=`{
+    "name":"小红",
+    "age":20,
+    "gender":true,
+    "weight":null,
+    "hobby":["吃饭","睡觉","打豆豆"],
+    "address":{
+        "province":"河北省",
+        "city":"邯郸市"
+    },
+}`
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>数组格式的 JSON 数据</td>
+                    <td>数组格式的 JSON 数据，最外层使用 [ ] 进行包裹，内部的每一项数据之间使用英文的 , 分隔。其中：
+                        <br>每一项的值类型只能是<span class="red">字符串、数字、布尔值、null、数组、对象</span>这 6 种类型之一。
+                    </td>
+                    <td>
+                        <pre><code>
+const array='["前端",2022,true,null,["html","css"],{"name":"zs","age":20}]'
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>把 JSON 数据转换为 JS 数据</td>
+                    <td>调用浏览器内置的 <span class="red">JSON.parse()</span> 函数，可以把 JSON 格式的字符串转换为 JS 数据，</td>
+                    <td>
+                        <pre><code>
+const jsonObj='{"a":"hello", "b":"world"}'
+console.log(JSON.parse(jsonObj));
+//输出对象 {a:"hello", b:"world"}
+
+const jsobArr='["java", "js", "javascript"]'
+console.log(JSON.parse(jsobArr));
+//输出数组 ["java", "js", "javascript"]
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>把 JS 数据转换为 JSON 数据</td>
+                    <td>调用浏览器内置的 <span class="red">JSON.stringify()</span> 函数，可以把 JS 数据转换为 JSON 格式的字符串</td>
+                    <td>
+                        <pre><code>
+const user={name:"zs", age:20}
+console.log(JSON.stringify(user));
+//输出字符串格式的json对象 {"name":"zs", "age":"20"}
+
+const list=["html", "css", "js"]
+console.log(JSON.stringify(list));
+//输出字符串格式的json数组 ["html", "css", "js"]
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>序列化和反序列化</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>序列化</td>
+                    <td>把真实数据转换为字符串的过程</td>
+                    <td colspan="2">
+                        <img src="./images/2022-11-10 221156.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>反序列化</td>
+                    <td>把字符串转换为真实数据的过程</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>把 XMLHttpRequest 请求到的 JSON 数据反序列化为 JS 对象</td>
+                    <td>在 xhr 对象的 <span class="red">load</span> 事件中，通过 <span class="red">xhr.response</span> 访问到的是 <span class="red">JSON 格式的字符串</span>数据。可以调用 <span class="red">JSON.parse()</span> 函数将 xhr.response 转化为 JS 对象。</td>
+                    <td>
+                        <pre><code>
+const xhr=new XMLHttpRequest()
+xhr.addEventListener('load',function () {
+    const res=JSON.parse(xhr.response)
+    console.log(res);
+})
+xhr.open('post','http://www.liulongbin.top:3009/api/post')
+xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+xhr.send('city=北京&location=顺义') //指定请求的数据
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>JSON 文件*</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>JSON 文件*</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                </tr>
+                <tr>
+                    <td>后缀名是 .json 的文件叫做 JSON 文件，专门用来存储 JSON 格式的数据。</td>
+                    <td>注意：
+                        <br> .json 结尾的文件，一般都是<span class="red">项目的配置文件</span>
+                        <br> 后面的 Node.js 课程中，我们会讲解并使用 <span class="red">package.json</span> 这个配置文件
+                    </td>
+                </tr>
+            </table>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>JSON 文件的语法要求</caption>
+                <tr>
+                    <td>
+                        在 JSON 文件中定义 JSON 格式的数据时，要遵守以下的 6 条规则：
+                        <br>① <span class="red">属性名</span>必须使用<span class="red">双引号</span>包裹
+                        <br>② <span class="red">字符串类型的值</span>必须使用<span class="red">双引号</span>包裹
+                        <br>③ JSON 中<span class="red">不允许使用单引号</span>表示字符串
+                        <br>④ JSON 中<span class="red">不能写注释</span>
+                        <br>⑤ JSON 的<span class="red">最外层</span>必须是<span class="red">对象</span>或<span class="red">数组</span>格式
+                        <br>⑥ 不能使用 <span class="red">undefined</span> 或<span class="red">函数</span>作为 JSON 的值
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>案例 - 封装自己的 Ajax 函数</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>案例 - 封装自己的 Ajax 函数</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>最终要实现的封装效果</td>
+                    <td>封装一个名为 itheima 的 Ajax 函数，调用它可以发起 GET 或 POST 请求</td>
+                    <td>
+                        <pre class="k500"><code>
+//导入ajax库
+&lt;script src="./itheima.js"></script>
+&lt;script>
+    //定义itheima函数，发起ajax请求
+    itheima({
+        method:'请求类型',
+        url:'请求地址',
+        params:{a:1,b:2},//查询参数
+        data:{x:3,y:4},  //请求体数据（application/json）
+        //data:'x=3&y=4' //请求体数据（application/x-www-form-urllencoded）
+        //data:fd        //请求体数据（multipart/form-data）
+        success:function(res){
+            //成功之后回调函数，res是请求到的数据
+            console.log(res);
+        }
+    })
+</script>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>定义 itheima 函数的参数选项</td>
+                    <td><span class="red">itheima 函数</span>是自定义的 Ajax 函数，它接收一个<span class="red">配置对象</span>作为参数。配置对象中包含如下 5 个参数选项</td>
+                    <td>
+                        <table border="3" cellspacing="0" cellpadding="3">
+                            <tr>
+                                <th>参数选项 </th>
+                                <th>说明</th>
+                            </tr>
+                            <tr>
+                                <td>method</td>
+                                <td>请求的类型（GET 或 POST）</td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>请求的 URL 地址</td>
+                            </tr>
+                            <tr>
+                                <td>params</td>
+                                <td>URL 末尾拼接的查询参数</td>
+                            </tr>
+                            <tr>
+                                <td>data</td>
+                                <td>请求体数据，有三种格式，分别是（<span class="red">FormData 格式、JSON 格式、普通字符串格式</span>）</td>
+                            </tr>
+                            <tr>
+                                <td>success</td>
+                                <td>请求成功之后的回调函数</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>核心的实现的步骤</td>
+                    <td>① 初步定义 itheima 函数
+                        <br>② 处理 params 参数
+                        <br>③ 处理 data 请求体数据
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>初步定义 itheima 函数</td>
+                    <td></td>
+                    <td>
+                        <pre class="k500"><code>
+function itheima(options) {
+    const xhr = new XMLHttpRequest() // 1. 创建 xhr 实例对象
+    xhr.addEventListener('load', function () {
+        const result = JSON.parse(xhr.response) // 3. 把响应的 JSON 数据转换为 JS 对象
+        options.success(result) // 4. 调用 success 成功的回调，把请求的结果当作参数传递进去
+    })
+    // 2. 根据用户指定的 method 和 url 发起对应的请求
+    xhr.open(options.method, options.url)
+    xhr.send()
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 params 参数</td>
+                    <td>希望达到的结果：把对象格式的 params 转换为“键值对”格式的查询参数，拼接到 URL 地址的末尾。示例如下</td>
+                    <td>
+                        <img src="./images/2022-11-11 214239.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 params 参数 - 核心步骤</td>
+                    <td>① 把“params 对象”转化为“<span class="red">字符串的数组</span>”
+                        <br>② 把字符串的数组，调用 <span class="red">join()</span> 函数进行拼接
+                    </td>
+                    <td>
+                        <img src="./images/2022-11-11 214430.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 params 参数 - 核心代码</td>
+                    <td></td>
+                    <td>
+                        <pre class="k500"><code>
+if (options.params) { // 1.1 如果条件成立，则证明有查询参数
+    const qs = [] // 1.2 用来存储“键值对”的空数组
+    for (let k in options.params) {
+        // 2. 向 qs 数组中追加“键值对”的字符串
+        qs.push(`${k}=${options.params[k]}`)
+    }
+    if (qs.length > 0) {
+        // 3. 如果 qs 数组不为空，则把“查询参数”拼接到 url 地址的末尾
+        options.url += `?${qs.join('&')}`
+    }
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 data 请求体数据</td>
+                    <td>希望达到的结果：根据<span class="red">不同的</span>请求体数据，设置对应的请求头的 <span class="red">Content-Type</span> 类型。
+                        <br>请求体的数据有以下三种类型：
+                    </td>
+                    <td>
+                        <img src="./images/2022-11-11 214751.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 data 请求体数据 - 判断是否需要携带请求体数据</td>
+                    <td></td>
+                    <td>
+                        <pre class="k500"><code>
+// 指定请求的“方式”与“地址”
+xhr.open(options.method, options.url)
+if (options.method.toUpperCase() !== 'GET' && options.data) {
+    // 需要携带请求体数据
+    // 1. 判断 options.data 是否为 FormData 格式
+    // 2. 判断 options.data 是否为“键值对”字符串
+    // 3. 判断 options.data 是否为 json 对象格式
+} else {
+// 不需要携带请求体数据
+    xhr.send()
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 data 请求体数据 - 判断 options.data 是否为 FormData 格式</td>
+                    <td>请大家思考：如何判断一个对象<span class="red">是否为</span>某个<span class="red">构造函数的实例</span>？
+                        <br>答案：对象 instanceof 构造函数
+                    </td>
+                    <td>
+                        <pre class="k500"><code>
+// 1. 判断 options.data 是否为 FormData 格式
+if (options.data instanceof FormData) {
+    xhr.send(options.data)
+    return
+}
+
+简化为：
+if (options.data instanceof FormData) return xhr.send(options.data)
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 data 请求体数据 - 判断 options.data 是否为“<span class="red">键值对”字符串</span></td>
+                    <td>请大家思考：如何判断某个值是否为<span class="red">字符串类型</span>？
+                        <br>答案：<span class="red">typeof</span> 值 === <span class="red">'string'</span>
+                    </td>
+                    <td>
+                        <pre class="k500"><code>
+// 2. 判断 options.data 是否为“键值对”字符串
+if (typeof options.data === 'string') {
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    return xhr.send(options.data)
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>处理 data 请求体数据 - 判断 options.data 是否为 <span class="red">json 对象格式</span></td>
+                    <td>请大家思考：如何判断某个值是否为<span class="red">对象类型</span>？
+                        答案：<span class="red">typeof</span> 值 === '<span class="red">object</span>'
+                    </td>
+                    <td>
+                        <pre class="k500"><code>
+// 3. 判断 options.data 是否为 json 对象格式
+if (typeof options.data === 'object') {
+    xhr.setRequestHeader('Content-Type', 'application/json')
+    return xhr.send(JSON.stringify(options.data))
+}
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>同源策略 & 跨域</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>什么是同源</td>
+                    <td>同源指的是两个 URL 地址具有<span class="red">相同的协议、主机名、端口号</span>。</td>
+                    <td>
+                        <p>例如，下表给出了相对于 <span class="red">http://www.test.com/index.html</span> 页面的 5 个<span class="red">同源检测</span>结果：</p>
+                        <table border="3" cellspacing="0" cellpadding="3">
+                            <tr>
+                                <th>URL</th>
+                                <th>是否同源</th>
+                                <th>原因说明</th>
+                            </tr>
+                            <tr>
+                                <td>http://www.test.com/other.html</td>
+                                <td>是</td>
+                                <td>同源（协议、域名、端口相同）</td>
+                            </tr>
+                            <tr>
+                                <td>https://www.test.com/about.html</td>
+                                <td>否</td>
+                                <td>协议不同（http 与 https）</td>
+                            </tr>
+                            <tr>
+                                <td>http://blog.test.com/movie.html</td>
+                                <td>否</td>
+                                <td>域名不同（www.test.com 与 blog.test.com）</td>
+                            </tr>
+                            <tr>
+                                <td>http://www.test.com:7001/home.html</td>
+                                <td>否</td>
+                                <td>端口不同（默认的 80 端口与 7001 端口）</td>
+                            </tr>
+                            <tr>
+                                <td>http://www.test.com:80/main.html</td>
+                                <td>是</td>
+                                <td>同源（协议、域名、端口相同）</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>什么是同源策略</td>
+                    <td>
+                        <span class="red">同源策略</span>（英文全称 Same origin policy）是<span class="red">浏览器</span>提供的一个<span class="red">安全功能</span>。
+                        <br><span class="red">浏览器</span>的<span class="red">同源策略</span>规定：不允许<span class="red">非同源的</span> URL 之间进行<span class="red">资源的交互</span>。
+                    </td>
+                    <td>
+                        <img src="./images/2022-11-11 221309.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>什么是跨域</td>
+                    <td><span class="red">同源</span>指的是两个 URL 的<span class="red">协议、主机名、端口号</span>完全一致，反之，则是<span class="red">跨域</span></td>
+                    <td>
+                        出现跨域的根本原因：<span class="red">浏览器的同源策略</span>不允许非同源的 URL 之间进行资源的交互。例如：
+                        <br>⚫ 网页：http://<span class="red">www.test.com</span>/index.html
+                        <br>⚫ 接口：http://<span class="red">www.api.com</span>/userlist
+                        <br>⚫ 受到同源策略的限制，上面的网页请求下面的接口会失败！
+                    </td>
+                </tr>
+                <tr>
+                    <td>浏览器对跨域请求的<span class="red">拦截过程</span></td>
+                    <td>浏览器允许发起跨域请求。但跨域请求回来的数据，会被浏览器拦截，无法被页面获取到！示意图如下</td>
+                    <td>
+                        <img src="./images/2022-11-11 221739.png" alt="" class="k500">
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>突破浏览器<span class="red">跨域限制</span>的两种方案</h2>
+        <div>
+            <p><span class="red">JSONP</span> 和 <span class="red">CORS</span> 是实现<span class="red">跨域数据请求</span>的两种技术方案。</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption><span class="red">JSONP</span> 和 <span class="red">CORS</span> 是实现<span class="red">跨域数据请求</span>的两种技术方案。</caption>
+                <tr>
+                    <th>方案</th>
+                    <th>诞生的时间</th>
+                    <th>方案来源</th>
+                    <th>优点</th>
+                    <th>缺点</th>
+                </tr>
+                <tr>
+                    <td>JSONP</td>
+                    <td>出现较早</td>
+                    <td>民间（非官方）</td>
+                    <td>兼容性好（兼容低版本 IE）</td>
+                    <td>仅支持 GET 请求</td>
+                </tr>
+                <tr>
+                    <td>CORS</td>
+                    <td>出现较晚</td>
+                    <td>W3C 官方标准 </td>
+                    <td>支持 GET、POST、PUT、DELETE、PATCH等常见的请求方式 </td>
+                    <td>不兼容某些低版本浏览器</td>
+                </tr>
+            </table>
+            <p>注意：目前 JSONP 在实际开发中<span class="red">很少会用到，CORS</span> 是跨域的<span class="red">主流技</span>术解决方案</p>
+            <br><br><br>
+        </div>
+
+        <h2><span class="red">CORS</span> 是<span class="red">解决跨域数据请求</span>的终极解决方案</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>CORS 的概念</td>
+                    <td>
+                        <span class="red">CORS</span> 是<span class="red">解决跨域数据请求</span>的终极解决方案，全称是 Cross-origin resource sharing。
+                        <br>
+                        CORS 技术需要<span class="red">浏览器</span>和<span class="red">服务器</span>同时支持，二者缺一不可：
+                        <br>① 浏览器要<span class="red">支持</span> CORS 功能（主流的浏览器全部支持，IE 不能低于 IE10）
+                        <br>② 服务器要<span class="red">开启</span> CORS 功能（需要<span class="red">后端开发者</span>为接口开启 CORS 功能）
+                    </td>
+                    <td>请大家思考：实现 CORS 的关键，是在<span class="red">客户端</span>还是在<span class="red">服务器端</span>？
+                        <br>答案：<span class="red">服务器端</span>。
+                        <br>原因：如果服务器端没有开启 CORS 功能，则客户端无法访问那些跨域的接口！
+                    </td>
+                </tr>
+                <tr>
+                    <td>CORS 的原理</td>
+                    <td>服务器端通过 <span class="red">Access-Control-Allow-Origin</span> 响应头，来告诉浏览器<span class="red">当前的 API 接口</span>是否允许跨域请求。</td>
+                    <td>
+                        <img src="./images/2022-11-11 224324.png" alt="" class="k500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>CORS 的两个主要优势</td>
+                    <td>
+                        ① CORS 是<span class="red">真正的 Ajax 请求</span>，支持 GET、POST、DELETE、PUT、PATCH 等这些常见的 Ajax 请求方式
+                        <br>② 只需要后端开启 CORS 功能即可，前端的代码无须做任何改动
+                    </td>
+                    <td>注意：我们之前做过的案例中，所有调用的接口<span class="red">均已在服务器端开启了 CORS 功能</span>！
+                        <br>例如：聊天机器人案例、新闻列表案例、用户登录案例
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2><span class="red">JSONP</span> 是<span class="red">实现跨域数据请求</span>的一种技术解决方案</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>什么是 JSONP</td>
+                    <td><span class="red">JSONP</span> 是<span class="red">实现跨域数据请求</span>的一种技术解决方案,它<span class="red">只支持 GET 请求</span>，不支持 POST、DELETE 等其它请求。</td>
+                    <td>
+                        ⚫ 在实际开发中很少被使用
+                        <br>⚫ 在面试中可能会问到 JSONP 的原理
+                    </td>
+                </tr>
+                <tr>
+                    <td>JSONP 不是真正的 Ajax 技术</td>
+                    <td>在解决跨域问题时：
+                        <br>⚫ <span class="red">CORS</span> 方案用到了 XMLHttpRequest 对象，发起的是纯正的 Ajax 请求
+                        <br>⚫ <span class="red">JSONP</span> 方案没有用到 XMLHttpRequest 对象，因此，<span class="red">JSONP 不是真正的 Ajax 技术</span></td>
+                    <td>结论：只要用到了 XMLHttpRequest 对象，发起的就是 Ajax 请求！</td>
+                </tr>
+                <tr>
+                    <td>JSONP 的底层实现原理</td>
+                    <td>JSONP 在底层，用到了 &lt;script> 标签的 <span class="red">src</span> 属性！</td>
+                    <td>原因：
+                        ⚫ &lt;script> 标签的 src 属性，<span class="red">不受</span>浏览器<span>同源策略的限制</span>
+                        ⚫ 可以把<span class="red">非同源的 JavaScript 代码</span>请求到本地，并执行
+                    </td>
+                </tr>
+                <tr>
+                    <td>JSONP 的底层实现原理 - P1</td>
+                    <td>把<span class="red">非同源的</span> JavaScript <span class="red">代码</span>请求到本地，并执行</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>JSONP 的底层实现原理 - P2</td>
+                    <td>如果请求回来的 JavaScript 代码<span class="red">只包含函数的调用</span>，则需要程序员<span class="red">手动定义 show 方法</span>。示例代码如下</td>
+                    <td>
+                        <pre><code>
+&lt;script&gt;
+// 1. 手动定义 show 方法
+function show(data) {
+console.log(data)
+}
+&lt;/script&gt;
+<!-- 2. 把非同源的 JavaScript 代码请求到本地，并执行 -->
+&lt;script src="http://www.liulongbin.top:3009/api/getscript2"&gt; &lt;/script&gt;
+                        </code></pre>
+                        <span class="red">缺点</span>：服务器响应回来的代码中，调用的<span class="red">函数名是写死的</span>！
+                    </td>
+                </tr>
+                <tr>
+                    <td>JSONP 的底层实现原理 - P3</td>
+                    <td>在指定 &lt;script> 标签的 <span class="red">src 属性</span>时，可以通过<span class="red">查询参数</span>中的 <span class="red">callback，自定义</span>回调函数的名称</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>JSONP 的底层实现原理 - P4</td>
+                    <td>在指定 &lt;script> 标签的 <span class="red">src 属性</span>时，还可以通过<span class="red">查询参数</span>的方式，指定要发送给服务器的数据：</td>
+                    <td>
+                        <pre class="k500"><code>
+<script>
+    // 1. 手动定义 showInfo 方法
+    function showInfo(data) { console.log(data) }
+</script>
+<!-- 通过 callback 参数，自定义回调函数的名字 -->
+<!-- 指定 name 和 age 这两个参数 -->
+<script src="http://www.liulongbin.top:3009/api/jsonp?callback=showInfo&name=zs&age=20"></script>
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>防抖 & 节流</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>防抖 & 节流</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>什么是防抖</td>
+                    <td>防抖（debounce）指的是：<span class="red">频繁触发</span>某个操作时，<span class="red">只执行最后一次</span>。</td>
+                    <td>场景：搜索框只在输入完后，才执行查询的请求。
+                        <br>好处：这样可以有效减少请求的次数，节省网络资源。\
+                    </td>
+                    <td>
+                        <pre><code>
+//1.定义 timerid为null
+let timerid=null
+$('.ipt').on('input',function () {
+    //3.清除之前的延迟器
+    clearTimeout(timerid)
+    const kw=$(this).val().trim()
+    if(!kw) return $('#suggest-list').empty()
+
+    //2.创建延迟器，并记录延迟器的id
+    timerid=setTimeout(function() {
+        getSuggestList(kw)
+    },500)
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>什么是节流</td>
+                    <td>节流（throttle）指的是：<span class="red">单位时间内，频繁</span>触发同一个操作，<span class="red">只会触发 1 次。</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>async和await和回调地狱</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>async和await</caption>
+                <tr>
+                    <td>async和await关键字让我们可以用一种更简洁的方式写出基于Promise的异步行为，而无需刻意地链式调用promise。</td>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>
+async function 函数名() {
+    const resilt=await Promise对象
+    //拿到promise对象内成功的结果继续向下执行
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        目标：掌握async和await的注意事项
+                        <br>1．await必须用在被async修饰的函数内, 函数内无await, 则async可省略
+                        <br>2．async修饰后, 此函数为异步函数，await之前是同步，遇到await会暂停async函数内代码，但是不影
+                        <br>响外面继续向下执行
+                        <br>3．await后面一般跟Promise对象
+                        <br>4．await不能捕获失败结果, 需要使用try+catch关键字捕获
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./images/async-await和链式调用 图示关联.jpg" alt="">
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>_EventLoop事件循环</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>_EventLoop事件循环</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>什么是事件循环</td>
+                    <td>JavaScript 是一门单线程执行的编程语言。也就是说，同一时间只能做一件事情。</td>
+                    <td>为了防止某个耗时任务导致程序假死的问题，异步代码 由 js 委托给宿主环境(node环境, 浏览器)等待执行</td>
+                </tr>
+                <tr>
+                    <td>_EventLoop事件循环</td>
+                    <td></td>
+                    <td>
+                        <img src="./images/2022-11-11 233635.png" alt="" class="k500">
+                        <br>
+                        <img src="./images/2022-11-11 233732.png" alt="">
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>微任务和宏任务</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>微任务和宏任务</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>微任务</td>
+                    <td> 当前宏任务执行完，在下一个宏任务开始之前需要执行的任务</td>
+                    <td>promise 的 .then .catch 中的代码都属于微任务</td>
+                </tr>
+                <tr>
+                    <td>宏任务</td>
+                    <td>
+                        主代码块, 定时器, 延时器的代码内容等都属于宏任务
+                        <br>特征：上一个宏任务执行完, 才会考虑执行下一个宏任务
+                    </td>
+                    <td>注意点:
+                        <br>1. js 主线程遇到异步的内容, 交给浏览器去等待, 不会阻塞主线程
+                        <br>2. 一定是满足条件后的任务, 才会被添加到任务队列
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <img src="./images/2022-11-11 234021.png" alt="" class="k500">
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+
+    <!-- 引入js文件 -->
+    <script src="./js/html.js"></script>
+
+    <!-- 浏览器读取less文件的js -->
+    <script src="../lib/less.js"></script>
+
+
+
+    <!-- 引入代码高亮的js文件 -->
+    <script src="../lib/highlight/highlight.min.js"></script>
+    <!-- highlight使用方式:   -->
+    <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+    <!-- 类名不写语言默认自动识别 -->
+
+    <!-- 初始化代码高亮 -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <!-- 引入代码显示行数的js文件 -->
+    <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+    <!-- 初始化代码显示高度 -->
+    <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+    <!-- 自动生成目录 -->
+    <script src="../lib/dist/tocbot.min.js"></script>
+    <script type="text/javascript">
+        //目录生成初始化
+        tocbot.init({
+            // 在何处呈现目录。
+            tocSelector: '.js-toc',
+
+            // 在何处获取标题以构建目录。
+            contentSelector: '.js-toc-content',
+
+            // 要在内容选择器元素内获取哪些标题。
+            headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+            //对于内容中相对或绝对位置的容器内的标题。
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+
+</body>
+
+</html>

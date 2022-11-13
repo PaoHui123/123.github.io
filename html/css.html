@@ -1,0 +1,3964 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+  <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+  <!-- 引入代码高亮的主题css -->
+  <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+  <!-- 引入代码样式代码 -->
+  <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+  <!-- 引入目录代码样式 -->
+  <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>css</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    a:active,
+    a:focus{
+
+    }
+    a:active:当前活动元素，鼠标在元素上按下还没有松开
+    a:focus:获取焦点时鼠标松开时显示的颜色
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>css</h3>
+            </li>
+            <li><a href="#cssYinRu" class="aside_a">css引入方式</a></li>
+            <li><a href="#cssShuXieShunXu" class="aside_a">css书写顺序</a></li>
+            <li><a href="#cssXuanZeQi" class="aside_a">css选择器</a></li>
+            <li><a href="#cssBiaoQianXuanZeQi" class="aside_a">标签选择器</a></li>
+            <li><a href="#cssLeiMingXuanZeQi" class="aside_a">类名选择器</a></li>
+            <li><a href="#cssIDXuanZeQi" class="aside_a">id选择器</a></li>
+            <li><a href="#cssTongPeiFuXuanZeQi" class="aside_a">通配符选择器</a></li>
+            <li><a href="#cssXuanZeQiJinJie" class="aside_a">css选择器进阶</a></li>
+            <li><a href="#cssFuHeXuanZeQi" class="aside_a">复合选择器</a></li>
+            <li><a href="#cssZiDaiXuanZeQi" class="aside_a">子代选择器</a></li>
+            <li><a href="#cssHouDaiXuanZeQi" class="aside_a">后代选择器</a></li>
+            <li><a href="#cssBingJiXuanZeQi" class="aside_a">并集选择器</a></li>
+            <li><a href="#cssJiaoJiXuanZeQi" class="aside_a">交集选择器</a></li>
+            <li><a href="#cssWeiLeiXuanZeQi" class="aside_a">:hover伪类选择器</a></li>
+            <li><a href="#emmetYuFa" class="aside_a">emmet语法</a></li>
+            <li><a href="#cssXuanZeQiJinJieHueiZong"
+                    class="aside_a">css选择器进阶汇总<br>后代选择器<br>子代选择器<br>并集选择器<br>交集选择器<br>hover伪类选择器</a></li>
+            <li><a href="#lianJieWeiLeiXuanZeQi" class="aside_a">链接伪类选择器<br>a:link{}
+                    选中a链接未选中的状态<br>a:visited选中a链接选中后的状态<br>a:hover 选中鼠标悬停的状态<br>a:active 选中鼠标按下的状态</a></li>
+            <li><a href="#jiaoDianWeiLeiXuanZeQi" class="aside_a">焦点伪类选择器</a></li>
+            <li><a href="#shuXingXuanZeQi" class="aside_a">属性选择器</a></li>
+            <li><a href="#jieGouWeiLeiXuanZeQi" class="aside_a">结构伪类选择器</a></li>
+            <li><a href="#cssXuanZeQiDaQuan" class="aside_a">css选择器大全</a></li>
+            <li><a href="#leiXuanZeQiMingMingGueiZe" class="aside_a">css类选择器命名规则</a></li>
+            <li><a href="#cssWenJianMingMing" class="aside_a">css文件命名规则</a></li>
+            <li><a href="#WenZiWenBenYangShi" class="aside_a">文字和文本样式</a></li>
+            <li><a href="#ziTiDaXiao" class="aside_a">字体大小</a></li>
+            <li><a href="#ziTiCuXI" class="aside_a">字体粗细</a></li>
+            <li><a href="#ziTiqingXie" class="aside_a">字体倾斜</a></li>
+            <li><a href="#ziTiZu" class="aside_a">字体族</a></li>
+            <li><a href="#wenBenSuoJin" class="aside_a">文本缩进</a></li>
+            <li><a href="#wenBenShueiPingDueiQi" class="aside_a">文本水平对齐<br>左对齐<br>右对齐<br>居中对齐</a></li>
+            <li><a href="#wenBenXiuShi" class="aside_a">文本修饰</a></li>
+            <li><a href="#xiaHuaXian2" class="aside_a">下划线</a></li>
+            <li><a href="#shanChuXian2" class="aside_a">删除线</a></li>
+            <li><a href="#shangHuaXian2" class="aside_a">上划线</a></li>
+            <li><a href="#wuXiauShiXian" class="aside_a">无修饰线<br>清除点<br>下划线等</a></li>
+            <li><a href="#hangGao" class="aside_a">行高</a></li>
+            <li><a href="#box-center" class="aside_a">（大盒子）水平居中</a></li>
+            <li><a href="#BeiJingXiangGuanShuXing" class="aside_a">背景相关属性<br>背景位置<br>背景大小<br>背景渐变</a></li>
+            <li><a href="#beiJingTouMing" class="aside_a">背景透明</a></li>
+            <li><a href="#yuanSuXianShiMoShi" class="aside_a">元素显示模式<br>块元素<br>行内元素<br>行内块元素</a></li>
+            <li><a href="#yuanSuXianShiMoShiZhuanHuan" class="aside_a">元素显示模式转换<br>转化为块元素<br>转化为行内块元素<br>转化为行内元素</a>
+            </li>
+            <li><a href="#htmlQianTaoGueiFan" class="aside_a">HTML嵌套规范注意</a></li>
+            <li><a href="#JuZhongFangFanZongJie" class="aside_a">居中方法总结</a></li>
+            <li><a href="#cssTeXing" class="aside_a">css特性<br>继承性<br>层叠行<br>优先性</a></li>
+            <li><a href="#cssThreeTeXing" class="aside_a">css特性（二）<br>继承性<br>层叠行<br>优先性</a></li>
+            <li><a href="#chroomTiaoShi" class="aside_a">chroom调试工具</a></li>
+            <li><a href="#HeZiMoXing" class="aside_a">盒子模型<br>Box Model</a></li>
+            <li><a href="#bianKuang" class="aside_a">盒子边框</a></li>
+            <li><a href="#quChuMoRenBianKuang" class="aside_a">去除默认边框</a></li>
+            <li><a href="#heZiNeiBianJu" class="aside_a">内边距</a></li>
+            <li><a href="#heZiWaiBianJu" class="aside_a">外边距</a></li>
+            <li><a href="#ziDongNeiJian" class="aside_a">盒子边框边距自动內减</a></li>
+            <li><a href="#ziDongNeiJian2" class="aside_a">自动內减</a></li>
+            <li><a href="#ziDongNeiJian3" class="aside_a">自动內减</a></li>
+            <li><a href="#HeZiMoXingZhuYi" class="aside_a">盒子模型注意事项<br>margin、padding</a></li>
+            <li><a href="#buhueichangdahedeteshuqingk" class="aside_a">不会撑大盒子的特殊情况（块级元素）</a></li>
+            <li><a href="#HeZiYuanJiaoBianKuang" class="aside_a">盒子圆角边框</a></li>
+            <li><a href="#heZiYinYing" class="aside_a">盒子阴影</a></li>
+            <li><a href="#wenZiYinYing" class="aside_a">文字阴影</a></li>
+            <li><a href="#weiYuanSu" class="aside_a">伪元素</a></li>
+            <li><a href="#biaoZhunLiu" class="aside_a">标准流</a></li>
+            <li><a href="#floatFuDong" class="aside_a">float浮动<br>float：left<br>float：right</a></li>
+            <li><a href="#qingChuFuDong" class="aside_a">清除浮动</a></li>
+            <li><a href="#jingTaiDingWei" class="aside_a">静态定位<br>相对定位<br>绝对定位<br>固定定位<br>固定定位<br>粘性定位</a></li>
+            <li><a href="#ZiJveFuXian" class="aside_a">子绝父相<br>子绝父相水平居中及垂直水平居中案例</a></li>
+            <li><a href="#yuanSuCengJi" class="aside_a">元素层级问题</a></li>
+            <li><a href="#DingWeiYuanSuCengJi" class="aside_a">更改定位元素的层级</a></li>
+            <li><a href="#chueZhiDueiQiFangShi" class="aside_a">垂直对齐方式<br>颈部对齐<br>中部对齐<br>底部对齐</a></li>
+            <li><a href="#guangBiaoLeiXing" class="aside_a">光标类型<br>箭头<br>小手<br>工字形<br>十字</a></li>
+            <li><a href="#overflow" class="aside_a">overflow溢出隐藏<br>元素本身隐藏<br>元素整体透明度</a></li>
+            <li><a href="#guoDu" class="aside_a">过度（动画过度）</a></li>
+            <li><a href="#transform2D"
+                    class="aside_a">transform<br>平面转换（2D转换）<br>空间转换（3D转换）<br>元素位移<br>元素旋转<br>元素缩放<br></a></li>
+            <li><a href="#dongHua" class="aside_a">动画</a></li>
+            <li>
+                <h3>flex布局</h3>
+            </li>
+            <li><a href="#flexBuJu" class="aside_a">flex布局简介</a></li>
+            <li><a href="#zhuZhouFangXiang" class="aside_a">设置主轴方向</a></li>
+            <li><a href="#zhuZhouPaiLie" class="aside_a">设置主轴上的子元素排列方式</a></li>
+            <li><a href="#ceZhouPaiLieDanHang" class="aside_a">设置侧轴上的子元素排列方式（单行）</a></li>
+            <li><a href="#ceZhouPaiLieDuoHang" class="aside_a">设置侧轴上的子元素排列方式（多行）</a></li>
+            <li><a href="#shenSuoBi-and-shunXu" class="aside_a">flex:伸缩比<br>定义项目的排列顺序</a></li>
+            <li><a href="#flex-wrap" class="aside_a">flex:弹性盒子换行</a></li>
+            <li><a href="#align-self" class="aside_a">子项自己在侧轴上的排列方式</a></li>
+            <li>
+                <h3>媒体查询</h3>
+            </li>
+            <li><a href="#shiKou" class="aside_a">视口</a></li>
+            <li><a href="#changDuDanWei" class="aside_a">长度单位</a></li>
+            <li><a href="#meiTiChaXun" class="aside_a">媒体查询<br>关键字<br>媒体类型<br>媒体特征<br>写法</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+            <li><a href="#" class="aside_a">2</a></li>
+        </ul>
+        <span>目录</span>
+        <ol class="js-toc"></ol>
+    </div>
+
+
+    <div class="zhuTi js-toc-content">
+
+
+        <h2> css网页美化师----- 注释用/* */ --- /* 类选择器 */</h2>
+
+        <h4>css书写顺序</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="cssShuXieShunXu">css书写顺序</caption>
+            <tr>
+                <th>顺序</th>
+                <th>类别</th>
+                <th>属性</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>布局属性</td>
+                <td>display、position、float、clear、visibility、overflow</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>盒子模型+背景</td>
+                <td>width、height、margin、padding、border、background</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>文本内容属性</td>
+                <td>color、font、text-decoration、text-alingn、line-height</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>点缀属性</td>
+                <td>cursor、border-radius、text-shadow、box-shadow</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h2> css样式引入方式</h2>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssYinRu">css引入方式</caption>
+            <thead>
+                <th>css样式引入方式</th>
+                <th>描述</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>内部样式表</td>
+                    <td>直接在style标签里面写样式</td>
+                    <td>理论上可以放到任何地方，可以控制页面的整个页面</td>
+                </tr>
+                <tr>
+                    <td>行内样式表</td>
+                    <td>在元素标签内部的style属性中设置css样式，适用于修改单样式，控制一个标签</td>
+                    <td>在双引号中间，写法要符合css规范<br>如：&lt;div style="color:red; font-size=12px"&gt;样式&lt;div&gt;</td>
+                </tr>
+                <tr>
+                    <td>外部样式表</td>
+                    <td>样式单独在一个css样式文件中，控制多个页面<br>新建一个后缀名为css的文件，css样式都在这个文件内，<br>要把css文件引入到html文件中，<br>css样式文件中只有样式，没有标签
+                    </td>
+                    <td>引入方式：&lt;link rel="stylesheet" hres="css文件及路径-"&gt;</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <h4>单位大小</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <thead>
+                <th>标签</th>
+                <th>描述</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>px</td>
+                    <td>像素</td>
+                    <td>修改字体大小必须加px</td>
+                </tr>
+                <tr>
+                    <td>em</td>
+                    <td>是一个相对单位，相当于font-size元素一个文字的大小</td>
+                    <td>如果没有赋值，会按照父元素的1个文字大小</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <h4>css选择器分为基础选择器，复合选择器，基础选择器又分为标签选择器，类选择器，id选择器，通配符选择器</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssXuanZeQi">css选择器</caption>
+            <thead>
+                <th>选择器</th>
+                <th>描述</th>
+                <th>css写法</th>
+                <th>html写法</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="cssBiaoQianXuanZeQi"></td>
+                    <td>标签选择器</td>
+                    <td>标签名 {属性1：属性值1}</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" id="cssLeiMingXuanZeQi">.类名</td>
+                    <td>类选择器类<br>名自己启 不能使用HTML标签，中文，纯数字当类名</td>
+                    <td>.red { color:red}</td>
+                    <td>&lt;p class="red"&gt;红色&lt;/p&gt;</td>
+                </tr>
+                <tr>
+                    <td>多类名 <br>一个标签有多个类名 在标签class属性中写多个类名，多个类名中间必须用空格隔开</td>
+                    <td></td>
+                    <td>&lt;p class="red font:20"&gt;红色&lt;/p&gt;</td>
+                </tr>
+                <tr>
+                    <td id="cssIDXuanZeQi">#id</td>
+                    <td>id选择器<br>只能调用一次html元素以以id属性来设置选择器，css中id以“#”来定义</td>
+                    <td>#ping {属性1：属性值； }</td>
+                    <td>&lt;div id="ping"&gt;&lt;/div&gt;</td>
+                </tr>
+                <tr>
+                    <td id="cssTongPeiFuXuanZeQi">*</td>
+                    <td>通配符选择器<br>不需要调用<br>用*定义，代表所有元素（标签）</td>
+                    <td>*{属性：属性值；}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+        <h4>选择器进阶</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssXuanZeQiJinJie">选择器进阶</caption>
+            <thead>
+                <th>选择器</th>
+                <th>描述</th>
+                <th>作用</th>
+                <th>结果</th>
+                <th>备注</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="cssFuHeXuanZeQi">复合选择器</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>复合选择器</caption>
+                            <thead>
+                                <th>标签</th>
+                                <th>描述</th>
+                                <th>作用</th>
+                                <th>结果</th>
+                                <th>注释</th>
+                            </thead>
+                            <tbody>
+                                <tr id="cssHouDaiXuanZeQi">
+                                    <td>后代选择器</td>
+                                    <td>选择器1 选择器2 { css }</td>
+                                    <td>根据 HTML 标签的嵌套关系，选择父元素 后代中 满足条件的元素</td>
+                                    <td>在选择器1所找到标签的后代（儿子、孙子、重孙子…）中，找到满足选择器2的标签，设置样式</td>
+                                    <td>
+                                        <p>在选择器1所找到标签的后代（儿子、孙子、重孙子…）中，找到满足选择器2的标签，设置样式</p>
+                                        <p>➢ 注意点：</p>
+                                        <p>1. 后代包括：儿子、孙子、重孙子……</p>
+                                        <p>2. 后代选择器中，选择器与选择器之前通过 空格 隔开</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="cssZiDaiXuanZeQi">子代选择器</td>
+                                    <td>选择器1 > 选择器2 { css }</td>
+                                    <td>根据 HTML 标签的嵌套关系，选择父元素 子代中 满足条件的元素</td>
+                                    <td>在选择器1所找到标签的子代（儿子）中，找到满足选择器2的标签，设置样式</td>
+                                    <td>
+                                        <p>在选择器1所找到标签的子代（儿子）中，找到满足选择器2的标签，设置样式</p>
+                                        <p>➢ 注意点：</p>
+                                        <p>1. 子代只包括：儿子</p>
+                                        <p>2. 子代选择器中，选择器与选择器之前通过 > 隔开</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="cssBingJiXuanZeQi">并集选择器</td>
+                    <td>同时选择多组标签，设置相同的样式</td>
+                    <td>选择器1 ， 选择器2 { css }</td>
+                    <td>
+                        <p>1. 并集选择器中的每组选择器之间通过 , 分隔</p>
+                        <p>2. 并集选择器中的每组选择器可以是基础选择器或者复合选择器</p>>
+                        <p>3. 并集选择器中的每组选择器通常一行写一个，提高代码的可读性</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="cssJiaoJiXuanZeQi">交集选择器</td>
+                    <td>选中页面中 同时满足 多个选择器的标签</td>
+                    <td>选择器1选择器2 { css }</td>
+                    <td>（既又原则）找到页面中 既 能被选择器1选中，又 能被选择器2选中的标签，设置样式</td>
+                    <td>
+                        <p>1. 交集选择器中的选择器之间是紧挨着的，没有东西分隔</p>
+                        <p>2. 交集选择器中如果有标签选择器，标签选择器必须写在最前面</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="cssWeiLeiXuanZeQi">:hover伪类选择器</td>
+                    <td>选中鼠标悬停在元素上的状态，设置样式</td>
+                    <td>选择器:hover { css }</td>
+                    <td>伪类选择器选中的元素的某种状态</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="emmetYuFa">emmet语法</td>
+                    <td>通过简写语法，快速生成代码</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>语法</caption>
+                            <thead>
+                                <th>记忆</th>
+                                <th>示例</th>
+                                <th>效果</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>标签名</td>
+                                    <td>div</td>
+                                    <td>&lt;div&gt; &lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: red;">类选择器</td>
+                                    <td>.red</td>
+                                    <td>&lt;div class="red"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td style="color: red;">id选择器</td>
+                                    <td>#one</td>
+                                    <td>&lt;div id="one"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>交集选择器</td>
+                                    <td>p.red#one</td>
+                                    <td>&lt;p class="red" id="one"&gt;&lt;/p&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>子代选择器</td>
+                                    <td>ul>li</td>
+                                    <td>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>内部文件</td>
+                                    <td>ul>li{我是li内容}</td>
+                                    <td>&lt;ul&gt;&lt;li&gt;我是li内容&lt;/li&gt;&lt;/ul&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>创建多个</td>
+                                    <td>ul>li*3</td>
+                                    <td>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+
+
+        <h4>选择器进阶汇总</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssXuanZeQiJinJieHueiZong">选择器进阶汇总</caption>
+            <thead>
+                <th>选择器</th>
+                <th>作用</th>
+                <th>格式</th>
+                <th>示例</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>后代选择器</td>
+                    <td>找后代</td>
+                    <td>选择器之间通过空格分隔</td>
+                    <td>.father .son {css}</td>
+                </tr>
+                <tr>
+                    <td>子代选择器</td>
+                    <td>找儿子</td>
+                    <td>选择器之间通过 > 分隔</td>
+                    <td>.father > .son {css}</td>
+                </tr>
+                <tr>
+                    <td>并集选择器</td>
+                    <td>找到多类元素</td>
+                    <td>选择器之间通过 . 分隔</td>
+                    <td>div.p.span{css}</td>
+                </tr>
+                <tr>
+                    <td>交集选择器</td>
+                    <td>找同时满足多个选择器的元素</td>
+                    <td>选择器之间紧挨着</td>
+                    <td>p.red {css}</td>
+                </tr>
+                <tr>
+                    <td>hover伪类选择器</td>
+                    <td>选中鼠标悬停时在元素的状态</td>
+                    <td>:hover</td>
+                    <td>a:hover {css}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+        <h4>链接伪类选择器：常用于选中超链接的不同状态</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="lianJieWeiLeiXuanZeQi">链接伪类选择器</caption>
+            <tr>
+                <th>选择器语法</th>
+                <th>功能</th>
+                <th>注意点</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>a:link{}</td>
+                <td>选中a链接未选中的状态</td>
+                <td> 如果需要同时实现以上四种伪类状态效果，需要按照 LVHA 顺序书写<br>
+                    其中 :hover伪类选择器 使用更为频繁，常用于选择各类元素的悬停状态
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>a:visited</td>
+                <td>选中a链接选中后的状态</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>a:hover</td>
+                <td>选中鼠标悬停的状态</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>a:active</td>
+                <td>选中鼠标按下的状态</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>焦点伪类选择器</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="jiaoDianWeiLeiXuanZeQi">焦点伪类选择器</caption>
+            <tr>
+                <th>场景</th>
+                <th>语法</th>
+                <th>效果</th>
+            </tr>
+            <tr>
+                <td>用于选中元素获取焦点时状态，常用于表单控件</td>
+                <td>input<span style="color:red;">:focus</span>{bockground-color:skyblue} </td>
+                <td>表单控件获取焦点时默认会显示外部轮廓线</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>属性选择器:通过元素上的HTML属性来选择元素，常用于选择 input 标签</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="shuXingXuanZeQi">标题</caption>
+            <tr>
+                <th>选择器</th>
+                <th>功能</th>
+                <th>例如</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>E[attr]</td>
+                <td>选择具有attr属性的E元素</td>
+                <td rowspan="5">E[attr="val"]<br>选择具有attr属性并且属性值等于val的E元素</td>
+                <td rowspan="5" style="color: red" ;>标红的才是选择器</td>
+            </tr>
+            <tr>
+                <td>input[type<span style="color:red;">=</span>"text"] { }</td>
+                <td>选中页面中所有的文本框</td>
+            </tr>
+            <tr>
+                <td>[type<span style="color:red;">^=</span>"text"] { }</td>
+                <td>选择type的属性值以text开头的所有元素</td>
+            </tr>
+            <tr>
+                <td>[type<span style="color:red;">$=</span>"text"] { }</td>
+                <td>选择type的属性值以text结束的所有元素</td>
+            </tr>
+            <tr>
+                <td>[type<span style="color:red;">*=</span>"text"] { }</td>
+                <td>选择type的属性值包含text的所有元素</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>结构伪类选择器</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="jieGouWeiLeiXuanZeQi">结构伪类选择器概念</caption>
+            <tr>
+                <th>作用</th>
+                <th>优势</th>
+                <th>场景</th>
+            </tr>
+            <tr>
+                <td>根据元素在HTML中的结构关系查找元素</td>
+                <td>减少对于HTML中类的依赖，有利于保持代码整洁</td>
+                <td>常用于查找某父级选择器中的子元素</td>
+            </tr>
+        </table>
+
+
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>结构伪类选择器</caption>
+            <tr>
+                <th>描述</th>
+                <th>选择器标签</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>匹配父元素中的第一个子元素，并且是E元素</td>
+                <td>E:first-child(){}</td>
+                <td rowspan="4">
+                    <div> n的注意点：
+                        <br>1. n为：0、1、2、3、4、5、6、……
+                        <br>2. 通过n可以组成常见公式<br>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>通过n可以组成常见公式</caption>
+                            <tr>
+                                <th>功能</th>
+                                <th>公式</th>
+                            </tr>
+                            <tr>
+                                <td>偶数</td>
+                                <td>2n、even</td>
+                            </tr>
+                            <tr>
+                                <td>奇数</td>
+                                <td>2n+1、2n-1、odd</td>
+                            </tr>
+                            <tr>
+                                <td>找到前5个</td>
+                                <td>-n+5</td>
+                            </tr>
+                            <tr>
+                                <td>找到从第5个往后</td>
+                                <td>n+5</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>匹配父元素中的最后一个子元素，并且是E元素</td>
+                <td>E:last-child(){}</td>
+            </tr>
+            <tr>
+                <td>匹配父元素中的第n个子元素，并且是E元素</td>
+                <td>E:nth-child(n){}</td>
+            </tr>
+            <tr>
+                <td>匹配父元素中的倒数第n个子元素，并且是E元素</td>
+                <td>E:nth-last--child(n){}</td>
+            </tr>
+            <tr>
+                <td>只在父元素的同类型（E）子元素范围中，匹配第n个</td>
+                <td>E:nth-of-type(n){}</td>
+                <td>:nth-child → 直接在所有孩子中数个数<br> :nth-of-type → 先通过该 类型 找到符合的一堆子元素，然后在这一堆子元素中数个数</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>css选择器大全</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssXuanZeQiDaQuan">css选择器大全</caption>
+            <thead>
+                <th>选择器</th>
+                <th>示例</th>
+                <th>描述</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>.class</td>
+                    <td>.intro</td>
+                    <td>选择所有class="intro"的元素</td>
+                </tr>
+                <tr>
+                    <td>#id</td>
+                    <td>#firstname</td>
+                    <td>选择所有id="firstname"的元素</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>选择所有元素</td>
+                </tr>
+                <tr>
+                    <td>element</td>
+                    <td>p</td>
+                    <td>选择所有p元素</td>
+                </tr>
+                <tr>
+                    <td>element,element</td>
+                    <td>div,p </td>
+                    <td>选择所有div元素和p元素</td>
+                </tr>
+                <tr>
+                    <td>element element</td>
+                    <td>div p</td>
+                    <td>选择div元素内的所有p元素</td>
+                </tr>
+                <tr>
+                    <td>element>element</td>
+                    <td>div>p</td>
+                    <td>选择所有父级是div元素的p元素</td>
+                </tr>
+                <tr>
+                    <td>element+element</td>
+                    <td>div+p</td>
+                    <td>选择所有紧跟在div元素之后的第一个p元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute]</td>
+                    <td>[target]</td>
+                    <td>选择所有带有target属性元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute=value]</td>
+                    <td>[target=-blank]</td>
+                    <td>选择所有使用target="-blank"的元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute~=value]</td>
+                    <td>[title~=flower]</td>
+                    <td>选择标题属性包含单词"flower"的所有元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute|=language]</td>
+                    <td>[lang|=en]</td>
+                    <td>选择 lang 属性等于 en，或者以 en- 为开头的所有元素</td>
+                </tr>
+                <tr>
+                    <td>:link</td>
+                    <td>a:link</td>
+                    <td>选择所有未访问链接</td>
+                </tr>
+                <tr>
+                    <td>:visited</td>
+                    <td> a:visited</td>
+                    <td>选择所有访问过的链接</td>
+                </tr>
+                <tr>
+                    <td>:active </td>
+                    <td>a:active</td>
+                    <td>选择活动链接</td>
+                </tr>
+                <tr>
+                    <td>:hover </td>
+                    <td>a:hover</td>
+                    <td>选择鼠标在链接上面时</td>
+                </tr>
+                <tr>
+                    <td>:focus</td>
+                    <td>input:focus</td>
+                    <td>选择具有焦点的输入元素</td>
+                </tr>
+                <tr>
+                    <td>:first-letter</td>
+                    <td>p:first-letter</td>
+                    <td>选择每一个p元素的第一个字母</td>
+                </tr>
+                <tr>
+                    <td>:first-line</td>
+                    <td>p:first-line</td>
+                    <td>选择每一个p元素的第一行</td>
+                </tr>
+                <tr>
+                    <td>:first-child</td>
+                    <td>p:first-child</td>
+                    <td>指定只有当p元素是其父级的第一个子级的样式。</td>
+                </tr>
+                <tr>
+                    <td>:before</td>
+                    <td>p:before</td>
+                    <td>在每个p元素之前插入内容</td>
+                </tr>
+                <tr>
+                    <td>:after</td>
+                    <td>p:after</td>
+                    <td> 在每个p元素之后插入内容</td>
+                </tr>
+                <tr>
+                    <td>:lang(language)</td>
+                    <td>p:lang(it)</td>
+                    <td>选择一个lang属性的起始值="it"的所有p元素</td>
+                </tr>
+                <tr>
+                    <td>element1~element2</td>
+                    <td>p~ul</td>
+                    <td>选择p元素之后的每一个ul元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute^=value]</td>
+                    <td>a[src^="https"]</td>
+                    <td>选择每一个src属性的值以"https"开头的元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute$=value]</td>
+                    <td>a[src$=".pdf"]</td>
+                    <td>选择每一个src属性的值以".pdf"结尾的元素</td>
+                </tr>
+                <tr>
+                    <td>[attribute*=value]</td>
+                    <td>a[src*="runoob"]</td>
+                    <td>选择每一个src属性的值包含子字符串"runoob"的元素</td>
+                </tr>
+                <tr>
+                    <td>:first-of-type</td>
+                    <td>p:first-of-type</td>
+                    <td>选择每个p元素是其父级的第一个p元素</td>
+                </tr>
+                <tr>
+                    <td>:last-of-type</td>
+                    <td>p:last-of-type</td>
+                    <td>选择每个p元素是其父级的最后一个p元素</td>
+                </tr>
+                <tr>
+                    <td>:only-of-type</td>
+                    <td>p:only-of-type</td>
+                    <td>选择每个p元素是其父级的唯一p元素</td>
+                </tr>
+                <tr>
+                    <td>:only-child</td>
+                    <td>p:only-child</td>
+                    <td>选择每个p元素是其父级的唯一子元素</td>
+                </tr>
+                <tr>
+                    <td>:nth-child(n)</td>
+                    <td>p:nth-child(2)</td>
+                    <td>选择每个p元素是其父级的第二个子元素</td>
+                </tr>
+                <tr>
+                    <td>:nth-last-child(n)</td>
+                    <td>p:nth-last-child(2)</td>
+                    <td>选择每个p元素的是其父级的第二个子元素，从最后一个子项计数</td>
+                </tr>
+                <tr>
+                    <td>:nth-of-type(n)</td>
+                    <td>p:nth-of-type(2)</td>
+                    <td>选择每个p元素是其父级的第二个p元素</td>
+                </tr>
+                <tr>
+                    <td>:nth-last-of-type(n)</td>
+                    <td>p:nth-last-of-type(2)</td>
+                    <td>选择每个p元素的是其父级的第二个p元素，从最后一个子项计数</td>
+                </tr>
+                <tr>
+                    <td>:last-child</td>
+                    <td>p:last-child</td>
+                    <td>选择每个p元素是其父级的最后一个子级。</td>
+                </tr>
+                <tr>
+                    <td>:root</td>
+                    <td>:root</td>
+                    <td>选择文档的根元素</td>
+                </tr>
+                <tr>
+                    <td>:empty</td>
+                    <td>p:empty</td>
+                    <td>选择每个没有任何子级的p元素（包括文本节点） </td>
+                </tr>
+                <tr>
+                    <td>:target</td>
+                    <td>#news:target</td>
+                    <td>选择当前活动的#news元素（包含该锚名称的点击的URL）</td>
+                </tr>
+                <tr>
+                    <td>:enabled</td>
+                    <td>input:enabled</td>
+                    <td>选择每一个已启用的输入元素</td>
+                </tr>
+                <tr>
+                    <td>:disabled</td>
+                    <td>input:disabled</td>
+                    <td>选择每一个禁用的输入元素</td>
+                </tr>
+                <tr>
+                    <td>:checked</td>
+                    <td>input:checked</td>
+                    <td>选择每个选中的输入元素</td>
+                </tr>
+                <tr>
+                    <td>:not(selector)</td>
+                    <td>:not(p)</td>
+                    <td>选择每个并非p元素的元素</td>
+                </tr>
+                <tr>
+                    <td>::selection</td>
+                    <td>::selection</td>
+                    <td>匹配元素中被用户选中或处于高亮状态的部分</td>
+                </tr>
+                <tr>
+                    <td>:out-of-range </td>
+                    <td>:out-of-range</td>
+                    <td>匹配值在指定区间之外的input元素</td>
+                </tr>
+                <tr>
+                    <td>:in-range</td>
+                    <td>:in-range</td>
+                    <td>匹配值在指定区间之内的input元素</td>
+                </tr>
+                <tr>
+                    <td>:read-write</td>
+                    <td>:read-write</td>
+                    <td>用于匹配可读及可写的元素</td>
+                </tr>
+                <tr>
+                    <td>:read-only</td>
+                    <td>:read-only</td>
+                    <td>用于匹配设置 "readonly"（只读） 属性的元素</td>
+                </tr>
+                <tr>
+                    <td>:optional</td>
+                    <td>:optional</td>
+                    <td>用于匹配可选的输入元素</td>
+                </tr>
+                <tr>
+                    <td>:required</td>
+                    <td>:required</td>
+                    <td>用于匹配设置了 "required" 属性的元素</td>
+                </tr>
+                <tr>
+                    <td>:valid</td>
+                    <td>:valid</td>
+                    <td>用于匹配输入值为合法的元素</td>
+                </tr>
+                <tr>
+                    <td>:invalid</td>
+                    <td>:invalid</td>
+                    <td>用于匹配输入值为非法的元素</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+        <h4>css类选择器命名规则参考表</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="leiXuanZeQiMingMingGueiZe">css类选择器命名规则参考表</caption>
+            <thead>
+                <th>CSS样式命名</th>
+                <th>说明</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#wrapper</td>
+                    <td>页面外围控制整体布局宽度</td>
+                </tr>
+                <tr>
+                    <td>#container或#content</td>
+                    <td>容器,用于最外层</td>
+                </tr>
+                <tr>
+                    <td>#layout </td>
+                    <td>布局</td>
+                </tr>
+                <tr>
+                    <td>#head, #header</td>
+                    <td>页头部分</td>
+                </tr>
+                <tr>
+                    <td>#foot, #footer</td>
+                    <td>页脚部分</td>
+                </tr>
+                <tr>
+                    <td>#nav</td>
+                    <td>主导航</td>
+                </tr>
+                <tr>
+                    <td>#subnav</td>
+                    <td>二级导航</td>
+                </tr>
+                <tr>
+                    <td>#menu</td>
+                    <td>菜单</td>
+                </tr>
+                <tr>
+                    <td>#submenu</td>
+                    <td>子菜单</td>
+                </tr>
+                <tr>
+                    <td>#sideBar</td>
+                    <td>侧栏</td>
+                </tr>
+                <tr>
+                    <td>#sidebar_a, #sidebar_b</td>
+                    <td>左边栏或右边栏</td>
+                </tr>
+                <tr>
+                    <td>#main</td>
+                    <td>页面主体</td>
+                </tr>
+                <tr>
+                    <td>#tag</td>
+                    <td>标签</td>
+                </tr>
+                <tr>
+                    <td>#msg #message</td>
+                    <td>提示信息</td>
+                </tr>
+                <tr>
+                    <td>#tips</td>
+                    <td>小技巧</td>
+                </tr>
+                <tr>
+                    <td>#vote</td>
+                    <td>投票</td>
+                </tr>
+                <tr>
+                    <td>#friendlink</td>
+                    <td>友情连接</td>
+                </tr>
+                <tr>
+                    <td>#title</td>
+                    <td>标题</td>
+                </tr>
+                <tr>
+                    <td>#summary</td>
+                    <td>摘要</td>
+                </tr>
+                <tr>
+                    <td>#loginbar</td>
+                    <td>登录条</td>
+                </tr>
+                <tr>
+                    <td>#searchInput</td>
+                    <td>搜索输入框</td>
+                </tr>
+                <tr>
+                    <td>#hot</td>
+                    <td>热门热点</td>
+                </tr>
+                <tr>
+                    <td>#search</td>
+                    <td>搜索</td>
+                </tr>
+                <tr>
+                    <td>#search_output</td>
+                    <td>搜索输出和搜索结果相似</td>
+                </tr>
+                <tr>
+                    <td>#searchBar</td>
+                    <td>搜索条</td>
+                </tr>
+                <tr>
+                    <td>#search_results</td>
+                    <td>搜索结果</td>
+                </tr>
+                <tr>
+                    <td>#copyright</td>
+                    <td>版权信息</td>
+                </tr>
+                <tr>
+                    <td>#branding</td>
+                    <td>商标</td>
+                </tr>
+                <tr>
+                    <td>#logo</td>
+                    <td>网站LOGO标志</td>
+                </tr>
+                <tr>
+                    <td>#siteinfo</td>
+                    <td>网站信息</td>
+                </tr>
+                <tr>
+                    <td>#siteinfoLegal</td>
+                    <td>法律声明</td>
+                </tr>
+                <tr>
+                    <td>#siteinfoCredits</td>
+                    <td>信誉</td>
+                </tr>
+                <tr>
+                    <td>#joinus </td>
+                    <td>加入我们</td>
+                </tr>
+                <tr>
+                    <td>#partner</td>
+                    <td>合作伙伴</td>
+                </tr>
+                <tr>
+                    <td>#service</td>
+                    <td>服务</td>
+                </tr>
+                <tr>
+                    <td>#regsiter</td>
+                    <td>注册</td>
+                </tr>
+                <tr>
+                    <td>#arr/arrow</td>
+                    <td>箭头</td>
+                </tr>
+                <tr>
+                    <td>#guild </td>
+                    <td>指南</td>
+                </tr>
+                <tr>
+                    <td>#sitemap</td>
+                    <td>网站地图</td>
+                </tr>
+                <tr>
+                    <td>#list</td>
+                    <td>列表</td>
+                </tr>
+                <tr>
+                    <td>#homepage</td>
+                    <td>首页</td>
+                </tr>
+                <tr>
+                    <td>#subpage</td>
+                    <td>二级页面子页面</td>
+                </tr>
+                <tr>
+                    <td>#tool, #toolbar </td>
+                    <td>工具条</td>
+                </tr>
+                <tr>
+                    <td>#drop</td>
+                    <td>下拉</td>
+                </tr>
+                <tr>
+                    <td>#dorpmenu</td>
+                    <td>下拉菜单</td>
+                </tr>
+                <tr>
+                    <td>#status </td>
+                    <td>状态</td>
+                </tr>
+                <tr>
+                    <td>#scroll </td>
+                    <td>滚动</td>
+                </tr>
+                <tr>
+                    <td>.tab</td>
+                    <td>标签页</td>
+                </tr>
+                <tr>
+                    <td>.left .right .center</td>
+                    <td>居左、中、右</td>
+                </tr>
+                <tr>
+                    <td>.news</td>
+                    <td>新闻</td>
+                </tr>
+                <tr>
+                    <td>.download</td>
+                    <td>下载</td>
+                </tr>
+                <tr>
+                    <td>.banner</td>
+                    <td> 广告条(顶部广告条)</td>
+                </tr>
+                <tr>
+                    <td>.products</td>
+                    <td>产品</td>
+                </tr>
+                <tr>
+                    <td>.products_prices</td>
+                    <td>产品价格</td>
+                </tr>
+                <tr>
+                    <td>.products_description</td>
+                    <td>产品描述</td>
+                </tr>
+                <tr>
+                    <td>.products_review</td>
+                    <td>产品评论</td>
+                </tr>
+                <tr>
+                    <td>.editor_review</td>
+                    <td>编辑评论</td>
+                </tr>
+                <tr>
+                    <td>.news_release</td>
+                    <td>最新产品</td>
+                </tr>
+                <tr>
+                    <td>.publisher</td>
+                    <td>生产商</td>
+                </tr>
+                <tr>
+                    <td>.screenshot</td>
+                    <td>缩略图</td>
+                </tr>
+                <tr>
+                    <td>.faqs</td>
+                    <td>常见问题</td>
+                </tr>
+                <tr>
+                    <td>.keyword</td>
+                    <td>关键词</td>
+                </tr>
+                <tr>
+                    <td>.blog</td>
+                    <td>博客</td>
+                </tr>
+                <tr>
+                    <td>.forum</td>
+                    <td>论坛</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+
+
+        <h4>CSS文件命名参考规则</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssWenJianMingMing">css文件命名规则</caption>
+            <thead>
+                <th>CSS文件命名</th>
+                <th>说明</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>master.css,style.css</td>
+                    <td>主要的</td>
+                </tr>
+                <tr>
+                    <td>module.css</td>
+                    <td>模块</td>
+                </tr>
+                <tr>
+                    <td>base.css</td>
+                    <td>本共用基</td>
+                </tr>
+                <tr>
+                    <td>layout.css</td>
+                    <td>布局，版面</td>
+                </tr>
+                <tr>
+                    <td>themes.css</td>
+                    <td>主题</td>
+                </tr>
+                <tr>
+                    <td>columns.css</td>
+                    <td>专栏</td>
+                </tr>
+                <tr>
+                    <td>font.css</td>
+                    <td>文字、字体</td>
+                </tr>
+                <tr>
+                    <td>forms.css</td>
+                    <td>表单</td>
+                </tr>
+                <tr>
+                    <td>mend.css</td>
+                    <td>补丁</td>
+                </tr>
+                <tr>
+                    <td>print.css</td>
+                    <td>打印</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+
+
+
+        <h4>文字和文本样式</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="WenZiWenBenYangShi">文字和文本样式</caption>
+            <thead>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="ziTiDaXiao">字体大小</td>
+                    <td>font-size</td>
+                    <td>值：数字 + px，谷歌浏览器默认文字大小是16px，单位需要设置，否则无效 </td>
+                </tr>
+                <tr>
+                    <td id="ziTiCuXI">字体粗细</td>
+                    <td>font-weight</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>取值</caption>
+                            <thead>
+                                <th>描述</th>
+                                <th>标签</th>
+                                <th>纯数字</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>正常</td>
+                                    <td>normmal</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td>加粗</td>
+                                    <td>bold</td>
+                                    <td>700</td>
+                                </tr>
+                                不是所有字体都提供了九种粗细，因此部分取值页面中无变化, 实际开发中以：正常、加粗两种取值使用最多。
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="ziTiqingXie">字体样式（是否倾斜）</td>
+                    <td>font-style</td>
+                    <td>正常（默认值）：normal<br>倾斜：italic</td>
+                </tr>
+                <tr>
+                    <td id="ziTiZu">字体</td>
+                    <td>font-family</td>
+                    <td><span style="color: red;">常见取值：具体字体1,具体字体2,具体字体3,具体字体4,...,字体系列</span><br>
+                        注意点：<br>
+                        1. 如果字体名称中存在多个单词，推荐使用引号包裹<br>
+                        2. 最后一项字体系列不需要引号包裹<br>
+                        3. 网页开发时，尽量使用系统常见自带字体，保证不同用户浏览网页都可以正确显示<br><br>
+                        渲染规则：<br>
+                        1. 从左往右按照顺序查找，如果电脑中未安装该字体，则显示下一个字体<br>
+                        2. 如果都不支持，此时会根据操作系统，显示最后字体系列的默认字体
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>样式的层叠问题</td>
+                    <td>无</td>
+                    <td>如果给同一个标签设置了相同的属性，此时样式会层叠（覆盖），写在最下面的会生效</td>
+                </tr>
+                <tr>
+                    <td>体font相关属性的连写</td>
+                    <td>➢ 属性名：font (复合属性)<br>
+                        ➢ 取值：<br>
+                        &nbsp; &nbsp; • font : style weight size family;<br>
+                        ➢ 省略要求：<br>
+                        &nbsp;&nbsp;• 只能省略前两个，如果省略了相当于设置了默认值
+                    </td>
+                    <td>注意点：如果需要同时设置单独和连写形式， 要么把单独的样式写在连写的下面，要么把单独的样式写在连写的里面</td>
+                </tr>
+                <tr>
+                    <td id="wenBenSuoJin">文本缩进<br>（首行缩进）</td>
+                    <td>text-indent</td>
+                    <td>取值： • 数字+px, • 数字+em（推荐：1em = 当前标签的font-size的大小）</td>
+                </tr>
+                <tr>
+                    <td id="wenBenShueiPingDueiQi">文本水平对齐方式</td>
+                    <td style="color: red;" title="重点">text-align</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>取值</caption>
+                            <thead>
+                                <th>属性值</th>
+                                <th>效果</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>左对齐</td>
+                                    <td>left</td>
+                                </tr>
+                                <tr>
+                                    <td>居中对齐</td>
+                                    <td>center</td>
+                                </tr>
+                                <tr>
+                                    <td>右对齐</td>
+                                    <td>right</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>如果需要让文本水平居中，text-align属性给文本所在标签（文本的父元素）设置</div>
+                        <div style="color: red;">➢ text-align : center 能让哪些元素水平居中？<br>
+                            1. 文本
+                            2. span标签、a标签
+                            3. input标签、img标签<br>
+                            ➢ 注意点：
+                            1. 如果需要让以上元素水平居中， text-align : center 需要给以上元素的 父元素设置
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="wenBenXiuShi">文本修饰</td>
+                    <td>text-decoration</td>
+                    <td>
+                        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                            <caption>取值</caption>
+                            <thead>
+                                <th>效果</th>
+                                <th>属性值</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="xiaHuaXian2">下划线（常用）</td>
+                                    <td>underline</td>
+                                </tr>
+                                <tr>
+                                    <td id="shanChuXian2">删除线（不常用）</td>
+                                    <td>line-through</td>
+                                </tr>
+                                <tr>
+                                    <td id="shangHuaXian2">上划线（几乎不用）</td>
+                                    <td>overline</td>
+                                </tr>
+                                <tr>
+                                    <td id="wuXiauShiXian" style="color:red;">无装饰线（常用）<br>(清除默认样式)</td>
+                                    <td>none</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        开发中会使用 text-decoration : none ; 清除a标签默认的下划线
+                    </td>
+                </tr>
+                <tr>
+                    <td id="hangGao">行高</td>
+                    <td>line-height<br>（ 取值：• 数字+px<br>• 倍数（当前标签font-size的倍数））<br><br><span
+                            style="color: red;">line-height : 1 可以取消上下间距</span></td>
+                    <td>➢ 应用：<br>
+                        1. 让单行文本垂直居中可以设置 line-height : 文字父元素高度<br>
+                        <span style="color: red;">2. 网页精准布局时，会设置 line-height : 1 可以取消上下间距</span><br>
+                        ➢ 行高与font连写的注意点：<br>
+                        • 如果同时设置了行高和font连写，注意覆盖问题<br>
+                        • font : style weight size/line-height family ;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <h4 id="box-center">（大盒子）水平居中</h4>
+            <p>➢ 如果需要让div、p、h（大盒子）水平居中？</p>
+            <p>• 可以通过margin : 0 auto ; 实现</p>
+            <p>➢ 注意点：</p>
+            <p> 1. 如果需要让 div、p、h（大盒子） 水平居中，直接给 当前元素本身 设置即可</p>
+            <p> 2. margin：0 auto 一般针对于固定宽度的盒子，如果大盒子没有设置宽度，此时会默认占满父元素的宽度</p>
+        </div>
+        <br><br><br>
+
+
+        <h4>背景相关属性</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="BeiJingXiangGuanShuXing">背景相关属性</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>取值</th>
+                <th>属性</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>背景</td>
+                <td>background</td>
+                <td>url()</td>
+                <td rowspan="3">
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>背景相关属性</caption>
+                        <tr>
+                            <th>标签</th>
+                            <th>取值</th>
+                            <th>效果</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">background-repeat</td>
+                            <td>repeat</td>
+                            <td>(默认值)水平和垂直方向都平铺</td>
+                        </tr>
+                        <tr>
+                            <td>no-repeat</td>
+                            <td>不平铺</td>
+                        </tr>
+                        <tr>
+                            <td>repeat-x</td>
+                            <td>沿水平方向（x轴）平铺</td>
+                        </tr>
+                        <tr>
+                            <td>repeat-y</td>
+                            <td>沿垂直方向（y轴）平铺</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>背景位置相关属性</caption>
+                        <tr>
+                            <th>标签</th>
+                            <th>取值</th>
+                        </tr>
+                        <tr>
+                            <td>background-position</td>
+                            <td>
+                                <img src="./images/BeiJingWeiZhi.png" alt="" width="400px">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>背景颜色</td>
+                <td>background-color</td>
+                <td>颜色取值：关键字、rgb表示法、rgba表示法、十六进制……</td>
+                <td>
+                    <p id="beiJingTouMing" style="color: red;">背景颜色默认值是透明：transparent或rgba(0,0,0,0) </p>
+                    <p><span style="color: red;">第4个0是图片的透明度，取值（0-1）</span></p>
+                    <p>背景颜色不会影响盒子大小，并且还能看清盒子的大小和位置，一般在布局中会习惯先给盒子设置背景颜色</p>
+                </td>
+            </tr>
+            <tr>
+                <td>背景图片</td>
+                <td>background-image</td>
+                <td></td>
+                <td>
+                    <p>背景图片中url中可以省略引号</p>
+                    <p>背景图片默认是在水平和垂直方向平铺的</p>
+                    <p style="color: red;">背景图片仅仅是指给盒子起到装饰效果，类似于背景颜色，是不能撑开盒子的</p>
+                </td>
+            </tr>
+            <tr>
+                <td>背景图片大小</td>
+                <td>background-size</td>
+                <td></td>
+                <td>
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>背景图片大小</caption>
+                        <tr>
+                            <th>取值</th>
+                            <th>场景</th>
+                        </tr>
+                        <tr>
+                            <td>数字+px</td>
+                            <td>简单方便，常用</td>
+                        </tr>
+                        <tr>
+                            <td>百分比</td>
+                            <td>相对于当前盒子自身的宽高百分比</td>
+                        </tr>
+                        <tr>
+                            <td>contain</td>
+                            <td>包含，将背景图片等比例缩放，直到不会超出盒子的最大</td>
+                        </tr>
+                        <tr>
+                            <td>cover</td>
+                            <td>覆盖，将背景图片等比例缩放，直到刚好填满整个盒子没有空白</td>
+                        </tr>
+                    </table>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>背景渐变</td>
+                <td>linear-gradient</td>
+                <td>linear-gradient(to 方向（也可以时角度）,颜色1,颜色2);</td>
+                <td></td>
+            </tr>
+        </table>
+
+
+        <br>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>背景相关属性的连写形式</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>属性值</th>
+                <th>书写顺序</th>
+                <th>省略问题</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td>背景相关属性的连写形式</td>
+                <td>background</td>
+                <td>单个属性值的合写，取值之间以空格隔开</td>
+                <td>background：color image repeat position</td>
+                <td>
+                    <p>可以按照需求省略</p>
+                    <p>特殊情况：在pc端，如果盒子大小和背景图片大小一样，此时可以直接写 background：url()</p>
+                </td>
+                <td>
+                    <p>如果需要设置单独的样式和连写</p>
+                    <p>要么把单独的样式写在连写的下面</p>
+                    <p>要么把单独的样式写在连写的里</p>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>img标签和背景图片的区别</caption>
+            <tr>
+                <th>
+                    <p>img标签是一个标签，不设置宽高默认会以原尺寸显示</p>
+                </th>
+                <th>
+                    <p>div标签 + 背景图片</p>
+                    <p>需要设置div的宽高，因为背景图片只是装饰的CSS样式，不能撑开div标签</p>
+                </th>
+            </tr>
+        </table>
+        <div>
+            如果不给body设置高度，那么默认设置颜色会覆盖整个可视区
+            <br>盒子的默认颜色为透明色
+            rgba(0,0,0.3)黑色半透明<br>
+            rgba(255,255,255，.3)白色半透明
+            <span>transparent:背景透明</span>
+        </div>
+        <br><br><br>
+
+
+        <h4>元素显示模式</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="yuanSuXianShiMoShi">元素显示模式</caption>
+            <tr>
+                <th>元素名称</th>
+                <th>显示特点</th>
+                <th>代表标签</th>
+            </tr>
+            <tr>
+                <td>块级元素</td>
+                <td>
+                    <p> 1. 独占一行（一行只能显示一个）</p>
+                    <p>2. 宽度默认是父元素的宽度，高度默认由内容撑开</p>
+                    <p>3. 可以设置宽高</p>
+                </td>
+                <td>div、p、h系列、ul、li、dl、dt、dd、form、header、nav、footer……</td>
+            </tr>
+            <tr>
+                <td>行内元素</td>
+                <td>
+                    <p>1. 一行可以显示多个</p>
+                    <p>2. 宽度和高度默认由内容撑开</p>
+                    <p>3. 不可以设置宽高</p>
+                </td>
+                <td>a、span 、b、u、i、s、strong、ins、em、del……</td>
+            </tr>
+            <tr>
+                <td>行内块级元素</td>
+                <td>
+                    <p>1. 一行可以显示多个</p>
+                    <p>2. 可以设置宽高</p>
+                </td>
+                <td>
+                    <p>input、textarea、button、select……</p>
+                    <p>特殊情况：img标签有行内块元素特点，但是Chrome调试工具中显示结果是inline</p>
+                </td>
+            </tr>
+            <tr>
+                <td id="yuanSuXianShiMoShiZhuanHuan">元素显示模式转换</td>
+                <td colspan="2">
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <!-- <caption>表格标题</caption> -->
+                        <tr>
+                            <th>属性</th>
+                            <th>效果</th>
+                            <th>使用频率</th>
+                        </tr>
+                        <tr>
+                            <td>display:block</td>
+                            <td>转化成块级元素</td>
+                            <td>较多</td>
+                        </tr>
+                        <tr>
+                            <td>display:inline-block</td>
+                            <td>转化成行内块元素</td>
+                            <td>较多</td>
+                        </tr>
+                        <tr>
+                            <td>display：inline</td>
+                            <td>转换为行内元素</td>
+                            <td>较少</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <div id="htmlQianTaoGueiFan">
+            <p>HTML嵌套规范注意</p>
+            <p> 1. 块级元素一般作为大容器，可以嵌套：文本、块级元素、行内元素、行内块元素等等……</p>
+            <p>➢ 但是：p标签中不要嵌套div、p、h等块级元素</p>
+            <p style="color: red;">2. a标签内部可以嵌套任意元素</p>
+            <p style="color: red;">➢ 但是：a标签不能嵌套a标签</p>
+        </div>
+
+        <div>
+            <h3 id="JuZhongFangFanZongJie">居中方法总结</h3>
+            <img src="./images/juZhong.png" alt="" width="400px">
+        </div>
+
+
+
+
+        <h4>css特性</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssTeXing">css特性</caption>
+            <tr>
+                <th>css特性</th>
+                <th>介绍</th>
+                <th>作用</th>
+                <th>扩展</th>
+            </tr>
+            <tr>
+                <td>继承性</td>
+                <td>
+                    <p>➢ 特性：子元素有默认继承父元素样式的特点（子承父业）</p>
+                    <p>➢ 可以继承的常见属性(文字控制属性都可以继承)</p>
+                    <p>1. color</p>
+                    <p>2. font-style、font-weight、font-size、font-family</p>
+                    <p>3. text-indent、text-align</p>
+                    <p>4. line-height</p>
+                    <p>5. ……</p>
+                    <p>注意：可以通过调试工具判断样式是否可以继承</p>
+                </td>
+                <td>
+                    <p>➢ 好处：可以在一定程度上减少代码</p>
+                    <p>➢ 常见应用场景：</p>
+                    <p>1. 可以直接给ul设置 list-style:none 属性，从而去除列表默认的小圆点样式</p>
+                    <p>2. 直接给body标签设置统一的font-size，从而统一不同浏览器默认文字大小</p>
+                </td>
+                <td>
+                    <p>继承失效的特殊情况</p>
+                    <p>➢ 如果元素有浏览器默认样式，此时继承性依然存在，但是优先显示浏览器的默认样式</p>
+                    <p>1. a标签的color会继承失效</p>
+                    <p>• 其实color属性继承下来了，但是被浏览器默认设置的样式给覆盖掉了</p>
+                    <p>2. h系列标签的font-size会继承失效</p>
+                    <p>• 其实font-size属性继承下来了，但是被浏览器默认设置的样式给覆盖掉了</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td>层叠性</td>
+                <td>
+                    <p>➢ 特性：</p>
+                    <p>1. 给同一个标签设置不同的样式 → 此时样式会层叠叠加 → 会共同作用在标签上</p>
+                    <p>2. 给同一个标签设置相同的样式 → 此时样式会层叠覆盖 → 最终写在最后的样式会生效</p>
+                    <p>➢ 注意点：</p>
+                    <p>1. 当样式冲突时，只有当选择器优先级相同时，才能通过层叠性判断结果</p>
+                </td>
+                <td>
+                    <p>如果给同一个标签设置了相同的属性，此时样式会？</p>
+                    <p>• 会层叠覆盖，写在最后的会生效</p>
+                    <p>➢ 如果给同一个标签设置了不同的样式，此时样式会？</p>
+                    <p>• 会层叠叠加，共同作用在标签上</p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>优先级</td>
+                <td colspan="3"><img src="./images/quanZhong.png" alt="" width="400px"></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>css三大特性：层叠行、继承性、优先级</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="cssThreeTeXing">css三大特性</caption>
+            <tr>
+                <th>特性</th>
+                <th>目的</th>
+                <th>描述</th>
+                <th>原则</th>
+            </tr>
+            <tr>
+                <td>层叠行</td>
+                <td>解决样式冲突问题</td>
+                <td>相同的选择器设置相同的样式时，一个样式会<span style="color: red;">覆盖（层叠）</span>另一个冲突的样式，层叠行主要解决样式冲突问题<p>
+                        口诀：长江后浪推前浪，前浪死在沙滩上</p>
+                </td>
+                <td><span style="color: red;">就近原则</span>，那个样式离结构进，就执行那个样式</td>
+            </tr>
+            <tr>
+                <td>继承性</td>
+                <td>可以简化代码，降低css的复杂程度</td>
+                <td>子标签会继承父标签的某些样式，如文本颜色和字号，简单理解就是<span
+                        style="color: red;">子承父业</span><br><br>子元素可以继承父元素的样式（text-、font-、line-、这些元素开头的可以继承，以及color属性）<br><br>口诀：龙生龙，凤生风，老鼠的孩子会打洞
+                </td>
+                <td>行高的继承性：<br>如果子标签这样写font:12px/1.5 Microsoft YaHei
+                    ，那么子元素的行高会是父元素行高的1.5倍<br><br>注意12px:文字大小。1.5是行高的1.5倍，如果是数字加单位就是行高</td>
+            </tr>
+            <tr>
+                <td>优先集</td>
+                <td>当同一个元素指定多个选择器时，就会有优先级的产生<br>1.选择器相同，则执行层叠行。<br>2.选择器不同，则根据选择器权重执行</td>
+                <td>
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>选择器权重</caption>
+                        <tr>
+                            <th>选择器</th>
+                            <th>选择器权重</th>
+                        </tr>
+                        <tr>
+                            <td>继承 或*</td>
+                            <td>0.0.0.0</td>
+                        </tr>
+                        <tr>
+                            <td>元素选择器</td>
+                            <td>0.0.0.1</td>
+                        </tr>
+                        <tr>
+                            <td>类选择器，伪类选择器</td>
+                            <td>0.0.1.0</td>
+                        </tr>
+                        <tr>
+                            <td>ID选择器</td>
+                            <td>0.1.0.0</td>
+                        </tr>
+                        <tr>
+                            <td>行内样式 style=""</td>
+                            <td>1.0.0.0</td>
+                        </tr>
+                        <tr>
+                            <td>!important<br><br><br>(在样式后面加上!important，则优先执行这个样式)<br><br>如：color：red!important
+                                ,则最优先执行这个样式</td>
+                            <td>无穷大</td>
+                        </tr>
+                    </table>
+                    <span>复合选择器会有权重叠加的问题，但是不会有进位的问题</span>
+                </td>
+                <td>注意：1.权重是有4组数字组成，但是不会有进位，<br>2.可以理解为类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推<br><br><span
+                        style="color: red;">继承的权重是0</span><br><br>a标签浏览器单独指定了一个样式</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <div>
+            <h4 id="chroomTiaoShi">chroom调试工具</h4>
+            <img src="./images/chroomTiaoShi.png" alt="" width="400px">
+        </div>
+        <br><br><br>
+
+        <h4>盒子模型(Box Model)</h4>
+        <div>
+            盒子的概念:<br>
+            1. 页面中的每一个标签，都可看做是一个 “盒子”，通过盒子的视角更方便的进行布局<br>
+            2. 浏览器在渲染（显示）网页时，会将网页中的元素看做是一个个的矩形区域，我们也形象的称之为 盒子
+        </div>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="HeZiMoXing">盒子模型(Box Model)组成</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td id="bianKuang">边框</td>
+                <td>border</td>
+                <td rowspan="5">
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>边框属性</caption>
+                        <tr>
+                            <th>作用</th>
+                            <th>属性</th>
+                            <th>备注</th>
+                        </tr>
+                        <tr>
+                            <td>定义边框粗细(单位px)</td>
+                            <td>border-width</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>边框的样式</td>
+                            <td>border-style</td>
+                            <td>
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <caption>边框样式属性</caption>
+                                    <tr>
+                                        <th>描述</th>
+                                        <th>标签</th>
+                                    </tr>
+                                    <tr>
+                                        <td>实线边框</td>
+                                        <td>solid</td>
+                                    </tr>
+                                    <tr>
+                                        <td>虚线边框</td>
+                                        <td>dashed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>点线边框</td>
+                                        <td>dotted</td>
+                                    </tr>
+                                </table>
+                                <div>还有其他边框样式，用处不多</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>边框颜色</td>
+                            <td>border-color</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div><span style="color: red;">边框的复合型写法：顺序：边框粗细、边框样式、边框颜色</span><br>如：border:5px solid red</div>
+                    <br>
+                    <div style="color: red;">边框连写或单独设置单条边框样式时一定要注意边框的层叠行</div>
+                    <div style="color: red;">边框会影响盒子的实际大小<br>注意点： ① 设置width和height是内容的宽高！② 设置border会撑大盒子！</div>
+                </td>
+            </tr>
+            <tr>
+                <td>上边框</td>
+                <td>border-top</td>
+            </tr>
+            <tr>
+                <td>下边框</td>
+                <td>border-bottom</td>
+            </tr>
+            <tr>
+                <td>左边框</td>
+                <td>border-left</td>
+            </tr>
+            <tr>
+                <td>右边框</td>
+                <td>border-right</td>
+            </tr>
+            <tr>
+                <td id="quChuMoRenBianKuang">去除默认边框</td>
+                <td>border:none</td>
+            </tr>
+            <tr id="ziDongNeiJian3" style="color: red;">
+                <td> box-sizing : border-box ; </td>
+                <td>盒子自动内减</td>
+                <td>浏览器会自动计算多余大小，自动在内容中减去</td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>content</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="heZiNeiBianJu">内边距</td>
+                <td>padding</td>
+                <td>
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>内边距</caption>
+                        <tr>
+                            <th>属性</th>
+                            <th>属性值</th>
+                            <th>连写（简写）属性</th>
+                        </tr>
+                        <tr>
+                            <td>padding-left</td>
+                            <td>左内边距</td>
+                            <td rowspan="4">
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <caption>padding连写</caption>
+                                    <tr>
+                                        <th>值的个数</th>
+                                        <th>表达意思</th>
+                                    </tr>
+                                    <tr>
+                                        <td>padding:5px;</td>
+                                        <td>1个值，上下左右都有5像素内边距</td>
+                                    </tr>
+                                    <tr>
+                                        <td>padding:5px 10px;</td>
+                                        <td>2个值，上下内边距是5像素，左右内边距是10像素</td>
+                                    </tr>
+                                    <tr>
+                                        <td>padding:5px 10px 15px;</td>
+                                        <td>3个值，上内边距是5像素， 左右内边距是10像素，下内边距是15像素</td>
+                                    </tr>
+                                    <tr>
+                                        <td>padding:5px 10px 15px 20px;</td>
+                                        <td>4个值，上5，右10，下15，左20。（顺时针方向）</td>
+                                    </tr>
+                                </table>
+                                <div style="color: red;">内边距会影响盒子的实际大小<br>注意点： ① 设置width和height是内容的宽高！② 设置border会撑大盒子！
+                                </div>
+                                <div style="color: red;">➢ 不会撑大盒子的特殊情况（块级元素）<br>1. 如果子盒子没有设置宽度，此时宽度默认是父盒子的宽度<br>2.
+                                    此时给子盒子设置左右的padding或者左右的border，此时不会撑大子盒子</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>padding-right</td>
+                            <td>右内边距</td>
+                        </tr>
+                        <tr>
+                            <td>padding-top</td>
+                            <td>上内边距</td>
+                        </tr>
+                        <tr>
+                            <td>padding-bottom</td>
+                            <td>下内边距</td>
+                        </tr>
+                        <tr id="ziDongNeiJian2" style="color: red;">
+                            <td> box-sizing : border-box ; </td>
+                            <td>盒子自动内减</td>
+                            <td>浏览器会自动计算多余大小，自动在内容中减去</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td id="heZiWaiBianJu">外边距</td>
+                <td>margin</td>
+                <td>
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>外边距</caption>
+                        <tr>
+                            <th>属性</th>
+                            <th>属性值</th>
+                            <th>连写（简写）属性</th>
+                        </tr>
+                        <tr>
+                            <td>margin-left</td>
+                            <td>左外边距</td>
+                            <td rowspan="4">
+                                <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                                    <caption>margin连写</caption>
+                                    <tr>
+                                        <th>值的个数</th>
+                                        <th>表达意思</th>
+                                    </tr>
+                                    <tr>
+                                        <td>margin:5px;</td>
+                                        <td>1个值，上下左右都有5像素外边距</td>
+                                    </tr>
+                                    <tr>
+                                        <td>margin:5px 10px;</td>
+                                        <td>2个值，上下外边距是5像素，左右外边距是10像素</td>
+                                    </tr>
+                                    <tr>
+                                        <td>margin:5px 10px 15px;</td>
+                                        <td>3个值，上外边距是5像素， 左右外边距是10像素，下外边距是15像素</td>
+                                    </tr>
+                                    <tr>
+                                        <td>margin:5px 10px 15px 20px;</td>
+                                        <td>4个值，上5，右10，下15，左20。（顺时针方向）</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>margin-right</td>
+                            <td>右外边距</td>
+                        </tr>
+                        <tr>
+                            <td>margin-top</td>
+                            <td>上外边距</td>
+                        </tr>
+                        <tr>
+                            <td>margin-bottom</td>
+                            <td>下外边距</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div id="ziDongNeiJian" style="color: red;">
+            自动内减：给盒子设置属性 box-sizing : border-box ; <br>优点：浏览器会自动计算多余大小，自动在内容中减去
+        </div>
+
+
+
+        <h4>盒子模型注意事项（margin、padding）</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="HeZiMoXingZhuYi">盒子模型注意事项（margin、padding）</caption>
+            <tr>
+                <th>事项</th>
+                <th>场景</th>
+                <th>结果</th>
+                <th>解决方法</th>
+            </tr>
+            <tr>
+                <td>清除默认内外边距</td>
+                <td>浏览器会默认给部分标签设置默认的margin和padding，但一般在项目开始前需要先清除这些标签默认的
+                    margin和padding，后续自己设置<br>
+                    • 比如：body标签默认有margin：8px<br>
+                    • 比如：p标签默认有上下的margin<br>
+                    • 比如：ul标签默认由上下的margin和padding-left
+                </td>
+                <td>样式{margin:0;padding:0}<br>或<br>*{margin:0;padding:0}</td>
+            </tr>
+            <tr>
+                <td style="color: red;">块级元素水平居中</td>
+                <td></td>
+                <td>块级元素水平居中</td>
+                <td style="color: red;">1：盒子必须右宽度（width）。2:盒子左右外边距都设置0
+                    <br>写法：margin:0 auto
+                </td>
+            </tr>
+            <tr>
+                <td>外边距折叠现象 – ① 合并现象</td>
+                <td>垂直布局 的 块级元素，上下的margin会合并</td>
+                <td>最终两者距离为margin的最大值</td>
+                <td>避免就好<br>• 只给其中一个盒子设置margin即可</td>
+            </tr>
+            <tr>
+                <td>外边距折叠现象 – ② 塌陷现象</td>
+                <td>互相嵌套 的 块级元素，子元素的 margin-top 会作用在父元素上</td>
+                <td>导致父元素一起往下移动</td>
+                <td>1. 给父元素设置border-top 或者 padding-top（分隔父子元素的margin-top）<br>
+                    2. 给父元素设置overflow：hidden<br>
+                    3. 转换成行内块元素<br>
+                    4. 设置浮动
+                </td>
+            </tr>
+            <tr>
+                <td>行内元素的margin和padding无效情况</td>
+                <td>1. 水平方向的margin和padding布局中有效！<br>
+                    2. 垂直方向的margin和padding布局中无效！
+                </td>
+                <td>给行内元素设置margin和padding时</td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="buhueichangdahedeteshuqingk">➢ 不会撑大盒子的特殊情况（块级元素）
+            <br>1. 如果子盒子没有设置宽度，此时宽度默认是父盒子的宽度
+            <br>2. 此时给子盒子设置左右的padding或者左右的border，此时不会撑大子盒子
+        </div>
+        <br><br><br>
+
+
+
+        <h4>盒子圆角边框</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="HeZiYuanJiaoBianKuang">盒子圆角边框</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>备注</th>
+                <th>连写</th>
+            </tr>
+            <tr>
+                <td>圆角边框</td>
+                <td>border-radius<br>(数值可以是百分比、也可以是px)</td>
+                <td rowspan="4">高设定为正方形的一半，可以得到圆形<br><br>（顺序不能颠倒）</td>
+                <td rowspan="5">
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>设置单独角的弧度</caption>
+                        <tr>
+                            <th>描述</th>
+                            <th>标签</th>
+                        </tr>
+                        <tr>
+                            <td>border-radius：10px 20px</td>
+                            <td>第一个数对应：左上角、右下角<br>第二个数对应：右上角、左下角</td>
+                        </tr>
+                        <tr>
+                            <td>border-radius：10px 20px 30px</td>
+                            <td>第一个数对应：左上角<br>第二个数对应：右上角、左下角<br>第三个数对应：右下角</td>
+                        </tr>
+                        <tr>
+                            <td>border-radius：10px 20px 30px 40px</td>
+                            <td>分别对应 左上角 右上角 右下角 左下角</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>border-top-left-radius</td>
+                <td>左上角</td>
+            </tr>
+            <tr>
+                <td>border-top-right-radius</td>
+                <td>右上角</td>
+            </tr>
+            <tr>
+                <td>border-bottom-right-radius</td>
+                <td>右下角</td>
+            </tr>
+            <tr>
+                <td>border-bottom-left-radius</td>
+                <td>左下角</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>盒子阴影</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="heZiYinYing">盒子阴影</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>属性值</th>
+                <th>如</th>
+            </tr>
+            <tr>
+                <td>盒子阴影</td>
+                <td>box-shadow</td>
+                <td>
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>盒子阴影属性值</caption>
+                        <tr>
+                            <th>值</th>
+                            <th>属性</th>
+                        </tr>
+                        <tr>
+                            <td>h-shadow</td>
+                            <td>必需，水平阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td>v-shadow</td>
+                            <td>必需，垂直阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td>blur</td>
+                            <td>可选，模糊距离</td>
+                        </tr>
+                        <tr>
+                            <td>spread</td>
+                            <td>可选，阴影尺寸</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>可选阴影的颜色</td>
+                        </tr>
+                        <tr>
+                            <td>inset</td>
+                            <td>可选，将外部阴影（outset）改为内部阴影</td>
+                        </tr>
+                        <tr>连写<br>按表格由上到下的顺序连写</tr>
+                    </table>
+                </td>
+                <td>
+                    <pre><code>box-shadow: 10px 10px 30px 10px red;</code></pre>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>文字阴影</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="wenZiYinYing">文字阴影</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>属性值</th>
+                <th>如</th>
+            </tr>
+            <tr>
+                <td>文字阴影</td>
+                <td>text-shadow</td>
+                <td>
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>文字阴影属性值</caption>
+                        <tr>
+                            <th>值</th>
+                            <th>属性</th>
+                        </tr>
+                        <tr>
+                            <td>h-shadow</td>
+                            <td>必需，水平阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td>v-shadow</td>
+                            <td>必需，垂直阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td>blur</td>
+                            <td>可选，模糊距离</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>可选阴影的颜色</td>
+                        </tr>
+                        <tr>连写<br>按表格由上到下的顺序连写</tr>
+                    </table>
+                </td>
+                <td>
+                    <pre><code>text-shadow: 10px 10px 30px 10px red;</code></pre>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+
+
+
+        <h4>伪元素</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="weiYuanSu">伪元素</caption>
+            <tr>
+                <th>概念</th>
+                <th>区别</th>
+                <th>种类</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td>一般页面中的非主体内容可以使用伪元素</td>
+                <td>1. 元素：HTML 设置的标签<br>
+                    2. 伪元素：由 CSS 模拟出的标签效果</td>
+                <td>
+                    <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>伪元素种类</caption>
+                        <tr>
+                            <th>伪元素</th>
+                            <th>作用</th>
+                        </tr>
+                        <tr>
+                            <td>::before</td>
+                            <td>在父元素内容的最前添加一个伪元素</td>
+                        </tr>
+                        <tr>
+                            <td>::after</td>
+                            <td>在父元素内容的最后添加一个伪元素</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>1. 必须设置content属性才能生效<br>2. 伪元素默认是行内元素</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h3>标准流</h3>
+        <div id="biaoZhunLiu">标准流：又称<span style="color: red;">文档流</span>，是浏览器在渲染显示网页内容时默认采用的一套排版规则，规定了应该以何种方式排列元素
+            <br>常见标准流排版规则：
+            <br>1. 块级元素：从上往下，<span style="color: red;">垂直布局</span>，独占一行
+            <br>2. 行内元素 或 行内块元素：从左往右，<span style="color: red;">水平布局</span>，空间不够自动折行
+        </div>
+        <br><br><br>
+
+
+
+        <h4>float浮动</h4>
+        <div>float浮动的早期作用：文本环绕。现在的作用：网页布局</div>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="floatFuDong">float浮动</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>特点</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td>元素不浮动（默认值）</td>
+                <td>float:none</td>
+                <td rowspan="3">
+                    浮动元素会具有行内块元素特性<br>
+                    1. 浮动元素会脱标(脱离标准流)，在标准流中不占位置
+                    <br>2. 浮动元素比标准流高出半个级别，可以覆盖标准流中的元素
+                    <br>3. 浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动
+                    <br>4. 浮动元素有特殊的显示效果：① 一行可以显示多个 ② 可以设置宽高
+                </td>
+                <td rowspan="3">浮动的元素不能通过text-align:center或者margin:0 auto</td>
+            </tr>
+            <tr>
+                <td>左浮动</td>
+                <td>float：left</td>
+            </tr>
+            <tr>
+                <td>右浮动</td>
+                <td>float:right</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>清除浮动</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="qingChuFuDong">清除浮动</caption>
+            <tr>
+                <th>含义</th>
+                <th>原因</th>
+                <th>目的</th>
+            </tr>
+            <tr>
+                <td>清除浮动带来的影响、如果子元素浮动了，此时子元素不能撑开标准流的块级父元素</td>
+                <td>子元素浮动后脱标 → 不占位置</td>
+                <td>需要父元素有高度，从而不影响其他网页元素的布局</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>清除浮动方法</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>清除浮动方法</caption>
+            <tr>
+                <th>方法</th>
+                <th>操作</th>
+                <th>特点</th>
+            </tr>
+            <tr>
+                <td>① 直接设置父元素高度</td>
+                <td></td>
+                <td>优点：简单粗暴，方便<br>
+                    缺点：有些布局中不能固定父元素高度。如：新闻列表、京东推荐模块
+                </td>
+            </tr>
+            <tr>
+                <td>② 额外标签法</td>
+                <td>1. 在父元素内容的最后添加一个块级元素
+                    <br>2. 给添加的块级元素设置 <span style="color: red;">clear:both</span>
+                </td>
+                <td>缺点：会在页面中添加额外的标签，会让页面的HTML结构变得复杂
+                </td>
+            </tr>
+            <tr>
+                <td>③ 单伪元素清除法</td>
+                <td>用伪元素替代了额外标签</td>
+                <td>优点：项目中使用，直接给标签加类即可清除浮动</td>
+            </tr>
+            <tr>
+                <td>④ 双伪元素清除法</td>
+                <td></td>
+                <td>优点：项目中使用，直接给标签加类即可清除浮动</td>
+            </tr>
+            <tr>
+                <td>⑤ 给父元素设置 <span style="color: red;">overflow : hidden</span></td>
+                <td>直接给父元素设置 <span style="color: red;">overflow : hidden</span></td>
+                <td>优点：方便</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>清除浮动</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>清除浮动</caption>
+            <tr>
+                <th>单伪元素清除浮动</th>
+                <th>双伪元素清除浮动</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+                        <code>
+/* 给父类添加一个 clearfix */
+
+.clearfix:after{
+    content:'.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+                        </code>
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+                        <code>
+/* 给父类添加一个 clearfix */
+
+.clearfix: before,
+.clearfix: after {
+    content: "";
+    display: table
+}
+.clearfix: after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+                        </code>
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        、
+
+
+        <h4>定位的常见应用场景是什么？</h4>
+        <span>1. 解决盒子与盒子之间的层叠问题 → 定位之后元素层级最高，可以层叠在其他盒子上
+            <br>2. 可以让盒子始终固定在屏幕中的某个位置
+        </span>
+
+        <h4>定位</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>定位</caption>
+            <tr>
+                <th>属性名</th>
+                <th>定位方式</th>
+                <th>属性值</th>
+                <th>偏移值</th>
+            </tr>
+            <tr id="jingTaiDingWei">
+                <td rowspan="4">position</td>
+                <td>静态定位</td>
+                <td>static</td>
+                <td rowspan="4">
+                    <table border="3" cellspacing="0" cellpadding="3" width="">
+                        <caption>定位偏移值：水平+垂直就近各取一个</caption>
+                        <tr>
+                            <th>方向</th>
+                            <th>属性名</th>
+                            <th>属性值</th>
+                            <th>含义</th>
+                        </tr>
+                        <tr>
+                            <td>水平</td>
+                            <td>left</td>
+                            <td>数字+px</td>
+                            <td>距离右边的距离</td>
+                        </tr>
+                        <tr>
+                            <td>水平</td>
+                            <td>right</td>
+                            <td>数字+px</td>
+                            <td>距离左边的距离</td>
+                        </tr>
+                        <tr>
+                            <td>垂直</td>
+                            <td>top</td>
+                            <td>数字+px</td>
+                            <td>距离上边的距离</td>
+                        </tr>
+                        <tr>
+                            <td>垂直</td>
+                            <td>bottom</td>
+                            <td>数字+px</td>
+                            <td>距离下边的距离</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>相对定位</td>
+                <td>relative</td>
+            </tr>
+            <tr>
+                <td>绝对定位</td>
+                <td>absolute</td>
+            </tr>
+            <tr>
+                <td>固定定位</td>
+                <td>fixed</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>静态定位</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>静态定位</caption>
+            <tr>
+                <th>介绍</th>
+                <th>代码</th>
+                <th>注意点</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>静态定位是默认值，就是之前认识的标准流。</td>
+                <td>position:static</td>
+                <td>1. 静态定位就是之前标准流，<span style="color: red;">不能通过方位属性进行移动</span><br>
+                    2. 之后说的定位不包括静态定位，一般特指后几种：相对、绝对、固定
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>相对定位</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>相对定位</caption>
+            <tr>
+                <th>介绍</th>
+                <th>代码</th>
+                <th>特点</th>
+                <th>应用场景</th>
+            </tr>
+            <tr>
+                <td>自恋型定位，相对于自己之前的位置进行移动</td>
+                <td>position:relative</td>
+                <td>1. 需要配合方位属性实现移动<br>
+                    2. 相对于自己原来位置进行移动<br>
+                    3. 在页面中占位置 → 没有脱标<br>
+                </td>
+                <td>1. 配合绝对定位组CP（子绝父相）<br>
+                    2. 用于小范围的移动
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>绝对定位</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>绝对定位</caption>
+            <tr>
+                <th>介绍</th>
+                <th>代码</th>
+                <th>特点</th>
+                <th>应用场景</th>
+                <th>绝对定位到底相对于谁进行偏移</th>
+            </tr>
+            <tr>
+                <td>拼爹型定位，相对于非静态定位的父元素进行定位移动</td>
+                <td>position:absolute</td>
+                <td>1. 需要配合方位属性实现移动<br>
+                    2. 默认相对于浏览器可视区域进行移动<br>
+                    3. 在页面中不占位置 → 已经脱标<br>
+                </td>
+                <td>配合绝对定位组CP（子绝父相）</td>
+                <td>
+                    1. 祖先元素中没有定位 → 默认相对于浏览器进行移动<br>
+                    2. 祖先元素中有定位 → 相对于 最近的 有定位 的祖先元素进行移动
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>固定定位</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>固定定位</caption>
+            <tr>
+                <th>介绍</th>
+                <th>代码</th>
+                <th>特点</th>
+                <th>应用场景</th>
+            </tr>
+            <tr>
+                <td>死心眼型定位，相对于浏览器进行定位移动</td>
+                <td>position:fixed</td>
+                <td>1. 需要配合方位属性实现移动<br>
+                    2. 相对于浏览器可视区域进行移动<br>
+                    3. 在页面中不占位置 → 已经脱标<br>
+                </td>
+                <td>让盒子固定在屏幕中的某个位置</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>粘性定位</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>粘性定位</caption>
+            <tr>
+                <th>介绍</th>
+                <th>代码</th>
+                <th>特点</th>
+                <th>应用场景</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>position:stkicky</td>
+                <td>必须配合方位词使用</td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>子绝父相</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="ZiJveFuXian">子绝父相</caption>
+            <tr>
+                <th>场景</th>
+                <th>含义</th>
+                <th>好处</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>让子元素相对于父元素进行自由移动</td>
+                <td>• 子元素：绝对定位<br>
+                    • 父元素：相对定位
+                </td>
+                <td>父元素是相对定位，则对网页布局影响最小</td>
+                <td>
+                    在使用子绝父相的时候，发现父元素已经有绝对定位了，此时直接子绝即可！<br>原因：父元素已经有定位已经满足要求，如果盲目修改父元素定位方式，可能会影响之前写好的布局
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>子绝父相居中案例</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>子绝父相居中案例</caption>
+            <tr>
+                <th>子绝父相水平居中案例</th>
+                <th>子绝父相水平垂直都居中案例</th>
+            </tr>
+            <tr>
+                <td>
+                    1. 子绝父相<br>
+                    2. 先让子盒子往右移动父盒子的一半<br>
+                    • left：50%<br>
+                    3. 再让子盒子往左移动自己的一半<br>
+                    • 普通做法：margin-left：负的子盒子宽度的一半<br>
+                    缺点：子盒子宽度变化后需要重新改代码<br>
+                    • 优化做法：transform：translateX(-50%) <br>
+                    优点：表示沿着X轴负方向（往左）始终移动自己宽度的一半，子盒子宽度变化不需要更改代码
+                </td>
+                <td>
+                    1. 子绝父相<br>
+                    2. 让子盒子往右走大盒子一半<br>
+                    • left：50%<br>
+                    3. 让子盒子往下走大盒子一半<br>
+                    • top：50%<br>
+                    4. 让子盒子往左+往上走自己的一半<br>
+                    • transform：translate(-50%，-50%)；
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+
+
+
+        <h4>元素层级问题</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="yuanSuCengJi">元素层级问题</caption>
+            <tr>
+                <th>不同布局方式元素的层级关系</th>
+                <th>不同定位之间的层级关系：</th>
+            </tr>
+            <tr>
+                <td>标准流 &lt; 浮动 &lt; 定位</td>
+                <td>相对、绝对、固定默认层级相同<br>
+                    此时HTML中写在下面的元素层级更高，会覆盖上面的元素
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>更改定位元素的层级</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="DingWeiYuanSuCengJi">更改定位元素的层级</caption>
+            <tr>
+                <th>场景</th>
+                <th>属性名</th>
+                <th>属性值</th>
+            </tr>
+            <tr>
+                <td>改变定位元素的层级</td>
+                <td>z-index</td>
+                <td>数字（数字越大，层级越高）</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>修饰：垂直对齐方式</h4>
+        <table border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="chueZhiDueiQiFangShi">修饰：垂直对齐方式</caption>
+            <tr>
+                <th>属性名</th>
+                <th>属性值</th>
+                <th>效果</th>
+                <th> 注意点</th>
+            </tr>
+            <tr>
+                <td rowspan="4">vertical-align</td>
+                <td>baseline</td>
+                <td>默认基线对齐</td>
+                <td rowspan="4">学习浮动之后，不推荐使用行内块元素让div一行中显示，因为可能会出现垂直对齐问题
+                    <br>推荐优先使用浮动完成效果
+                </td>
+            </tr>
+            <tr>
+                <td>top</td>
+                <td>颈部对齐</td>
+            </tr>
+            <tr>
+                <td>middle</td>
+                <td>中部对齐</td>
+            </tr>
+            <tr>
+                <td>bottom</td>
+                <td>底部对齐</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>光标类型：设置鼠标光标在元素上时显示的样式</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="guangBiaoLeiXing">光标类型</caption>
+            <tr>
+                <th>属性名</th>
+                <th>属性值</th>
+                <th>效果</th>
+            </tr>
+            <tr>
+                <td rowspan="4">cursor</td>
+                <td>default</td>
+                <td>默认值 通常是箭头</td>
+            </tr>
+            <tr>
+                <td>pointer</td>
+                <td>小手效果 提示用户可以点击</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>工字形 提示用户可以选择文字</td>
+            </tr>
+            <tr>
+                <td>move</td>
+                <td>十字光标 提示用户可以移动</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>overflow溢出隐藏</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="overflow">overflow溢出隐藏</caption>
+            <tr>
+                <th>属性名</th>
+                <th>属性值</th>
+                <th>效果</th>
+            </tr>
+            <tr>
+                <td rowspan="4">overflow</td>
+                <td>visible</td>
+                <td>默认值 溢出部分可见</td>
+            </tr>
+            <tr>
+                <td>hidden</td>
+                <td>溢出部分隐藏</td>
+            </tr>
+            <tr>
+                <td>scroll</td>
+                <td>无论是否溢出，都显示滚动·条</td>
+            </tr>
+            <tr>
+                <td>auto</td>
+                <td>根据是否溢出，自动显示或隐藏滚动条</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>元素本身隐藏：让某元素本身在屏幕中不可见。如：鼠标:hover之后元素隐藏</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>元素本身隐藏</caption>
+            <tr>
+                <th>常见属性</th>
+                <th>区别</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td> visibility：hidden</td>
+                <td>visibility：hidden 隐藏元素本身，并且在网页中 占位置</td>
+                <td rowspan="2">
+                    开发中经常会通过 display属性完成元素的显示隐藏切换
+                    <br>display：none；（隐藏）、 display：block；（显示）
+                </td>
+            </tr>
+            <tr>
+                <td>display：none</td>
+                <td>display：none 隐藏元素本身，并且在网页中 不占位置</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>元素整体透明度:让某元素整体（包括内容）一起变透明</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>元素整体透明度:让某元素整体（包括内容）一起变透明</caption>
+            <tr>
+                <th>属性名</th>
+                <th>属性值</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td>opacity</td>
+                <td>
+                    0~1之间的数字<br>
+                    1：表示完全不透明<br>
+                    0：表示完全透明<br>
+                </td>
+                <td>opacity会让元素整体透明，包括里面的内容，如：文字、子元素等……</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>过度：让元素的样式慢慢的变化，常配合hover使用，增强网页交互体验</h4>
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption id="guoDu">表格过度</caption>
+            <tr>
+                <th>描述</th>
+                <th>属性名</th>
+                <th>参数</th>
+                <th>取值</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td rowspan="2">过度（动画过度）</td>
+                <td rowspan="2">transition</td>
+                <td>过度的属性</td>
+                <td>all:所有能过度的属性都过度、具体属性如：width：只有width过度</td>
+                <td rowspan="2">
+                    1. 过渡需要：默认状态 和 hover状态样式不同，才能有过渡效果<br>
+                    2. transition属性给需要过渡的元素本身加<br>
+                    3. transition属性设置在不同状态中，效果不同的<br>
+                    ① 给默认状态设置，鼠标移入移出都有过渡效果<br>
+                    ② 给hover状态设置，鼠标移入有过渡效果，移出没有过渡效果
+                </td>
+            </tr>
+            <tr>
+                <td>过度的时长</td>
+                <td>数字+s(秒)</td>
+            </tr>
+        </table>
+        <p>扩展：过度曲线(运动曲线)，过度时间</p>
+        <br><br><br>
+
+
+
+
+        <h4>transform 平面转换（2D转换）</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="transform2D">平面转换（2D转换）<br> 改变盒子在平面内的形态（位移、旋转、缩放） 2D转换<br>
+                平面转换属性 transform
+            </caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>简写</th>
+                <th>技巧</th>
+            </tr>
+            <tr>
+                <td>元素位移</td>
+                <td>transform: translate(水平移动距离, 垂直移动距离);<br>
+                    <p>取值（正负均可）
+                        <br> 1.像素单位数值 2,百分比（参照物为盒子自身尺寸） <span style="color: red;">注意：X轴正向为右，Y轴正向为下</span>
+                    </p>
+                </td>
+                <td>1.translate()如果只给出一个值, 表示x轴方向移动距离
+                    <br>2.单独设置某个方向的移动距离：translateX() & translateY()
+                </td>
+                <td>
+                    <table border="3" cellspacing="0" cellpadding="3">
+                        <caption>使用translate快速实现绝对定位的元素居中效果</caption>
+                        <tr>
+                            <th>实现方法</th>
+                            <th>核心代码</th>
+                            <th>原理</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre>
+                                    <code>
+position:absolute;
+left:50%;
+top:50%;
+margin-left:-100px;
+margin-top:-50px;
+width:200px;
+height:100px;
+                                    </code>
+                                </pre>
+                                
+                            </td>
+                            <td>
+                                <pre><code>
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+                                </code></pre>
+                            </td>
+                            <td>位移取值为百分比数值，参照盒子自身尺寸计算移动距离</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>元素旋转</td>
+                <td>transform: rotate(角度);角度单位是deg{1.取值为正, 则顺时针旋转2.取值为负, 则逆时针旋转}</td>
+                <td></td>
+                <td>
+                    <table border="3" cellspacing="0" cellpadding="3">
+                        <caption>使用transform-origin属性改变转换原点</caption>
+                        <tr>
+                            <th>语法</th>
+                            <th>取值</th>
+                        </tr>
+                        <tr>
+                            <td> transform-origin: 原点水平位置 原点垂直位置;（默认圆点是盒子中心点） </td>
+                            <td>1.方位名词（left、top、right、bottom、center）
+                                <br>2.像素单位数值
+                                <br>3.百分比（参照盒子自身尺寸计算）
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <table border="3" cellspacing="0" cellpadding="3">
+                        <caption>多重转换</caption>
+                        <tr>
+                            <th>目标</th>
+                            <th>技巧</th>
+                            <th>原理</th>
+                        </tr>
+                        <tr>
+                            <td>使用transform复合属性实现多形态转换</td>
+                            <td>transform:translate() rotate();</td>
+                            <td>旋转会改变网页元素的坐标轴向
+                                <br>先写旋转，则后面的转换效果的轴向以旋转后的轴向为准，会影响转换结果
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>元素缩放</td>
+                <td>transform: scale(x轴缩放倍数, y轴缩放倍数);</td>
+                <td>一般情况下, 只为scale设置一个值, 表示x轴和y轴等比例缩放
+                    <br>transform: scale(缩放倍数);
+                    <br>scale值大于1表示放大, scale值小于1表示缩小
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>transform 空间转换（3D转换）</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>transform 空间转换（3D转换）</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td>元素空间位移</td>
+                <td>
+                    <pre><code>
+transform: translate3d(x, y, z);
+transform: translateX(值);
+transform: translateY(值);
+transform: translateZ(值);
+/*取值（正负均可） 1.像素单位数值, 2.百分比*/
+                    </code></pre>
+                    transform: translate3d(x, y, z);
+                    <br>transform: translateX(值);
+                    <br>transform: translateY(值);
+                    <br>transform: translateZ(值);
+                    <br>取值（正负均可） 1.像素单位数值, 2.百分比
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>透视</td>
+                <td>perspective: 值;（添加给父级） 取值px 数值一般在800 – 1200。</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>空间旋转</td>
+                <td>transform: rotateZ(值);
+                    <br>transform: rotateX(值);
+                    <br>transform: rotateY(值);
+                    <br>简写：rotate3d(x, y, z, 角度度数) {x，y，z 取值为0-1之间的数字}
+                    <br>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>空间属性连写</td>
+                <td>transform: rotate3d(x轴,Y轴,z轴,旋转度数);
+                </td>
+                <td>
+                    <pre>
+                        <code>transform: rotate3d(1,0,1,60deg);</code>
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>立体呈现</td>
+                <td>transform-style: preserve-3d （默认值flat, 表示子元素处于2D平面内呈现）</td>
+                <td>呈现立体图形步骤
+                    <br>1. 盒子父元素添加transform-style: preserve-3d；
+                    <br>2. 按需求设置子盒子的位置（位移或旋转）
+                    <br>注意:空间内，转换元素都有自已独立的坐标轴，互不干扰
+                </td>
+            </tr>
+            <tr>
+                <td>空间缩放</td>
+                <td>transform: scaleX(倍数);
+                    <br>transform: scaleY(倍数);
+                    <br>transform: scaleZ(倍数);
+                    <br>transform: scale3d(x, y, z);
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+        <br><br><br>
+
+
+
+        <h4>动画</h4>
+        <h4>动画的实现步骤</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="dongHua">动画的实现步骤</caption>
+            <tr>
+                <th>定义动画</th>
+                <th>使用动画</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>@keyframes 动画名称 {0%{} 10%{} 15%{}}</td>
+                <td>animation:动画名称 动画时长 速度曲线 延迟时间 重复次数 动画方向 执行完毕状态;</td>
+                <td>1.动画名称和动画时长必须赋值，<br>2.取值不分先后顺序，3.如果有2个时间值，第一个时间表示动画时长，第二个时间表示延迟时间</td>
+            </tr>
+        </table>
+
+
+
+        <table align="center" border="3" cellspacing="0" cellpadding="3" width="">
+            <caption>动画属性</caption>
+            <tr>
+                <th>作用</th>
+                <th>属性</th>
+                <th>属性值</th>
+            </tr>
+            <tr>
+                <td>动画名称</td>
+                <td>animation-name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>动画时长</td>
+                <td>animation-duration</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>延迟时间</td>
+                <td>animation-delay </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>动画执行完毕时状态</td>
+                <td>animation-fill-mode</td>
+                <td>forwards：最后一帧状态<br>backwards：第一帧状态</td>
+            </tr>
+            <tr>
+                <td>速度曲线</td>
+                <td>animation-timing-function</td>
+                <td>steps(数字)：逐帧动画<br>
+                    linear:匀速
+                </td>
+            </tr>
+            <tr>
+                <td>重复次数</td>
+                <td>animation-iteration-count</td>
+                <td>infinite为无限循环</td>
+            </tr>
+            <tr>
+                <td>动画执行方向 </td>
+                <td>animation-direction</td>
+                <td>alternate为反向</td>
+            </tr>
+            <tr>
+                <td>暂停动画</td>
+                <td>animation-play-state </td>
+                <td>paused为暂停，通常配合:hover使用</td>
+            </tr>
+            <tr>
+                <td>动画连写</td>
+                <td>animation</td>
+                <td>动画名称和播放时长必写，不写的是默认值<br>
+                    2个时间 第一个时间是时长，第二个是延迟<br>
+                    取值没有顺序
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>flex布局</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="flexBuJu">flex布局</caption>
+            <tr>
+                <th>作用</th>
+                <th>设置方式</th>
+                <th>组成部分</th>
+            </tr>
+            <tr>
+                <td>基于 Flex 精确灵活控制块级盒子的布局方式，避免浮动布局中脱离文档流现象发生。<br>Flex布局非常适合结构化布局</td>
+                <td>父元素添加 <span style="color: red;">display: flex</span>，子元素可以自动的挤压或拉伸</td>
+                <td> 弹性容器
+                    <br>弹性盒子
+                    <br>主轴
+                    <br>侧轴 / 交叉轴
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>flex:主轴方向</h4>
+        <div> 主轴默认是水平方向, 侧轴默认是垂直方向<br>修改主轴方向属性: flex-direction</div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="zhuZhouFangXiang">flex:主轴方向</caption>
+            <tr>
+                <th>作用</th>
+                <th>属性</th>
+                <th>属性值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td rowspan="4">设置主轴方向</td>
+                <td rowspan="4">flex-direction</td>
+                <td>row</td>
+                <td>行, 水平,（从左到右）默认值</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>column</td>
+                <td>列, 垂直（从上到下）</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>row-reverse</td>
+                <td>行, 从右向左</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>column-reverse</td>
+                <td>列, 从下向上</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>flex布局:主轴对齐方式</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="zhuZhouPaiLie">flex布局:主轴对齐方式</caption>
+            <tr>
+                <th>作用</th>
+                <th>属性</th>
+                <th>属性值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td rowspan="6">设置主轴上的子元素排列方式</td>
+                <td rowspan="6">justify-content</td>
+                <td>flex-start</td>
+                <td>默认值, 起点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>flex-end</td>
+                <td>终点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>center </td>
+                <td>沿主轴居中排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-around</td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在弹性盒子<span style="color: red;">两侧</span></td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-between </td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在<span style="color: red;">相邻盒子之间</span></td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-evenly</td>
+                <td>弹性盒子沿主轴均匀排列, 弹性盒子与<span style="color: red;">容器之间间距相等</span></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+
+
+        <h4>flex布局:设置侧轴上的子元素排列方式（单行）</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="ceZhouPaiLieDanHang">flex布局:侧轴对齐方式</caption>
+            <tr>
+                <th>属性</th>
+                <th>属性值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td rowspan="4">设置侧轴上的子元素排列方式（单行）</td>
+                <td rowspan="4">align-items（添加到弹性容器）</td>
+                <td>flex-start</td>
+                <td>起点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>flex-end</td>
+                <td>终点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>center </td>
+                <td>沿侧轴居中排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>stretch</td>
+                <td>默认效果, 弹性盒子沿着侧轴线被拉伸至铺满容器</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>flex布局:设置侧轴上的子元素排列方式（多行）</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="ceZhouPaiLieDuoHang">flex布局: 多个弹性盒子 主轴对齐方式</caption>
+            <tr>
+                <th>作用</th>
+                <th>属性</th>
+                <th>属性值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td rowspan="7">设置侧轴上的子元素排列方式（多行）</td>
+                <td rowspan="7">align-content</td>
+                <td>flex-start</td>
+                <td>默认值, 起点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>flex-end</td>
+                <td>终点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>center </td>
+                <td>沿主轴居中排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-around</td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在弹性盒子两侧</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-between </td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在相邻盒子之间</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-evenly</td>
+                <td>弹性盒子沿主轴均匀排列, 弹性盒子与容器之间间距相等</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>stretch</td>
+                <td>设置子项元素高度平分父元素高度</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>flex:弹性盒子换行</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="flex-wrap">flex:弹性盒子换行</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>弹性盒子换行显示</td>
+                <td>flex-wrap</td>
+                <td>默认值：no wrap<br>换行：wrap</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>fles-flow复合属性</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>fles-flow复合属性</caption>
+            <tr>
+                <th>标签</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>fles-flow</td>
+                <td>fles-flow: 主轴方向 是否换行;</td>
+                <td>fles-flow:row wrap</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <h4>flex:子项常见属性</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="shenSuoBi-and-shunXu">flex：伸缩比</caption>
+            <tr>
+                <th>描述</th>
+                <th>用法</th>
+                <th>取值</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>伸缩比</td>
+                <td>flex:值</td>
+                <td>数值（整数）</td>
+                <td>只占用父盒子剩余尺寸</td>
+            </tr>
+            <tr>
+                <td>定义项目的排列顺序</td>
+                <td>order</td>
+                <td>数值（整数）</td>
+                <td>数值越小排列越靠前（与z-index不一样）</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>flex布局:子项自己在侧轴上的排列方式</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="align-self">flex布局: 子项自己在侧轴上的排列方式</caption>
+            <tr>
+                <th>作用</th>
+                <th>属性</th>
+                <th>属性值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td rowspan="7">子项自己在侧轴上的排列方式</td>
+                <td rowspan="7">align-self</td>
+                <td>flex-start</td>
+                <td>默认值, 起点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>flex-end</td>
+                <td>终点开始依次排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>center </td>
+                <td>沿主轴居中排列</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-around</td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在弹性盒子两侧</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-between </td>
+                <td>弹性盒子沿主轴均匀排列, 空白间距均分在相邻盒子之间</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>space-evenly</td>
+                <td>弹性盒子沿主轴均匀排列, 弹性盒子与容器之间间距相等</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>stretch</td>
+                <td>设置子项元素高度平分父元素高度</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+
+
+
+
+
+
+        <h4>视口</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="shiKou">视口</caption>
+            <tr>
+                <th>描述</th>
+                <th>连写</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td>viewport：视口</td>
+                <td rowspan="3">
+                    <pre>
+                        <code>meat name="viewport" content="width=device-width,initial-scale=1.0"</code>
+                    </pre>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>width=device-width：视口宽度 = 设备宽度</td>
+                <!-- <td></td> -->
+                <td></td>
+            </tr>
+            <tr>
+                <td>initial-scale=1.0：缩放1倍（不缩放）</td>
+                <!-- <td></td> -->
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>长度单位</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="changDuDanWei">长度单位</caption>
+            <tr>
+                <th>描述</th>
+                <th>标签</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td>em单位</td>
+                <td>相对单位
+                    <br>rem单位是相对于HTML标签的字号计算结果
+                    <br>1rem = 1HTML字号大小
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>1rem的大小等于1个html根标签文字大小，</td>
+                <td>1.确认设计稿宽度，设计搞宽度参考视口宽度，1rem=视口宽度的的十分之一<br>
+                    2.测量px的值
+                </td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>1vw等于视口宽度的百分之一</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>vh</td>
+                <td>1vh等于视口高度的百分之一</td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体查询</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption id="meiTiChaXun">媒体查询</caption>
+            <tr>
+                <th>写法</th>
+                <th>如</th>
+                <th>注释</th>
+            </tr>
+            <tr>
+                <td>@meadia(媒体特性){选择器{CSS属性}}</td>
+                <td><pre><code>@media(width:320){html{font-size:32}}</code></pre></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>min-width（从小到大）</td>
+                <td>max-width（从大到小）</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>根据设备宽度的变化，设置差异化样式</td>
+                <td>@media 关键词 媒体类型 and (媒体特性){css代码}</td>
+                <td>and<br>only<br>not</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体查询关键词</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询关键词</caption>
+            <tr>
+                <td></td>
+                <td>and</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>only</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>取相反的结果</td>
+                <td>not</td>
+                <td>了解</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th>类型名称</th>
+                <th>值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>屏幕</td>
+                <td>screen</td>
+                <td>带屏幕的设备</td>
+            </tr>
+            <tr>
+                <td>打印预览</td>
+                <td>print</td>
+                <td>打印预览模式</td>
+            </tr>
+            <tr>
+                <td>阅读器</td>
+                <td>speech</td>
+                <td>屏幕阅读模式</td>
+            </tr>
+            <tr>
+                <td>不区分类型</td>
+                <td>all</td>
+                <td>默认值，包括以上3种情形</td>
+            </tr>
+            <tr>
+                <td>取相反的结果</td>
+                <td>not</td>
+                <td>了解</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>媒体特征</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体特征</caption>
+            <tr>
+                <th>特性名称</th>
+                <th>属性</th>
+                <th>值</th>
+            </tr>
+            <tr>
+                <td>视口的宽和高</td>
+                <td>width、height</td>
+                <td>数值</td>
+            </tr>
+            <tr>
+                <td>视口最大宽或高</td>
+                <td>max-width、max-height</td>
+                <td>数值</td>
+            </tr>
+            <tr>
+                <td>视口最小宽或高</td>
+                <td>min-width、min-height</td>
+                <td>数值</td>
+            </tr>
+            <tr>
+                <td>屏幕方向</td>
+                <td>orientation</td>
+                <td>portrait: 竖屏
+                    <br>landscape: 横屏
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+
+        <h4>媒体查询写法</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询写法</caption>
+            <tr>
+                <th>简写</th>
+                <th>@media(媒体特性){选择器{样式}}</th>
+            </tr>
+            <tr>
+                <td>完整写法</td>
+                <td>@media 关键词 媒体类型 and （媒体特性）{css代码}</td>
+            </tr>
+            <tr>
+                <td>视口最大宽或高</td>
+                <td>max-width、max-height</td>
+            </tr>
+            <tr>
+                <td>视口最小宽或高</td>
+                <td>min-width、min-height</td>
+            </tr>
+            <tr>
+                <td>屏幕方向</td>
+                <td>orientation</td>
+            </tr>
+        </table>
+        <br><br><br>
+
+        <div>
+            <div>外链式CSS引入</div>
+            <div>link rel="stylesheet" media="逻辑符 媒体类型 and (媒体特性)" href="xx.css"</div>
+            <div>满足条件执行的css样式</div>
+        </div>
+
+
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+        <h4>媒体类型</h4>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>媒体查询</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <pre><code>
+<div>你好，地球</div>
+<div>你好，地球</div>
+<div>你好，地球</div>
+<div>你好，地球</div>
+
+<h4>语义化标签</h4>
+<table>
+    <caption id="YuYiHua">语义化标签</caption>
+    <tr>
+
+    </tr>
+</table>
+<br><br><br>
+
+    </code></pre>
+
+
+
+
+    <!-- 引入js文件 -->
+  <script src="./js/html.js"></script>
+
+  <!-- 浏览器读取less文件的js -->
+  <script src="../lib/less.js"></script>
+
+
+
+  <!-- 引入代码高亮的js文件 -->
+  <script src="../lib/highlight/highlight.min.js"></script>
+  <!-- highlight使用方式:   -->
+  <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+  <!-- 类名不写语言默认自动识别 -->
+
+  <!-- 初始化代码高亮 -->
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+  <!-- 引入代码显示行数的js文件 -->
+  <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+  <!-- 初始化代码显示高度 -->
+  <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+  <!-- 自动生成目录 -->
+  <script src="../lib/dist/tocbot.min.js"></script>
+  <script type="text/javascript">
+    //目录生成初始化
+    tocbot.init({
+      // 在何处呈现目录。
+      tocSelector: '.js-toc',
+
+      // 在何处获取标题以构建目录。
+      contentSelector: '.js-toc-content',
+
+      // 要在内容选择器元素内获取哪些标题。
+      headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+      //对于内容中相对或绝对位置的容器内的标题。
+      hasInnerContainers: true,
+    });
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

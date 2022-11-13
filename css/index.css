@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+button,
+input {
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+body {
+  /* width: 100%;
+    height: 100%; */
+  background-color: aquamarine;
+}
+.warapper {
+  width: 1220px;
+  background-color: darkcyan;
+  margin: 0 auto;
+}
+.body_main {
+  background-color: azure;
+}
+.main_diDu {
+  position: fixed;
+  /* 固定定位*/
+  width: 100%;
+  /* height: 50%; */
+  background-color: cadetblue;
+  top: 95%;
+  left: 0px;
+  right: 0px;
+  bottom: 0%;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+.main_diDu .nav {
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 8px;
+  background-color: blueviolet;
+}
+.main_diDu .nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.main_diDu .nav ul li a {
+  flex: 1;
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  font-size: 18px;
+  margin: 0 10px;
+}
+.main_diDu .nav ul li:hover {
+  background-color: chartreuse;
+}
+.main_diDu iframe {
+  border: none;
+  width: 100%;
+  height: 95%;
+  box-sizing: border-box;
+}
+.main_diDu:hover {
+  top: 10%;
+  left: 0px;
+  right: 0px;
+  bottom: 0%;
+}
+@media screen and (max-height: 700px) {
+  /*最大高度为700px时的样式*/
+  .main_diDu {
+    top: 85%;
+    left: 0px;
+    right: 0px;
+    bottom: 0%;
+  }
+  .main_diDu:hover {
+    top: 0%;
+    left: 0px;
+    right: 0px;
+    bottom: 4%;
+  }
+}

@@ -1,0 +1,199 @@
+ /*makedown代码块高亮自定义，横向的滑动块--start*/
+ .hljs-ln-numbers {
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 0px !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .hljs-ln-n{
+    width: 30px !important;
+  }
+
+  /* .hljs-ln-line .hljs-ln-numbers */
+
+  .hljs-ln-line{
+    margin-left: 10px !important;
+  }
+
+
+  .hljs-ln-code {
+    /* 行数右边距 */
+    padding-left: 8px !important;
+  }
+
+
+  /*去掉边框*/
+  pre {
+    border: none;
+    tab-size: 4;
+    /* white-space: pre-line; */
+    /* word-wrap: break-word; */
+
+  }
+
+  code {
+    /*实现左右滑动块*/
+    white-space: pre !important;
+    /* overflow-x: scroll !important; */
+    word-break: keep-all !important;
+    word-wrap: initial !important;
+  }
+
+  .cnblogs-markdown .hljs {
+    font-size: 16px !important;
+    font-family: consolas, monospace !important;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #23241f !important;
+    color: #FFF;
+    white-space: pre;
+    word-break: normal;
+    padding: 10px 15px !important;
+  }
+
+
+  /* 最大宽度 */
+  pre code{
+    /* max-width: 800px; */
+    max-height: 1000px;
+
+  }
+
+
+  /* 以下代码是样式,按需自行修改 */
+  /* .hljs,
+  .hljs-tag,
+  .hljs-subst {
+    color: #f8f8f2;
+  }
+
+  .hljs-strong,
+  .hljs-emphasis {
+    color: #a8a8a2;
+  }
+
+  .hljs-bullet,
+  .hljs-quote,
+  .hljs-number,
+  .hljs-regexp,
+  .hljs-literal,
+  .hljs-link {
+    color: #ae81ff;
+  }
+
+  .hljs-code,
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-class {
+    color: #a6e22e;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-name,
+  .hljs-attr {
+    color: #f92672;
+  }
+
+  .hljs-symbol,
+  .hljs-attribute {
+    color: #66d9ef;
+  }
+
+  .hljs-params,
+  .hljs-class .hljs-title {
+    color: #f8f8f2;
+  }
+
+  .hljs-string,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-selector-id,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-addition,
+  .hljs-variable,
+  .hljs-template-variable {
+    color: #e6db74;
+  }
+
+  .hljs-comment,
+  .hljs-deletion,
+  .hljs-meta {
+    color: #75715e;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-built_in,
+  .hljs-name,
+  .hljs-tag {
+
+    color: #569CD6;
+
+  }
+
+  .hljs-string,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-selector-id,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-addition,
+  .hljs-variable,
+  .hljs-template-variable {
+
+    color: #CE9178;
+
+  }
+
+
+  .hljs-comment,
+  .hljs-deletion,
+  .hljs-meta {
+
+    color: #6A9955;
+
+  }
+
+  .hljs-bullet,
+  .hljs-quote,
+  .hljs-number,
+  .hljs-regexp,
+  .hljs-literal,
+  .hljs-link {
+
+    color: #B5CEA8;
+
+  }
+
+  .hljs-code,
+  .hljs-title,
+  .hljs-section,
+  .hljs-selector-class {
+
+    color: #DCDCAA;
+
+  } */
+  /*makedown代码块高亮自定义，横向的滑动块--end*/

@@ -1,0 +1,60 @@
+// out: false
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+em,
+i {
+  font-style: normal
+}
+
+li {
+  list-style: none
+}
+
+img {
+  // ie浏览器中如果图片的外面包含了a，会出现默认的边框
+  border: 0;
+  vertical-align: middle
+}
+
+button {
+  cursor: pointer
+}
+
+a {
+  color: #666;
+  text-decoration: none
+}
+
+button,
+input {
+  //  "\5B8B\4F53" 
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666
+}
+
+.hide,
+.none {
+  display: none
+}
+
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0
+}
+
+.clearfix {
+  *zoom: 1
+}
