@@ -33,15 +33,22 @@ function tiHuan_code() {
     // 取消空格
     let c = b.replace(/    /g, "")
 
-    //去掉第一行的换行
+    //去掉第一行和最后一行的换行
     let d = b
     for (let j = 0; j < 99; j++) {
       if (/^\n/.test(d)) {
         d = d.replace(/^\n/, "")
-      } else {
+      }else{
         break
       }
     }
+
+    
+    //去掉第一行和最后一行的换行
+
+    // else if(/\n$/.test(d)) {
+    //   d = d.replace(/\n$/, "")
+    // }
 
 
 

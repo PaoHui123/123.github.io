@@ -37,7 +37,8 @@
   <p class="red">documentElement 属性可返回文档的根节点(不会)
   </p>
     dom.style.cssText="" //修改元素节点的css样式
-
+    <br>
+    con.dir(div) //打印真实的dom节点
 
 
 
@@ -626,7 +627,28 @@ console.log(count);
         <tr>
           <td>实例方法findIndex</td>
           <td>查找元素的索引值</td>
-          <td></td>
+          <td>
+            <pre><code>
+//例子1
+var arr = ['a','b','c','d'];
+var flag = arr.findIndex(item => {
+     return item === 'c';
+ })
+console.log(flag) // 得到： 2
+
+//例子2
+var arr2 = [1,18,2,99,666,44,66];
+    var flag2 = arr2.findIndex(item => {
+        return item > 50;
+    });
+console.log(flag2)   // 得到： 3
+
+//例子3
+var arr3 = ['red','pink','green'];
+    var flag3 = arr3.findIndex(item => item === 'yellow')
+console.log(flag3)  // 得到：-1
+            </code></pre>
+          </td>
         </tr>
         <tr>
           <td>实例方法静态方法 Array.from()</td>
@@ -4745,9 +4767,9 @@ console.log(arr)
           <td>
             1. 立即执行函数
             <pre><code>
-                (function t() { })();
-                //或者
-                ;(function t() { })()
+(function t() { })();
+//或者
+;(function t() { })()
             </code></pre>
             <br>
             2. 数组解构
@@ -5801,18 +5823,18 @@ console.log(Math.max(...arr)); // 9 利用展开运算符
           </td>
           <td>
             <pre><code>
-                // 普通函数
-                function sayHi() {
-                  console.log(this);
-                }
-                let user={
-                  name:'小明',
-                  age:'18'
-                }
-                // 调用 bind 指向this的值
-                let sayHello=sayHi.bind(user)
-                //调用使用 bind 创建的新函数
-                sayHello()
+// 普通函数
+function sayHi() {
+  console.log(this);
+}
+let user={
+  name:'小明',
+  age:'18'
+}
+// 调用 bind 指向this的值
+let sayHello=sayHi.bind(user)
+//调用使用 bind 创建的新函数
+sayHello()
             </code></pre>
           </td>
         </tr>
