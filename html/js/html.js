@@ -83,17 +83,6 @@ juZhong()
 tianJiaId()//给h标签添加id
 
 
-const aside = document.querySelector('.aside')
 
-//侧边栏按钮
-document.getElementById("switch_btn").onclick = function () {
-    if (this.children[0].checked == true) {
-        this.children[1].className = "input"
-        aside.style.left = '-230px'
-    } else {
-        this.children[1].className = "input checked"
-        aside.style.left = '10px'
-    }
-}
 
 

@@ -11,199 +11,96 @@
 * {
     // margin: 0 auto;
     padding: 0 auto;
-  }
+}
 
-  li {
+li {
     list-style: none;
     /*取消点*/
-  }
+}
 
-  a {
+a {
     text-decoration: none;
     /*取消下划线 */
-  }
+}
 
-  html {
+html {
     scroll-behavior: smooth;
-  }
+}
 
+
+body {
+    display: flex;
+}
 
 .aside {
     width: 300px;
     background-color: #e8e7e3;
-    float: left;/*左浮动 */
-    position: fixed;/* 悬浮  固定定位*/
-    overflow: auto;/*限制div高度，内容多了显示滚动条*/
-    bottom: 10%;/* 下边距 */
-    top: 10%;/* 上边距 */
-    left: -300px;/* 左边距 */
-    transition-property: left;/*应用过度css属性的名称*/
-    transition-duration: 1s; /*定义过度效果花费的时间*/
+    // float: left;/*左浮动 */
+    //position: fixed;/* 悬浮  固定定位*/
+    // overflow: auto;/*限制div高度，内容多了显示滚动条*/
+    //bottom: 10%;/* 下边距 */
+    //top: 10%;/* 上边距 */
+    //left: -300px;/* 左边距 */
+    transition-property: left;
+    /*应用过度css属性的名称*/
+    transition-duration: 1s;
+    /*定义过度效果花费的时间*/
 
-    &:hover{
-        left: 10px;
 
-        .one1{
-            top: -100px;
-        }
-    }
+    .aside1 {
 
-    .setup{
-        display: flex;
-        height: 40px;
+        width: 280px;
+        overflow: auto;
+        /*限制div高度，内容多了显示滚动条*/
+        position: fixed;
+        /* 固定定位*/
+        bottom: 10%;
+        /* 下边距 */
+        top: 10%;
+        /* 上边距 */
+        left: 20px;
+        // right: 0px;
+        // background-color: #e8e7e3;
 
-        &:hover{
-            background-color: aquamarine;
-        }
 
-        .left{
-            margin-left: 10px;
-            line-height: 40px;
-        }
-        .center{
-            flex: 1;
-        }
 
-        .right{
-            margin-right: 10px;
-            width: 40px;
 
-            // 以下代码为按钮
-            .switch_on {
-                font-size: 16px;
-                width: 40px;
-                height: 40px;
-                line-height: 50px;
-                position: absolute;
-                
-            
-            
-             input {
-                width: 40px;
-                height: 100%;
-                position: absolute;
-                background: none;
-                -webkit-appearance: none;
-                
-            }
-            //-webkit-appearance: none; ”改变按钮在不同浏览器中的默认风格
-            
-            // 默认checked前(on)的样式
-            span.input.checked:before {
-                border-color: #64bd63;
-                box-shadow: #64bd63 0px 0px 0px 16px inset;
-                background-color: #64bd63;
-                transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
-            }
-            
-             span.input:before {
-                content: '';
-                width: 40px;
-                height: 25px;
-                border-radius: 20px;
-                display: inline-block;
-                position: absolute;
-                top: 8px;
-                left: 0;
-                border: 1px solid #dfdfdf;
-                box-shadow: #dfdfdf 0px 0px 0px 0px inset;
-                background-color: #fdfdfd;
-                transition: border 0.4s, box-shadow 0.4s;
-                background-clip: content-box;
-            }
-            
-            // checked后的样式
-             span.input.checked:after {
-                left: 15px;
-            }
-            
-             span.input:after {
-                content: '';
-                width: 25px;
-                height: 25px;
-                position: absolute;
-                top: 8px;
-                left: 0;  //transition之前初始化的left
-                border-radius: 100%;
-                background-color: #fff;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-                transition: left 0.2s;  //把left从0变成15px
+        ul {
+            li {
+
+
+                .aside_a {
+                    display: block;
+                    line-height: 30px;
+                    /*行高 */
+                    color: green;
+                    width: 100%;
+
+                    &:hover {
+                        background-color: red;
+                        transition-property: background;
+                        /*应用过度css属性的名称*/
+                        transition-duration: 1s;
+                        /*定义过度效果花费的时间*/
+                    }
+                }
             }
         }
+        span{
+            font-size: 50px;
         }
     }
 
 
-
-
-
-
-
-    .aside1{
-        left: 0px;
-        position: relative;/* 相对定位*/
-
-
-        .aside_a{
-            display: block;
-            line-height: 30px;/*行高 */
-            color: green;
-        }
-
-        li{
-
-            &:hover{
-                background-color: red;
-                transition-property: background;/*应用过度css属性的名称*/
-                transition-duration: 1s; /*定义过度效果花费的时间*/
-            }
-        }   
-    }
-
-
-    // 菜单
-    .one1{
-        background-color: rgba(0,0,0,.5);
-        float: left;/*左浮动 */
-        position: fixed;/* 悬浮*/
-        line-height: 40px;/*行高*/
-        left: 10px;/* 左间距 */
-        top: 45%;/*上间距*/
-        font-size: 30px;
-        color: tomato;
-        transition-property: top;/*应用过度css属性的名称*/
-        transition-duration: 2s; /*定义过度效果花费的时间*/
-    }
 }
 
 
 
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-/* td {
-    text-align: center;
-    min-width: 80px;
-} */
-
-
-
-
-
-
 .zhuTi {
-    width: 80%;
+    flex: 1;
+    width: 0%;
     /* max-width: 80%; */
     /* width: 1300px; */
     /*宽 */
@@ -216,28 +113,34 @@
     /* border-color: antiquewhite;/*边框颜色 */
     padding: 10px;
     /*内边距*/
+    padding-left: 30px;
 
-    .red{
+
+    .red {
         color: red;
     }
 
 
-    .k100{
+    .k100 {
         max-width: 100px;
     }
-    .k200{
+
+    .k200 {
         max-width: 200px;
     }
-    .k300{
+
+    .k300 {
         max-width: 300px;
     }
-    .k400{
+
+    .k400 {
         max-width: 400px;
     }
-    .k500{
+
+    .k500 {
         max-width: 500px;
     }
-    
+
 }
 
 

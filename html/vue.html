@@ -24,28 +24,15 @@
 
 </head>
 
-<div>
+
 
 
 
 
 
     <div class="aside">
-        <div class="setup">
-            <div class="left">一直显示目录</div>
-            <div class="center"></div>
-            <div class="right">
-                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
-                <label class="switch_on" id="switch_btn">
-                    <input type="checkbox" checked="checked">
-                    <span class="input"></span>
-                </label>
-            </div>
-        </div>
-        <div class="one1">
-            <sapan>菜<br>单</sapan>
-        </div>
-        <ul class="aside1 ">
+       <div class="aside1 ">
+        <ul>
             <li>
                 <h3>html框架</h3>
             </li>
@@ -55,6 +42,7 @@
         <span>目录</span>
         <ol class="js-toc"></ol>
     </div>
+</div>
     
 
 
@@ -731,15 +719,15 @@ export default {
                     </td>
                     <td>
                         <pre><code>
-                            <div>
-                                <p>和为：{{num}}</p>
-                            </div>
+<div>
+    <p>和为：{{num}}</p>
+</div>
 
-                            computed:{
-                                "计算属性名"(){
-                                    return "值"
-                                }
-                            }
+computed:{
+    "计算属性名"(){
+        return "值"
+    }
+}
                         </code></pre>
                     </td>
                     <td>计算属性也是属性, 所以不要和data里重名, 用起来也和data类似</td>
