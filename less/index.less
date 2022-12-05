@@ -13,14 +13,14 @@ body {
 }
 
 // 版心
-.warapper{
+.warapper {
     width: 1220px;
     background-color: darkcyan;
     margin: 0 auto;
 }
 
-.body_main{
-background-color: azure;
+.body_main {
+    background-color: azure;
 }
 
 
@@ -31,24 +31,27 @@ background-color: azure;
     width: 100%;
     /* height: 50%; */
     background-color: cadetblue;
-    top: 95.5%;
+    top: 0%;
     left: 0px;
     right: 0px;
     bottom: 0px;
     box-sizing: border-box;
     transition: all 1s;
+
     .nav {
         justify-content: space-between;
         height: 40px;
         margin-bottom: 8px;
         background-color: blueviolet;
-        ul{
+
+        ul {
             display: flex;
             // flex-direction: row;
             justify-content: space-evenly;
-            li{
-                
-                a{
+
+            li {
+
+                a {
                     flex: 1;
                     display: inline-block;
                     // width: 100px;
@@ -59,82 +62,15 @@ background-color: azure;
                     font-size: 18px;
                     margin: 0 10px;
                 }
-                &:hover{
+
+                &:hover {
                     background-color: chartreuse;
                 }
-
-
-                // 以下代码为按钮
-                .switch_on {
-                    font-size: 16px;
-                    width: 40px;
-                    height: 40px;
-                    line-height: 50px;
-                    position: absolute;
-                    
-                
-                
-                 input {
-                    width: 40px;
-                    height: 100%;
-                    position: absolute;
-                    background: none;
-                    -webkit-appearance: none;
-                    
-                }
-                //-webkit-appearance: none; ”改变按钮在不同浏览器中的默认风格
-                
-                // 默认checked前(on)的样式
-                span.input.checked:before {
-                    border-color: #64bd63;
-                    box-shadow: #64bd63 0px 0px 0px 16px inset;
-                    background-color: #64bd63;
-                    transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
-                }
-                
-                 span.input:before {
-                    content: '';
-                    width: 40px;
-                    height: 25px;
-                    border-radius: 20px;
-                    display: inline-block;
-                    position: absolute;
-                    top: 8px;
-                    left: 0;
-                    border: 1px solid #dfdfdf;
-                    box-shadow: #dfdfdf 0px 0px 0px 0px inset;
-                    background-color: #fdfdfd;
-                    transition: border 0.4s, box-shadow 0.4s;
-                    background-clip: content-box;
-                }
-                
-                // checked后的样式
-                 span.input.checked:after {
-                    left: 15px;
-                }
-                
-                 span.input:after {
-                    content: '';
-                    width: 25px;
-                    height: 25px;
-                    position: absolute;
-                    top: 8px;
-                    left: 0;  //transition之前初始化的left
-                    border-radius: 100%;
-                    background-color: #fff;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-                    transition: left 0.2s;  //把left从0变成15px
-                }
-            }
-
-
-
-
             }
         }
-        
+
     }
-    
+
     iframe {
         border: none;
         width: 100%;
@@ -151,14 +87,15 @@ background-color: azure;
 
 // 响应式
 @media screen and (max-height:700px) {
-    /*最大高度为700px时的样式*/
-    .main_diDu {
-    top: 85%;
-    // top: 10%;
-    left: 0px;
-    right: 0px;
-    bottom: 0%;
-    }
 
-    
+    /*最大高度为700px时的样式*/
+    // .main_diDu {
+    //     top: 85%;
+    //     // top: 10%;
+    //     left: 0px;
+    //     right: 0px;
+    //     bottom: 0%;
+    // }
+
+
 }

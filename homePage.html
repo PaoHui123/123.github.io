@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style lang="less">
+        /* // 导入依赖文件 */
+        @import url(./base.less);
+
+        body {
+            background-color: aquamarine;
+        }
+
+        /* // 版心 */
+        .warapper {
+            width: 1220px;
+            background-color: darkcyan;
+            margin: 0 auto;
+        }
+
+        .body_main {
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 主体 -->
+    <div class="body_main warapper">
+        <audio src="./src/qiJiZaiXian.m4a" controls loop></audio>
+
+        <div style="text-align: center; font-size: 20px;">
+            <span style="color: red; font-weight: 700; font-size: 25px;">滚去学习,你花那么多钱,有什么资格不学习。</span><br>
+            卷的过别人了吗?<br>
+            学会了吗?<br>
+            预习了吗?<br>
+            打了多少代码?<br>
+        </div>
+        <div>
+            曾经有无数的学生, 跟我说过, 如果再给我重来一次的机会, 我肯定会认真对待作业, 能帮我查缺补漏
+
+            <br>学生名言: 眼睛会了, 手没回, 做项目啥也不是
+
+            <br>学生名言: 眼睛会了, 经历作业的磨炼和折磨, 脑子现在也会了 (中间一度眼睛也不会了, 但是我能坚持不断纠正错误和问题, 最后成功)
+            <br>只要你用心, 定能收获成功, 敷衍了事难获成功!
+        </div>
+    </div>
+
+
+
+
+    <!-- 浏览器读取less文件的js -->
+    <script src="./lib/less.js"></script>
+</body>
+
+</html>
