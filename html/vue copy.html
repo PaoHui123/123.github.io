@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+    <!-- 引入代码高亮的主题css -->
+    <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+    <!-- 引入代码样式代码 -->
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <!-- 引入目录代码样式 -->
+    <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>vue</title>
+    <style>
+
+    </style>
+
+</head>
+
+<div>
+
+
+
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>html框架</h3>
+            </li>
+            <li><a href="#" class="aside_a">1111</a></li>
+            <li><a href="#" class="aside_a">1111</a></li>
+        </ul>
+        <span>目录</span>
+        <ol class="js-toc"></ol>
+    </div>
+    
+
+
+    <div class="zhuTi js-toc-content">
+        
+
+        <h1>第一天，第二天未写完</h1>
+
+
+        <h2>Vue组件概念, 创建和使用</h2>
+        <h2>什么是组件化开发</h2>
+        <div>
+            <p>组件是可复用的 Vue 实例, 封装标签, 样式和JS代码</p>
+            <p>⚫ 组件化 ：封装的思想，把页面上 `可重用的部分` 封装为 `组件`，从而方便项目的 开发 和 维护</p>
+            <p>⚫⚫ 一个页面， 可以拆分成一个个组件，一个组件就是一个整体</p>
+            <p>⚫ 每个组件可以有自己独立的 结构 样式 和 行为(html, css和js)</p>
+            <p>⚫ 例如：http://www.ibootstrap.cn/ 所展示的效果，就契合了组件化开发的思想</p>
+            <br>
+            <p>前端组件化开发的好处：</p>
+            <p>- 提高了 <span class="red">复用性和灵活性</span></p>
+            <p>- 提升了 <span class="red">开发效率 和 后期可维护性</span></p>
+         </div>
+
+         
+         <h2>组件的注册与使用</h2>
+          <div>  
+            <p>App.vue 是根组件, 这个比较特殊, 是最大的一个根组件。其实里面还可以注册使用其他小组件</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>组件的注册与使用</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>1.<span class="red">创建</span>组件, 封装要复用的标签, 样式, JS代码</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2. <span class="red">引入组件</span></td>
+                    <td>
+                        <pre><code>
+import 组件对象 from 'vue文件路径'
+                        </code></pre>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3. <span class="red">注册</span>组件</td>
+                    <td>
+                        <pre><code>
+//全局注册 – main.js中 – 语法如图
+Vue.component("组件名"，组件对象)
+//Vue 是大写，不能错
+
+// 局部注册 – 某.vue文件内 – 语法如图
+export default{
+    components:{
+        "组件名":组件对象
+    }
+}
+                        </code></pre>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4. <span class="red">使用</span>组件：组件名当成标签使用即可</td>
+                    <td>
+                        <pre><code>
+<组件名></组件名>
+                        </code></pre>
+                    </td>
+                    <td>组件名不能和内置的html名同名</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>组件名的大小写</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>在进行组件的注册时，定义组件名的方式有两种</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>1. 注册使用短横线命名法，例如 hm-header 和 hm-mai</td>
+                    <td>
+                        <pre><code>
+vue.component('hm-button',HmButton)
+//使用时 `<hm-button> </hm-button>`
+                        </code></pre>
+                    </td>
+                    <td>推荐1: <span class="red">定义组件名</span>时, 用大驼峰命名法, 更加方便</td>
+                </tr>
+                <tr>
+                    <td>2. 注册使用大驼峰命名法，例如 HmHeader 和 HmMain</td>
+                    <td>
+                        <pre><code>
+vue.component('HmButton',HmButton)
+//使用时 `<HmButton> </HmButton>` 和 `<hm-button> </hm-button>` 都可以
+                        </code></pre>
+                    </td>
+                    <td>推荐2: <span class="red">使用组件</span>时，遵循html5规范, 小写横杠隔开（可选）</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>通过 name 注册组件 (了解)</h2>
+        <div>
+            <p>组件在 <span class="red">开发者工具中</span> 显示的名字，可以通过name进行修改：</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>
+//创建组件时 通过这个设置组件名字
+export default{
+    name:'HmButton'
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>在注册组件期间，除了可以直接提供组件的注册名称之外，
+                        <br>还可以把组件的 name 属性作为注册后组件的名称
+                        <pre><code>
+//可以使用组件的名字
+import HmButton from './组件'
+Vue.component(HmButton.name,HmButton)
+//等价于 Vue.component('HmButton',HmButton)
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>组件的样式冲突 scoped</h2>
+        <div>
+            <p>默认情况下，写在组件中的样式会 `<span class="red">全局生效</span>`，因此很容易造成多个组件之间的样式冲突问题。</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>组件的样式冲突 scoped</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>1. `<span class="red">全局样式</span>`: 默认组件中的样式会作用到全局</td>
+                    <td rowspan="2">
+                        scoped原理？
+                        <br>⚫ （1）当前组件内标签都被添加 <span class="red">data-v-hash值</span> 的属性
+                        <br>⚫ （2）css选择器都被添加 <span class="red">[data-v-hash值]</span> 的属性选择器
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2. `<span class="red">局部样式</span>`: 可以给组件加上 <span class="red">scoped</span> 属性, <span class="red">可以让样式只作用于当前组件</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3">最终效果: 必须是<span class="red">当前组件的元素</span>, 才会有这个自定义属性, 才会被这个样式作用到</td>
+                    <pre><code>
+<style scoped>
+    .box{
+        border: 2px solid blue;
+    }
+</style>
+                    </code></pre>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+        <h2>Vue组件通信</h2>
+        <h2>组件通信 - 父传子</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>父组件</td>
+                    <td>调用“函数”、传入“实参”</td>
+                    <td>
+                        <pre><code>
+import cpt1 from '子组件'    //导入
+
+components:{   //注册
+    cpt1,
+}
+
+<cpt1 title='哈哈哈' price=77></cpt1>  //使用： 传入实参
+                        </code></pre>
+                        <br>
+                        完整案例
+                        <pre><code>
+<template>
+    <div>
+      <hm-cpt1></hm-cpt1>
+      <hm-cpt2></hm-cpt2>
+      <hm-cpt3 title="小米手机" price="8888"></hm-cpt3>
+      <hm-cpt3 title="华为手机" price="9888"></hm-cpt3>
+      <hm-cpt3
+          v-for="item in list"
+           :key="item.id" 
+           :title="item.title"
+           :price="item.price">
+      </hm-cpt3>
+    </div>
+</template>
+                              
+&lt;script>
+import HmCpt1 from './components/05-口水鸡.vue'
+import HmCpt2 from './components/05-棒棒糖.vue'
+import HmCpt3 from './components/05-商品.vue'
+export default {
+    data(){
+        return{
+            title:"苹果",
+            price:18,
+            list:[
+                {id:1,title:"口水鸡",price:65},
+                {id:2,title:"香蕉",price:9.9},
+                {id:3,title:"草莓",price:29.9}
+            ]
+        }
+    },
+    components:{
+        HmCpt1:HmCpt1,  //组件名 组件对象的变量
+        HmCpt2:HmCpt2,  //组件名 组件对象的变量
+        HmCpt3:HmCpt3,  //组件名 组件对象的变量
+    }
+}
+</script>
+
+<style>
+
+</style>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>子组件</td>
+                    <td>封装“函数”</td>
+                    <td>
+                        <pre><code>
+<template>
+    <div class="box">
+        <!-- 使用形参 -->
+        <h2>标题：{{title}}</h2>
+        <p>价格：{{price}}</p>
+    </div>
+</template>
+<script>
+    export default {
+        props:["title","price"]  //设置形参
+        //封装所谓的形参，
+    }
+</script>
+<style scoped>
+    .box{
+        border: 2px solid blue;
+    }
+</style>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+
+    <!-- 引入js文件 -->
+    <script src="./js/html.js"></script>
+
+    <!-- 浏览器读取less文件的js -->
+    <script src="../lib/less.js"></script>
+
+
+
+    <!-- 引入代码高亮的js文件 -->
+    <script src="../lib/highlight/highlight.min.js"></script>
+    <!-- highlight使用方式:   -->
+    <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+    <!-- 类名不写语言默认自动识别 -->
+
+    <!-- 初始化代码高亮 -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <!-- 引入代码显示行数的js文件 -->
+    <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+    <!-- 初始化代码显示高度 -->
+    <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+    <!-- 自动生成目录 -->
+    <script src="../lib/dist/tocbot.min.js"></script>
+    <script type="text/javascript">
+        //目录生成初始化
+        tocbot.init({
+            // 在何处呈现目录。
+            tocSelector: '.js-toc',
+
+            // 在何处获取标题以构建目录。
+            contentSelector: '.js-toc-content',
+
+            // 要在内容选择器元素内获取哪些标题。
+            headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+            //对于内容中相对或绝对位置的容器内的标题。
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+
+</body>
+
+</html>

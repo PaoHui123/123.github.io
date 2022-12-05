@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+    <!-- 引入代码高亮的主题css -->
+    <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+    <!-- 引入代码样式代码 -->
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <!-- 引入目录代码样式 -->
+    <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>node</title>
+    <style>
+
+    </style>
+
+</head>
+
+<div>
+
+
+
+
+
+    <div class="aside">
+        <div class="setup">
+            <div class="left">一直显示目录</div>
+            <div class="center"></div>
+            <div class="right">
+                <!-- <span style="line-height: 40px; color: black; font-size: 20px;"></span> -->
+                <label class="switch_on" id="switch_btn">
+                    <input type="checkbox" checked="checked">
+                    <span class="input"></span>
+                </label>
+            </div>
+        </div>
+        <div class="one1">
+            <sapan>菜<br>单</sapan>
+        </div>
+        <ul class="aside1 ">
+            <li>
+                <h3>html框架</h3>
+            </li>
+            <li><a href="#" class="aside_a">1111</a></li>
+            <li><a href="#" class="aside_a">1111</a></li>
+        </ul>
+        <span>目录</span>
+        <ol class="js-toc"></ol>
+    </div>
+    
+
+
+    <div class="zhuTi js-toc-content">
+        
+        <div>
+            不用敲<br>
+            扩展：-S(记录到项目依赖)  或 -D(记录到开发依赖)
+        </div>
+
+
+        
+
+        <h2>查看node版本号</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>查看node版本号</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>node -V</td>
+                    <td>查看node版本号</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>npm -V</td>
+                    <td>查看npm版本号</td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>node概念及作用</h2>
+        <div>
+            <p>node概念：</p>
+            <p>
+                <span class="red">node 是一个基于 Chrome V8 引擎的 JavaScript 运行时(运行环境)</span>
+                <br>通俗讲: 用node这个软件可以独立执行JS文件代码, 脱离浏览器软件
+                <br>很开心, node内使用的语法还是JavaScript, 所以也管它叫nodejs, 我们上手很容易
+            </p>
+            <p>node作用</p>
+            <p>
+                读写和操作本地文件和路径
+                <br>读写和操作数据库
+                <br>基于 Express/Koa 框架，可以快速构建 Web 应用
+                <br>基于 restify 框架，可以快速构建 API 接口项目(提供地址, 让前端发ajax请求)
+                <br>基于 Electron 框架，可以构建跨平台的桌面应用
+                <br>...其他
+            </p>
+
+            <br><br><br>
+        </div>
+
+        <h2>node环境下, 无法使用DOM和BOM对象</h2>
+        <div>
+
+            <br><br><br>
+        </div>
+
+
+        <h2>了解node环境中全局变量</h2>
+        <div>
+            <pre><code>
+ /* 
+  window 浏览器中的全局对象
+  global node中的全局对象
+  注意: 在node中, 使用global中的属性和方法, 不需要引入
+
+  ctrl + c 停止执行
+*/
+
+// 1. 打印
+// console.log(global)
+
+// 2. 定时器 和 延时器
+// setInterval(()=>{
+//    console.log('node中使用定时器~')
+// }, 1000)
+
+// setTimeout(()=>{
+//   console.log('node中使用延时器~')
+// }, 1000)
+
+// 3. 获取当前文件的绝对路径 和 当前文件所在目录的绝对路径
+// 作用: 方便后面的本地文件读取
+console.log(__filename)
+console.log(__dirname)
+            </code></pre>
+
+            <br><br><br>
+        </div>
+
+
+        <h2>内置模块-fs使用</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>fs使用</caption>
+                <tr>
+                    <th>介绍</th>
+                    <th>特点</th>
+                    <th>使用</th>
+                </tr>
+                <tr>
+                    <td>fs，即 file system，文件系统，该模块可以实现对 文件、文件夹的操作</td>
+                    <td>
+                        node安装内置的, 无需自己创建和下载
+                        <br>模块标识不必写相对路径, 直接写名字即可
+                    </td>
+                    <td>
+                        新建业务js文件`代码/02_use_fs.js`, 引入并加载fs模块
+                        <pre><code>
+// 目标: 使用fs模块
+// 1. 引入fs模块
+const fs = require('fs')
+// 2. 调用它内置导出的方法, 实现对应功能
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>fs模块中的常用方法 需要先引入模块</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>fs模块中的常用方法</caption>
+                <tr>
+                    <th>api</th>
+                    <th>作用</th>
+                    <th>例子</th>
+                </tr>
+                <tr>
+                    <td>fs.access(path, callback)</td>
+                    <td>判断路径是否存在</td>
+                    <td>
+                        <pre><code>
+// (1): 判断文件是否存在
+// 语法: fs.access('目标文件路径', 回调函数)
+// 作用: 尝试读取指定目标文件, 把结果回传给回调函数, err有值代表报错, 无值成功
+fs.access('./data/student.txt', err => {
+    if (err) {
+        // 如果err有值, 证明有错误, 文件不存在
+        console.log('文件不存在')
+    } else {
+        console.log('文件存在')
+    }
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>fs.writeFile(file, data, callback)</td>
+                    <td>向文件中写入内容</td>
+                    <td>
+                        手动新建目标文件, 然后写入一些内容
+                        <pre><code>
+// (2): 手动新建目标文件, 写入一些内容
+// 语法: fs.writeFile('目标文件路径', 要写入的字符串, 回调函数)
+// 作用: 向目标文件, 写入指定的字符串进去, 回传结果给回调函数, err有值写入失败, 无值成功
+const obj = {
+    name: '小李',
+    age: 18,
+    hobby: '写代码'
+}
+const jsonStr = JSON.stringify(obj)
+fs.writeFile('./data/student.json', jsonStr, err => {
+    if (err) {
+        console.log('写入报错')
+        console.log(err);
+    } else {
+        console.log('写入成功')
+    }
+})
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>fs.readFile(path, callback)</td>
+                    <td>读取文件中内容</td>
+                    <td>
+                        <pre><code>
+// (3): 读取目标文件内容
+// 语法: fs.readFile('目标文件路径', 回调函数)
+// 作用: 把目标文件内容, 读取后传递给回调函数的第二个参数并执行回调函数一次
+fs.readFile('./data/student.json', (err, data) => {
+    if (err) {
+        console.log('读取失败')
+        console.log(err);
+    } else {
+        // 读取成功
+        console.log(data)
+        // 但是发现是Buffer(数据流), 计算机中以2进制存储数据, 读出来是16进制的
+        // 需要强制转换成字符串显示
+        console.log(data.toString());
+    }
+})
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>路径动态拼接问题</h2>
+        <div>
+            <p>node执行时, 携带./或者../形式. 就会导致代码里路径查找出错</p>
+            <pre><code>
+/* 
+ 1) 存在问题:
+ 在使用 fs 模块操作文件时
+ 如果提供的操作路径是以./ 或 ../ 开头的相对路径时
+ 很容易出现路径动态拼接错误的问题
+
+ 2) 原因：
+ 代码在运行的时候，会以执行node 命令时所处的目录，动态拼接出被操作文件的完整路径
+ 
+ 3) 解决方案：
+ 在使用fs 模块操作文件时，直接提供绝对路径
+ 不要提供./ 或 ../ 开头的相对路径，从而防止路径动态拼接的问题
+*/
+
+const fs = require('fs')
+
+// fs.readFile('./静夜思.txt', (err, data)=>{
+//     if(err){
+//        return console.log('读取文件出错', err)
+//     }
+//     console.log(data)
+//     console.log(data.toString())
+// })
+
+
+fs.readFile(__dirname + '/静夜思.txt', (err, data)=>{
+    if(err){
+       return console.log('读取文件出错', err)
+    }
+    console.log(data)
+    console.log(data.toString())
+})
+            </code></pre>
+
+            <br><br><br>
+        </div>
+
+
+
+        <h2>内置模块-path库-可以拼接, 查询处理路径字符串</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>内置模块-path库-可以拼接, 查询处理路径字符串</caption>
+                <tr>
+                    <th>介绍</th>
+                    <th>特点</th>
+                    <th>使用</th>
+                </tr>
+                <tr>
+                    <td>path, 是 node 本身提供的 API，专门用来处理路径。</td>
+                    <td>
+                        * node安装内置的, 无需自己创建和下载
+                        <br>* 模块标识不必写相对路径, 直接写名字即可
+                    </td>
+                    <td>
+                        <pre><code>
+// 目标: 使用path模块
+// 1. 引入path模块
+const path = require('path')
+// 2. 调用它内置导出的方法, 实现对应功能
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>path模块中的几个常用方法</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>path模块中的几个常用方法</caption>
+                <tr>
+                    <th>方法</th>
+                    <th>作用/th>
+                    <th>例子</th>
+                </tr>
+                <tr>
+                    <td>path.extname(path)</td>
+                    <td>返回路径中文件的扩展名(包含.)</td>
+                    <td>
+                        <pre><code>
+// (1): 返回路径字符串中的扩展名
+// 语法: path.extname('路径字符串')
+// 注意: 不用关心此路径文件在不在, 就是处理这个字符串
+// 返回值: 提取后缀字符串(带.)
+console.log(path.extname('./data/student.json'));
+console.log(path.extname('./data/student.js.json'));
+console.log(path.extname('./data/a.json.txt'));
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>path.join([...paths])**</td>
+                    <td>拼接路径(相对路径</td>
+                    <td>
+                        <pre><code>
+// (2): 拼接路径, 使用join方法
+// 语法: path.join('路径字符串', ...可以多个)
+// 返回值: 从第一个路径往后拼接, 完整的路径字符串
+console.log(path.join('a', 'b', 'c'));
+console.log(path.join('a', 'b', '../c', 'd'));
+console.log(path.join('a', 'b', '..', 'c'));
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>path.resolve([...paths])</td>
+                    <td>拼接路径(绝对路径)</td>
+                    <td>
+                        <pre><code>
+// (3): 拼接路径, 使用resolve方法
+// 语法: path.resolve('路径字符串', ...可以多个)
+// 返回值: 从磁盘根目录返回, 完整的路径字符串
+console.log(path.resolve('a', 'b', 'c'));
+console.log(path.resolve('a', 'b', '../c', 'd'));
+console.log(path.resolve('a', 'b', '..', 'c'));
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>path.basename(path)</td>
+                    <td>返回路基你中最后一部分</td>
+                    <td>
+                        <pre><code>
+// 2. path.basename()
+// 返回 path 的最后一部分
+// 尾随的目录分隔符被忽略
+// console.log(path.basename('a/b/c/静夜思.txt'))
+// console.log(path.basename('a/b/c/girl.png'))
+// console.log(path.basename('a/b/c/d'))   
+                        </code></pre>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>网络基础知识</h2>
+        <h3>前置知识: 当我们在浏览器中输入了www.baidu.com的时候,发生了什么?</h3>
+        <h3>ip地址 域名 端口三者之间的关系?</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>ip地址</td>
+                    <td>- 任何一台设备(计算机, 手机, ...)想要接入到网络中(互联网,局域网)，就会被分配一个唯一的ip地址
+                        <br>- 通过这个ip地址就能找到这台设备
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>域名:</td>
+                    <td>- 比如 www.jd.com 就是域名 ，方便记忆
+                        <br>- 我们购买了云服务器之后, 服务器会有一个IP地址,  我们可以通过域名解析让域名指向当前IP
+                        <br>- 域名和ip地址绑定后，通过域名就可以找到对应的ip地址, 从而访问到该服务器
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>端口</td>
+                    <td>- 一台计算机能运行很多程序, 一般一个程序会占用一个或者多个端口
+                        <br>- http协议的默认端口是80
+                        <br>- https协议的默认端口是443
+                        <br>- 数据库的默认端口3306
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>浏览器与服务器的交互过程</td>
+                    <td>1. 根据相关域名, 去查询dns服务器,得到对应的ip地址
+                        <br>2. 根据IP地址, 找到对应的计算机
+                        <br>3. 根据端口找到对应的服务器程序
+                        <br>4. 根据url请求具体的信息
+                        <br>5. 服务器根据请求进行处理
+                        <br>6. 浏览器接收到了服务器的响应, 把结果响应出来
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>http模块</h2>
+        <div>
+            <p>http是一个node内置模块，让我们能够通过简单的流程创建一个web服务</p>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>实现步骤</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>落地代码</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>导入内置http模块</td>
+                    <td rowspan="7">
+                        <pre class="k500"><code>
+// 1. 加载http模块
+import http from 'http';
+
+// 2. 创建服务对象，一般命名为server
+const server = http.createServer(); // create创建、server服务器
+
+// 3. 给server对象注册请求（request）事件，监听浏览器的请求。只要有浏览器的请求，就会触发该事件
+server.on('request', (req, res) => {
+  // 设置响应状态码
+  res.statusCode = 200;
+  // 设置响应头(确保中文能正确返回, 编码显示)
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  // 设置响应体
+  res.end('hello，欢迎访问web服务，这是服务端给你的回应');
+});
+
+// 4. 设置端口，开启服务
+server.listen(3000, () => {
+  console.log('服务器启动了');
+});
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>创建server服务对象 (server 对象负责建立连接，接收数据)</td>
+                    <!-- <td></td> -->
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>注册request事件, 当浏览器发送请求到服务器执行，设置处理请求的函数, 并返回响应数据</td>
+                    <!-- <td></td> -->
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>监听端口 (一个电脑里有很多个服务, 用端口区分)</td>
+                    <!-- <td></td> -->
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>使用node命令执行此js文件, 你发现, 终端里与以前不太一样</td>
+                    <!-- <td></td> -->
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>测试, 浏览器是否能请求到此服务, 打开浏览器输入url地址: http://localhost:3000即可</td>
+                    <!-- <td></td> -->
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>内置模块-http模块-参数req和res对象讲解</h2>
+        <div>
+            <p>请求: 是前端发送到web服务的过程, 前=>后</p>
+            <p>响应: 是web服务做出返回的过程, 后=>前</p>
+            <div>
+                当收到浏览器的请求后，会触发request事件，事件处理函数有两个形式参数 req 和 res。
+                <pre><code>
+// 代码片段
+server.on('request', function (req, res) {
+  // 该函数就是处理请求响应的函数
+  // 形参res是响应response的简写
+})
+                </code></pre>
+            </div>
+        
+        <h3>req讲解</h3>
+        <div>
+        <p>它是request请求对象(前端发来的内容都被node添加到了这个对象内)</p>
+        <br>
+        <p>常见属性</p>
+        <pre><code>
+headers: 所有的请求头信息
+method： 请求的方式
+url： 请求的地址   
+        </code></pre>
+        <p>注意：在发送请求的时候，可能会出现两次请求的情况，这是因为谷歌浏览器会自动增加一个`favicon.ico`的请求。</p>
+         <p>request对象中，常用的就是method和url两个参数</p>
+        </div>   
+
+
+
+        <h3>res讲解</h3>
+        <div>
+            <p>常见的属性和方法</p>
+            <pre><code>
+res.write(data): 给浏览器发送响应体，可以调用多次，从而提供连续的请求体
+res.end();   通知浏览器，所有响应头和响应主体都已被发送，即服务器将其视为已完成。
+res.end(data); 结束请求，并且响应一段内容，相当于res.write(data) + res.end()
+res.statusCode: 响应的的状态码 200 404 500
+res.statusMessage: 响应的状态信息， OK Not Found ,会根据statusCode自动设置。
+res.setHeader(name, value); 设置响应头信息， 比如content-type
+res.writeHead(statusCode, statusMessage, options); 设置响应头，同时可以设置状态码和状态信息。
+            </code></pre>
+            <p>注意：必须先设置响应头，才能设置响应</p>
+            <br><br><br>
+        </div>
+        </div>
+
+
+        <h2>解决中文乱码问题</h2>
+        <div>
+            <p>当调用 res.end() 方法，向客户端发送中文内容的时候，会出现乱码问题，此时，需要手动设置内容的编码格式：</p>
+            <pre><code>
+res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>不同的url响应不同内容</h2>
+        <div>
+            <pre><code>
+const http = require('http');
+const server = http.createServer();
+server.listen(3000, () => console.log('my server running'));
+server.on('request', (req, res) => {
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    const url = req.url // 获取请求的url地址
+    if (url === '/' || url === 'index.html') {
+        res.end('<h1>首页</h1>');
+    } else if (url === '/about.html') {
+        res.end('<h1>关于我们</h1>');
+    } else {
+        res.end('<h1>404</h1>');
+    }
+});
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>案例-时钟:缺少素材文件</h2>
+        <div>
+            <p>使用http模块, 搭建web服务, 配置端口号3006</p>
+            <p>1. 监听request事件, 并读取时钟案例html文件内容, 返回</p>
+
+            <pre><code>
+/* 
+把时钟案例部署在本地服务器上
+通过localhost:3000能够访问
+*/
+              
+const http = require('http')
+const fs = require('fs')
+const path = require('path')
+              
+http.createServer((req, res) => {
+  if (req.url === '/') {
+    // 1.1 从本地读取index.html文件的内容
+    fs.readFile(path.join(__dirname, 'clock', 'index.html'), (err, data) => {
+      if (err) {
+        return console.log('读取文件失败', err)
+      }
+      // 1.2 响应给浏览器端
+      res.setHeader('Content-Type', 'text/html; charset=utf-8')
+      res.end(data)
+    })
+  } else if (req.url === '/index.css') {
+    // 2.1 从本地读取index.css文件的内容
+    fs.readFile(path.join(__dirname, 'clock', 'index.css'), (err, data) => {
+      if (err) {
+        return console.log('读取文件失败', err)
+      }
+      // 2.2 响应给浏览器端
+      res.setHeader('Content-Type', 'text/css')
+      res.end(data)
+    })
+  } else if (req.url === '/index.js') {
+    // 3.1 从本地读取index.css文件的内容
+    fs.readFile(path.join(__dirname, 'clock', 'index.js'), (err, data) => {
+      if (err) {
+        return console.log('读取文件失败', err)
+      }
+      // 3.2 响应给浏览器端
+      res.setHeader('Content-Type', 'appliction/javascript')
+      res.end(data)
+    })
+  }
+}).listen(3000, () => {
+  console.log('3000端口的web服务器已经启动')
+})               
+            </code></pre>
+        </div>
+
+
+        <h2>案例-实现静态web服务器</h2>
+        <div>
+            <p>研究：稍微研究下（多文件）怎么把数据库可视化前端写好文件，以服务形式展示浏览器</p>
+            <p>用node+http模块编写一个web服务, 负责返回网页相应资源给浏览器</p>
+            <br><br><br>
+        </div>
+
+        <h3>讲解</h3>
+        <div>
+            <p>注意：浏览器中输入的URL地址，仅仅是一个标识，不与服务器中的目录一致。也就是说：返回什么内容是由服务端的逻辑决定</p>
+        </div>
+
+        <h4>MIME类型解释</h4>
+        <div>
+            <p>MIME(Multipurpose Internet Mail Extensions)多用途Internet邮件扩展类型 是一种表示文档性质和格式的标准化方式</p>
+            <p>浏览器通常使用MIME类型（而不是文件扩展名）来确定如何处理文档；因此服务器将正确的MIME类型附加到响应对象的头部是非常重要的</p>
+            <p>回忆上个案例设置的响应头Content-Type里的内容类型, 告诉浏览器本次响应体内容类型</p>
+        </div>
+
+        <h3>在node处理MIME响应头类型(因为后很多, 所以借助第三方包, 这里先用npm(安装node自带的命令), 明天详细讲解npm作用</h3>
+        <div>
+            <p>MIME类型的通用处理-mime模块</p>
+            <div>
+                <p>作用：获取文件的MIME类型</p>
+                <p>安装：`npm i mime`</p>
+                <pre><code>
+const mime = require('mime')
+// 获取路径对应的MIME类型
+mime.getType('txt')                    // ⇨ 'text/plain' 纯文本
+// 根据MIME获取到文件后缀名
+mime.getExtension('text/plain')        // ⇨ 'txt'
+                </code></pre>
+                <br>
+                <p>mime的语法</p>
+                <pre><code>
+ // 1. 引入三方模块
+const mime = require('mime')
+// 2. mime.getType (获取路径对应的MIME类型)
+console.log(mime.getType('/index.html')) // text/html
+console.log(mime.getType('/assets/css/index.css')) // text/css
+console.log(mime.getType('/assets/images/logo.png')) // image/png
+console.log(mime.getType('/assets/js/index.js')) // application/javascript
+                </code></pre>
+            </div>
+        </div>
+
+
+        <h3>把`素材/project`项目-前端网页, 拿到web服务的js文件的隔壁, 并编写node相关的web服务的js代码, 最终落地代码</h3>
+        <div>
+            <pre><code>
+/* 把 可视化静态网站 部署到 3000端口的 web服务器上*/
+
+const http = require('http')
+const mime = require('mime')
+const path = require('path')
+const fs = require('fs')
+
+
+http.createServer((req, res)=>{
+   // 1. 拼接请求的完整路径
+   // index.html  __dirname + 'project/index.html'
+   let reqUrl = req.url === '/' ? '/index.html' : req.url
+   let fullPath = path.join(__dirname, 'project', reqUrl)
+   console.log(fullPath)
+
+   // 2. 根据路径读取本地文件
+   fs.readFile(fullPath, (err, data)=>{
+      if(err){
+         // 如果访问的页面不存在, 则返回404页面
+         fs.readFile(path.join(__dirname, 'project', '404.html'), (err, data)=>{
+            if(err){
+               return console.log('读取404页面失败', err)
+            }
+            res.end(data)
+         })
+         return 
+      } 
+      // 3. 响应给浏览器
+      res.setHeader('Content-Type', mime.getType(req.url))
+      res.end(data)
+   })
+}).listen(3000, ()=>{
+   console.log('3000端口的web服务器已经启动~')
+})
+            </code></pre>
+        </div>
+
+<p>*******第二天********************************************************************************************************************************</p>
+
+
+        <h2>模块化概念</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>模块化概念</caption>
+                <tr>
+                    <th>原因</th>
+                    <th>解决</th>
+                    <th>生活例子</th>
+                    <th>总结</th>
+                </tr>
+                <tr>
+                    <td> 一个页面往往比较复杂，所有的js代码或者HTML代码写在一起很难维护</td>
+                    <td>所以把一个大的文件(不只JS), 拆分成若干小文件(模块)，而且还能把小文件(模块)通过**特定的语法**组合到一起的实现过程</td>
+                    <td>比如电脑，可以把电脑拆分成显示器、键盘、硬盘、内存等一个一个的小模块，通过"特定方式"组装到一起</td>
+                    <td>一个文件就是一个模块，有自己的作用域，只需要选择性向外**导出**特定的函数或变量, 然后通过特定语法按需**导入**到使用的地方(是一种思想和语法)</td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>模块化优点</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>模块化优点</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                </tr>
+                <tr>
+                    <td>提高代码复用性</td>
+                    <td>
+                        某个模块, 发布后, 所有程序员都可以使用(只要拿到对应模块代码)
+                        <br>封装一些常用的工具函数, 大家都来引用这个模块里暴露出来的这些函数
+                    </td>
+                </tr>
+                <tr>
+                    <td>提高代码可维护性</td>
+                    <td>
+                            某个模块代码想要替换, 可以快速直接替换
+                            <br>项目需要对登录模块升级，则不会影响其他模块
+                            <br>生活例子: 比如电脑屏幕坏了，只换屏幕就可以了；比如想升级显卡，只换显卡就行了
+                    </td>
+                </tr>
+                <tr>
+                    <td>实现按需加载</td>
+                    <td>需要哪个模块就用特定的语法把它引入过来</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>模块规范:CommonJS规范</h2>
+        <div>
+
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>CommonJS规范:nodejs</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>导出语法</td>
+                    <td>module.exports</td>
+                    <td>
+                        新建模块, 并**导出**
+                        <pre><code>
+// 模块内的工具变量和方法
+const baseURL = 'http://geek.itheima.net'
+const getSum = (numA, numB) => numA + numB
+const getArraySum = arr => {
+    let sum = 0
+    arr.forEach(item => sum += item)
+    return sum
+}
+
+// 目标: 想要被外部使用的话, 需要"导出"
+// 语法: module.exports = {}
+// 作用: 把要导出的装入此对象内(key是外部要使用的, value是内部导出的值)
+// 注意: 外部无法使用未导出的变量
+module.exports = {
+    url: baseURL
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>导入语法</td>
+                    <td>require</td>
+                    <td>
+                        新建模块, 并导入
+                        <pre><code>
+// 目标: 导入模块过来, 拿到模块暴露出来的值使用
+// 语法: require('模块标识')
+// 返回值: 模块内导出的对象
+// 解释: 模块标识, 目标模块文件路径和文件名
+// 查看: 执行此js文件, 把它交给node执行, 打印结果
+const obj = require('./01_export.js')
+console.log(obj);
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            </div>
+
+            <h2>ES6模块化规范概念和基本使用</h2>
+            <div>
+                <p>浏览器和node都可以使用</p>
+                <div>
+                    <p>node环境</p>
+                    <p>需要前置处理, node执行的js文件, 所在目录新建package.json并配置 "type": "module"</p>
+                </div>
+                <br>
+                <div>
+                    <p>浏览器环境 </p>
+                    <p>需要前置处理, <script type="module"></script></p>
+                </div>
+                <br>
+                <div>
+                    <p>node环境-代码</p>
+                    <p>(node环境): ES6模块化在node环境使用, 新建`代码/02_ES6规范讲解_在node环境使用/01_export.js`导出一些代码</p>
+                    <pre><code>
+const baseURL = 'http://geek.itheima.net'
+const getSum = (numA, numB) => numA + numB
+const getArraySum = arr => {
+    let sum = 0
+    arr.forEach(item => sum += item)
+    return sum
+}
+                        
+// 目标: 使用ES6模块化语法, 导出
+// 语法: export default {}
+// 作用: 导出对象里装入要导出的属性名和值
+// 注意: key和value变量名可以简写
+export default {
+    // url: baseURL,
+    // getSum: getSum,
+    // getArraySum: getArraySum
+    url: baseURL,
+    getSum,
+    getArraySum
+}
+                    </code></pre>
+                    <p>(node环境): 在新建`代码/02_ES6规范讲解_在node环境使用/02_import.js`导入上个模块过来</p>
+                    <pre><code>
+// 目标: ES6模块化规范导入
+// 语法: import 变量名 from '模块标识'
+// 作用: 变量名里装的就是目标模块导出的对象
+// 执行: 用node环境命令执行此文件
+import obj from './01_export.js'
+console.log(obj) 
+                    </code></pre>
+                    <p>
+                        原因: node环境默认使用CommonJS规范的语法导入和导
+                        <br>解决: 需要在执行的js文件, 所在文件夹新建package.json, 并配置 { "type": "module" }
+                        <br>注意: package.json是此文件夹的配置清单, 可以影响node执行时的一些抉择    
+                        <br>注意: json文件里key和value都必须是双引号, 如果值是数字可以不用加双引号
+                        <br>注意: json文件里不能写注释
+                    </p>
+                    <p>执行成功, 打印到导入过来的对象</p>
+                </div>
+
+
+                <div>
+                    <p>浏览器环境-代码(了解)</p>
+                    <p>为何了解, 因为后续我们使用构建工具(webpack)自动处理后代码, 自动引入到html文件中执行了, 不会在html里手写模块化代码</p>
+
+                    <div>
+                        <p>(浏览器环境), ES6模块化在浏览器环境使用, 新建文件夹和文件`代码/03_ES6规范讲解_在浏览器环境使用/01_export.js`, 并导出一些代码</p>
+                        <pre><code>
+const baseURL = 'http://geek.itheima.net'
+const getSum = (numA, numB) => numA + numB
+const getArraySum = arr => {
+    let sum = 0
+    arr.forEach(item => item += sum)
+    return sum
+}
+
+// 导出对象, 并携带模块内部值
+export default {
+    baseURL,
+    getSum,
+    getArraySum
+}
+                        </code></pre>
+                        <p>(浏览器环境), 再新建`代码/03_ES6规范讲解_在浏览器环境使用/index.html`, 准备导入上面模块使用</p>
+                        <pre><code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document</title>
+&lt;/head>
+&lt;body>
+&lt;script type="module">
+        // html中的script分为引入脚本和模块
+        // 默认引入的是脚本js文件(文件里不能出现export等)
+        // 如果需要导入的是模块js文件(需要type="module"声明下即可, 但是可能需要最新浏览器支持)
+        import obj from './01_exports.js'
+        console.log(obj);
+        const result = obj.getSum(10, 20)
+        console.log(result);
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+                        </code></pre>
+                    </div>
+                </div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>ES6规范</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>导出语法</td>
+                    <td>export default</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>导入语法</td>
+                    <td>import</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p>注意: 其实ES6模块化导出和导入的语法有很多, 我们先学一种, 掌握最常用的, 后续会再学一种常用的, 更多的请参考扩展里ES6模块化规范</p>
+
+            <p>==注意: 尽量使用可以开启web服务的插件来运行html, 不要用磁盘打开html==</p>
+
+            <br><br><br>
+        </div>
+
+        <h2>模块分类</h2>
+        <div>
+            内置模块(也叫核心模块) :安装node软件, 自带的, 可直接引入使用  fs  path  http等
+            <br>自定义模块: 自己创建的js文件, 需先创建后引入使用 (ps: 所以每个文件都是模块)  【内部设置导出、外面引入导入】
+            <br>第三方模块：多神奇模块:其他人创建并**发布**的js文件等, 需**先下载后引入**使用  mime
+        </div>
+
+
+
+        <h2>npm-初始化环境</h2>
+        <div>
+            <p>package.json 项目清单</p>
+            <pre><code>
+# 初始化 得到package.json 项目清单
+npm init -y
+            </code></pre>
+            <p>每个选项的作用</p>
+            <pre><code>
+            //.json文件里不能写注释, 不用复制过去          
+{
+    "name": "01_use_npm", // 软件包/应用程序包 的名字, 只有作为软件包才有用, 应用程序此名随意
+    "version": "1.0.0", // 软件包/应用程序包 的版本, 只有作为软件包发布才有用, 供别人下载对应版本的包, 应用程序此处随意
+    "description": "", // 软件包/应用程序包 的简短描述
+    "main": "index.js", // 软件包/应用程序包 的入口, 只有作为软件包发布才有用, 别人引入你的包, 默认会引这里指定文件
+    "scripts": { // 定义一组可以运行的node脚本, 用npm run key名, 可以执行右侧的命令
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [], // 软件包/应用程序包相关的, 关键字数组
+    "author": "", // 软件包/应用程序包的作者
+    "license": "ISC" // 指定软件包的许可证。(商用后不允许宣传)
+}  
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>npm下载第三方模块</h2>
+        <div>
+            <pre><code>
+# 正常的下载安装
+npm install 模块包名
+
+# 简写install为i
+npm i 模块包名
+
+# 一次性安装多个模块
+npm i 模块包名 模块包名 模块包名
+            </code></pre>
+        </div>
+
+
+
+
+        <h2>axios举例</h2>
+        <div>
+            <p>下载`axios</p>
+            <pre><code>
+npm i axios  
+            </code></pre>
+            <p>例子 使用axios</p>
+            <pre><code>
+// 目标: 使用axios发请求拿到网易新闻接口数据
+// 请求地址: http://c.m.163.com/nc/article/headline/T1348647853363/0-40.html
+// 1. 下载axios模块包(npm i axios)
+// 2. 引入axios函数
+import axios from 'axios'
+// 3. 调用axios函数发请求, 原地Promise对象, 用.then拿到成功结果
+axios({
+    url: 'http://c.m.163.com/nc/article/headline/T1348647853363/0-40.html'
+}).then(res => {
+    console.log(res.data);
+})
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>moment包使用, 用于格式化时间字符串</h2>
+        <div>
+            <p>下载moment包, 命令`npm i moment`</p>\
+            <pre><code>
+// 目标: 引入moment模块, 格式化时间
+// 1. 下载moment (npm i moment)
+// 2. 引入moment对象
+import moment from 'moment'
+// 3. 使用内置的方法格式化日期对象
+const date = new Date()
+console.log(moment(date).format('YYYY-MM-DD'));
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>npm命令, 删除包</h2>
+        <div>
+            <pre><code>
+`npm uninstall 包名`
+`npm uni 包名`  //简写
+            </code></pre>
+            
+            <br><br><br>
+        </div>
+
+
+        <h2>npm-镜像地址</h2>
+        <div>
+            <pre><code>
+# 查看npm的配置列表
+npm config list
+
+npm是从指定的registry地址下载的包
+
+# 把npm切换成淘宝镜像的地址
+npm config set registry https://registry.npmmirror.com/
+            </code></pre>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+
+    <!-- 引入js文件 -->
+    <script src="./js/html.js"></script>
+
+    <!-- 浏览器读取less文件的js -->
+    <script src="../lib/less.js"></script>
+
+
+
+    <!-- 引入代码高亮的js文件 -->
+    <script src="../lib/highlight/highlight.min.js"></script>
+    <!-- highlight使用方式:   -->
+    <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+    <!-- 类名不写语言默认自动识别 -->
+
+    <!-- 初始化代码高亮 -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <!-- 引入代码显示行数的js文件 -->
+    <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+    <!-- 初始化代码显示高度 -->
+    <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+    <!-- 自动生成目录 -->
+    <script src="../lib/dist/tocbot.min.js"></script>
+    <script type="text/javascript">
+        //目录生成初始化
+        tocbot.init({
+            // 在何处呈现目录。
+            tocSelector: '.js-toc',
+
+            // 在何处获取标题以构建目录。
+            contentSelector: '.js-toc-content',
+
+            // 要在内容选择器元素内获取哪些标题。
+            headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+            //对于内容中相对或绝对位置的容器内的标题。
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+
+</body>
+
+</html>
