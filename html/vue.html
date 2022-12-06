@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <!--万国码-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- 样式 -->
     <link rel="stylesheet/less" type="text/css" href="./less/style.less">
 
@@ -17,6 +18,7 @@
 
     <!-- 引入目录代码样式 -->
     <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+
     <title>vue</title>
     <style>
 
@@ -137,10 +139,10 @@ export default {
                     <td>
                         支持基本语法, 支持三元运算符
                         <pre><code>
-                            {{msg}}
-                            {{obj.name}}
-                            {{msg.to()}}
-                            {{obj.age>18?"成年":"未成年"}}
+{{msg}}
+{{obj.name}}
+{{msg.to()}}
+{{obj.age>18?"成年":"未成年"}}
                         </code></pre>
                     </td>
                     <td>（1）使用数据在 data 中必须存在
@@ -413,10 +415,11 @@ methods:{
                     </td>
                     <td>
                         <pre><code>
-                            <div class="box" :style="{color:color,backgroundColor:bg}"></div>
+<div class="box" :style="{color:color,backgroundColor:bg}"></div>
                         </code></pre>
+                        <br>
                         <pre><code>
-                            <div class="box" :style="[styleObj1,styleObj2]"></div>
+<div class="box" :style="[styleObj1,styleObj2]"></div>
                         </code></pre>
                     </td>
                     <td>v-bind 对于类名操作的增强, 注意点 :class 不会影响到原来的 class 属性</td>
@@ -617,6 +620,7 @@ export default {
                     <th>功能</th>
                     <th>用法</th>
                 </tr>
+                <tbody class="center">
                 <tr>
                     <td>@keyup.enter</td>
                     <td>监听回车键</td>
@@ -657,6 +661,7 @@ export default {
                     <td>@keyup.right</td>
                     <td></td>
                 </tr>
+            </tbody>
                 <tr>
                     <td colspan="2">
                         <pre><code>
@@ -665,6 +670,7 @@ export default {
                         </code></pre>
                     </td>
                 </tr>
+                
 
             </table>
             <br><br><br>
@@ -955,6 +961,8 @@ export default{
 }
                         </code></pre>
                     </td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>在注册组件期间，除了可以直接提供组件的注册名称之外，
@@ -966,6 +974,8 @@ Vue.component(HmButton.name,HmButton)
 //等价于 Vue.component('HmButton',HmButton)
                         </code></pre>
                     </td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
             <br><br><br>
@@ -1235,9 +1245,9 @@ fn(id){
                     </td>
                     <td>
                         <pre><code>
-                           props:{
-                            ...
-                           } 
+props:{
+ ...
+} 
                         </code></pre>
                     </td>
                 </tr>

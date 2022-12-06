@@ -36,6 +36,8 @@
   pre {
     border: none;
     tab-size: 4;
+    padding-top: 5px;
+    padding-bottom: 5px;
     /* white-space: pre-line; */
     /* word-wrap: break-word; */
 
@@ -47,6 +49,10 @@
     /* overflow-x: scroll !important; */
     word-break: keep-all !important;
     word-wrap: initial !important;
+
+    /* 字体 */
+    font-family: monospace !important;  
+    
   }
 
   .cnblogs-markdown .hljs {

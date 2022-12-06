@@ -24,32 +24,35 @@ body {
 }
 
 
-// 底部悬浮模块
-.main_diDu {
-    position: fixed;
-    /* 固定定位*/
-    width: 100%;
-    /* height: 50%; */
-    // background-color: cadetblue;
-    top: 0%;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    box-sizing: border-box;
-    transition: all 1s;
+
+    
 
     .nav {
-        justify-content: space-between;
+        width: 100%;
         height: 40px;
+        position: fixed;
+        /* 固定定位*/
+        /* height: 50%; */
+        // background-color: cadetblue;
+        top: 0%;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        box-sizing: border-box;
+        justify-content: space-between;
+
         // margin-bottom: 8px;
         background-color: blueviolet;
-        padding-left: 10%;
-        padding-right: 10%;
+        transition: all 1s;
+        z-index: 1;
+        
 
         ul {
             display: flex;
             // flex-direction: row;
             justify-content: space-evenly;
+            padding-left: 10%;
+            padding-right: 10%;
 
 
             li {
@@ -62,7 +65,7 @@ body {
                     line-height: 40px;
                     color: black;
                     font-size: 18px;
-                    margin: 0 10px;
+                    // margin: 0 10px;
                     width: 100%;
                 }
 
@@ -72,18 +75,25 @@ body {
             }
         }
 
+        
     }
+    
 
-    iframe {
-        border: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        height: 95%;
-        box-sizing: border-box;
-    }
 
+iframe {
+    position: absolute;
+    top: 40px;
+    bottom: 1%;
+    left: 0%;
+    right: 0%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 94%;
+    box-sizing: border-box;
 }
+
 
 
 
