@@ -4,9 +4,10 @@
 // 导出设置
 
 // 导入依赖文件
- @import url(../../less/base.less);
+@import url(../../less/base.less);
 
-
+@leftRight:20%;
+@leftRight-shouJi:30%;
 
 * {
     // margin: 0 auto;
@@ -29,11 +30,13 @@ html {
 
 
 body {
-    display: flex;
+    // display: flex;
 }
 
 .aside {
-    width: 300px;
+    // width: 300px;
+    width: @leftRight;
+    
     background-color: #e8e7e3;
     // float: left;/*左浮动 */
     //position: fixed;/* 悬浮  固定定位*/
@@ -46,10 +49,17 @@ body {
     transition-duration: 1s;
     /*定义过度效果花费的时间*/
 
+    position: fixed;
+    top: 0%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
 
     .aside1 {
 
-        width: 280px;
+        // width: 280px;
+        // width: @leftRight;
         overflow: auto;
         /*限制div高度，内容多了显示滚动条*/
         position: fixed;
@@ -59,8 +69,7 @@ body {
         top: 10%;
         /* 上边距 */
         left: 20px;
-        // right: 0px;
-        // background-color: #e8e7e3;
+        right: 100% - @leftRight;
 
 
 
@@ -99,13 +108,13 @@ body {
 
 
 .zhuTi {
-    flex: 1;
-    width: 0%;
+    // width: 0%;
     /* max-width: 80%; */
     /* width: 1300px; */
     /*宽 */
     background-color: antiquewhite;
-    margin: 0 auto;
+    // margin: 0 auto;
+    margin-left: @leftRight;
     /*居中 */
 
     /*border-width: 10px;/*边框 */
@@ -165,6 +174,18 @@ body {
     .zhuTi {
         /* width: 600px; */
         // width: 95%;
+    }
+
+}
+@media screen and (max-width:360px) {
+.aside {
+    width: @leftRight-shouJi;
+    .aside1 {
+        right: 100% - @leftRight-shouJi;
+    }
+}
+    .zhuTi {
+        margin-left: @leftRight-shouJi;
     }
 
 }
