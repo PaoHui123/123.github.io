@@ -7,7 +7,10 @@
 @import url(../../less/base.less);
 
 @leftRight:20%;
-@leftRight-shouJi:30%;
+@leftRight-300:50%;
+@leftRight-400:45%;
+@leftRight-500:40%;
+@leftRight-600:35%;
 
 * {
     // margin: 0 auto;
@@ -177,15 +180,57 @@ body {
     }
 
 }
-@media screen and (max-width:360px) {
+// 小于
+@media screen and (max-width:300px) {
 .aside {
-    width: @leftRight-shouJi;
+    width: @leftRight-300;
     .aside1 {
-        right: 100% - @leftRight-shouJi;
+        right: 100% - @leftRight-300;
     }
 }
     .zhuTi {
-        margin-left: @leftRight-shouJi;
+        margin-left: @leftRight-300;
     }
 
 }
+
+// 小于
+@media screen and (max-width:400px) {
+    .aside {
+        width: @leftRight-400;
+        .aside1 {
+            right: 100% - @leftRight-400;
+        }
+    }
+        .zhuTi {
+            margin-left: @leftRight-400;
+        }
+    
+    }
+
+    // 小于
+@media screen and (max-width:500px) {
+    .aside {
+        width: @leftRight-500;
+        .aside1 {
+            right: 100% - @leftRight-500;
+        }
+    }
+        .zhuTi {
+            margin-left: @leftRight-500;
+        }
+    
+    }
+
+    @media screen and (max-width:600px) {
+        .aside {
+            width: @leftRight-500;
+            .aside1 {
+                right: 100% - @leftRight-500;
+            }
+        }
+            .zhuTi {
+                margin-left: @leftRight-500;
+            }
+        
+        }
