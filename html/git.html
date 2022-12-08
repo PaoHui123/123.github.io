@@ -30,76 +30,81 @@
 
 
 
-<div class="aside">
-    <div class="aside1 ">
-        <ul>
-            <li>
-                <h3>html框架</h3>
-            </li>
-            <li><a href="#" class="aside_a">1111</a></li>
-            <li><a href="#" class="aside_a">1111</a></li>
-        </ul>
-        <span>目录</span>
-        <ol class="js-toc"></ol>
+    <div class="aside">
+        <div class="aside1 ">
+            <ul>
+                <li>
+                    <h3>html框架</h3>
+                </li>
+                <li><a href="#" class="aside_a">1111</a></li>
+                <li><a href="#" class="aside_a">1111</a></li>
+            </ul>
+            <span>目录</span>
+            <ol class="js-toc"></ol>
+        </div>
     </div>
-</div>
 
 
 
-<div class="zhuTi js-toc-content">
-    <h3>备注</h3>
-    <div>
-        <pre><code>
-链接远程仓库
+    <div class="zhuTi js-toc-content">
+        <h3>备注</h3>
+        <div>
+            <pre><code>
+# 链接远程仓库
 git remote add origin https://github.com/PaoHui123/123.git
 
-删除远程链接
+# 删除远程链接
 git remote rm origin
 
-查看远程链接
+# 查看远程链接
 git remote -v
-        </code></pre>
-    </div>
 
+# 克隆代码
+git clone 项目地址
 
-
-    <h2>配置邮箱-姓名</h2>
-    <div>
-        1. 需要再用命令, 配置下, 你本机提交任何仓库时, 你的提交信息
-        <br>2. 无论哪个项目/哪个仓库, 你都要表明你的<span class="red">身份名字</span>和<span class="red">邮箱</span>
-        <br>3. 命令格式如下: ==中文自己看情况换==
-        <pre><code>
-git         config      --global     user.name    "名字双引号，中文英文都可以"   按回车
-git         config      --global     user.email   "双引号，写邮箱地址"          按回车
+# 提交远程仓库
+git push 远程链接名称
             </code></pre>
-        <p>查看是否配置成功</p>
-        <pre><code>
-git      config      --list
+        </div>
+
+
+
+        <h2>配置邮箱-姓名</h2>
+        <div>
+            1. 需要再用命令, 配置下, 你本机提交任何仓库时, 你的提交信息
+            <br>2. 无论哪个项目/哪个仓库, 你都要表明你的<span class="red">身份名字</span>和<span class="red">邮箱</span>
+            <br>3. 命令格式如下: ==中文自己看情况换==
+            <pre><code>
+git config --global user.name  "名字双引号，中文英文都可以"
+git config --global user.email "双引号，写邮箱地址"
+
+# 查看是否配置成功
+git config --list
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
 
 
 
 
-    <h2>创建git版本库-初始化</h2>
-    <div>
-        <p>1. 我们新建一个文件夹 / 现有的文件夹 是git仓库吗? 不是!!!</p>
-        <p>因为没有 .git 文件夹, 所以没有被git管理</p>
-        <br>
-        <P>2. 新文件夹 / 现有文件夹, 可以运行如下命令, 得到.git文件夹, 即可让git开始准备管理</P>
-        <pre><code>
-# 初始化 git 仓库, 产物: .git 文件夹 (所在文件夹"内"被管理)
+        <h2>创建git版本库-初始化</h2>
+        <div>
+            <p>1. 我们新建一个文件夹 / 现有的文件夹 是git仓库吗? 不是!!!</p>
+            <p>因为没有 .git 文件夹, 所以没有被git管理</p>
+            <br>
+            <P>2. 新文件夹 / 现有文件夹, 可以运行如下命令, 得到.git文件夹, 即可让git开始准备管理</P>
+            <pre><code>
+# 初始化 git 仓库
 git init
-                </code></pre>
-        <br><br><br>
-    </div>
+            </code></pre>
+            <br><br><br>
+        </div>
 
 
-    <h2>放到暂存区中</h2>
-    <div>
-        <pre><code>
+        <h2>放到暂存区中</h2>
+        <div>
+            <pre><code>
 # 语法
 git add 要暂存的文件名
 
@@ -115,73 +120,73 @@ git add .
 # 提交的内容说明
 git commit -m '提交的内容说明'
             </code></pre>
-    </div>
+        </div>
 
-    <h2>查看所有提交的日志记录</h2>
-    <div>
-        <pre><code>
+        <h2>查看所有提交的日志记录</h2>
+        <div>
+            <pre><code>
 # 查看所有提交的日志记录
 git log
 
 # 当我们的日志越来越多, 可能想要简化查看
 git log --oneline
             </code></pre>
-    </div>
+        </div>
 
-    <h2>查看修改了那些文件</h2>
-    <div>
-        <pre><code>
+        <h2>查看修改了那些文件</h2>
+        <div>
+            <pre><code>
 # 查看修改了那些文件
 git status
             </code></pre>
-    </div>
+        </div>
 
-    <h2>git回退</h2>
-    <div>
-        1. 我们玩游戏, 突然感觉没玩好, 想要回到上次存档的记录重新来? 可以!!
-        <br>2. 代码写到后面发现, 最近这2天的需求写错了, 回到2天前? 可以!!
-        <br>3. 但是以上的回退前提, 你前面确实commit存档过 (而且存到的.git文件夹要存在)
-        <br>4. 回退命令语法如下, 中文看情况写
-        <pre><code>
+        <h2>git回退</h2>
+        <div>
+            1. 我们玩游戏, 突然感觉没玩好, 想要回到上次存档的记录重新来? 可以!!
+            <br>2. 代码写到后面发现, 最近这2天的需求写错了, 回到2天前? 可以!!
+            <br>3. 但是以上的回退前提, 你前面确实commit存档过 (而且存到的.git文件夹要存在)
+            <br>4. 回退命令语法如下, 中文看情况写
+            <pre><code>
 # git回退
 git reset --hard 版本号
 
 # 尝试回退到 a3bcab2 这次记录上
 git reset --hard a3bcab2
             </code></pre>
-    </div>
+        </div>
 
-    <h2>查看版本号</h2>
-    <div>
-        每次的版本号随机生成
-        <pre><code>
+        <h2>查看版本号</h2>
+        <div>
+            每次的版本号随机生成
+            <pre><code>
 # 查看版本号
 git log --oneline
             </code></pre>
-    </div>
+        </div>
 
 
-    <h2>查看 git 所有的操作记录, 包括你的reset记录</h2>
-    <div>
-        <pre><code>
+        <h2>查看 git 所有的操作记录, 包括你的reset记录</h2>
+        <div>
+            <pre><code>
 git reflog
             </code></pre>
-        <br>
-    </div>
+            <br>
+        </div>
 
 
-    <h2>查看Head标记</h2>
-    <div>
-        <p>HEAD 是头指针, 可以指向标记现在工作区所在的记录</p>
-    </div>
+        <h2>查看Head标记</h2>
+        <div>
+            <p>HEAD 是头指针, 可以指向标记现在工作区所在的记录</p>
+        </div>
 
 
-    <h2>git忽略文件</h2>
-    <div>
-        1. 有的时候, 我们某些文件/文件夹, 不想让git进行跟踪管理
-        <br>2. 这种场景下, 我们需要在.git文件夹隔壁, 来个叫做 <span class="red">.gitignore</span> (固定名字)的忽略文件, 并写入忽略规则
-        <br>3. 可以编写如下这些规则
-        <pre><code>
+        <h2>git忽略文件</h2>
+        <div>
+            1. 有的时候, 我们某些文件/文件夹, 不想让git进行跟踪管理
+            <br>2. 这种场景下, 我们需要在.git文件夹隔壁, 来个叫做 <span class="red">.gitignore</span> (固定名字)的忽略文件, 并写入忽略规则
+            <br>3. 可以编写如下这些规则
+            <pre><code>
 # 忽略某个指定文件
 password.txt
 
@@ -194,87 +199,87 @@ css/index.js
 # 忽略文件夹下某类文件
 css/*.js
             </code></pre>
-    </div>
+        </div>
 
 
-    <h2>分支创建的命令和特点</h2>
-    <h2>创建分支</h2>
-    <div>
-        <p></p>
-        <pre><code>
+        <h2>分支创建的命令和特点</h2>
+        <h2>创建分支</h2>
+        <div>
+            <p></p>
+            <pre><code>
 # 创建分支
 git branch 分支名
             </code></pre>
-    </div>
+        </div>
 
-    <h2>查看现在这个.git版本库里所有分支</h2>
-    <div>
-        <p>可以运行命令查看现在这个.git版本库里所有分支</p>
-        <pre><code>
+        <h2>查看现在这个.git版本库里所有分支</h2>
+        <div>
+            <p>可以运行命令查看现在这个.git版本库里所有分支</p>
+            <pre><code>
 # 查看当前版本库所有分支
 git branch
 # 绿色带*代表, 你现在所处的分支           
             </code></pre>
-    </div>
+        </div>
 
-    <h2>切换分支</h2>
-    <div>
-        <p>==注意: 第一次创建并切换到此分支==, 这里你会发现master分支上的所有代码(和当前节点所有提交记录) 都被复制了过来, 在这个基础上, 接着往后开发就行, 不是你的页面不同碰!!</p>
-        <pre><code>
+        <h2>切换分支</h2>
+        <div>
+            <p>==注意: 第一次创建并切换到此分支==, 这里你会发现master分支上的所有代码(和当前节点所有提交记录) 都被复制了过来, 在这个基础上, 接着往后开发就行, 不是你的页面不同碰!!</p>
+            <pre><code>
 # 切换分支命令
 git checkout 分支名                
             </code></pre>
-    </div>
+        </div>
 
-    <h2>切换到分支</h2>
-    <div>
-        <p>1. 当我们某个分支的业务开发完毕以后呢, 我们可以把分支里写好的代码, 合并到主分支/其他分支上
-            <br>2. 首先, 切换到你要合并到的目标分支上, 这里以master主分支为例
-        </p>
-        <pre><code>
+        <h2>切换到分支</h2>
+        <div>
+            <p>1. 当我们某个分支的业务开发完毕以后呢, 我们可以把分支里写好的代码, 合并到主分支/其他分支上
+                <br>2. 首先, 切换到你要合并到的目标分支上, 这里以master主分支为例
+            </p>
+            <pre><code>
 # 切换分支
 git checkout master
             </code></pre>
-    </div>
+        </div>
 
-    <h2>合并分支命令</h2>
-    <div>
-        <pre><code>
+        <h2>合并分支命令</h2>
+        <div>
+            <pre><code>
 # 把目标分支名下的所有记录, 合并到当前分支下
 git merge 目标分支名                                
             </code></pre>
-    </div>
+        </div>
 
 
-    <h2>分支冲突</h2>
-    <div>
-        <p>出现分支冲突,与人商量</p>
-    </div>
+        <h2>分支冲突</h2>
+        <div>
+            <p>出现分支冲突,与人商量</p>
+        </div>
 
 
-    <h2>删除分支</h2>
-    <div>
-        <p>1. 假如注册功能开发完毕, 代码已经合并到master分支上, 我们无需reg分支</p>
-        <pre><code>
+        <h2>删除分支</h2>
+        <div>
+            <p>1. 假如注册功能开发完毕, 代码已经合并到master分支上, 我们无需reg分支</p>
+            <pre><code>
 git branch -d 分支名
             </code></pre>
-        <p>如果你当前分支代码 还有没合并到别的分支的, 则会报错</p>
-    </div>
+            <p>如果你当前分支代码 还有没合并到别的分支的, 则会报错</p>
+        </div>
 
-    <h2>git全局配置-删除</h2>
-    <div>
-        <pre><code>
+        <h2>git全局配置-删除</h2>
+        <div>
+            <pre><code>
 # 1. git全局配置删除命令
 # user.name 可以视情况删除哪个自己选
 git config --unset --global user.name
             </code></pre>
-    </div>
+        </div>
 
 
-    <h2>vscode中文件右侧标记</h2>
-    <div>
-        <p>一般打开一个包含git仓库的文件夹时, 会有这些标记</p>
-        <pre><code>
+        <h2>vscode中文件右侧标记</h2>
+        <div>
+            <p>一般打开一个包含git仓库的文件夹时, 会有这些标记</p>
+            <pre><code>
 右侧没有标记的时候为“未修改” 或 此文件/文件夹, 被git忽略不跟踪变化
 M为“已修改”
 A为“已添加”
@@ -283,19 +288,19 @@ R为“已重命名”
 C为“已复制”
 U为“已更新但为融合”
             </code></pre>
-    </div>
+        </div>
 
 
-    <h2>git restore 目标文件</h2>
-    <div>
-        <p>git还原 (会把"工作区"恢复到上次提交的时候), 并删除刚写的所有代码(无法找回)</p>
-        <p>非常危险</p>
-    </div>
+        <h2>git restore 目标文件</h2>
+        <div>
+            <p>git还原 (会把"工作区"恢复到上次提交的时候), 并删除刚写的所有代码(无法找回)</p>
+            <p>非常危险</p>
+        </div>
 
 
-    <h2>git版本回退更多</h2>
-    <div>
-        <pre><code>
+        <h2>git版本回退更多</h2>
+        <div>
+            <pre><code>
 # 除了找到对应版本号之外, 我们还可以用内置的代号
 # 回退到 "最近一次提交" (但是要注意如果你已经回退了, 是回不到未来的, 回到未来需要指定
 版本号数字字母)
@@ -314,30 +319,30 @@ git reset --hard head^
 git reset --hard head^^
 # 如果回退的太远, 一百个往前, 你不能写一百个^吧, 还是写head~个数吧
             </code></pre>
-    </div>
+        </div>
 
 
 
 
-    <h2>git版本回退-更优解</h2>
-    <div>
-        <p>reset其实会把未来的丢失掉, 如果推到远程仓库可能会有问题 (看下面情况做吧), 但是其实保证大家维护的同一个项目工程都是最新代码即可</p>
-        <p>比reset更好用的revert</p>
-        <p>如果已经有A -> B -> C，想回到B：</p>
-        <p>方法一：reset到B，丢失C：</p>
-        <p>A -> B</p>
-        <p>方法二：再提交一个revert反向修改，变成B：</p>
-        <p>A -> B -> C -> B</p>
-        <p>C还在，但是两个B是重复的</p>
-        <p>看你的需求，也许C就是瞎提交错了（比如把密码提交上去了），必须reset</p>
-        <p>如果C就是修改，现在又要改回来，将来可能再改成C，那你就revert</p>
-    </div>
+        <h2>git版本回退-更优解</h2>
+        <div>
+            <p>reset其实会把未来的丢失掉, 如果推到远程仓库可能会有问题 (看下面情况做吧), 但是其实保证大家维护的同一个项目工程都是最新代码即可</p>
+            <p>比reset更好用的revert</p>
+            <p>如果已经有A -> B -> C，想回到B：</p>
+            <p>方法一：reset到B，丢失C：</p>
+            <p>A -> B</p>
+            <p>方法二：再提交一个revert反向修改，变成B：</p>
+            <p>A -> B -> C -> B</p>
+            <p>C还在，但是两个B是重复的</p>
+            <p>看你的需求，也许C就是瞎提交错了（比如把密码提交上去了），必须reset</p>
+            <p>如果C就是修改，现在又要改回来，将来可能再改成C，那你就revert</p>
+        </div>
 
 
 
-    <h2>git常用忽略配置</h2>
-    <div>
-        <pre><code>
+        <h2>git常用忽略配置</h2>
+        <div>
+            <pre><code>
 .DS_Store
 node_modules/
 dist/
@@ -355,43 +360,43 @@ mock
 *.njsproj
 *.sln
             </code></pre>
-    </div>
+        </div>
 
 
 
-    <h2>Gitee</h2>
+        <h2>Gitee</h2>
 
-    <h3>1.为了把本地项目（被git管理）放在公共平台（开源）</h3>
+        <h3>1.为了把本地项目（被git管理）放在公共平台（开源）</h3>
 
-    <h3>配置SSH公钥私钥</h3>
-    <p>**ssh-keygen -t rsa -b 4096 -C "写自己注册gitee邮箱地址" 提前改好再复制到你的黑窗口**</p>
+        <h3>配置SSH公钥私钥</h3>
+        <p>**ssh-keygen -t rsa -b 4096 -C "写自己注册gitee邮箱地址" 提前改好再复制到你的黑窗口**</p>
 
-    <h2>新建远程仓储</h2>
+        <h2>新建远程仓储</h2>
 
-    <h2>设置开源</h2>
+        <h2>设置开源</h2>
 
-    <h2>在本地项目设置 与远程仓储的关联</h2>
+        <h2>在本地项目设置 与远程仓储的关联</h2>
 
-    <h2>来到本地电脑 下 要推送这个项目 黑窗口里面 输入下面命令</h2>
-    <pre><code>
+        <h2>来到本地电脑 下 要推送这个项目 黑窗口里面 输入下面命令</h2>
+        <pre><code>
 git  remote   add     origin           SSH地址
      配置远程   新增    给远程地址起别名   远程仓库地址
         </code></pre>
 
-    <h2>推送本地项目到远程仓库</h2>
-    <div>
-        <pre><code>
+        <h2>推送本地项目到远程仓库</h2>
+        <div>
+            <pre><code>
 git push  -u  origin     master
     推送      远程地址别名  主分支
 
 git push
 后续
             </code></pre>
-    </div>
+        </div>
 
-    <h2>总结</h2>
-    <div>
-        <pre><code>
+        <h2>总结</h2>
+        <div>
+            <pre><code>
 * 新电脑：
 
   * 安装git软件
@@ -441,7 +446,7 @@ git push
   * 2、远程没有更新`Already up to date.`  本地和远程是一样记录点！
   * **也就是上传代码之前    先保证在主分支上拿到最新代码再合并分支
             </code></pre>
-    </div>
+        </div>
 
 
 
@@ -450,12 +455,12 @@ git push
 
 
 
- 
 
 
-    <h2>整理完好</h2>
-    <div>
-        <pre><code>
+
+        <h2>整理完好</h2>
+        <div>
+            <pre><code>
 1.安装：GitLens
 # 此插件可以显示他人的提交记录
 
@@ -523,13 +528,13 @@ git push
     查看分支现场 git
     7 修复之前的分支 git stash pop
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
 
-    <h2>1.远程仓库相关命令</h2>
-    <div>
-        <pre><code>
+        <h2>1.远程仓库相关命令</h2>
+        <div>
+            <pre><code>
 1.远程仓库相关命令
     检出仓库：$ git clone git://github.com/jquery/jquery.git
     查看远程仓库：$ git remote -v
@@ -539,13 +544,13 @@ git push
     拉取远程仓库：$ git pull [remoteName] [localBranchName]
     推送远程仓库：$ git push [remoteName] [localBranchName]
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
 
-    <h2>2.分支(branch)操作相关命令</h2>
-    <div>
-        <pre><code>
+        <h2>2.分支(branch)操作相关命令</h2>
+        <div>
+            <pre><code>
 查看本地分支：$ git branch
 查看远程分支：$ git branch -r
 创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支
@@ -564,13 +569,13 @@ $ git push origin test:test // 提交本地test分支作为远程的test分支
 如果想删除远程的分支呢？类似于上面，如果:左边的分支为空，那么将删除:右边的远程的分支。
 $ git push origin :test // 刚提交到远程的test将被删除，但是本地还会保存的，不用担心            
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
 
-    <h2>3.版本(tag)操作相关命令</h2>
-    <div>
-        <pre><code>
+        <h2>3.版本(tag)操作相关命令</h2>
+        <div>
+            <pre><code>
 3.版本(tag)操作相关命令
     查看版本：$ git tag
     创建版本：$ git tag [name]
@@ -579,13 +584,13 @@ $ git push origin :test // 刚提交到远程的test将被删除，但是本地�
     创建远程版本(本地版本push到远程)：$ git push origin [name]
     删除远程版本：$ git push origin :refs/tags/[name]
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
 
-    <h2>4.子模块(submodule)相关操作命令</h2>
-    <div>
-        <pre><code>
+        <h2>4.子模块(submodule)相关操作命令</h2>
+        <div>
+            <pre><code>
 子模块(submodule)相关操作命令
 添加子模块：$ git submodule add [url] [path]
 如：$ git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs
@@ -594,349 +599,349 @@ $ git push origin :test // 刚提交到远程的test将被删除，但是本地�
 删除子模块：（分4步走哦）
 1)$ git rm --cached [path]  
             </code></pre>
-        <br><br><br>
-    </div>
+            <br><br><br>
+        </div>
 
-    <h2>5.编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</h2>
-    <div>
-        <pre><code>
-
-            </code></pre>
-        <br><br><br>
-    </div>
-
-    <h2>6.编辑“.git/config”文件，将子模块的相关配置节点删除掉</h2>
-    <div>
-        <pre><code>
+        <h2>5.编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</h2>
+        <div>
+            <pre><code>
 
             </code></pre>
-        <br><br><br>
+            <br><br><br>
+        </div>
+
+        <h2>6.编辑“.git/config”文件，将子模块的相关配置节点删除掉</h2>
+        <div>
+            <pre><code>
+
+            </code></pre>
+            <br><br><br>
+        </div>
+
+        <h2>7.手动删除子模块残留的目录</h2>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h2>标题</h2>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
-
-    <h2>7.手动删除子模块残留的目录</h2>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-    <h2>标题</h2>
-    <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 </body>
 
