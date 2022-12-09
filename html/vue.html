@@ -32,8 +32,8 @@
 
 
 
-    <div class="aside">
-       <div class="aside1 ">
+<div class="aside">
+    <div class="aside1 ">
         <ul>
             <li>
                 <h3>html框架</h3>
@@ -45,18 +45,18 @@
         <ol class="js-toc"></ol>
     </div>
 </div>
-    
 
 
-    <div class="zhuTi js-toc-content">
-        :default-active="$route.path"  //动态控制默认展开 当前的路由地址
-        
-        <p>data</p>
-        <p>methods</p>
-        <p>data</p>
 
-        在webpack.config.js 中配置  就会使用代理服务器
-        <pre><code>
+<div class="zhuTi js-toc-content">
+    :default-active="$route.path" //动态控制默认展开 当前的路由地址
+
+    <p>data</p>
+    <p>methods</p>
+    <p>data</p>
+
+    在webpack.config.js 中配置 就会使用代理服务器
+    <pre><code>
 devServer: {
     proxy:{
         //1.代理服务器启动后，对应的url和网站的url保持一致
@@ -76,7 +76,7 @@ devServer: {
 }
         </code></pre>
 
-        <pre><code>
+    <pre><code>
 svg相关属性
     width 修改svg图标宽度
     height 修改svg图标高度
@@ -89,60 +89,60 @@ svg相关属性
     第三个数值：在svg图标x轴的截取量
     第四个数值：在svg图标y轴的截取量
         </code></pre>
-       
-        
 
 
-        <h2>vue脚手架</h2>
+
+
+    <h2>vue脚手架</h2>
+    <div>
+        <p>@vue/cli 也叫 vue脚手架, @vue/cli 是vue官方提供的一个全局命令工具
+            <br>这个命令可以帮助我们快速的创建一个vue项目的基础架子。
+        </p>
+        <p>
+            <br>1. 全局安装：npm i @vue/cli -g 或 yarn global add @vue/cli
+            <br>2. 查看vue版本：vue --version
+            <br>3. 初始化一个vue项目：vue create 项目名（不能用中文）
+            <br>4. 启动项目, 打包项目：yarn serve 或yarn build
+        </p>
         <div>
-            <p>@vue/cli 也叫 vue脚手架, @vue/cli 是vue官方提供的一个全局命令工具
-                <br>这个命令可以帮助我们快速的创建一个vue项目的基础架子。
+            <p>如何覆盖脚手架下的webpack配置：</p>
+            <p>1. 注意：我们在项目无法找到webpack.config.js文件，因为vue把它隐藏了。
+                <br>2. 如果需要覆盖webpack的配置，可以修改vue.config.js文件，覆盖webpack配置
             </p>
-            <p>
-                <br>1. 全局安装：npm i @vue/cli -g 或 yarn global add @vue/cli
-                <br>2. 查看vue版本：vue --version
-                <br>3. 初始化一个vue项目：vue create 项目名（不能用中文）
-                <br>4. 启动项目, 打包项目：yarn serve 或yarn build
-            </p>
-            <div>
-                <p>如何覆盖脚手架下的webpack配置：</p>
-                <p>1. 注意：我们在项目无法找到webpack.config.js文件，因为vue把它隐藏了。
-                    <br>2. 如果需要覆盖webpack的配置，可以修改vue.config.js文件，覆盖webpack配置
-                </p>
-            </div>
-            <img src="./images/2022-11-17 220542.png" alt="">
-            <div>
-                <p>单文件组件：一个 .vue 文件就是一个组件</p>
-                <br>1. 安装插件 （语法高亮）: vueur
-                <br>2. 一个单文件组件由三部分组成
-                <br>template： 结构 （有且只能一个根元素）
-                <br>script: js逻辑
-                <br>style： 样式
-                <br>3. 让组件支持 less
-                <br>（1） style标签， lang=“less”，开启less功能
-                <br>（2） 装包： yarn add less-loader@7.2.1 less -D
-            </div>
-
-            
-            <br><br><br>
+        </div>
+        <img src="./images/2022-11-17 220542.png" alt="">
+        <div>
+            <p>单文件组件：一个 .vue 文件就是一个组件</p>
+            <br>1. 安装插件 （语法高亮）: vueur
+            <br>2. 一个单文件组件由三部分组成
+            <br>template： 结构 （有且只能一个根元素）
+            <br>script: js逻辑
+            <br>style： 样式
+            <br>3. 让组件支持 less
+            <br>（1） style标签， lang=“less”，开启less功能
+            <br>（2） 装包： yarn add less-loader@7.2.1 less -D
         </div>
 
 
-        <h2>vue如何提供数据data属性</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>data 属性</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>1. 通过 data 属性可以提供数据， data属性必须是一个函数
-                        <br>2. 这个函数需要返回一个对象，这个对象就代表vue提供的数据
-                    </td>
-                    <td>
-                        <pre><code>
+        <br><br><br>
+    </div>
+
+
+    <h2>vue如何提供数据data属性</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>data 属性</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>1. 通过 data 属性可以提供数据， data属性必须是一个函数
+                    <br>2. 这个函数需要返回一个对象，这个对象就代表vue提供的数据
+                </td>
+                <td>
+                    <pre><code>
 export default {
     data(){
         return {
@@ -154,84 +154,84 @@ export default {
 //使用插值表达式可以在模板中使用
 <div>{{zs}}</div>
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>插值表达式： 小胡子语法 {{ }}</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>插值表达式： 小胡子语法 {{ }}</caption>
-                <tr>
-                    <th>作用</th>
-                    <th>用法</th>
-                    <th>注意点</th>
-                </tr>
-                <tr>
-                    <td>作用: 使用 data 中的数据渲染视图（模板）</td>
-                    <td>
-                        支持基本语法, 支持三元运算符
-                        <pre><code>
+    <h2>插值表达式： 小胡子语法 {{ }}</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>插值表达式： 小胡子语法 {{ }}</caption>
+            <tr>
+                <th>作用</th>
+                <th>用法</th>
+                <th>注意点</th>
+            </tr>
+            <tr>
+                <td>作用: 使用 data 中的数据渲染视图（模板）</td>
+                <td>
+                    支持基本语法, 支持三元运算符
+                    <pre><code>
 {{msg}}
 {{obj.name}}
 {{msg.to()}}
 {{obj.age>18?"成年":"未成年"}}
                         </code></pre>
-                    </td>
-                    <td>（1）使用数据在 data 中必须存在
-                        <br>（2）能使用表达式，但是不能使用语句 if for ...
-                        <br>（3）不能在标签属性中使用 {{ }} 插值
-                    </td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td>（1）使用数据在 data 中必须存在
+                    <br>（2）能使用表达式，但是不能使用语句 if for ...
+                    <br>（3）不能在标签属性中使用 {{ }} 插值
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>vue指令</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>vue指令</caption>
-                <tr>
-                    <th>指令</th>
-                    <th>说明</th>
-                    <th>作用</th>
-                    <th>语法</th>
-                    <th>简写</th>
-                    <th>例子</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>v-bind</td>
-                    <td></td>
-                    <td><span class="red">动态的设置html的标签属性</span><br><br>插值表达式不能用在html的属性上，想要动态的设置html元素属性，需要使用v-bind指令</td>
-                    <td><span class="red">v-bind:属性名="值"</span></td>
-                    <td><span class="red">:属性名="值"</span></td>
-                    <td>
-                        <pre><code>
+    <h2>vue指令</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>vue指令</caption>
+            <tr>
+                <th>指令</th>
+                <th>说明</th>
+                <th>作用</th>
+                <th>语法</th>
+                <th>简写</th>
+                <th>例子</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>v-bind</td>
+                <td></td>
+                <td><span class="red">动态的设置html的标签属性</span><br><br>插值表达式不能用在html的属性上，想要动态的设置html元素属性，需要使用v-bind指令</td>
+                <td><span class="red">v-bind:属性名="值"</span></td>
+                <td><span class="red">:属性名="值"</span></td>
+                <td>
+                    <pre><code>
 <!-- 完整语法 -->
 <a v-bind:href="url"></a>
 <!-- 简写 -->
 <a :href="url"></a>
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>v-on</td>
-                    <td></td>
-                    <td>注册事件</td>
-                    <td>1. v-on:事件名=“要执行的少量代码"
-                        <br>2. v-on:事件名=“methods中的函数名"
-                        <br>3. v-on:事件名=“methods中的函数名(实参)"
-                    </td>
-                    <td><span class="red">v-on 可以 简写 成 @</span></td>
-                    <td>
-                        <pre class="k400"><code>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v-on</td>
+                <td></td>
+                <td>注册事件</td>
+                <td>1. v-on:事件名=“要执行的少量代码"
+                    <br>2. v-on:事件名=“methods中的函数名"
+                    <br>3. v-on:事件名=“methods中的函数名(实参)"
+                </td>
+                <td><span class="red">v-on 可以 简写 成 @</span></td>
+                <td>
+                    <pre class="k400"><code>
 <div>
     &lt;h3>我是指令-{{money}}</h3>
     <button v-on:click="money=money+10">加10</button>
@@ -239,7 +239,7 @@ export default {
     <button v-on:click="sellHouse(5)">加5</button>
 </div>
                         </code></pre>
-                        <pre><code>
+                    <pre><code>
 methods:{
     addMoney(){
         this.money++
@@ -249,43 +249,43 @@ methods:{
     }
 }
                         </code></pre>
-                    </td>
-                    <td><span class="red">注意：事件处理函数在methods中提供</span></td>
-                </tr>
-                <tr>
-                    <td>v-show</td>
-                    <td></td>
-                    <td>控制盒子的显示隐藏</td>
-                    <td>v-show="布尔值" (true显示, false隐藏)
-                        <br><br>原理: 实质是在控制元素的 <span class="red">css 样式</span>, `display: none;`
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td rowspan="2">应用场景:
-                        <br><span class="red">1. 如果是频繁的切换显示隐藏, 用 v-show</span>
-                        <br>(v-show, 只是控制css样式，而v-if, 频繁切换会大量的创建和删除元素, 消耗性能)
-                        <br><span class="red">2. 如果是不用频繁切换, 要么显示, 要么隐藏的情况, 适合于用 v-if</span>
-                        <br>(v-if 是惰性的, 如果初始值为 false, 那么这些元素就直接不创建了, 节省一些初始渲染开销)
-                    </td>
-                </tr>
-                <tr>
-                    <td>v-if </td>
-                    <td></td>
-                    <td>控制盒子的显示隐藏</td>
-                    <td>v-if="布尔值" (true显示, false隐藏)
-                        <br><br>原理: 实质是在动态的<span class="red">创建 或者 删除</span>元素节点
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>v-else</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td rowspan="2">
-                        <pre><code>
+                </td>
+                <td><span class="red">注意：事件处理函数在methods中提供</span></td>
+            </tr>
+            <tr>
+                <td>v-show</td>
+                <td></td>
+                <td>控制盒子的显示隐藏</td>
+                <td>v-show="布尔值" (true显示, false隐藏)
+                    <br><br>原理: 实质是在控制元素的 <span class="red">css 样式</span>, `display: none;`
+                </td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">应用场景:
+                    <br><span class="red">1. 如果是频繁的切换显示隐藏, 用 v-show</span>
+                    <br>(v-show, 只是控制css样式，而v-if, 频繁切换会大量的创建和删除元素, 消耗性能)
+                    <br><span class="red">2. 如果是不用频繁切换, 要么显示, 要么隐藏的情况, 适合于用 v-if</span>
+                    <br>(v-if 是惰性的, 如果初始值为 false, 那么这些元素就直接不创建了, 节省一些初始渲染开销)
+                </td>
+            </tr>
+            <tr>
+                <td>v-if </td>
+                <td></td>
+                <td>控制盒子的显示隐藏</td>
+                <td>v-if="布尔值" (true显示, false隐藏)
+                    <br><br>原理: 实质是在动态的<span class="red">创建 或者 删除</span>元素节点
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v-else</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">
+                    <pre><code>
 <div>
     <p v-if="islongin">尊敬的vip您好</p>
     <p v-else>你是谁，赶紧登录</p>
@@ -296,185 +296,185 @@ methods:{
     <p v-else>20岁以上</p>
 </div>
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>v-else-if</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <!-- <td></td> -->
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>v--model</td>
-                    <td></td>
-                    <td>给表单元素使用, 双向数据绑定
-                        <br>什么是双向数据绑定？
-                        <br>⚫ 1. 数据变化了, 视图会跟着变
-                        <br>⚫ 2. 视图变化了, 数据要跟着变
-                    </td>
-                    <td>v-model='值'</td>
-                    <td></td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v-else-if</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td></td> -->
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>v--model</td>
+                <td></td>
+                <td>给表单元素使用, 双向数据绑定
+                    <br>什么是双向数据绑定？
+                    <br>⚫ 1. 数据变化了, 视图会跟着变
+                    <br>⚫ 2. 视图变化了, 数据要跟着变
+                </td>
+                <td>v-model='值'</td>
+                <td></td>
+                <td>
+                    <pre><code>
 <input type="text" v-model="msg">
                         </code></pre>
-                    </td>
-                    <td>
-                        语法: v-model.修饰符="Vue数据变量"
-                        <br><br>
-                        <table border="3" cellspacing="0" cellpadding="3">
-                            <caption>v-model 修饰符：让v-model拥有更强大的功能</caption>
-                            <tr>
-                                <th>功能</th>
-                                <th>用法</th>
-                            </tr>
-                            <tr>
-                                <td>.number</td>
-                                <td>转数字，以parseFloat转成数字类型</td>
-                            </tr>
-                            <tr>
-                                <td>.trim</td>
-                                <td>去除首尾空白字符</td>
-                            </tr>
-                            <tr>
-                                <td>.lazy</td>
-                                <td>在change时触发而非inupt时<br> 等表单失去焦点, 才把值赋予给Vue数据变量</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>v-text</td>
-                    <td></td>
-                    <td>更新元素的innerText</td>
-                    <td>v-text="值"</td>
-                    <td></td>
-                    <td rowspan="2">
-                        <pre><code>
+                </td>
+                <td>
+                    语法: v-model.修饰符="Vue数据变量"
+                    <br><br>
+                    <table border="3" cellspacing="0" cellpadding="3">
+                        <caption>v-model 修饰符：让v-model拥有更强大的功能</caption>
+                        <tr>
+                            <th>功能</th>
+                            <th>用法</th>
+                        </tr>
+                        <tr>
+                            <td>.number</td>
+                            <td>转数字，以parseFloat转成数字类型</td>
+                        </tr>
+                        <tr>
+                            <td>.trim</td>
+                            <td>去除首尾空白字符</td>
+                        </tr>
+                        <tr>
+                            <td>.lazy</td>
+                            <td>在change时触发而非inupt时<br> 等表单失去焦点, 才把值赋予给Vue数据变量</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>v-text</td>
+                <td></td>
+                <td>更新元素的innerText</td>
+                <td>v-text="值"</td>
+                <td></td>
+                <td rowspan="2">
+                    <pre><code>
 <div>
     <p v-text="str"></p>
     <p v-html="str"></p>
 </div>
                         </code></pre>
-                    </td>
-                    <td rowspan="2">区别：
-                        <br>⚫ v-text 不解析标签
-                        <br>⚫ v-html 解析标签
-                    </td>
-                </tr>
-                <tr>
-                    <td>v-html</td>
-                    <td></td>
-                    <td>更新元素的innerHTML</td>
-                    <td>v-html="值"</td>
-                    <td></td>
-                    <!-- <td></td> -->
-                    <!-- <td></td> -->
-                </tr>
-                <tr>
-                    <td>v-for</td>
-                    <td></td>
-                    <td>可以遍历 数组 或者 对象，用于渲染结构</td>
-                    <td>遍历数组语法:
-                        <br>⚫ v-for="item in 数组名"
-                        <br>⚫ v-for="(item, index) in 数组名"
-                        <br>遍历对象语法：
-                        <br>⚫ v-for = "(value, key) in 对象名"
-                        <br>遍历数字
-                        <br>⚫ v-for = "item in 数字"
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td rowspan="2">区别：
+                    <br>⚫ v-text 不解析标签
+                    <br>⚫ v-html 解析标签
+                </td>
+            </tr>
+            <tr>
+                <td>v-html</td>
+                <td></td>
+                <td>更新元素的innerHTML</td>
+                <td>v-html="值"</td>
+                <td></td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td>v-for</td>
+                <td></td>
+                <td>可以遍历 数组 或者 对象，用于渲染结构</td>
+                <td>遍历数组语法:
+                    <br>⚫ v-for="item in 数组名"
+                    <br>⚫ v-for="(item, index) in 数组名"
+                    <br>遍历对象语法：
+                    <br>⚫ v-for = "(value, key) in 对象名"
+                    <br>遍历数字
+                    <br>⚫ v-for = "item in 数字"
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
-        <h2>v-bind 对于class和style的增强：动态设置class 和 style</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>用 v-bind 动态设置标签的 class 类名</caption>
-                <tr>
-                    <th>语法</th>
-                    <th>说明</th>
-                    <th>例子</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>:class="对象/数组"
-                        <br>:class="{类名: 布尔值}”, true使用, false不用
-                        <br>:class="[类名1，类名2]”
-                        <br>:style="{css属性名: 值}"
-                    </td>
-                    <td>对象：如果键值对的值为<span class="red">true</span>，那么就有这个类，否则没有这个类
-                        <br>数组：数组中所有的类，都会添加到盒子上
-                    </td>
-                    <td>
-                        <pre><code>
+    <h2>v-bind 对于class和style的增强：动态设置class 和 style</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>用 v-bind 动态设置标签的 class 类名</caption>
+            <tr>
+                <th>语法</th>
+                <th>说明</th>
+                <th>例子</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>:class="对象/数组"
+                    <br>:class="{类名: 布尔值}”, true使用, false不用
+                    <br>:class="[类名1，类名2]”
+                    <br>:style="{css属性名: 值}"
+                </td>
+                <td>对象：如果键值对的值为<span class="red">true</span>，那么就有这个类，否则没有这个类
+                    <br>数组：数组中所有的类，都会添加到盒子上
+                </td>
+                <td>
+                    <pre><code>
 <div class="box" :style="{color:color,backgroundColor:bg}"></div>
                         </code></pre>
-                        <br>
-                        <pre><code>
+                    <br>
+                    <pre><code>
 <div class="box" :style="[styleObj1,styleObj2]"></div>
                         </code></pre>
-                    </td>
-                    <td>v-bind 对于类名操作的增强, 注意点 :class 不会影响到原来的 class 属性</td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td>v-bind 对于类名操作的增强, 注意点 :class 不会影响到原来的 class 属性</td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>v-model 双向数据绑定 语法糖</h2>
-        <div>
-            <p>语法糖：v-model本质上是 value属性和input事件的一层包装</p>
-            <p>
-                v-model的作用：提供数据的双向绑定
-                <br>① 数据发生了改变，页面会自动变 v-bind:value
-                <br>② 页面输入改变 ， 数据会自动变化 v-on:input
-            </p>
-            <pre><code>
+    <h2>v-model 双向数据绑定 语法糖</h2>
+    <div>
+        <p>语法糖：v-model本质上是 value属性和input事件的一层包装</p>
+        <p>
+            v-model的作用：提供数据的双向绑定
+            <br>① 数据发生了改变，页面会自动变 v-bind:value
+            <br>② 页面输入改变 ， 数据会自动变化 v-on:input
+        </p>
+        <pre><code>
                 <template>
                     <div>
                         <!-- 原来 --><input type="text" v-model="msg"> 
@@ -485,26 +485,26 @@ methods:{
                     </div>
                 </template>
             </code></pre>
-            <p>
-                v-model是一个语法糖怎么理解？
-                <br>本质上是 value属性和input事件的一层包装
-            </p>
-        </div>
+        <p>
+            v-model是一个语法糖怎么理解？
+            <br>本质上是 value属性和input事件的一层包装
+        </p>
+    </div>
 
 
-        <h3>v-model给组件使用</h3>
-        <div>
-            <p>我们经常遇到一种场景：
-                <br>1. 父组件提供一个数据给子组件使用（父传子）
-                <br>2. 子组件又需要修改父组件传过来的这个数据，所以需要子传父把值传给父组件。（子传父）
-                <br>这种场景可以使用v-model进行简写。
-            </p>
-            <pre><code>
+    <h3>v-model给组件使用</h3>
+    <div>
+        <p>我们经常遇到一种场景：
+            <br>1. 父组件提供一个数据给子组件使用（父传子）
+            <br>2. 子组件又需要修改父组件传过来的这个数据，所以需要子传父把值传给父组件。（子传父）
+            <br>这种场景可以使用v-model进行简写。
+        </p>
+        <pre><code>
                 <demo :value="money" @input="money = $event"></demo>
                 <!-- 简写 -->
                 <demo v-model="money">
             </code></pre>
-            <pre><code>
+        <pre><code>
                 export default{
                     props:{
                         value;Number
@@ -518,30 +518,30 @@ methods:{
                     }
                 }
             </code></pre>
-            <p>小结</p>
-            <p>v-model可以应用于组件么？ 答：可以</p>
-            <p>父传子传递的属性名，子传父触发的事件分别是什么？ 答：value 和 input事件</p>
-        </div>
+        <p>小结</p>
+        <p>v-model可以应用于组件么？ 答：可以</p>
+        <p>父传子传递的属性名，子传父触发的事件分别是什么？ 答：value 和 input事件</p>
+    </div>
 
 
 
 
-        <h2>vue中获取事件对象</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>vue中获取事件对象：
-                        <br>(1) 没有传参, 通过形参接收 e
-                        <br>(2) 传参了, 通过$event指代事件对象 e
-                    </td>                     
-                    <td>
-                        <pre><code>
+    <h2>vue中获取事件对象</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>vue中获取事件对象：
+                    <br>(1) 没有传参, 通过形参接收 e
+                    <br>(2) 传参了, 通过$event指代事件对象 e
+                </td>
+                <td>
+                    <pre><code>
 <template>
     <div>
         <a @click="fn" href="http://www.baidu.com">百度</a>
@@ -565,52 +565,52 @@ export default {
 &lt;style>
 &lt;/style>
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>事件修饰符</h2>
-        <div>
-            <p>事件修饰符：vue提供事件修饰符，可以快速阻止默认行为或阻止冒泡</p>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>.prevent 阻止默认行为</td>
-                    <td>
-                        <pre><code>
+    <h2>事件修饰符</h2>
+    <div>
+        <p>事件修饰符：vue提供事件修饰符，可以快速阻止默认行为或阻止冒泡</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>.prevent 阻止默认行为</td>
+                <td>
+                    <pre><code>
 <a @click.prevent="fn" href="http://www.baidu.com">百度2</a>
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td> .stop 阻止冒泡</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> .stop 阻止冒泡</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>按键修饰符</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>按键修饰符</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                </tr>
-                <tbody class="center">
+    <h2>按键修饰符</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>按键修饰符</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+            </tr>
+            <tbody class="center">
                 <tr>
                     <td>@keyup.enter</td>
                     <td>监听回车键</td>
@@ -652,69 +652,69 @@ export default {
                     <td></td>
                 </tr>
             </tbody>
-                <tr>
-                    <td colspan="2">
-                        <pre><code>
+            <tr>
+                <td colspan="2">
+                    <pre><code>
 <input type="text" @keyup="fn">
 <input type="text" @keyup.enter="fn2">
                         </code></pre>
-                    </td>
-                </tr>
-                
-
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+            </tr>
 
 
-        <h2>vue的就地复用策略</h2>
-        <div>
-            <p>就地复用：Vue会尽可能的就地（同层级，同位置）复用旧dom结构，对比虚拟dom，进行差异化更新。（效率更高）</p>
-        </div>
-
-        <h2>虚拟dom</h2>
-        <div>
-            <p>本质就是 保存节点信息, 描述真实dom的 JS 对象（大白话：真实DOM在vue这一个电子档案）</p>
-            <p>虚拟dom（一个个js对象）：可以用最少的属性结构，描述真实的dom</p>
-        </div>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>diff算法</h2>
-        <div>
-            <p>策略1</p>
-            <p>先同层级根元素比较。 => 如果根元素变化，那么不考虑复用，整个dom树删除重建
-                <br>先同层级根元素比较。 => 如果根元素不变，对比出属性的变化更新，并考虑往下递归复用。
-            </p>
-            <br>
-            <p>策略2</p>
-            <p>对比同级兄弟元素时，默认按照下标进行对比复用。（:key=“index” 或者 不设置）
-                <br>对比同级兄弟元素时，key设置值唯一固定且不变。（:key=“item.id”）
-            </p>
-        </div>
+    <h2>vue的就地复用策略</h2>
+    <div>
+        <p>就地复用：Vue会尽可能的就地（同层级，同位置）复用旧dom结构，对比虚拟dom，进行差异化更新。（效率更高）</p>
+    </div>
+
+    <h2>虚拟dom</h2>
+    <div>
+        <p>本质就是 保存节点信息, 描述真实dom的 JS 对象（大白话：真实DOM在vue这一个电子档案）</p>
+        <p>虚拟dom（一个个js对象）：可以用最少的属性结构，描述真实的dom</p>
+    </div>
+
+
+    <h2>diff算法</h2>
+    <div>
+        <p>策略1</p>
+        <p>先同层级根元素比较。 => 如果根元素变化，那么不考虑复用，整个dom树删除重建
+            <br>先同层级根元素比较。 => 如果根元素不变，对比出属性的变化更新，并考虑往下递归复用。
+        </p>
+        <br>
+        <p>策略2</p>
+        <p>对比同级兄弟元素时，默认按照下标进行对比复用。（:key=“index” 或者 不设置）
+            <br>对比同级兄弟元素时，key设置值唯一固定且不变。（:key=“item.id”）
+        </p>
+    </div>
 
 
 
 
-        <h2>计算属性</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>计算属性的基本使用</caption>
-                <tr>
-                    <th>概念</th>
-                    <th>注意</th>
-                    <th>例子</th>
-                    <th>注意</th>
-                </tr>
-                <tr>
-                    <td>一个特殊属性, 值依赖于另外一些数据动态计算出来。</td>
-                    <td>⚫ 1. 计算属性必须定义在 computed 节点中
-                        <br>⚫ 2. 计算属性必须是一个 function,计算属性必须有返回值
-                        <br>⚫ 3. 计算属性不能被当作方法调用, 要作为属性来用
-                        <br><span class="red">多次使用计算属性，性能会极高</span>
-                        <br><span class="red">计算属性名和data里名字不能重复</span>
-                    </td>
-                    <td>
-                        <pre><code>
+    <h2>计算属性</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>计算属性的基本使用</caption>
+            <tr>
+                <th>概念</th>
+                <th>注意</th>
+                <th>例子</th>
+                <th>注意</th>
+            </tr>
+            <tr>
+                <td>一个特殊属性, 值依赖于另外一些数据动态计算出来。</td>
+                <td>⚫ 1. 计算属性必须定义在 computed 节点中
+                    <br>⚫ 2. 计算属性必须是一个 function,计算属性必须有返回值
+                    <br>⚫ 3. 计算属性不能被当作方法调用, 要作为属性来用
+                    <br><span class="red">多次使用计算属性，性能会极高</span>
+                    <br><span class="red">计算属性名和data里名字不能重复</span>
+                </td>
+                <td>
+                    <pre><code>
 <div>
     <p>和为：{{num}}</p>
 </div>
@@ -725,15 +725,15 @@ computed:{
     }
 }
                         </code></pre>
-                    </td>
-                    <td>计算属性也是属性, 所以不要和data里重名, 用起来也和data类似</td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <p style="font-size: 30px;">完整写法</p>
-                        1. 计算属性默认情况下只能获取，不能修改。
-                        <br>2. 要给计算属性赋值，就必须写计算属性的完整写法！
-                        <pre><code>
+                </td>
+                <td>计算属性也是属性, 所以不要和data里重名, 用起来也和data类似</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p style="font-size: 30px;">完整写法</p>
+                    1. 计算属性默认情况下只能获取，不能修改。
+                    <br>2. 要给计算属性赋值，就必须写计算属性的完整写法！
+                    <pre><code>
 computed:{
     full:{
         get(){
@@ -745,34 +745,34 @@ computed:{
     }
 }
                         </code></pre>
-                    </td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
-        <h2>侦听器 watch</h2>
-        <div>
-            <p>watch: 可以侦听到 data/computed 属性值的改变</p>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>侦听器 watch</caption>
-                <tr>
-                    <th>语法</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>
-                        <pre><code>
+    <h2>侦听器 watch</h2>
+    <div>
+        <p>watch: 可以侦听到 data/computed 属性值的改变</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>侦听器 watch</caption>
+            <tr>
+                <th>语法</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>
 watch:{
     "被监听的属性名"(newVal,oldVal){
 
     }
 }
                         </code></pre>
-                    </td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td>
+                    <pre><code>
 <template>
     <div>
         <input type="text" v-model="name">
@@ -794,18 +794,18 @@ watch:{
     }
 </style>
                         </code></pre>
-                    </td>
-                    <td>
-                        1. 如何侦听一个对象/数组呢?
-                        <br>写成对象形式, deep:true
-                        <span class="red"><br>2. 如何让侦听器函数马上执行一次呢?
+                </td>
+                <td>
+                    1. 如何侦听一个对象/数组呢?
+                    <br>写成对象形式, deep:true
+                    <span class="red"><br>2. 如何让侦听器函数马上执行一次呢?
                         <br>immediate: true</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        如果监听的是复杂数据类型，需要深度监听，需要指定deep为true, 需要用到监听的完整的写法
-                        <pre><code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    如果监听的是复杂数据类型，需要深度监听，需要指定deep为true, 需要用到监听的完整的写法
+                    <pre><code>
 watch:{
     "要监听的属性名"：{
         immediate:true,  //立即执行一次
@@ -816,60 +816,60 @@ watch:{
     }
 }
                         </code></pre>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
 
 
-        <h2>Vue组件概念, 创建和使用</h2>
-        <h2>什么是组件化开发</h2>
-        <div>
-            <p>组件是可复用的 Vue 实例, 封装标签, 样式和JS代码</p>
-            <p>⚫ 组件化 ：封装的思想，把页面上 `可重用的部分` 封装为 `组件`，从而方便项目的 开发 和 维护</p>
-            <p>⚫⚫ 一个页面， 可以拆分成一个个组件，一个组件就是一个整体</p>
-            <p>⚫ 每个组件可以有自己独立的 结构 样式 和 行为(html, css和js)</p>
-            <p>⚫ 例如：http://www.ibootstrap.cn/ 所展示的效果，就契合了组件化开发的思想</p>
-            <br>
-            <p>前端组件化开发的好处：</p>
-            <p>- 提高了 <span class="red">复用性和灵活性</span></p>
-            <p>- 提升了 <span class="red">开发效率 和 后期可维护性</span></p>
-         </div>
+    <h2>Vue组件概念, 创建和使用</h2>
+    <h2>什么是组件化开发</h2>
+    <div>
+        <p>组件是可复用的 Vue 实例, 封装标签, 样式和JS代码</p>
+        <p>⚫ 组件化 ：封装的思想，把页面上 `可重用的部分` 封装为 `组件`，从而方便项目的 开发 和 维护</p>
+        <p>⚫⚫ 一个页面， 可以拆分成一个个组件，一个组件就是一个整体</p>
+        <p>⚫ 每个组件可以有自己独立的 结构 样式 和 行为(html, css和js)</p>
+        <p>⚫ 例如：http://www.ibootstrap.cn/ 所展示的效果，就契合了组件化开发的思想</p>
+        <br>
+        <p>前端组件化开发的好处：</p>
+        <p>- 提高了 <span class="red">复用性和灵活性</span></p>
+        <p>- 提升了 <span class="red">开发效率 和 后期可维护性</span></p>
+    </div>
 
-         
-         <h2>组件的注册与使用</h2>
-          <div>  
-            <p>App.vue 是根组件, 这个比较特殊, 是最大的一个根组件。其实里面还可以注册使用其他小组件</p>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>组件的注册与使用</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>1.<span class="red">创建</span>组件, 封装要复用的标签, 样式, JS代码</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2. <span class="red">引入组件</span></td>
-                    <td>
-                        <pre><code>
+
+    <h2>组件的注册与使用</h2>
+    <div>
+        <p>App.vue 是根组件, 这个比较特殊, 是最大的一个根组件。其实里面还可以注册使用其他小组件</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>组件的注册与使用</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>1.<span class="red">创建</span>组件, 封装要复用的标签, 样式, JS代码</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2. <span class="red">引入组件</span></td>
+                <td>
+                    <pre><code>
 import 组件对象 from 'vue文件路径'
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3. <span class="red">注册</span>组件</td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3. <span class="red">注册</span>组件</td>
+                <td>
+                    <pre><code>
 //全局注册 – main.js中 – 语法如图
 Vue.component("组件名"，组件对象)
 //Vue 是大写，不能错
@@ -881,151 +881,152 @@ export default{
     }
 }
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>4. <span class="red">使用</span>组件：组件名当成标签使用即可</td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4. <span class="red">使用</span>组件：组件名当成标签使用即可</td>
+                <td>
+                    <pre><code>
 <组件名></组件名>
                         </code></pre>
-                    </td>
-                    <td>组件名不能和内置的html名同名</td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td>组件名不能和内置的html名同名</td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>组件名的大小写</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>在进行组件的注册时，定义组件名的方式有两种</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>1. 注册使用短横线命名法，例如 hm-header 和 hm-mai</td>
-                    <td>
-                        <pre><code>
+    <h2>组件名的大小写</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>在进行组件的注册时，定义组件名的方式有两种</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>1. 注册使用短横线命名法，例如 hm-header 和 hm-mai</td>
+                <td>
+                    <pre><code>
 vue.component('hm-button',HmButton)
 //使用时 `<hm-button> </hm-button>`
                         </code></pre>
-                    </td>
-                    <td>推荐1: <span class="red">定义组件名</span>时, 用大驼峰命名法, 更加方便</td>
-                </tr>
-                <tr>
-                    <td>2. 注册使用大驼峰命名法，例如 HmHeader 和 HmMain</td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td>推荐1: <span class="red">定义组件名</span>时, 用大驼峰命名法, 更加方便</td>
+            </tr>
+            <tr>
+                <td>2. 注册使用大驼峰命名法，例如 HmHeader 和 HmMain</td>
+                <td>
+                    <pre><code>
 vue.component('HmButton',HmButton)
 //使用时 `<HmButton> </HmButton>` 和 `<hm-button> </hm-button>` 都可以
                         </code></pre>
-                    </td>
-                    <td>推荐2: <span class="red">使用组件</span>时，遵循html5规范, 小写横杠隔开（可选）</td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td>推荐2: <span class="red">使用组件</span>时，遵循html5规范, 小写横杠隔开（可选）</td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>通过 name 注册组件 (了解)</h2>
-        <div>
-            <p>组件在 <span class="red">开发者工具中</span> 显示的名字，可以通过name进行修改：</p>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>
-                        <pre><code>
+    <h2>通过 name 注册组件 (了解)</h2>
+    <div>
+        <p>组件在 <span class="red">开发者工具中</span> 显示的名字，可以通过name进行修改：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>
 //创建组件时 通过这个设置组件名字
 export default{
     name:'HmButton'
 }
                         </code></pre>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>在注册组件期间，除了可以直接提供组件的注册名称之外，
-                        <br>还可以把组件的 name 属性作为注册后组件的名称
-                        <pre><code>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>在注册组件期间，除了可以直接提供组件的注册名称之外，
+                    <br>还可以把组件的 name 属性作为注册后组件的名称
+                    <pre><code>
 //可以使用组件的名字
 import HmButton from './组件'
 Vue.component(HmButton.name,HmButton)
 //等价于 Vue.component('HmButton',HmButton)
                         </code></pre>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>组件的样式冲突 scoped</h2>
-        <div>
-            <p>默认情况下，写在组件中的样式会 `<span class="red">全局生效</span>`，因此很容易造成多个组件之间的样式冲突问题。</p>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>组件的样式冲突 scoped</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>1. `<span class="red">全局样式</span>`: 默认组件中的样式会作用到全局</td>
-                    <td rowspan="2">
-                        scoped原理？
-                        <br>⚫ （1）当前组件内标签都被添加 <span class="red">data-v-hash值</span> 的属性
-                        <br>⚫ （2）css选择器都被添加 <span class="red">[data-v-hash值]</span> 的属性选择器
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2. `<span class="red">局部样式</span>`: 可以给组件加上 <span class="red">scoped</span> 属性, <span class="red">可以让样式只作用于当前组件</span></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="3">最终效果: 必须是<span class="red">当前组件的元素</span>, 才会有这个自定义属性, 才会被这个样式作用到</td>
-                    <pre><code>
+    <h2>组件的样式冲突 scoped</h2>
+    <div>
+        <p>默认情况下，写在组件中的样式会 `<span class="red">全局生效</span>`，因此很容易造成多个组件之间的样式冲突问题。</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>组件的样式冲突 scoped</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>1. `<span class="red">全局样式</span>`: 默认组件中的样式会作用到全局</td>
+                <td rowspan="2">
+                    scoped原理？
+                    <br>⚫ （1）当前组件内标签都被添加 <span class="red">data-v-hash值</span> 的属性
+                    <br>⚫ （2）css选择器都被添加 <span class="red">[data-v-hash值]</span> 的属性选择器
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2. `<span class="red">局部样式</span>`: 可以给组件加上 <span class="red">scoped</span> 属性, <span
+                        class="red">可以让样式只作用于当前组件</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">最终效果: 必须是<span class="red">当前组件的元素</span>, 才会有这个自定义属性, 才会被这个样式作用到</td>
+                <pre><code>
 <style scoped>
     .box{
         border: 2px solid blue;
     }
 </style>
                     </code></pre>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
 
-        <h2>Vue组件通信</h2>
-        <h2>组件通信 - 父传子</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>父组件</td>
-                    <td>调用“函数”、传入“实参”</td>
-                    <td>
-                        <pre><code>
+    <h2>Vue组件通信</h2>
+    <h2>组件通信 - 父传子</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>父组件</td>
+                <td>调用“函数”、传入“实参”</td>
+                <td>
+                    <pre><code>
 import cpt1 from '子组件'    //导入
 
 components:{   //注册
@@ -1034,9 +1035,9 @@ components:{   //注册
 
 <cpt1 title='哈哈哈' price=77></cpt1>  //使用： 传入实参
                         </code></pre>
-                        <br>
-                        完整案例
-                        <pre><code>
+                    <br>
+                    完整案例
+                    <pre><code>
 <template>
     <div>
       <hm-cpt1></hm-cpt1>
@@ -1080,14 +1081,14 @@ export default {
 
 </style>
                         </code></pre>
-                    </td>
-                </tr>
-                <tr>
-                    <td>子组件</td>
-                    <td>封装“函数”</td>
-                    <td>
-                        <span class="red">props:["title","price"]</span>  //设置形参
-                        <pre><code>
+                </td>
+            </tr>
+            <tr>
+                <td>子组件</td>
+                <td>封装“函数”</td>
+                <td>
+                    <span class="red">props:["title","price"]</span> //设置形参
+                    <pre><code>
 <template>
     <div class="box">
         <!-- 使用形参 -->
@@ -1097,7 +1098,7 @@ export default {
 </template>
 <script>
     export default {
-        props:["title","price"]  //设置形参
+        props: ["title", "price"]  //设置形参
         //封装所谓的形参，
     }
 </script>
@@ -1107,52 +1108,52 @@ export default {
     }
 </style>
                         </code></pre>
-                    </td>
-                </tr>
-                <tr>
-                    <td>小结</td>
-                    <td colspan="2">
-                        父传子的基本步骤是什么?
-                        <br>父组件内, 给子组件添加属性的方式传值
-                        <br>子组件内, 通过 props 接收
-                    </td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+            </tr>
+            <tr>
+                <td>小结</td>
+                <td colspan="2">
+                    父传子的基本步骤是什么?
+                    <br>父组件内, 给子组件添加属性的方式传值
+                    <br>子组件内, 通过 props 接收
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>单向数据流</h2>
-        <div>
-            <p>在vue中需要遵循单向数据流原则： （从父到子的<span class="red">单向数据流动</span>, 叫单向数据流）</p>
-            <p>1. 父组件的数据变化了，会自动向下流动影响到子组件</p>
-            <p>2. 子组件不能直接修改父组件传递过来的 props， props是只读的！</p>
-            <br><br><br>
-        </div>
+    <h2>单向数据流</h2>
+    <div>
+        <p>在vue中需要遵循单向数据流原则： （从父到子的<span class="red">单向数据流动</span>, 叫单向数据流）</p>
+        <p>1. 父组件的数据变化了，会自动向下流动影响到子组件</p>
+        <p>2. 子组件不能直接修改父组件传递过来的 props， props是只读的！</p>
+        <br><br><br>
+    </div>
 
 
-        <h2>组件通信 - 子传父</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>组件通信 - 子传父</caption>
-                <tr>
-                    <th>基本语法</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td>1. 子组件：发信号！通过 `<span class="red">this.$emit(‘通道名称', 参数1, 参数2, ...)</span>` 同时传参</td>
-                    <td>
-                        <pre><code>
+    <h2>组件通信 - 子传父</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>组件通信 - 子传父</caption>
+            <tr>
+                <th>基本语法</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>1. 子组件：发信号！通过 `<span class="red">this.$emit(‘通道名称', 参数1, 参数2, ...)</span>` 同时传参</td>
+                <td>
+                    <pre><code>
 this.$emit("subnum",this.id);
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2. 父组件可以给子组件设置相应的接受通道名称 父组件并提供对应的函数接收参数</td>
-                    <td>
-                        <pre><code>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2. 父组件可以给子组件设置相应的接受通道名称 父组件并提供对应的函数接收参数</td>
+                <td>
+                    <pre><code>
 <!-- 父组件可以给子组件设置相应的接受通道名称 -->
 <cpt1
 v-for="item in list"
@@ -1170,90 +1171,90 @@ fn(id){
     })
 }
                         </code></pre>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>小结</td>
-                    <td colspan="2">子传父的步骤是什么呢?
-                        <br>1. 子组件内, 恰当时机 this.$emit('自定义事件名', 值)
-                        <br>2. 父组件内, 给组件 @自定义事件="父methods函数"
-                    </td>
-                    <!-- <td></td> -->
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>小结</td>
+                <td colspan="2">子传父的步骤是什么呢?
+                    <br>1. 子组件内, 恰当时机 this.$emit('自定义事件名', 值)
+                    <br>2. 父组件内, 给组件 @自定义事件="父methods函数"
+                </td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>props校验</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>props校验</caption>
-                <tr>
-                    <th>说明</th>
-                    <th>功能</th>
-                    <th>备注</th>
-                    <th>例子</th>
-                </tr>
-                <tr>
-                    <td>props 是父传子, 传递给子组件的数据, 为了提高 <span class="red">子组件被使用时 的稳定性</span>, 可以进行props校验，</td>
-                    <td>验证传递的数据是否符合要求</td>
-                    <td>
-                        <table border="3" cellspacing="0" cellpadding="3">
-                            <caption>props提供了多种数据验证方案</caption>
-                            <tr>
-                                <th>功能</th>
-                                <th>用法</th>
-                            </tr>
-                            <tr>
-                                <td>基础的类型检查</td>
-                                <td>Number</td>
-                            </tr>
-                            <tr>
-                                <td>多个可能的类型</td>
-                                <td>[String,Number]</td>
-                            </tr>
-                            <tr>
-                                <td>必填项校验</td>
-                                <td>required:true</td>
-                            </tr>
-                            <tr>
-                                <td>默认值</td>
-                                <td>default:100</td>
-                            </tr>
-                            <tr>
-                                <td>自定义验证函数</td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <pre><code>
+    <h2>props校验</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>props校验</caption>
+            <tr>
+                <th>说明</th>
+                <th>功能</th>
+                <th>备注</th>
+                <th>例子</th>
+            </tr>
+            <tr>
+                <td>props 是父传子, 传递给子组件的数据, 为了提高 <span class="red">子组件被使用时 的稳定性</span>, 可以进行props校验，</td>
+                <td>验证传递的数据是否符合要求</td>
+                <td>
+                    <table border="3" cellspacing="0" cellpadding="3">
+                        <caption>props提供了多种数据验证方案</caption>
+                        <tr>
+                            <th>功能</th>
+                            <th>用法</th>
+                        </tr>
+                        <tr>
+                            <td>基础的类型检查</td>
+                            <td>Number</td>
+                        </tr>
+                        <tr>
+                            <td>多个可能的类型</td>
+                            <td>[String,Number]</td>
+                        </tr>
+                        <tr>
+                            <td>必填项校验</td>
+                            <td>required:true</td>
+                        </tr>
+                        <tr>
+                            <td>默认值</td>
+                            <td>default:100</td>
+                        </tr>
+                        <tr>
+                            <td>自定义验证函数</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <pre><code>
 props:{
  ...
 } 
                         </code></pre>
-                    </td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>单向数据流</h2>
-        <div>
-            <p>在vue中需要遵循单向数据流原则 （从父到子的单向数据流动, 叫单向数据流）</p>
-            <p>
-                传入是个对象，本质上是地址，
-                <br>修改数据，修改的是同一个地址上的数据
-            </p>
-            <pre><code>
+    <h2>单向数据流</h2>
+    <div>
+        <p>在vue中需要遵循单向数据流原则 （从父到子的单向数据流动, 叫单向数据流）</p>
+        <p>
+            传入是个对象，本质上是地址，
+            <br>修改数据，修改的是同一个地址上的数据
+        </p>
+        <pre><code>
 <!-- 子组件 -->
 <template>
     <div class="one">
@@ -1276,762 +1277,988 @@ props:{
     :obj="'item"
 ></cpt2>
             </code></pre>
-            <p>总结： <span class="red">传入数据：必要时可以传入对象，同一个地址上的数据！</span></p>
-            <br><br><br>
-        </div>
+        <p>总结： <span class="red">传入数据：必要时可以传入对象，同一个地址上的数据！</span></p>
+        <br><br><br>
+    </div>
 
 
-        <h2>ref 和 $refs  获取 dom 元素, 或者组件实例</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>获取原生DOM标签</caption>
-                <tr>
-                    <td>
-                        1. 目标标签 – 添加 ref 属性
-                        <pre><code>
+    <h2>ref 和 $refs 获取 dom 元素, 或者组件实例</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>获取原生DOM标签</caption>
+            <tr>
+                <td>
+                    1. 目标标签 – 添加 ref 属性
+                    <pre><code>
 <h1 ref="myH1">1.ref/id获取原生dom</h1>
                         </code></pre>
-                        2. 恰当时机, 通过 this.$refs.xxx, 获取目标标签
-                        <pre><code>
+                    2. 恰当时机, 通过 this.$refs.xxx, 获取目标标签
+                    <pre><code>
 console.log(this.$refs.myH1)
                         </code></pre>
-                    </td>
-                </tr>
-            </table>
+                </td>
+            </tr>
+        </table>
 
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>通过ref属性获取组件对象</caption>
-                <tr>
-                    <td>
-                        1. 给Demo组件目标组件, 添加ref属性-名字随意
-                        <pre><code>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>通过ref属性获取组件对象</caption>
+            <tr>
+                <td>
+                    1. 给Demo组件目标组件, 添加ref属性-名字随意
+                    <pre><code>
 <demo ref="de"></demo>
                         </code></pre>
-                        2. 恰当时机, 通过 this.$refs.xxx 获取组件对象, <span class="red">可调用组件对象里方法等</span>
-                        <pre><code>
+                    2. 恰当时机, 通过 this.$refs.xxx 获取组件对象, <span class="red">可调用组件对象里方法等</span>
+                    <pre><code>
 this.$refs.de.fn()
                         </code></pre>
-                        <p>如果拿到了组件对象能做什么?
-                            答：可以调用组件里的属性/方法
-                        </p>
+                    <p>如果拿到了组件对象能做什么?
+                        答：可以调用组件里的属性/方法
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
+
+
+    <h2>$nextTick:<span class="red">等DOM更新后</span>, 才会触发执行此方法里的函数体标题</h2>
+    <div>
+        <div>
+            <span style="font-size:20px">需求：点击改data的数据, 获取原生DOM内容</span>
+            <p>1.创建标签显示数据</p>
+            <pre><code>
+<p ref="a">数字： {{count}}</p>
+<button>点击+1，观察打印</button>
+                </code></pre>
+            <p>点击+1, 马上获取原生DOM内容 （拿到的是更新前的dom？）<span class="red">原因: Vue更新DOM是异步的</span></p>
+            <pre><code>
+methods:{
+    btn(){
+        this.count++
+        console.log(this.$refs.a.innerHtml)
+    }
+}
+                </code></pre>
+        </div>
+        <div>
+            <p>$nextTick：<span class="red">等DOM更新后</span>, 才会触发执行此方法里的函数体</p>
+            <pre><code>
+//语法: this.$nextTick(函数体)
+methods:{
+    btn(){
+        this.count++
+        this.$nextTick(()=>{
+            console.log('DOM更新后触发$nextTick函数')
+            console.log(this.$refs.a.innerHtml)
+        })
+        
+    }
+}
+                </code></pre>
+        </div>
+        <div>
+            <p>小结</p>
+            <p>data改变，更新DOM是同步还是异步的? 答：异步的</p>
+            <p>我们可以如何获取到更新后的DOM呢? 答：this.$nextTick里的函数体</p>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <h2>dynamic 动态组件</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>dynamic 动态组件</caption>
+            <tr>
+                <th>问题</th>
+                <th>答</th>
+            </tr>
+            <tr>
+                <td>动态组件是什么?</td>
+                <td>是 <span class="red">可以改变</span> 的 <span class="red">组件</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>动态组件能解决什么需求呢 ?</td>
+                <td>解决多组件同一位置, 切换显示的需求</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>基本语法</td>
+                <td>
+                    <span class="red">1. component 组件(位置) + is 属性 (哪个组件)</span>
+                    <pre><code>
+<component :is="要显示的组件" />
+                        </code></pre>
+                    <span class="red">2. 修改 is 属性绑定的值 => 切换组件</span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+        <p class="red" style="font-size: 20px;">dynamic 动态组件- 怎么用(案例)</p>
+        <p>1. 准备被切换的 2个组件, 并引入注册
+            <br>2. 准备变量来承载要显示的"组件名"
+            <br><span class="red">3. 设置挂载点&lt;component&gt;, is属性设置要显示的组件 ( component + is )
+                <br>4. 点击按钮 – 修改comName变量里的"组件名" ( 修改 is 的值)</span>
+        </p>
+        <img src="./images/2022-12-09 213905.png" alt="" class="k400">
+        <div>
+            小结
+            <p>1. 动态组件是什么? 答：是 <span class="red">可以改变 的 组件</span></p>
+            <p>2. 可以解决什么问题？ 答：<span class="red">多组件同一位置, 切换显示隐藏的需求</span></p>
+            <p>3. 如何使用动态组件? 答：<span class="red">component组件(位置) + is 属性(显示哪个组件)</span></p>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <h2>-自定义指令</h2>
+    <div>
+        <p><span style="font-size:16px">自定义指令：自己定义指令, 封装dom操作，扩展额外功能</span></p>
+
+        <table border="3" cellpadding="0" cellspacing="3">
+            <tbody>
+                <tr>
+                    <th>全局注册 - 语法</th>
+                    <th>&nbsp;局部注册 &ndash; 语法</th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre><code>
+Vue.directive("指令名",{
+    "inserted"(el){
+        //可以对el标签扩展额外功能
+    }
+})
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code>
+.directive:{
+    "指令名",{
+        "inserted"(el){
+            //可以对el标签扩展额外功能
+        }
+    }
+}
+                        </code></pre>
                     </td>
                 </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>$nextTick:<span class="red">等DOM更新后</span>, 才会触发执行此方法里的函数体标题</h2>
+                <tr>
+                    <td colspan="2">
+                        <p>自定义指令 - 指令的值</p>
+                        <p>需求：定义color指令-传入一个颜色, 给标签设置文字颜色</p>
+                        <p>语法：在绑定指令时，可以通过&ldquo;等号&rdquo;的形式为指令绑定具体的参数值</p>
+                        <pre><code>
+                            <div v-color="color">我是内容</div>
+                        </code></pre>
+                        <p> 通过<span style="color:#c0392b"> binding.value</span> 可以拿到指令值，指令值修改会<span class="red">触发
+                                update 函数</span>。</p>
+                        <pre><code>
+directives:{
+    //自定义一个局部属性
+    color:{
+        //指令在组件渲染的时候
+        inserted(el,{value}){
+            el.style.color=value
+        },
+        //update指令的值改变时触发，binding.value指令的值修改触发
+        update(el,binding){
+            el.style.color=binding.value
+        }
+    }
+}
+                        </code></pre>
+                        <p>简写为：</p>
+                        <pre><code>
+directives:{
+    //在bind 和update时，会触发相同的业务逻辑
+    color(el,binding){
+        el.style.color=binding.value
+    }
+}
+                        </code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <div>
-
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
+            <p>指令如何传值? 答：v-指令名="值"</p>
+            <p>指令值变化会触发什么方法? 答：自定义指令的update方法</p>
         </div>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
+    <h2>插槽</h2>
+    <div>
+        <table border="3" cellpadding="0" cellspacing="3">
+            <tbody>
+                <tr>
+                    <td>默认插槽</td>
+                    <td>具名插槽</td>
+                    <td>作用域插槽</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>插槽基本语法：</p>
+                        <p>1. 组件内用占位</p>
+                        <p>2. 使用组件时 夹着的地方, 传入标签替换slot</p>
+                        <pre><code>
+<template>
+    <div>
+        ...
         <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
+            <solt>默认显示的内容</solt>
+            <!-- 形参：接收结构 -->
         </div>
+        ...
+    </div>
+</template>
+                    </code></pre>
+                        <pre><code>
+<Pannel>
+    <img src="../" alt="">
+    <span>我时内容</span>
+</Pannel>
 
+<Pannel>
+    <p>123</p>
+    <p>123</p>
+</Pannel>
 
-        <h2>标题</h2>
+<Pannel></Pannel>  默认值
+                    </code></pre>
+                    </td>
+                    <td>
+                        <p>需求：一个组件内有多处，需要外部传入标签，进行定制</p>
+                        <p>语法:</p>
+                        <p>1. 多个slot使用name属性区分名字  <span class="red">&lt;slot name="content">&lt;/slot></span></p>
+                        <p>2. template配合v-slot:名字来分发对应标签</p>
+                        <pre><code>
+<template>
+    <div>
+        <slot name="title"></slot>  <!-- 具名 -->
+        <slot name="conent"></slot>  <!-- 具名 -->
+    </div>
+</template>
+                        </code></pre>
+                        <pre><code>
+<Pannel>
+    <template v-slot:title>
+        <h4>1234324</h4>
+    </template>
+
+    <template v-slot:conent>
+        <h4>1234324</h4>
+        <span>890786hjdfgfs</span>
+    </template>
+</Pannel>
+
+<Pannel>
+    <template #title><!-- 简写 -->
+        <h4>1234324</h4>
+    </template>
+
+    <template #conent><!-- 简写 -->
+        <p>1231</p>
+        <p>1231</p>
+        <p>1231</p>
+    </template>
+</Pannel>
+                        </code></pre>
+                        <p>&nbsp;v-slot:可以简化成 <span class="red">#插槽名</span></p>
+                    </td>
+                    <td>
+                        <p>作用域插槽: 定义 slot 插槽的同时, 是<span style="color:#e74c3c">可以传值的</span>。给插槽上可以<span style="color:#e74c3c">绑定数据</span>，将来使用组件时可以用。</p>
+                        <p>基本使用步骤：</p>
+                        <p>1. 给 slot 标签, 以 添加属性的方式传值，向外暴露数据</p>
+                        <pre><code>
+<slot :scr="scr">
+    {{scr}}
+</slot>
+                        </code></pre>
+                        <p>2. 所有添加的属性, 都会被收集到一个对象中</p>
+                        <pre><code>
+{scr:'地址'}
+                        </code></pre>
+                        
+                        <p>3. 在template中, 通过 ` v-slot= &quot;getSon&quot; ` 接收</p>
+                        <pre><code>
+<template v-slot="getSon">
+    <img :src="getSon" alt="">
+</template>
+                        </code></pre>
+                        <br>
+                        <br>
+                        <p>习惯命名写法：</p>
+                        <p>1. 如果子组件内部是一个对象数据，一般写法为 <span style="color:#e74c3c">:row =</span> &ldquo;子组件内对象&rdquo;</p>
+                        <pre><code>
+<slot :row="obj"></slot>
+                        </code></pre>
+                        <p>2. 所有添加的属性, 都会被收集到一个对象中</p>
+                        <pre><code>
+{
+    row:{
+        name:'张三',
+        age:18,
+        sex:'男'
+    }
+}
+                        </code></pre>
+                        <p>3. 在template中, 通过 `<span style="color:#e74c3c"> v-slot= &quot;scope&quot;</span> ` 接收</p>
+                        <pre><code>
+<template>
+    <p>{{scope.row.name}}</p>
+    <p>{{scope.row.age}}</p>
+    <p>{{scope.row.sex}}</p>
+</template>
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>当组件内某一部分标签不确定，想要自定义怎么办? 答：用插槽 slot 技术</p>
+                        <br>
+                        <p>插槽使用步骤? 答：</p>
+                        <p>1. 先在组件内用 slot 占位</p>
+                        <p>2. 使用组件时, 传入具体标签插入</p>
+                    </td>
+                    <td>
+                        <p>组件内 有多处不确定的结构 怎么办?</p>
+                        <p>1. slot占位, 给name属性起名字来区分</p>
+                        <p>2. template配合<span style="color:#e74c3c"> v-slot:</span>插槽名 分发内容</p>
+                        <p>v-slot:插槽名 可以简化成什么? #插槽名</p>
+                    </td>
+                    <td>
+                        <p>作用域插槽的作用是什么？ 答：可以给插槽上绑定数据，供将来使用组件时使用</p>
+                        <br>
+                        <p>作用域插槽使用步骤？</p>
+                        <p>（1）给 slot 标签, 以 添加属性的方式传值</p>
+                        <p>（2）所有属性都会被收集到一个对象中</p>
+                        <p>（3）template中, 通过 ` <span style="color:#e74c3c">v-slot= &quot;scope&quot; </span>` 接收</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
         <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
+            <p>作用域插槽的作用是什么？ 答：可以给插槽上绑定数据，供将来使用组件时使用</p>
+            <p>作用域插槽使用步骤？ 答：（1）给 slot 标签, 以 添加属性的方式传值 （2）所有属性都会被收集到一个对象中 （3）template中, 通过 ` <span class="red">v-slot= "scope" </span>` 接收</p>
         </div>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h3>具名插槽与作用域插槽合起来使用</h3>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>具名插槽与作用域插槽合起来使用</caption>
+            <tr>
+                <th>语法</th>
+            </tr>
+            <tr>
+                <td>
+                    1. 子组件命名，且向外暴露数据
+                    <pre><code>
+<slot name="some" :row="obj"></slot>
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2. 所有添加的属性, 都会被收集到一个对象中
+                    <pre><code>
+{
+    row:{
+        name;"张三",
+        age:18,
+        sex:"男"
+    }
+}
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3. 在template中, 通过  <span class="red">v-slot:some= "scope"</span>  接收且指定设置对应name的slot
+                    <pre><code>
+<template v-slot:some="scope">
+    <p>{{scope.row.name}}</p>
+    <p>{{scope.row.age}}</p>
+    <p>{{scope.row.sex}}</p>
+</template>
+                    </code></pre>
+                    <pre><code>
+<template #some="scope">
+    <p>{{scope.row.name}}</p>
+    <p>{{scope.row.age}}</p>
+    <p>{{scope.row.sex}}</p>
+</template>
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>具名作用域插槽使用步骤？
+                        <br>（1）给 slot 标签, 以添加属性的方式传值，且命名
+                        <br>（2）template中, 通过  <span class="red">v-slot:命名= "scope" </span> 接收
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
+
+    <h2>生命周期</h2>
+    <div>
+        <p>vue组件生命周期：从<span class="red">创建</span> 到 <span class="red">销毁</span> 的整个过程就是 – Vue实例的 - 生命周期</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
+
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
+    </div>
 
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h2>标题</h2>
+    <div>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>列表</caption>
+            <tr>
+                <th>功能</th>
+                <th>用法</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br><br>
     </div>
 
 
 
 
 
-    <script>
 
 
 
-    </script>
-
-    <!-- 引入js文件 -->
-    <script src="./js/html.js"></script>
-
-    <!-- 浏览器读取less文件的js -->
-    <script src="../lib/less.js"></script>
 
 
 
-    <!-- 引入代码高亮的js文件 -->
-    <script src="../lib/highlight/highlight.min.js"></script>
-    <!-- highlight使用方式:   -->
-    <!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
-    <!-- 类名不写语言默认自动识别 -->
-
-    <!-- 初始化代码高亮 -->
-    <script>hljs.initHighlightingOnLoad();</script>
 
 
 
-    <!-- 引入代码显示行数的js文件 -->
-    <script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
 
-    <!-- 初始化代码显示高度 -->
-    <script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
 
-    <!-- 自动生成目录 -->
-    <script src="../lib/dist/tocbot.min.js"></script>
-    <script type="text/javascript">
-        //目录生成初始化
-        tocbot.init({
-            // 在何处呈现目录。
-            tocSelector: '.js-toc',
+</div>
 
-            // 在何处获取标题以构建目录。
-            contentSelector: '.js-toc-content',
 
-            // 要在内容选择器元素内获取哪些标题。
-            headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
 
-            //对于内容中相对或绝对位置的容器内的标题。
-            hasInnerContainers: true,
-        });
-    </script>
+
+
+<script>
+
+
+
+</script>
+
+<!-- 引入js文件 -->
+<script src="./js/html.js"></script>
+
+<!-- 浏览器读取less文件的js -->
+<script src="../lib/less.js"></script>
+
+
+
+<!-- 引入代码高亮的js文件 -->
+<script src="../lib/highlight/highlight.min.js"></script>
+<!-- highlight使用方式:   -->
+<!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+<!-- 类名不写语言默认自动识别 -->
+
+<!-- 初始化代码高亮 -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<!-- 引入代码显示行数的js文件 -->
+<script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+<!-- 初始化代码显示高度 -->
+<script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+<!-- 自动生成目录 -->
+<script src="../lib/dist/tocbot.min.js"></script>
+<script type="text/javascript">
+    //目录生成初始化
+    tocbot.init({
+        // 在何处呈现目录。
+        tocSelector: '.js-toc',
+
+        // 在何处获取标题以构建目录。
+        contentSelector: '.js-toc-content',
+
+        // 要在内容选择器元素内获取哪些标题。
+        headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+
+        //对于内容中相对或绝对位置的容器内的标题。
+        hasInnerContainers: true,
+    });
+</script>
 
 
 
