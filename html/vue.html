@@ -90,6 +90,12 @@ svg相关属性
     第四个数值：在svg图标y轴的截取量
         </code></pre>
 
+        <p>onerror 是当图片加载失败时 会执行的一个事件 </p>
+
+        <p>.sync修饰符  表示父组件把传过去的值的修改权，交给了子组件，
+            <br>如果父组件把修改值的权利交给子组件，那么子组件必须通过固定语法修改父组件传过来的值  this.$emit('updated':Props传过来的值)
+        </p>
+
 
 
 
@@ -1457,7 +1463,7 @@ Vue.directive("指令名",{
                         <p>需求：定义color指令-传入一个颜色, 给标签设置文字颜色</p>
                         <p>语法：在绑定指令时，可以通过&ldquo;等号&rdquo;的形式为指令绑定具体的参数值</p>
                         <pre><code>
-                            <div v-color="color">我是内容</div>
+<div v-color="color">我是内容</div>
                         </code></pre>
                         <p> 通过<span style="color:#c0392b"> binding.value</span> 可以拿到指令值，指令值修改会<span class="red">触发
                                 update 函数</span>。</p>
@@ -1720,204 +1726,152 @@ directives:{
     <h2>生命周期</h2>
     <div>
         <p>vue组件生命周期：从<span class="red">创建</span> 到 <span class="red">销毁</span> 的整个过程就是 – Vue实例的 - 生命周期</p>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <br><br><br>
+        <br>
     </div>
 
-    <h2>标题</h2>
+    <h3>生命周期-钩子函数概述</h3>
     <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <p>生命周期函数：是由 vue 框架提供的<span class="red">内置函数</span>，会伴随着组件的生命周期，<span class="red">自动按次序执行</span>。</p>
+        <p>作用: 特定的时间点，执行特定的操作</p>
+        <p>比如: 组件创建完毕后，可以<span class="red">在created 生命周期函数中发起Ajax 请求</span>，从而初始化 data 数据</p>
+        <p>
+            分类: 三大阶段，8个方法
+            <br>- 组件<span class="red">初始化阶段</span>的生命周期函数（准备数据+dom渲染）
+            <br>- 组件<span class="red">运行阶段</span>的生命周期函数 (数据更新阶段)
+            <br>- 组件<span class="red">销毁阶段</span>的生命周期函数
+        </p>
+        <img src="./images/2022-12-10 095636.png" alt="" class="k400">
+        <a href="https://v2.cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA">生命周期详解</a>
+        <img src="./images/2022-12-10 095941.png" alt="" class="k400">
         <br><br><br>
     </div>
 
 
-    <h2>标题</h2>
+    <h3>生命周期钩子-详解:八大生命周期钩子函数</h3>
     <div>
         <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
+            <caption>八大生命周期钩子函数</caption>
             <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
+                <td>beforeCreate：data数据初始化之前，组件还没有数据</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><span class="red">created: data数据初始化之后，可以获取到组件的数据</span></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>beforeMount：DOM渲染之前，DOM还没渲染</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><span class="red">mounted：DOM渲染之后，可以操作DOM了</span></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>beforeUpdate: 数据更新，DOM更新前</td>
+            </tr>
+            <tr>
+                <td>updated: 数据更新，DOM更新后</td>
+            </tr>
+            <tr>
+                <td>beforeDestroy: 组件销毁前</td>
+            </tr>
+            <tr>
+                <td>destroyed: 组件销毁后</td>
             </tr>
         </table>
+        <div>八个生命周期钩子函数中，最常用的两个是什么？
+            <p>created (可以开始发送ajax请求，获取数据)</p>
+            <p>mounted （可以开始操作dom了）</p>
+        </div>
         <br><br><br>
     </div>
 
 
-    <h2>标题</h2>
+    <h2>单页应用程序: SPA - Single Page Application</h2>
     <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <p> 单页面应用(SPA): 所有功能在一个html页面上实现 (多页面应用程序MPA)</p>
+        <p>
+            优点：
+            <br><span class="red">不整个刷新页面</span>，每次请求仅获取需要的部分，<span class="red">用户体验更好</span>
+            <br>数据传递容易, <span class="red">开发效率高</span>
+            <br>缺点：
+            <br>开发成本高(需要学习专门知识 - 路由)
+            <br>首次加载会比较慢一点。不利于seo
+        </p>
         <br><br><br>
     </div>
 
 
-    <h2>标题</h2>
+    <h2>路由</h2>
+    <h3>vue-router的介绍 </h3>
     <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <p>vue-router： vue-router本质是 vue 官方的一个路由插件，是一个第三方包</p>
+        <p>官网: https://router.vuejs.org/zh/</p>
+        <p>vue-router集成了 路径 和 组件的切换匹配处理，我们只需要配置规则即可</p>
         <br><br><br>
     </div>
 
-
-    <h2>标题</h2>
+    <h3>组件的分类说明</h3>
     <div>
-        <table border="3" cellspacing="0" cellpadding="3">
-            <caption>列表</caption>
-            <tr>
-                <th>功能</th>
-                <th>用法</th>
-                <th>备注</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <p>组件分类： .vue文件分2类, 一个是页面组件, 一个是复用组件</p>
+        <p>src/views文件夹:放<span class="red">页面组件</span> - 页面展示 - 配合路由用</p>
+        <p>src/components文件夹:<span class="red">复用组件</span> - 展示数据 - 常用于复用</p>
         <br><br><br>
+    </div>
+
+    <h3>vue-router的基本使用</h3>
+    <div>
+        5 个 基础步骤
+        <br>1. 下载vue-router模块到当前工程，版本3.5.3
+        <br>2. 在main.js中引入VueRouter函数
+        <br>3. 添加到Vue.use()身上 – 帮你注册全局RouterLink和RouterView组件
+        <br>4. 创建路由对象
+        <br>5. 将路由对象注入到new Vue实例中
+        <br>
+        <span class="red">
+            <br>2 个 核心步骤：
+            <br>1. 配置路由规则
+            <br>2. 指定路由出口 router-view
+        </span>
+        <br><br><br>
+    </div>
+
+    <h3>路由的封装抽离</h3>
+    <div>
+        <p>目标：将路由模块抽离出来。 好处：拆分模块，利于维护</p>
+        <pre><code>
+在src文件夹新建router文件夹  在router文件夹内新建index文件夹用于存放路由规则
+在main文件夹
+导入import router from './router'
+
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app')
+        </code></pre>
+    </div>
+    
+    <h2>路由规则未写入</h2>
+
+
+    <h2>声明式导航 - 导航链接</h2>
+    <div>
+        <p>组件router-link 替代 a标签，能跳转，能高亮</p>
+        <p>1. vue-router提供了一个全局组件 router-link</p>
+        <p>2. router-link<span class="red">实质上</span>最终会渲染成<span class="red">a链接</span> to属性等价于提供 href属性(<span class="red">to无需#</span>)</p>
+        <p>3. router-link提供了声明式<span class="red">导航高亮</span>的功能(<span class="red">自带类名</span>)</p>
+        <pre><code>
+            代码 待会写
+        </code></pre>
+        <div>
+            小结
+            <p>1. router-link是什么?
+                答：VueRouter提供的全局组件, 本质就是a标签</p>
+            <p>2. router-link怎么用?
+                答：当标签使用, 必须传入to属性, 指定路由路径值</p>
+            <p>3. router-link好处?
+                答：自带激活时的类名, 可以做高亮</p>
+        </div>
+
+        <br><br>
+        
     </div>
 
 
@@ -2216,8 +2170,7 @@ directives:{
 
 </script>
 
-<!-- 引入js文件 -->
-<script src="./js/html.js"></script>
+
 
 <!-- 浏览器读取less文件的js -->
 <script src="../lib/less.js"></script>
@@ -2259,6 +2212,9 @@ directives:{
         hasInnerContainers: true,
     });
 </script>
+
+<!-- 引入js文件 -->
+<script src="./js/html.js"></script>
 
 
 
