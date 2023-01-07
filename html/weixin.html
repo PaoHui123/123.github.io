@@ -255,85 +255,135 @@
 
 
         <p>1. 页面的4 种文件类型：</p>
-        <pre><code>
-| 类型名称 | 作用 | 是否必须存在 |
-| -------- | ------------------------------------------- | ------------ |
-| .wxml | 用于页面的布局结构，相当于网页中 .html 文件 | 是 |
-| .wxss | 用于页面的样式，相当于网页中的 .css 文件 | 否 |
-| .js | 用于页面的逻辑 | 是 |
-| .json | 用于页面的配置 | 否 |
-        </code></pre>
-
-
-        **我们知道的是小程序的每个页面都是由以这4种文件类型的文件共同构成的且四个文件必须是相同的名字**。
-
-        2. 再来看一些**特定名称**的文件：
-
-        | 文件名 | 作用 | 是否必须存在 |
-        | ------------------- | ---------------------------- | ---------------- |
-        | app.js | 小程序入口（首先执行的文件） | 是 |
-        | app.json | 小程序的**全局配置** | 是 |
-        | app.wxss | 小程序的**全局样式** | 否 |
-        | project.config.json | 小程序**开发者工具配置** | 是（会自动创建） |
-        | sitemap.json | 小程序搜索优化 | 否 |
-
-        以上关于文件类型及特定文件相关的细节，后续学习过程中会逐步讲解，在此只是先对目结构有个大致的了解！
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>1. 页面的4 种文件类型</caption>
+            <tr>
+                <th>类型名称</th>
+                <th>作用</th>
+                <th>是否必须存在</th>
+            </tr>
+            <tr>
+                <td>.wxml</td>
+                <td>用于页面的布局结构，相当于网页中 .html 文件</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>.wxss</td>
+                <td>用于页面的样式，相当于网页中的 .css 文件</td>
+                <td>否</td>
+            </tr>
+            <tr>
+                <td>.js</td>
+                <td>用于页面的逻辑</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>.json</td>
+                <td>用于页面的配置</td>
+                <td>否</td>
+            </tr>
+        </table>
+        <br><br>
+        
+        <p>我们知道的是小程序的每个页面都是由以这4种文件类型的文件共同构成的且四个文件必须是相同的名字</p>。
+        <br>
+        <br>
+        <p>2. 再来看一些<span class="red">特定名称</span>的文件：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>再来看一些<span class="red">特定名称</span>的文件</caption>
+            <tr>
+                <th>文件名</th>
+                <th>作用</th>
+                <th>是否必须存在</th>
+            </tr>
+            <tr>
+                <td>app.js</td>
+                <td>小程序入口（首先执行的文件）</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>app.json</td>
+                <td>小程序的全局配置</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>app.wxss</td>
+                <td>小程序的全局样式</td>
+                <td>否</td>
+            </tr>
+            <tr>
+                <td>project.config.json</td>
+                <td>小程序开发者工具配置</td>
+                <td>是（会自动创建）</td>
+            </tr>
+            <tr>
+                <td>sitemap.json</td>
+                <td>小程序搜索优化</td>
+                <td>否</td>
+            </tr>
+        </table>
+        <br>
+        <p>以上关于文件类型及特定文件相关的细节，后续学习过程中会逐步讲解，在此只是先对目结构有个大致的了解！</p>
+        <br><br>
 
         <h3>2.3 牛刀小试</h3>
 
-        > 需求：将小程序页面中的文字颜色变成红色，字号变成 20px。
+        <p>需求：将小程序页面中的文字颜色变成红色，字号变成 20px。</p>
 
-        通过上面的讲解我们知道 .wxml 是用来定义页面内容及结构的，所以我们先从 .wxml 入手，打开 `pages/index/index.wxml` 找到如下代码：
+        <p>通过上面的讲解我们知道 .wxml 是用来定义页面内容及结构的，所以我们先从 .wxml 入手，打开 `pages/index/index.wxml` 找到如下代码：</p>
 
-        ```xml
-        <!-- 第 20 ~ 22 行 -->
-        <view class="usermotto">
-            <text class="user-motto">{{motto}}</text>
-        </view>
-        ```
+        <pre><code>
+<!-- 第 20 ~ 22 行 -->
+<view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+</view>
+        </code></pre>
+        <br>
+        
+        
 
-        在此基础上改变一些内容（加了几个感叹号），保存代码后，页面中立刻发生了变化（刷新）
+        <p>在此基础上改变一些内容（加了几个感叹号），保存代码后，页面中立刻发生了变化（刷新）</p>
+        <pre><code>
+<!-- 第 20 ~ 22 行 -->
+<view class="usermotto">
+    <text class="user-motto">{{motto}}!!!</text>
+</view>
+        </code></pre>
 
-        ```xml{3}
-        <!-- 第 20 ~ 22 行 -->
-        <view class="usermotto">
-            <text class="user-motto">{{motto}}!!!</text>
-        </view>
-        ```
+        <p>tip 提示:通过这一步操作体会一下 .wxml 类型的文件相当于 html 用来定义页面中的内容和结构。</p>
+        <br>
 
-        ::: tip 提示:
-        通过这一步操作体会一下 .wxml 类型的文件相当于 html 用来定义页面中的内容和结构。
-        :::
+        <p>接下来打开 `pages/index/index.wxss`，找到 `.usermotto` 这个选择器，如下代码所示：</p>
 
-        接下来打开 `pages/index/index.wxss`，找到 `.usermotto` 这个选择器，如下代码所示：
+        <pre><code>
+/* 第 17 ~ 19 行 */
+.usermotto {
+    margin-top: 200px;
+}
+        </code></pre>
+        <br>
+        
 
-        ```css
-        /* 第 17 ~ 19 行 */
-        .usermotto {
-        margin-top: 200px;
-        }
-        ```
 
-        在此基础上修改一些样式，设置字号及颜色，保存代码后，页面也会立刻发生变化（刷新）
+        <p>在此基础上修改一些样式，设置字号及颜色，保存代码后，页面也会立刻发生变化（刷新）</p>
+        <pre><code>
+.usermotto {
+    font-size: 20px;
+    color: red;
+    margin-top: 200px;
+}
+        </code></pre>
+        <br>
 
-        ```css{2,3}
-        .usermotto {
-        font-size: 20px;
-        color: red;
-        margin-top: 200px;
-        }
-        ```
+        <p>tip 提示:
+        通过这一步操作体会一下 .wxss 类型的文件相当于 css 用来定义页面样式，并且似乎（事实也是这样的）和 css 的属性也都是一样的！</p>
+            <br>
+        <p>至此 .js 和 .json 等其它内容我们后面会有专门的章节进行讲解。</p>
+            <br><br>
+        <h3> 2.4 页面导航布局</h3>
 
-        ::: tip 提示:
-        通过这一步操作体会一下 .wxss 类型的文件相当于 css 用来定义页面样式，并且似乎（事实也是这样的）和 css 的属性也都是一样的！
-        :::
-
-        至此 .js 和 .json 等其它内容我们后面会有专门的章节进行讲解。
-
-        ## 2.4 页面导航布局
-
-        > 通过一个小案例来学习小程序页面布局的相关知识，主要涉及到小程序内置的组件（标签）用样式的使用。
-
+        <p>通过一个小案例来学习小程序页面布局的相关知识，主要涉及到小程序内置的组件（标签）用样式的使用。</p>
+            <br>
         下图是比较常见的页面导航布局，要实现这个布局会用到小程序中提供的一些组件（标签）如下表所示：
 
         | 组件名（标签） | 作用 | 与 html 对比 |
@@ -1400,7 +1450,7 @@
         contentSelector: '.js-toc-content',
 
         // 要在内容选择器元素内获取哪些标题。
-        headingSelector: 'h2,h3,h4',//对h2和h3元素进行生成目录
+        headingSelector: 'h2,h3,h4,h5',//对h2和h3元素进行生成目录
 
         //对于内容中相对或绝对位置的容器内的标题。
         hasInnerContainers: true,
