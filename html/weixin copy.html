@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--告诉浏览器该网站的语言-->
+
+<head>
+    <meta charset="utf-8">
+    <!--万国码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" type="text/css" href="./less/style.less">
+
+    <!-- 引入代码高亮的主题css -->
+    <link rel="stylesheet" type="text/css" href="../lib/highlight/styles/atom-one-dark.min.css">
+
+    <!-- 引入代码样式代码 -->
+    <link rel="stylesheet" type="text/css" href="./css/highlight.css">
+
+    <!-- 引入目录代码样式 -->
+    <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
+    <title>微信小程序</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="aside">
+        <div class="aside1 ">
+            <ul>
+                <li>
+                    <h3>html框架</h3>
+                </li>
+                <li><a href="#" class="aside_a">1111</a></li>
+                <li><a href="#" class="aside_a">1111</a></li>
+            </ul>
+            <span>目录</span>
+            <ol class="js-toc"></ol>
+        </div>
+    </div>
+
+
+
+
+    <div class="zhuTi js-toc-content">
+
+
+        <h2>开发准备</h2>
+
+        <div>开发微信小程序之前，需要一些准备工作，主要包括了解小程序的特点、申请小程序账号、安装小程序开发者工具。</div>
+        <br>
+        <br>
+        <h3> 1.1 小程序的概念</h3>
+
+        <p>小程序是一种新型的轻量的开发技术，"微信之父" 张晓龙是这样定义小程序的：</p>
+
+        <img src="./images/weixin/img-3.jpg" alt="">
+
+        <p>结论：小程序是基于WEB规范，采用HTML、CSS和JS（WXML/WXSS/JavaScript）等搭建的一套框架，本质就是富单页面web应用。</p>
+
+        <img src="./images/weixin/demo.jpg" alt="image-20201031151904778" style="zoom:80%;" />
+
+        <p><a href="https://developers.weixin.qq.com/doc/">扩展阅读：[微信开发者文档](https://developers.weixin.qq.com/doc/)</a></p>
+        <br>
+        <br>
+
+
+        <h3> 1.2 小程序的特点</h3>
+
+        <p>本节目标: 了解小程序与web网页开发区别</p>
+
+        <p>小程序的主要开发语言是 JavaScript ，小程序的开发同普通的网页开发相比有很大的相似性。对于前端开发者而言，从网页开发迁移到小程序的开发成本并不高，但是二者还是有些许区别的。</p>
+
+        <br>
+        <p>网页：
+            <br>渲染线程和脚本线程是互斥的
+            <br>小程序：渲染线程和脚本线程是两个独立的线程</p>
+        <br>
+        <p>说明：
+        <br>1. 网页依赖浏览器
+        <br>2. 小程序依赖微信=>ios/android微信客户端</p>
+        <br>
+
+
+        <p>总结：
+        <br>1. 相同点：web开发和小程序开发都遵循web标准，使用js开发、
+        <br>2. 不同点：**web应用**渲染线程和js脚本执行线程是互斥（同时只能干一件事儿）；**小程序应用**渲染线程和js脚本执行线程是独立的（可以同时干活）
+        <br>3. 不同点：web应用运行在浏览器；小程序应用运行在微信客户端</p>
+            <br>
+
+
+        <h3> 1.3 注册小程序账号</h3>
+
+        <p>开发小程序的第一步，你需要拥有一个小程序帐号，通过这个帐号你就可以管理和开发属于自己的小程序。</p>
+        <a href="https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN">注册地址：https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN</a>
+       <br>
+       <br>
+
+        <h4> 账号类型</h4>
+
+        <p>选择小程序</p>
+        <img src="./images/weixin/image-20211108122843077.png" alt="">
+            <br>
+            <br>
+        <h4>账号信息</h4>
+
+        <p> 注意⚠️：填写邮箱要确保之前没有注册过微信公众平台其它账号的新邮箱（例如：公众号）</p>
+        <img src="./images/weixin/image-20211108123224525-9273220.png" alt="">
+       <br>
+       <br>
+
+        <h4> 邮箱激活</h4>
+        <img src="./images/weixin/image-20211108123543079-9273220.png" alt="">
+            <br>
+            <br>
+        <h4> 信息登记和绑定管理员</h4>
+
+        <p>注意：填写完个人信息，使用自己的**微信扫码绑定小程序管理员</p>
+        <img src="./images/weixin/image-20211108123741911-9273220.png" alt="">
+        <br>
+        <br>
+
+        <h4> 登录小程序后台</h4>
+        <img src="./images/weixin/image-20211108125542354.png" alt="">
+            <br>
+            <br>
+        <p>说明：需要管理员授权（上一步注册中扫码绑定），**使用管理员微信扫码确认后即可登录到小程序后台</p>
+        <img src="./images/weixin/img-11.jpg" alt="">
+        <br>
+        <br>
+
+        <h3> 1.4 小程序管理后台</h3>
+
+        <p>本节目标:了解管理后台常用菜单和开发设置信息</p>
+            <br>
+            <br>
+        <h4>小程序信息</h4>
+
+        <p>账号注册完毕后不能立刻使用，还需要进一步对小程序的信息进行完善，具体的操作步骤如下图所示参考老师课堂演示。</p>
+        <img src="./images/weixin/index/picture_15.jpg" alt="">
+
+        <p>注意⚠️：在填写小程序类目时<span class="red">不要选择游戏类型</span>，否则视为小游戏开发了。</p>
+            <br>
+            <br>
+        <h4>获取AppID</h4>
+
+        <p>说明：在开发和发布小程序时必须要填写 AppID</p>
+        <img src="./images/weixin/image-20200327110021595.png" style="width: 100%;" alt="">
+            <br>
+            <br>
+
+        <h4>项目成员管理</h4>
+        <img src="./images/weixin/cy.png" style="width: 100%;" alt="">
+            <br><br>
+        <h3>总结：</h3>
+        <div>
+            <p>小程序管理后台的作用？</p>
+            <br>1. 基本信息=》维护小程序基本信息
+            <br>2. 版本管理=》管理开发好的小程序，进行审核和发布上线
+            <br>3. 成员管理=》添加其他同学，分配开发者权限，共同开发一个小程序
+            <br>4. 开发管理=》获取appid，创建和发布项目需要使用
+            <br>5. 统计=》运营人员使用
+        </div>
+        <br>
+        <br>
+        
+
+
+
+        <h4>扩展:</h4>
+        <div>
+            到企业工作开发小程序流程：
+            <br>
+            <br>1. 获取公司小程序的APPID
+            <br>2. 让管理员给你开通开发者权限
+        </div>
+        <br>
+        <br>
+        
+
+
+
+        <h3> 1.5 微信开发者工具</h3>
+
+        <p>微信开发者工具是官方提供的专门用于微信小程序开发调试的工具，它提供的主要功能如下：</p>
+
+        <br>- 快速创建小程序项目（起到脚手架的作用）
+        <br>- 代码的查看和编辑（相当于 vs code 作用）
+        <br>- 对小程序功能进行调试（相当于浏览器作用）
+        <br>- 小程序的预览和发布
+        <br>
+        <br>
+
+        <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载</a>并安装微信开发者工具，双击下载好的微信开发者工具，然后后根据引导下一步、下一步操作直到完成，首次打开微信开发者工具时需要先进行登录（打开手机微信扫码登录）。
+        <img src="./images/weixin/index/picture_19.jpg" style="width: 100%;" alt="">
+        <br>
+        <br>
+        <br>
+
+        <h2>基础知识</h2>
+
+        <p>小程序开发的方式与 Web 非常类似，使用 Javascript 做为开发语言，使用 CSS 来实现页面的布局，除此之外还内置了许多功能丰富的组件，如地图、富文本、轮播图等。</p>
+        <br>
+        <h3>2.1 创建小程序</h3>
+
+        <p>通过小程序开发者工具创建一个新的项目，步骤：
+        <br>1. 填写小程序项目名称
+        <br>2. 选择项目代码保存目录（注意：选择后加上项目名称，这样代码会生成到该目录）
+        <br>3. 填写AppID，语言选择javascript
+        <br>4. 后端服务<span class="red">不使用云服务</span>，最后确定</p>
+        <img src="./images/weixin/image-20211108173607517.png" style="width: 100%;" alt="">
+            <br>
+            <br>
+
+        <p>注意⚠️：选择小程序项目目录时，需要手动加上项目名称</p>
+        <img src="./images/weixin/image-20211108175314730.png" style="width: 100%;" alt="">
+        <br>
+        <br>
+
+
+
+        <h3>2.2 目录结构</h3>
+
+        <p>小程序包含一个描述整体程序的 app 和多个描述各自页面的 pages</p>
+        <pre><code>
+├── pages ..................................... 页面目录（默认生成2个页面index和logs）
+│   ├── index ................................. index页目录
+│      ├── index.js .......................... index页面业务逻辑
+│      ├── index.wxml ........................ index页面布局结构
+│      └── index.wxss ........................ index页面布局样式
+│   └── logs .................................. logs页目录
+│   ├── logs.js ........................... logs页面业务逻辑
+│   ├── logs.json ......................... logs页面配置文件
+│   ├── logs.wxml ......................... logs页面布局结构
+│   └── logs.wxss ......................... logs页面布局样式
+└── utils ..................................... 全局方法
+└── util.js ...............................工具方法
+├── app.js .................................... 入口文件(程序入口)
+├── app.json .................................. 全局配置
+├── app.wxss .................................. 全局样式
+├── project.config.json ....................... 项目配置文件
+├── project.private.config.json ................项目私有配置文件
+├── sitemap.json .............................. 配置小程序及其页面是否允许被微信索引
+        </code></pre>
+        <br>
+        <br>
+
+
+        
+
+
+        <p>1. 页面的4 种文件类型：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>1. 页面的4 种文件类型</caption>
+            <tr>
+                <th>类型名称</th>
+                <th>作用</th>
+                <th>是否必须存在</th>
+            </tr>
+            <tr>
+                <td>.wxml</td>
+                <td>用于页面的布局结构，相当于网页中 .html 文件</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>.wxss</td>
+                <td>用于页面的样式，相当于网页中的 .css 文件</td>
+                <td>否</td>
+            </tr>
+            <tr>
+                <td>.js</td>
+                <td>用于页面的逻辑</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>.json</td>
+                <td>用于页面的配置</td>
+                <td>否</td>
+            </tr>
+        </table>
+        <br><br>
+        
+        <p>我们知道的是小程序的每个页面都是由以这4种文件类型的文件共同构成的且四个文件必须是相同的名字</p>。
+        <br>
+        <br>
+        <p>2. 再来看一些<span class="red">特定名称</span>的文件：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption>再来看一些<span class="red">特定名称</span>的文件</caption>
+            <tr>
+                <th>文件名</th>
+                <th>作用</th>
+                <th>是否必须存在</th>
+            </tr>
+            <tr>
+                <td>app.js</td>
+                <td>小程序入口（首先执行的文件）</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>app.json</td>
+                <td>小程序的全局配置</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>app.wxss</td>
+                <td>小程序的全局样式</td>
+                <td>否</td>
+            </tr>
+            <tr>
+                <td>project.config.json</td>
+                <td>小程序开发者工具配置</td>
+                <td>是（会自动创建）</td>
+            </tr>
+            <tr>
+                <td>sitemap.json</td>
+                <td>小程序搜索优化</td>
+                <td>否</td>
+            </tr>
+        </table>
+        <br>
+        <p>以上关于文件类型及特定文件相关的细节，后续学习过程中会逐步讲解，在此只是先对目结构有个大致的了解！</p>
+        <br><br>
+
+        <h3>2.3 牛刀小试</h3>
+
+        <p>需求：将小程序页面中的文字颜色变成红色，字号变成 20px。</p>
+
+        <p>通过上面的讲解我们知道 .wxml 是用来定义页面内容及结构的，所以我们先从 .wxml 入手，打开 `pages/index/index.wxml` 找到如下代码：</p>
+
+        <pre><code>
+<!-- 第 20 ~ 22 行 -->
+<view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+</view>
+        </code></pre>
+        <br>
+        
+        
+
+        <p>在此基础上改变一些内容（加了几个感叹号），保存代码后，页面中立刻发生了变化（刷新）</p>
+        <pre><code>
+<!-- 第 20 ~ 22 行 -->
+<view class="usermotto">
+    <text class="user-motto">{{motto}}!!!</text>
+</view>
+        </code></pre>
+
+        <p>tip 提示:通过这一步操作体会一下 .wxml 类型的文件相当于 html 用来定义页面中的内容和结构。</p>
+        <br>
+
+        <p>接下来打开 `pages/index/index.wxss`，找到 `.usermotto` 这个选择器，如下代码所示：</p>
+
+        <pre><code>
+/* 第 17 ~ 19 行 */
+.usermotto {
+    margin-top: 200px;
+}
+        </code></pre>
+        <br>
+        
+
+
+        <p>在此基础上修改一些样式，设置字号及颜色，保存代码后，页面也会立刻发生变化（刷新）</p>
+        <pre><code>
+.usermotto {
+    font-size: 20px;
+    color: red;
+    margin-top: 200px;
+}
+        </code></pre>
+        <br>
+
+        <p>tip 提示:
+        通过这一步操作体会一下 .wxss 类型的文件相当于 css 用来定义页面样式，并且似乎（事实也是这样的）和 css 的属性也都是一样的！</p>
+            <br>
+        <p>至此 .js 和 .json 等其它内容我们后面会有专门的章节进行讲解。</p>
+            <br><br>
+        <h3> 2.4 页面导航布局</h3>
+
+        <p>通过一个小案例来学习小程序页面布局的相关知识，主要涉及到小程序内置的组件（标签）用样式的使用。</p>
+            <br>
+        <p>下图是比较常见的页面导航布局，要实现这个布局会用到小程序中提供的一些组件（标签）如下表所示：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption></caption>
+            <tr>
+                <th>组件名（标签）</th>
+                <th>作用</th>
+                <th>与 html 对比</th>
+            </tr>
+            <tr>
+                <td>view</td>
+                <td>定义一个块级元素</td>
+                <td>相当于 html 中的 div 标签</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>定义一个行内元素</td>
+                <td>相当于 html 中的 span 标签</td>
+            </tr>
+        </table>
+        <br>
+
+        <p>关于小程序页面布局中的样式几乎和网页的 css 是一样的，先学习部分选择器的使用，如下表所示：</p>
+        <table border="3" cellspacing="0" cellpadding="3">
+            <caption></caption>
+            <tr>
+                <th>选择器</th>
+                <th>示例</th>
+                <th>含义</th>
+            </tr>
+            <tr>
+                <td>类选择器</td>
+                <td>.navs</td>
+                <td>根据类名选择元素</td>
+            </tr>
+            <tr>
+                <td>标签选择器</td>
+                <td>text、view</td>
+                <td>根据标签名选择元素</td>
+            </tr>
+            <tr>
+                <td>后代选择器</td>
+                <td>.navs text</td>
+                <td>根据标签的嵌套关系选择元素</td>
+            </tr>
+        </table>
+
+        将原来在 `pages/index/index.wxml` 和 `pages/index/index.wxss` 中编写代码删除，然后加关于页面导航布局相关的代码。
+
+        完整代码如下所示：
+
+        ```xml
+        <!-- pages/index/index.wxml -->
+        <view class="navs">
+            <text class="active">精选</text>
+            <text>手机</text>
+            <text>食品</text>
+            <text>内衣</text>
+            <text>生鲜</text>
+            <text>母婴</text>
+        </view>
+        ```
+
+        ```css
+        /* pages/index/index.wxss */
+        .navs {
+        display: flex;
+        justify-content: space-around;
+        height: 44px;
+        padding: 0 10px;
+        line-height: 44px;
+        border-top: 1px solid #eee;
+        }
+
+        .navs text {
+        color: #333;
+        font-size: 14px;
+        }
+
+        .navs .active {
+        color: #f5a11c;
+        border-bottom: 4px solid #f5a11c;
+        }
+        ```
+
+        ::: tip 提示:
+        通过上述的小例子大家要体会在编写小程序页面时与网页布局几乎是一致的，所不同的就是小程序中使用了一些特定的组件（组件），关于样式部分和 css 几乎完全一致。
+        :::
+
+        另外大家有没有发现样式文件不需要引入到页面当中，它是自动引入并生效的，但是要求**页面文件的名称和样式的文件必须要一致！**
+
+        <h3>2.5 小程序适配</h3>
+
+        > 小程序主要是运行在手机端的，它也需要像移动 Web 一样来处理不同大小屏幕的适配，小程序中适配的方法非常简单，它提供了专门的长度单位 `rpx` 它会自动的根据屏幕的大小转换成 `px` 。
+
+        ```css
+        /* 用 px 定义图片的尺寸 */
+        .preview-image {
+        width: 375px;
+        height: 160px;
+        }
+        ```
+
+        ```css
+        /* 用 rpx 定义图片的尺寸 */
+        .preview-image {
+        width: 750rpx;
+        height: 320rpx;
+        }
+        ```
+
+        说明：在小程序模拟器中对比使用 px 和 rpx 的区别后发现，rpx 在不同的设备中折算成 px 的实际大小是变化的，即针对不同尺寸屏幕进行适配的处理。
+
+        还有一点非常重要也必须要知道，小程序的屏幕宽度为 750rpx，即一个盒子的宽度如果设置为 750rpx 时会占满整个小程序的屏幕宽度。
+
+
+
+        总结：
+
+        1. 规定所有屏幕都是750rpx宽：实际开发设计稿是 750px，设计稿中是多少 px 在小程序中就写成多少 rpx，即 1 : 1 的关系
+        2. 小程序会根据屏幕大小自动转换rpx为px
+
+        <h3>2.6 轮播图交互</h3>
+
+        > 为了让大家对小程序内置组件有更多的了解，我们再来看几个功能强大的组件：
+
+        | 组件名（标签） | 作用 | 与 html 对比 |
+        | -------------- | -------------------------------- | ------------------- |
+        | swiper | 滑块视图容器 | 无 |
+        | swiper-item | 可滑动的区块（用在 swiper 内部） | 无 |
+        | image | 加载图片 | img（注意名称区别） |
+
+        通过 swiper 组件的属性对轮播图的功能进行配置，常见的属性包括：
+
+        | 属性名 | 默认值 | 作用 |
+        | ------------------------------------------------------------ | ----------------- | -------------------- |
+        | indicator-dots | false | 是否显示面板指示点 |
+        | autoplay | false | 是否自动切换 |
+        | circular | false | 是否采用衔接滑动 |
+        | indicator-color | rgba(0, 0, 0, .3) | 指示点颜色 |
+        | indicator-active-color | \#000000 | 当前选中的指示点颜色 |
+        | ... 还有[更多](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html) | | |
+
+        swiper 的功能强大提供的属性也非常多，不过不用头疼，常用的就几个以后根据开发需求随用随查就可以了。
+
+        示例：
+
+        ```js
+        <swiper autoplay indicator-dots>
+            <swiper-item>
+                <image class="img" src="https://t7.baidu.com/it/u=508006830,4042443322&fm=193&f=GIF"></image>
+            </swiper-item>
+            <swiper-item>
+                <image class="img" src="https://t7.baidu.com/it/u=508006830,4042443322&fm=193&f=GIF"></image>
+            </swiper-item>
+        </swiper>
+        ```
+
+        <h3>2.7 购物车计数器</h3>
+
+        > 对小程序布局的知识有了一定了解后，我们来学习如何在小程序中处理逻辑，比如数据渲染和事件处理等。
+
+        我们以实现购物车计数器功能为例展开学习。
+
+        打开 `pages/index/index.js` 将原来的全部内容都删除掉，我们一点点添加代码。
+
+        在动手前最先要了解的是每个页面的 .js 文件中**必须调用**一个内置全局的函数 `Page` 并且至少要传入一个**空对象**做为它的参数，否则可能会报错，如下图所示：
+
+        ![Page调用](assets/picture_7.jpg)
+
+        <h4>响应变量</h4>
+
+        > 如何定义响应变量？
+
+        Page 函数的配置项及其含义：
+
+        | 选项 | 含义 | 说明 |
+        | ---- | ---------------- | ------------------------- |
+        | data | 定义页面初始数据 | 类似 vue 组件的 data 函数 |
+
+        **语法：data:{ 变量名: 变量值 }**
+
+        在了解了上述的知识后，我们看看相关的代码：
+
+        ```javascript
+        // pages/index/index.js
+        Page({
+        data: {
+        msg: '大家好，这是我开发的第一个小程序！',
+        },
+        })
+        ```
+
+        上述代码中为 `pages/index/index.wxml` 初始了一个数据 `msg`，那如何才能将它渲染到页面当中呢？非常简单通过插值（即一对双大括号）来将 `msg` 渲染到指定的页面位置：
+
+        ```xml
+        <!-- pages/index/index.wxml -->
+        <!-- 上一小节页面导航和轮播图代码省略了... -->
+        <!-- 添加的新代码 -->
+        <view>{{msg}}</view>
+        ```
+
+        保存代码后就可以在页面中看到 "大家好，这是我开发的第一个小程序！" 这段文字了。
+
+        大家自行尝试一下数据类型如果是数组或对象时，如何渲染到页面当中？例如：
+
+        ```javascript
+        // pages/index/index.js
+        Page({
+        data: {
+        msg: '大家好，这是我开发的第一个小程序！',
+        // 初始对象类型的数据
+        user: {
+        name: '小明',
+        age: 18,
+        },
+        },
+        })
+        ```
+
+        揭晓答案：其实也非常简单跟 Vue 的语法几乎是一样，直接通过 `.` 语法就可以了。
+
+        <h4>事件监听</h4>
+
+        > 在对 `data` 的知识有了一个了解之后，再来学习一下小程序中事件监听的处理方式。
+
+        **语法： bind:事件名称="回调函数" 或者 bind事件名称="回调函数"**
+
+        小程序中大部分事件类型与网页中一致，如 `blur`、`focus`、`change` 等，也有个特殊的事件类型需要指出，点击事件在小程序不是使用 `click` 事件类型，取而代之的是 `tap` 事件类型。
+
+        ```xml
+        <!-- page/index/index.wxml -->
+        <!-- 省略前面几小节的代码 -->
+        <button bind:tap="sayHi">点击一下</button>
+        ```
+
+        上述代码中的 `button` 也是小程序中内置组件，通过 `bind:tap="sayHi"` 添加点击事件的监听，`sayHi` 是一个方法会在点击按钮时被调用。
+
+        那 `sayHi` 这个方法我们定义了吗？
+
+        在小程序页面的 .ts 文件中直接定义一个方法就可以了，来看具体的用法：
+
+        ```javascript{6-8}
+        // pages/index/index.js
+        Page({
+        data: {
+        msg: '大家好，这是我开发的第一个小程序！',
+        },
+        sayHi() {
+        console.log('按钮被点击了...')
+        },
+        })
+        ```
+
+        ::: warning 注意:
+        做为对比 Vue 学习，Vue 中方法都是定义在 methods 属性当中，小程序页面中则是直接定义的，这点大家一定要注意区分。
+        :::
+
+        此时在页面中点击一下按钮，`sayHi` 方法成功被调用了，以上就是小程序中的事件处理方法了，你学会了吗？
+
+        ### 更新数据
+
+        > 据我们的经验可以知道 data 中的数据应该是可以根据逻辑的需要进行修改的，那我们就来学习一下小程序中如何修改这些数据吧！
+
+        **语法：this.setDate({变量名: 变量值})**
+
+        假如用户在点击的时候我们将 `msg` 这个数据修改为 "Hello everybody，this is my first miniprogram!"，如何实现呢？
+
+        ```javascript
+        // pages/index/index.js
+        Page({
+        data: {
+        msg: '大家好，这是我开发的第一个小程序！',
+        },
+
+        sayHi() {
+        console.log('按钮被点击了...')
+        // 错误的写法！
+        // this.msg = 'Hello everybody，this is my first miniprogram!'
+        // 正确的写法
+        this.setData({
+        msg: 'Hello everybody，this is my first miniprogram!',
+        })
+        },
+        })
+        ```
+
+        ::: warning 注意
+        这里要敲黑板了，小程序中修改数据并不是直接进行赋值，而是要通过调用 `this.setData` 方法才能实现，将需要修改的数据以对象属性/值的形式传给 `this.setData` 方法。
+        :::
+
+        <h4>功能实现</h4>
+
+        > 好了基础知识铺垫完了，接下来我们就可以实现购物车计数器的功能了，分成3个步骤：
+
+        1. 简单布局一下页面，用到两个`button`组件和一个`input`组件
+
+        2. 监听`button`的点击事件，然后对数值进行加 1 或减 1 操作
+
+        3. 将按钮修改后的结果显示在`input`组件中
+
+        ```javascript
+        // pages/index/index.js
+        Page({
+        data: {
+        msg: '大家好，这是我开发的第一个小程序！',
+        // 初始值为 1
+        num: 1,
+        },
+        // 购物车数量加1
+        increment() {
+        this.setData({
+        num: this.data.num + 1,
+        })
+        },
+
+        // 购物车数量减1
+        decrement() {
+        // 数量最小为1
+        if (this.data.num <= 1) return this.setData({ num: this.data.num - 1 }) }, }) ``` ```xml <!--
+            pages/index/index.wxml -->
+            <!-- 上一小节页面导航和轮播图代码省略了... -->
+            <!-- 购物车 -->
+            <view class="cart">
+                <button type="primary" bind:tap="decrement">-</button>
+                <input value="{{num}}" />
+                <button type="primary" bind:tap="increment">+</button>
+            </view>
+            ```
+
+            ::: warning 注意:
+            为组件的属性绑定数据时也必须使用插值即双大括号 ，这一点与 Vue 的属性绑定也不一致！
+            :::
+
+
+            <h3>2.8 小程序配置</h3>
+
+            > 小程序的配置如窗口的颜色、标题，自定义组件、底部 tab 栏等都是通过配置文件来实现的，即 `.json` 类型的文件。
+
+            配置文件又分为：【全局配置】和【页面配置】
+
+            <h4>全局配置</h4>
+
+            全局配置即小程序根目录中的 `app.json` 它的最外层是一个对象，可以包含一些常见的配置项：
+
+            | 配置项 | 类型 | 是否必须 | 说明 |
+            | ------------- | -------- | -------- | ------------------- |
+            | pages | string[] | 是 | 页面路径列表 |
+            | window | object | 否 | 全局的默认窗口表现 |
+            | tabBar | object | 否 | 底部 `tab` 栏的表现 |
+            | entryPagePath | string | 否 | 小程序默认启动首页 |
+
+            <h5>>配置路由</h5>
+
+            * `pages` 的值是一个数组，所有页面的路径都要写在这个数组里，**否则页面无法被访问到**，数组的第一个单元为小程序的启动首页。
+
+            ```json
+            {
+            "pages": ["pages/index/index", "pages/logs/logs"]
+            }
+            ```
+
+            下面我们**新建一个页面**来测试 `pages` 配置项的使用：
+
+            > 使用微信开发者工具快速创建页面
+
+            1. 首页在pages目录下创建页面的文件夹
+
+            <img src="assets/image-20200327113931259.png" alt="image-20200327113931259" style="zoom:50%;"
+                align="left" />
+
+            2. 在新创建的目录下=》选择新建 Page =〉自动生成.js、.json、.wxml、.wxss四个文件，app.json会自动添加新建页面路径
+
+            <img src="assets/image-20200327114213685.png" align="left" alt="image-20200327114213685"
+                style="zoom:50%;" />
+
+
+
+            > 那 `pages` 的作用到底是什么呢？如果没有在 `pages` 中添加这个页面又会出现什么结果呢？下面我们来通过链接跳转的方式来给大家演示一下效果：
+
+            | 组件名 | 作用 | 与 htm 对比 |
+            | --------- | -------- | ----------------------- |
+            | navigator | 地址跳转 | 相当于 html 中的 a 标签 |
+
+            3. 在`pages/index/index`页面中添加一个链接并跳转到刚刚创建的 demo 页面
+
+            ```xml
+            <!-- pages/index/index.wxml -->
+            <!-- 省略前几小节代码 -->
+            <!-- 1. 相对路径 -->
+            <navigator url="../demo/demo">相对路径-跳转到 demo 页面</navigator>
+            <!-- 2. 绝对路径 -->
+            <navigator url="/pages/demo/demo">绝对路径-跳转到 demo 页面</navigator>
+            <!-- 注意如果 url 地址为空的，小程序会报一个找不到路径的错误（不影响其它功能） -->
+            ```
+
+            上述两种情况都可以正常的跳转到 demo 页面，但是如果将 `app.json` 中的 demo 页面路径删除后，则不能成功跳转了（点击跳转链接后没有任何反应），因此我们必须要把页面的路径填写到 `pages`
+            的配置项中。
+
+
+
+            总结：
+            小程序页面的跳转既支持相对路径（以 . 或 .. 开头）也支持绝对路径（以 / 开头），绝对路径 / 指的是小程序的根目录。
+
+            <h5>配置窗口</h5>
+
+            * `window` 的值是一个对象，通过它可以全局配置小程序的状态栏、导航条、标题、窗口背景色。
+
+            | 属性 | 类型 | 默认值 | 说明 |
+            | ------------------------------------------------------------ | ----------- | ------- |
+            ---------------------------------------- |
+            | navigationBarTitleText | string | 空白 | 导航栏标题文字内容 |
+            | navigationBarTextStyle | string | black | 导航栏标题颜色，仅支持 `black` / `white` |
+            | navigationBarBackgroundColor | 16 进制颜色 | #00000 | 导航栏背景颜色，如 `#000000` |
+            | navigationStyle | string | default | 导航栏样式，仅支持 `default` / `custom` |
+            | ... 还有[更多](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window) | | |
+            |
+
+            ```json
+            {
+            "pages": [
+            "pages/index/index",
+            "pages/logs/logs",
+            "pages/demo/demo"
+            ],
+            "window": {
+            "navigationBarTitleText": "小程序示例",
+            "navigationBarTextStyle": "white",
+            "navigationBarBackgroundColor": "#f5a11c"
+            }
+            }
+            ```
+
+            <h5>配置菜单</h5>
+
+            * `tabBar` 定义小程序 tab 栏的表现，如下图即所谓的 tab 栏：
+
+            ![](assets/picture_13.jpg)
+
+            定义 tab 的内容有些多，大家参照着上图和下面的表格来对小程序的 tab 栏进行配置：
+
+            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
+            | --------------- | ----------- | ------ | -------- |
+            ---------------------------------------------------------- |
+            | list | array | 无 | 是 | tab 的列表，详见 `list` 属性说明，最少 2 个、最多 5 个 tab |
+            | color | 16 进制颜色 | 无 | 否 | tab 上的文字默认颜色，仅支持十六进制颜色 |
+            | selectedColor | 16 进制颜色 | 无 | 否 | tab 上的文字选中时的颜色，仅支持十六进制颜色 |
+            | backgroundColor | 16 进制颜色 | 无 | 否 | tab 的背景色，仅只持 16 进制颜色 |
+            | borderStyle | string | black | 否 | tabbar 上边框的颜色， 仅支持 `black` / `white` |
+            | position | string | bottom | 否 | tabBar 的位置，仅支持 `bottom` / `top` |
+
+            上述配置中 `list` 具体又包含以下内容：
+
+            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
+            | ---------------- | ------ | ------ | -------- |
+            ------------------------------------------------------------ |
+            | pagePath | string | | 是 | 页面路径，必须在 pages 中先定义 |
+            | text | string | | 是 | tab 上按钮文字 |
+            | iconPath | string | | 否 | 图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片，当 `position` 为 `top` 时，不显示 icon
+            |
+            | selectedIconPath | string | | 否 | 选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片，当 `position` 为 `top`
+            时，不显示 icon |
+
+            以上的配置不用刻意的去背，根据需要随时查看文档就可以，以下为完整示例代码：
+
+            ```json
+            {
+            "pages": [
+            "pages/index/index",
+            "pages/logs/logs",
+            "pages/demo/demo"
+            ],
+            "window": {
+            "navigationBarTitleText": "小程序示例",
+            "navigationBarTextStyle": "white",
+            "navigationBarBackgroundColor": "#f5a11c",
+            "enablePullDownRefresh": true
+            },
+            "tabBar": {
+            "color": "#333",
+            "selectedColor": "#FFC64B",
+            "backgroundColor": "#FFF",
+            "borderStyle": "black",
+            "position": "bottom",
+            "list": [
+            {
+            "text": "首页",
+            "pagePath": "pages/index/index",
+            "iconPath": "assets/home.png",
+            "selectedIconPath": "assets/home-active.png"
+            },
+            {
+            "text": "卡券",
+            "pagePath": "pages/logs/logs",
+            "iconPath": "assets/card.png",
+            "selectedIconPath": "assets/card-active.png"
+            },
+            {
+            "text": "我的",
+            "pagePath": "pages/demo/demo",
+            "iconPath": "assets/my.png",
+            "selectedIconPath": "assets/my-active.png"
+            }
+            ]
+            }
+            }
+            ```
+
+            ::: tip 提示:
+            以上是常用的全局配置项，还有更多[全局配置](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html)的选项，后续学习当中会根据需要进行讲解。
+            :::
+
+            <h5>扩展-路由导航</h5>
+
+            > 使用navigator组件导航路由
+
+            语法：` <navigator open-type="navigate" url="/pages/pops/pops">跳转</navigator>`
+
+            1. 普通页面跳转
+
+            ```html
+            <navigator url="/pages/pops/pops">go</navigator>
+            ```
+
+            2. tabbar页面跳转
+
+            ```html
+            <navigator open-type="switchTab" url="/pages/home/home">go</navigator>
+            ```
+
+            3. 替换当前，然后打开新页面=>不能返回上次浏览页面
+
+            ```html
+            <navigator open-type="redirect" url="/pages/news/news">go</navigator>
+            ```
+
+            <h4>页面配置</h4>
+
+            * 接下来学习一下**页面配置**，顾名思义页面配置只针对某个页面生效，如 `index.json` 是针对 `index` 页面生效，`demo.json` 是针对页面 `demo` 生效。
+
+            页面的部分配置可以覆盖全局 `app.json` 中的配置，常见的配置如下表：
+
+            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
+            | ---------------------------- | ----------- | ------- | -------- | ----------------------------------------
+            |
+            | navigationBarTitleText | string | 空白 | 否 | 导航栏标题文字内容 |
+            | navigationBarTextStyle | string | black | 否 | 导航栏标题颜色，仅支持 `black` / `white` |
+            | navigationBarBackgroundColor | 16 进制颜色 | #00000 | 否 | 导航栏背景颜色，如 `#000000` |
+            | navigationStyle | string | default | 否 | 导航栏样式，仅支持 `default` / `custom` |
+
+            有没有发现上表中的配置内容其实是全局配置中 `window` 部分的内容，如果写在 `app.json` 中则属于全局配置，对所有的页面都生效，而如果写在页面中则属于页面配置，只对当前页面生效。
+
+            页面配置的内容相对少一些，不过后续在实际的应用中我们还会再学习到其它的配置内容。
+
+
+            <h3>2.9 字体图标</h3>
+
+            > 小程序也可以使用字体图标且与网页中应用字体图标的方法一致，然而有一点要注意小程序样式中的静态资源不支持本地路径，只能使用网络路径（http 或 https）或者 base64，因此在引用字体标时不要写本地路径：
+
+            ![image-20221128111855794](assets/image-20221128111855794.png)
+
+            示例1:
+
+            ```css
+            @font-face {
+            font-family: 'icomoon';
+            src: url('https://static.botue.com/ugo/fonts/icomoon.eot?rnu94l');
+            src: url('https://ekafit.oss-cn-beijing.aliyuncs.com/ugo/fonts/icomoon.eot?rnu94l#iefix')
+            format('embedded-opentype'),
+            url('https://static.botue.com/ugo/fonts/icomoon.ttf?rnu94l')
+            format('truetype'),
+            url('https://static.botue.com/ugo/fonts/icomoon.woff?rnu94l') format('woff'),
+            url('https://static.botue.com/ugo/fonts/icomoon.svg?rnu94l#icomoon')
+            format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+            }
+            ```
+
+            示例2：
+
+            ```css
+            .box {
+            width: 200rpx;
+            height: 200rpx;
+            /* 本地路径不支持 */
+            /* background-image: url('/assets/xxx.jpg') */
+            background-image: url('https://xxx.com/uploads/xxx.jpg')
+            }
+            ```
+
+
+
+            总结：
+
+            1. css中字体图标和图片必须使用网络路径加载
+            2. 全局配置 tabBar 中的图片只能使用本地路径不支持网络路径，切记切记！！！
+
+
+
+
+
+            <h2>开发调试</h2>
+
+            任何程序开发都离不开调试，小程序开发者工具自带了调试工具，下面我们就来学习小程序开发者工具的调试功能。
+
+            <h3>3.1 调试器</h3>
+
+            > 了解小程序调试面板
+
+            ![调试器](assets/picture_2.jpg)
+
+            上图中的 【Wxml】 是用来显示小程序页面的结构和样式，【Console】 控制台，【Network】 查看网络请求，【AppData】 查看组件本地数据，【终端】创建命令行窗口等。
+
+            <h3>3.2 预览和真机调试</h3>
+
+            > 在大部情况下我们编写的代码会在开发者工具的模拟器中查看到效果，我们还可以在真机中进行预览或调试小程序，这个功能是由小程序开发者工具提供的，如下图所示：
+
+            ![预览和真机调试](assets/picture_4-9620768.jpg)
+
+            ::: warning 注意:
+            在教室由于网络的原因，预览和真机调试功能的功能可能无法演示，回家后自行测试一下！
+            :::
+
+            <h3>3.3 编译模式</h3>
+
+            > 编译模式是允许开发者指定某个页面来单独开发调试
+
+            首先要掌握编译模式的添加步骤：
+
+            ![编译模式](assets/picture_8.jpg)
+
+            ![编译模式](assets/picture_10.jpg)
+
+            当添加了编译模式后再对编译模式进行切换就可以单独针对某个页面进行开发调试了。
+
+            ::: tip 提示:
+            这个功能我们暂时还用不到，大家先有个了解，后续项目的开发过程会用到，到时再详细介绍。
+            :::
+
+            <h3>3.4 刷新和热重载</h3>
+
+            > 早期小程序开发者工具是没有热重载功能，只有编译功能，即每次修改代码后都会将页面重新编译，这种情况下开发效率比较低
+
+            现在的小程序开发工具中支持了热重载的功能：
+
+            ![刷新和热重载](assets/picture_12.jpg)
+
+            说明：热重载类似热更新，只更新变化部分
+
+            ::: warning 注意:
+            注：`.json` 类型文件和 `app.js` 不支持热重载的功能，代码修改后会重新编译整个小程序。
+            :::
+
+            <h2>发布上线</h2>
+
+            小程序开发完毕后，最后一个环节就是将小程序发布到微信小程序的应用商店中。
+
+            <h3>4.1 小程序上传</h3>
+
+            > 小程序开发并调试完毕后直接点击【上传】按钮，填写版本信息后小程序会被上传到微信的服务器当中，如下图所示：
+
+            ![小程序上传](assets/picture_2-9622133.jpg)
+
+            在上传小程序代码时有一点大家需要注意，微信官方要求小程序的体积不能超过 2M，超过 2M 时上传不会成功，要解决这个问题可以**采用分包**的功能，这个功能我们在后面再学习。
+
+            <h3>4.2 文件忽略</h3>
+
+            > 在小程序的开发阶段，项目目录中难免会有一些与代码逻辑无关的文件，如页面中用到的图片、文档等，这些文件会占用小程序的代码体积（不能超过 2M），导致无法实现预览、真机调试和上传等功能。
+
+            <img src="assets/image-20221128160142814.png" alt="image-20221128160142814" style="zoom:50%;" />
+
+            我们有两个方法解决：一种是将不用的图片和文档等删除，另一个种方法是通过配置来忽略这些文件。
+
+            在 `project.config.json` 中进行配置忽略文件：
+
+            ```json
+            {
+            "miniprogramRoot": "miniprogram/",
+            "packOptions": {
+            "ignore": [
+            { "type": "folder", "value": "assets/uploads" }
+            ]
+            }
+            }
+            ```
+
+            - `"type": "folder"` 忽略文件目录，`"value"` 用来指明具体忽略的文件目录
+
+            ::: warning 注意:
+            被忽略的文件不会被打包到小程序项目当中，因此如果项目中引用了这些图片，图片将无法被加载显示。
+            :::
+
+            <h3>4.3 体验版</h3>
+
+            > 上一步骤只是将代码上传到了小程序的官方服务器上，普通用户还是无法通过小程序商店搜索到，此时可以先将小程序设定为【体验版本】，通过添加或申请体验权限来访问小程序。
+
+            1. 每次上传新代码成功后就可以设置【体验版本】了，步骤如下图：
+
+            ![体验版](assets/picture_3.jpg)
+
+            成功设置体验版本后会后自动生成一个二维码，分享这个二维码用户可根据提示申请体验权限，小程序管理员在手机微信中允许后方可访问。
+
+            2. 针对公司内部成员如产品、测试、运营人员，可以事先在后台添加为体验成员，这样直接扫码就可以访问小程序无需再申请权限。如下图所示：
+
+            ![体验版](assets/picture_5-9622133.jpg)
+
+            添加体验成员仍然是通过【微信号】来添加的，大家互相添加一下。
+
+            <h3>4.4 提交审核</h3>
+
+            >
+            小程序全面测试完毕后还需要提交给小程序官方审核，主要是看小程序[有无违规的内容](https://developers.weixin.qq.com/community/develop/doc/000c266f094ab00976ad5c0d251809)。
+
+            ![](assets/picture_7-9622133.jpg)
+
+            <h3>4.5 发布</h3>
+
+            审核通过后就可发布小程序了，发布成功后所有用户都可以在小程序应用商店中找到我们开发的小程序了。
+
+
+
+            # 第一天
+
+
+
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+            <h2>标题</h2>
+            <div>
+                <table border="3" cellspacing="0" cellpadding="3">
+                    <caption>列表</caption>
+                    <tr>
+                        <th>功能</th>
+                        <th>用法</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br><br><br>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+
+
+<script>
+
+
+
+</script>
+
+<!-- 引入js文件 -->
+<script src="./js/html.js"></script>
+
+<!-- 浏览器读取less文件的js -->
+<script src="../lib/less.js"></script>
+
+
+
+<!-- 引入代码高亮的js文件 -->
+<script src="../lib/highlight/highlight.min.js"></script>
+<!-- highlight使用方式:   -->
+<!-- <pre><code class="语言">需要高亮的代码</code></pre> -->
+<!-- 类名不写语言默认自动识别 -->
+
+<!-- 初始化代码高亮 -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<!-- 引入代码显示行数的js文件 -->
+<script src="../lib/highlightjs-line-numbers.js-master/highlightjs-line-numbers.js"></script>
+
+<!-- 初始化代码显示高度 -->
+<script>hljs.initLineNumbersOnLoad({ singleLine: true });</script>
+
+<!-- 自动生成目录 -->
+<script src="../lib/dist/tocbot.min.js"></script>
+<script type="text/javascript">
+    //目录生成初始化
+    tocbot.init({
+        // 在何处呈现目录。
+        tocSelector: '.js-toc',
+
+        // 在何处获取标题以构建目录。
+        contentSelector: '.js-toc-content',
+
+        // 要在内容选择器元素内获取哪些标题。
+        headingSelector: 'h2,h3,h4,h5',//对h2和h3元素进行生成目录
+
+        //对于内容中相对或绝对位置的容器内的标题。
+        hasInnerContainers: true,
+    });
+</script>
+
+
+
+</body>
+
+</html>
