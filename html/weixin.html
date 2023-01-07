@@ -19,7 +19,9 @@
     <link rel="stylesheet" type="text/css" href="../lib/dist/tocbot.css">
     <title>微信小程序</title>
     <style>
-
+        img{
+            max-width: 90%;
+        }
     </style>
 
 </head>
@@ -34,7 +36,7 @@
         <div class="aside1 ">
             <ul>
                 <li>
-                    <h3>html框架</h3>
+                    <h4>html框架</h4>
                 </li>
                 <li><a href="#" class="aside_a">1111</a></li>
                 <li><a href="#" class="aside_a">1111</a></li>
@@ -52,211 +54,207 @@
 
         <h2>开发准备</h2>
 
-        <div>开发微信小程序之前，需要一些准备工作，主要包括了解小程序的特点、申请小程序账号、安装小程序开发者工具。</div>
-        <br>
-        <br>
-        <h3> 1.1 小程序的概念</h3>
+        <p>开发微信小程序之前，需要一些准备工作，主要包括了解小程序的特点、申请小程序账号、安装小程序开发者工具。</p>
 
-        <p>小程序是一种新型的轻量的开发技术，"微信之父" 张晓龙是这样定义小程序的：</p>
+        <h3>1.1 小程序的概念</h3>
 
-        <img src="./images/weixin/img-3.jpg" alt="">
+        <blockquote>
+            <p>小程序是一种新型的轻量的开发技术，&quot;微信之父&quot; 张晓龙是这样定义小程序的：</p>
+        </blockquote>
 
-        <p>结论：小程序是基于WEB规范，采用HTML、CSS和JS（WXML/WXSS/JavaScript）等搭建的一套框架，本质就是富单页面web应用。</p>
+        <p><img alt="小程序" src="./images/weixin/img-3.jpg" /></p>
 
-        <img src="./images/weixin/demo.jpg" alt="image-20201031151904778" style="zoom:80%;" />
+        <p><strong><code>结论：</code></strong>小程序是基于WEB规范，采用HTML、CSS和JS（WXML/WXSS/JavaScript）等搭建的一套框架，本质就是富单页面web应用。</p>
 
-        <p><a href="https://developers.weixin.qq.com/doc/">扩展阅读：[微信开发者文档](https://developers.weixin.qq.com/doc/)</a></p>
-        <br>
-        <br>
+        <p><img src="./images/weixin/demo.jpg" alt="image-20201031151904778" style="zoom:80%";></p>
 
+        <p>扩展阅读：<a href="https://developers.weixin.qq.com/doc/">微信开发者文档</a></p>
 
-        <h3> 1.2 小程序的特点</h3>
+        <h3>1.2 小程序的特点</h3>
 
-        <p>本节目标: 了解小程序与web网页开发区别</p>
+        <p><strong><code>本节目标:</code></strong> 了解小程序与web网页开发区别</p>
 
-        <p>小程序的主要开发语言是 JavaScript ，小程序的开发同普通的网页开发相比有很大的相似性。对于前端开发者而言，从网页开发迁移到小程序的开发成本并不高，但是二者还是有些许区别的。</p>
+        <blockquote>
+            <p>小程序的主要开发语言是 JavaScript ，小程序的开发同普通的网页开发相比有很大的相似性。对于前端开发者而言，从网页开发迁移到小程序的开发成本并不高，但是二者还是有些许区别的。</p>
+        </blockquote>
 
-        <br>
-        <p>网页：
-            <br>渲染线程和脚本线程是互斥的
-            <br>小程序：渲染线程和脚本线程是两个独立的线程</p>
-        <br>
-        <p>说明：
-        <br>1. 网页依赖浏览器
-        <br>2. 小程序依赖微信=>ios/android微信客户端</p>
-        <br>
+        <p>网页：渲染线程和脚本线程是互斥的</p>
 
+        <p>小程序：渲染线程和脚本线程是两个独立的线程</p>
 
-        <p>总结：
-        <br>1. 相同点：web开发和小程序开发都遵循web标准，使用js开发、
-        <br>2. 不同点：**web应用**渲染线程和js脚本执行线程是互斥（同时只能干一件事儿）；**小程序应用**渲染线程和js脚本执行线程是独立的（可以同时干活）
-        <br>3. 不同点：web应用运行在浏览器；小程序应用运行在微信客户端</p>
-            <br>
+        <p>说明：</p>
 
+        <ol>
+            <li>网页依赖浏览器</li>
+            <li>小程序依赖微信=&gt;ios/android微信客户端</li>
+        </ol>
 
-        <h3> 1.3 注册小程序账号</h3>
+        <p>总结：</p>
 
-        <p>开发小程序的第一步，你需要拥有一个小程序帐号，通过这个帐号你就可以管理和开发属于自己的小程序。</p>
-        <a href="https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN">注册地址：https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN</a>
-       <br>
-       <br>
+        <ol>
+            <li>相同点：web开发和小程序开发都遵循web标准，使用js开发、</li>
+            <li>不同点：<strong>web应用</strong>渲染线程和js脚本执行线程是互斥（同时只能干一件事儿）；<strong>小程序应用</strong>渲染线程和js脚本执行线程是独立的（可以同时干活）
+            </li>
+            <li>不同点：web应用运行在浏览器；小程序应用运行在微信客户端</li>
+        </ol>
 
-        <h4> 账号类型</h4>
+        <h3>1.3 注册小程序账号</h3>
 
-        <p>选择小程序</p>
-        <img src="./images/weixin/image-20211108122843077.png" alt="">
-            <br>
-            <br>
+        <blockquote>
+            <p>开发小程序的第一步，你需要拥有一个小程序帐号，通过这个帐号你就可以管理和开发属于自己的小程序。</p>
+        </blockquote>
+
+        <p>注册地址：https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&amp;lang=zh_CN</p>
+
+        <h4>账号类型</h4>
+
+        <blockquote>
+            <p>选择小程序</p>
+        </blockquote>
+
+        <p><img alt="image-20211108122843077" src="./images/weixin/image-20211108122843077.png" /></p>
+
         <h4>账号信息</h4>
 
-        <p> 注意⚠️：填写邮箱要确保之前没有注册过微信公众平台其它账号的新邮箱（例如：公众号）</p>
-        <img src="./images/weixin/image-20211108123224525-9273220.png" alt="">
-       <br>
-       <br>
+        <blockquote>
+            <p>注意⚠️：填写邮箱要确保之前没有注册过微信公众平台其它账号的新邮箱（例如：公众号）</p>
+        </blockquote>
 
-        <h4> 邮箱激活</h4>
-        <img src="./images/weixin/image-20211108123543079-9273220.png" alt="">
-            <br>
-            <br>
-        <h4> 信息登记和绑定管理员</h4>
+        <p><img alt="image-20211108123224525" src="./images/weixin/image-20211108123224525-9273220.png" /></p>
 
-        <p>注意：填写完个人信息，使用自己的**微信扫码绑定小程序管理员</p>
-        <img src="./images/weixin/image-20211108123741911-9273220.png" alt="">
-        <br>
-        <br>
+        <h4>邮箱激活</h4>
 
-        <h4> 登录小程序后台</h4>
-        <img src="./images/weixin/image-20211108125542354.png" alt="">
-            <br>
-            <br>
-        <p>说明：需要管理员授权（上一步注册中扫码绑定），**使用管理员微信扫码确认后即可登录到小程序后台</p>
-        <img src="./images/weixin/img-11.jpg" alt="">
-        <br>
-        <br>
+        <p><img alt="image-20211108123543079" src="./images/weixin/image-20211108123543079-9273220.png" /></p>
 
-        <h3> 1.4 小程序管理后台</h3>
+        <h4>信息登记和绑定管理员</h4>
 
-        <p>本节目标:了解管理后台常用菜单和开发设置信息</p>
-            <br>
-            <br>
+        <blockquote>
+            <p>注意：填写完个人信息，使用自己的<strong>微信扫码绑定小程序管理员</strong></p>
+        </blockquote>
+
+        <p><img alt="image-20211108123741911" src="./images/weixin/image-20211108123741911-9273220.png" /></p>
+
+        <h4>登录小程序后台</h4>
+
+        <p><img alt="image-20211108125542354" src="./images/weixin/image-20211108125542354.png" /></p>
+
+        <p>说明：需要管理员授权（上一步注册中扫码绑定），<strong>使用管理员微信扫码确认后即可登录到小程序后台</strong></p>
+
+        <p><img alt="授权" src="./images/weixin/img-11.jpg" /></p>
+
+        <h3>1.4 小程序管理后台</h3>
+
+        <p><strong><code>本节目标:</code></strong> 了解管理后台常用菜单和开发设置信息</p>
+
         <h4>小程序信息</h4>
 
         <p>账号注册完毕后不能立刻使用，还需要进一步对小程序的信息进行完善，具体的操作步骤如下图所示参考老师课堂演示。</p>
-        <img src="./images/weixin/index/picture_15.jpg" alt="">
 
-        <p>注意⚠️：在填写小程序类目时<span class="red">不要选择游戏类型</span>，否则视为小游戏开发了。</p>
-            <br>
-            <br>
+        <p><img alt="小程序信息" src="./images/weixin/index/picture_15.jpg" /></p>
+
+        <p>注意⚠️：在填写小程序类目时<strong>不要选择游戏类型</strong>，否则视为小游戏开发了。</p>
+
         <h4>获取AppID</h4>
 
         <p>说明：在开发和发布小程序时必须要填写 AppID</p>
-        <img src="./images/weixin/image-20200327110021595.png" style="width: 100%;" alt="">
-            <br>
-            <br>
+
+        <p><img alt="image-20200327110021595" src="./images/weixin/image-20200327110021595.png" /></p>
 
         <h4>项目成员管理</h4>
-        <img src="./images/weixin/cy.png" style="width: 100%;" alt="">
-            <br><br>
-        <h3>总结：</h3>
-        <div>
-            <p>小程序管理后台的作用？</p>
-            <br>1. 基本信息=》维护小程序基本信息
-            <br>2. 版本管理=》管理开发好的小程序，进行审核和发布上线
-            <br>3. 成员管理=》添加其他同学，分配开发者权限，共同开发一个小程序
-            <br>4. 开发管理=》获取appid，创建和发布项目需要使用
-            <br>5. 统计=》运营人员使用
-        </div>
-        <br>
-        <br>
-        
 
+        <p><img alt="image-20211108125542354" src="./images/weixin/cy.png" /></p>
 
+        <p><strong>总结：</strong></p>
 
-        <h4>扩展:</h4>
-        <div>
-            到企业工作开发小程序流程：
-            <br>
-            <br>1. 获取公司小程序的APPID
-            <br>2. 让管理员给你开通开发者权限
-        </div>
-        <br>
-        <br>
-        
+        <p>小程序管理后台的作用？</p>
 
+        <ol>
+            <li>基本信息=》维护小程序基本信息</li>
+            <li>版本管理=》管理开发好的小程序，进行审核和发布上线</li>
+            <li>成员管理=》添加其他同学，分配开发者权限，共同开发一个小程序</li>
+            <li>开发管理=》获取appid，创建和发布项目需要使用</li>
+            <li>统计=》运营人员使用</li>
+        </ol>
 
+        <p><strong><code>扩展</code></strong>：</p>
 
-        <h3> 1.5 微信开发者工具</h3>
+        <p>到企业工作开发小程序流程：</p>
+
+        <ol>
+            <li>获取公司小程序的APPID </li>
+            <li>让管理员给你开通开发者权限</li>
+        </ol>
+
+        <h3>1.5 微信开发者工具</h3>
 
         <p>微信开发者工具是官方提供的专门用于微信小程序开发调试的工具，它提供的主要功能如下：</p>
 
-        <br>- 快速创建小程序项目（起到脚手架的作用）
-        <br>- 代码的查看和编辑（相当于 vs code 作用）
-        <br>- 对小程序功能进行调试（相当于浏览器作用）
-        <br>- 小程序的预览和发布
-        <br>
-        <br>
+        <ul>
+            <li>快速创建小程序项目（起到脚手架的作用）</li>
+            <li>代码的查看和编辑（相当于 vs code 作用）</li>
+            <li>对小程序功能进行调试（相当于浏览器作用）</li>
+            <li>小程序的预览和发布</li>
+        </ul>
 
-        <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载</a>并安装微信开发者工具，双击下载好的微信开发者工具，然后后根据引导下一步、下一步操作直到完成，首次打开微信开发者工具时需要先进行登录（打开手机微信扫码登录）。
-        <img src="./images/weixin/index/picture_19.jpg" style="width: 100%;" alt="">
-        <br>
-        <br>
-        <br>
+        <p><a
+                href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载</a>并安装微信开发者工具，双击下载好的微信开发者工具，然后后根据引导下一步、下一步操作直到完成，首次打开微信开发者工具时需要先进行登录（打开手机微信扫码登录）。
+        </p>
+
+        <p><img alt="微信开发者工具" src="./images/weixin/index/picture_19.jpg" /></p>
 
         <h2>基础知识</h2>
 
         <p>小程序开发的方式与 Web 非常类似，使用 Javascript 做为开发语言，使用 CSS 来实现页面的布局，除此之外还内置了许多功能丰富的组件，如地图、富文本、轮播图等。</p>
-        <br>
+
         <h3>2.1 创建小程序</h3>
 
-        <p>通过小程序开发者工具创建一个新的项目，步骤：
-        <br>1. 填写小程序项目名称
-        <br>2. 选择项目代码保存目录（注意：选择后加上项目名称，这样代码会生成到该目录）
-        <br>3. 填写AppID，语言选择javascript
-        <br>4. 后端服务<span class="red">不使用云服务</span>，最后确定</p>
-        <img src="./images/weixin/image-20211108173607517.png" style="width: 100%;" alt="">
-            <br>
-            <br>
+        <p>通过小程序开发者工具创建一个新的项目，步骤：</p>
+
+        <ol>
+            <li>填写小程序项目名称</li>
+            <li>选择项目代码保存目录（<strong><code>注意：</code></strong>选择后加上项目名称，这样代码会生成到该目录）</li>
+            <li>填写AppID，语言选择javascript</li>
+            <li>后端服务<strong>不使用云服务</strong>，最后确定</li>
+        </ol>
+
+        <p><img alt="image-20211108173607517" src="./images/weixin/image-20211108173607517.png" /></p>
 
         <p>注意⚠️：选择小程序项目目录时，需要手动加上项目名称</p>
-        <img src="./images/weixin/image-20211108175314730.png" style="width: 100%;" alt="">
-        <br>
-        <br>
 
-
+        <p><img alt="image-20211108175314730" src="./images/weixin/image-20211108175314730.png" /></p>
 
         <h3>2.2 目录结构</h3>
 
-        <p>小程序包含一个描述整体程序的 app 和多个描述各自页面的 pages</p>
+        <blockquote>
+            <p>小程序包含一个描述整体程序的 app 和多个描述各自页面的 pages</p>
+        </blockquote>
+
         <pre><code>
-├── pages ..................................... 页面目录（默认生成2个页面index和logs）
-│   ├── index ................................. index页目录
-│      ├── index.js .......................... index页面业务逻辑
-│      ├── index.wxml ........................ index页面布局结构
-│      └── index.wxss ........................ index页面布局样式
-│   └── logs .................................. logs页目录
-│   ├── logs.js ........................... logs页面业务逻辑
-│   ├── logs.json ......................... logs页面配置文件
-│   ├── logs.wxml ......................... logs页面布局结构
-│   └── logs.wxss ......................... logs页面布局样式
-└── utils ..................................... 全局方法
-└── util.js ...............................工具方法
-├── app.js .................................... 入口文件(程序入口)
-├── app.json .................................. 全局配置
-├── app.wxss .................................. 全局样式
-├── project.config.json ....................... 项目配置文件
-├── project.private.config.json ................项目私有配置文件
-├── sitemap.json .............................. 配置小程序及其页面是否允许被微信索引
+├── pages .......................... 页面目录（默认生成2个页面index和logs）
+│   ├── index ...................... index页目录
+│       ├── index.js ............... index页面业务逻辑
+│       ├── index.wxml ............. index页面布局结构
+│       └── index.wxss ............. index页面布局样式
+│   └── logs ....................... logs页目录
+│       ├── logs.js ................ logs页面业务逻辑
+│       ├── logs.json .............. logs页面配置文件
+│       ├── logs.wxml .............. logs页面布局结构
+│       └── logs.wxss .............. logs页面布局样式
+└── utils .......................... 全局方法
+     └── util.js ....................工具方法
+├── app.js ......................... 入口文件(程序入口)
+├── app.json ....................... 全局配置
+├── app.wxss ....................... 全局样式
+├── project.config.json ............ 项目配置文件
+├── project.private.config.json .....项目私有配置文件
+├── sitemap.json ................... 配置小程序及其页面是否允许被微信索引
         </code></pre>
-        <br>
-        <br>
 
+        <ol>
+            <li>页面的4 种文件类型：</li>
+        </ol>
 
-        
-
-
-        <p>1. 页面的4 种文件类型：</p>
         <table border="3" cellspacing="0" cellpadding="3">
-            <caption>1. 页面的4 种文件类型</caption>
             <tr>
                 <th>类型名称</th>
                 <th>作用</th>
@@ -283,18 +281,18 @@
                 <td>否</td>
             </tr>
         </table>
-        <br><br>
-        
-        <p>我们知道的是小程序的每个页面都是由以这4种文件类型的文件共同构成的且四个文件必须是相同的名字</p>。
-        <br>
-        <br>
-        <p>2. 再来看一些<span class="red">特定名称</span>的文件：</p>
+
+        <p><strong>我们知道的是小程序的每个页面都是由以这4种文件类型的文件共同构成的且四个文件必须是相同的名字</strong>。</p>
+
+        <ol>
+            <li>再来看一些<strong>特定名称</strong>的文件：</li>
+        </ol>
+
         <table border="3" cellspacing="0" cellpadding="3">
-            <caption>再来看一些<span class="red">特定名称</span>的文件</caption>
             <tr>
-                <th>文件名</th>
-                <th>作用</th>
-                <th>是否必须存在</th>
+                <td>文件名</td>
+                <td>作用</td>
+                <td>是否必须存在</td>
             </tr>
             <tr>
                 <td>app.js</td>
@@ -303,17 +301,17 @@
             </tr>
             <tr>
                 <td>app.json</td>
-                <td>小程序的全局配置</td>
+                <td>小程序的 <strong>全局配置</strong></td>
                 <td>是</td>
             </tr>
             <tr>
                 <td>app.wxss</td>
-                <td>小程序的全局样式</td>
+                <td>小程序的 <strong>全局样式</strong></td>
                 <td>否</td>
             </tr>
             <tr>
                 <td>project.config.json</td>
-                <td>小程序开发者工具配置</td>
+                <td>小程序<strong>开发者工具配置</strong></td>
                 <td>是（会自动创建）</td>
             </tr>
             <tr>
@@ -322,1070 +320,3313 @@
                 <td>否</td>
             </tr>
         </table>
-        <br>
+
         <p>以上关于文件类型及特定文件相关的细节，后续学习过程中会逐步讲解，在此只是先对目结构有个大致的了解！</p>
-        <br><br>
 
         <h3>2.3 牛刀小试</h3>
 
-        <p>需求：将小程序页面中的文字颜色变成红色，字号变成 20px。</p>
+        <blockquote>
+            <p>需求：将小程序页面中的文字颜色变成红色，字号变成 20px。</p>
+        </blockquote>
 
-        <p>通过上面的讲解我们知道 .wxml 是用来定义页面内容及结构的，所以我们先从 .wxml 入手，打开 `pages/index/index.wxml` 找到如下代码：</p>
+        <p>通过上面的讲解我们知道 .wxml 是用来定义页面内容及结构的，所以我们先从 .wxml 入手，打开 <code>pages/index/index.wxml</code> 找到如下代码：</p>
 
         <pre><code>
-<!-- 第 20 ~ 22 行 -->
-<view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-</view>
-        </code></pre>
-        <br>
-        
-        
+&lt;!-- 第 20 ~ 22 行 --&gt;
+&lt;view class=&quot;usermotto&quot;&gt;
+  &lt;text class=&quot;user-motto&quot;&gt;{{motto}}&lt;/text&gt;
+&lt;/view&gt;
+</code></pre>
 
         <p>在此基础上改变一些内容（加了几个感叹号），保存代码后，页面中立刻发生了变化（刷新）</p>
+
         <pre><code>
-<!-- 第 20 ~ 22 行 -->
-<view class="usermotto">
-    <text class="user-motto">{{motto}}!!!</text>
-</view>
-        </code></pre>
+&lt;!-- 第 20 ~ 22 行 --&gt;
+&lt;view class=&quot;usermotto&quot;&gt;
+  &lt;text class=&quot;user-motto&quot;&gt;{{motto}}!!!&lt;/text&gt;
+&lt;/view&gt;
+</code></pre>
 
-        <p>tip 提示:通过这一步操作体会一下 .wxml 类型的文件相当于 html 用来定义页面中的内容和结构。</p>
-        <br>
+        <p> tip 提示:
+            通过这一步操作体会一下 .wxml 类型的文件相当于 html 用来定义页面中的内容和结构。</p>
 
-        <p>接下来打开 `pages/index/index.wxss`，找到 `.usermotto` 这个选择器，如下代码所示：</p>
+        <p>接下来打开 <code>pages/index/index.wxss</code>，找到 <code>.usermotto</code> 这个选择器，如下代码所示：</p>
 
         <pre><code>
 /* 第 17 ~ 19 行 */
 .usermotto {
-    margin-top: 200px;
+  margin-top: 200px;
 }
-        </code></pre>
-        <br>
-        
-
+</code></pre>
 
         <p>在此基础上修改一些样式，设置字号及颜色，保存代码后，页面也会立刻发生变化（刷新）</p>
+
         <pre><code>
 .usermotto {
-    font-size: 20px;
-    color: red;
-    margin-top: 200px;
+  font-size: 20px;
+  color: red;
+  margin-top: 200px;
 }
-        </code></pre>
-        <br>
+</code></pre>
 
         <p>tip 提示:
-        通过这一步操作体会一下 .wxss 类型的文件相当于 css 用来定义页面样式，并且似乎（事实也是这样的）和 css 的属性也都是一样的！</p>
-            <br>
+            通过这一步操作体会一下 .wxss 类型的文件相当于 css 用来定义页面样式，并且似乎（事实也是这样的）和 css 的属性也都是一样的！</p>
+
         <p>至此 .js 和 .json 等其它内容我们后面会有专门的章节进行讲解。</p>
-            <br><br>
-        <h3> 2.4 页面导航布局</h3>
 
-        <p>通过一个小案例来学习小程序页面布局的相关知识，主要涉及到小程序内置的组件（标签）用样式的使用。</p>
-            <br>
-        下图是比较常见的页面导航布局，要实现这个布局会用到小程序中提供的一些组件（标签）如下表所示：
+        <h3>2.4 页面导航布局</h3>
 
-        | 组件名（标签） | 作用 | 与 html 对比 |
-        | -------------- | ---------------- | -------------------------- |
-        | view | 定义一个块级元素 | 相当于 html 中的 div 标签 |
-        | text | 定义一个行内元素 | 相当于 html 中的 span 标签 |
+        <blockquote>
+            <p>通过一个小案例来学习小程序页面布局的相关知识，主要涉及到小程序内置的组件（标签）用样式的使用。</p>
+        </blockquote>
 
-        关于小程序页面布局中的样式几乎和网页的 css 是一样的，先学习部分选择器的使用，如下表所示：
+        <p>下图是比较常见的页面导航布局，要实现这个布局会用到小程序中提供的一些组件（标签）如下表所示：</p>
 
-        | 选择器 | 示例 | 含义 |
-        | ---------- | ---------- | -------------------------- |
-        | 类选择器 | .navs | 根据类名选择元素 |
-        | 标签选择器 | text、view | 根据标签名选择元素 |
-        | 后代选择器 | .navs text | 根据标签的嵌套关系选择元素 |
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>组件名（标签）</th>
+                <th>作用</th>
+                <th>与 html 对比</th>
+            </tr>
+            <tr>
+                <td>view</td>
+                <td>定义一个块级元素</td>
+                <td>相当于 html 中的 div 标签</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>定义一个行内元素</td>
+                <td>相当于 html 中的 span 标签</td>
+            </tr>
+        </table>
 
-        将原来在 `pages/index/index.wxml` 和 `pages/index/index.wxss` 中编写代码删除，然后加关于页面导航布局相关的代码。
+        <p>关于小程序页面布局中的样式几乎和网页的 css 是一样的，先学习部分选择器的使用，如下表所示：</p>
 
-        完整代码如下所示：
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>选择器</th>
+                <th>示例</th>
+                <th>含义</th>
+            </tr>
+            <tr>
+                <td>类选择器</td>
+                <td>.navs</td>
+                <td>根据类名选择元素</td>
+            </tr>
+            <tr>
+                <td>标签选择器</td>
+                <td>text、view</td>
+                <td>根据标签名选择元素</td>
+            </tr>
+            <tr>
+                <td>后代选择器</td>
+                <td>.navs text</td>
+                <td>根据标签的嵌套关系选择元素</td>
+            </tr>
+        </table>
 
-        ```xml
-        <!-- pages/index/index.wxml -->
-        <view class="navs">
-            <text class="active">精选</text>
-            <text>手机</text>
-            <text>食品</text>
-            <text>内衣</text>
-            <text>生鲜</text>
-            <text>母婴</text>
-        </view>
-        ```
+        <p>将原来在 <code>pages/index/index.wxml</code> 和 <code>pages/index/index.wxss</code> 中编写代码删除，然后加关于页面导航布局相关的代码。</p>
 
-        ```css
-        /* pages/index/index.wxss */
-        .navs {
-        display: flex;
-        justify-content: space-around;
-        height: 44px;
-        padding: 0 10px;
-        line-height: 44px;
-        border-top: 1px solid #eee;
-        }
+        <p>完整代码如下所示：</p>
 
-        .navs text {
-        color: #333;
-        font-size: 14px;
-        }
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;view class=&quot;navs&quot;&gt;
+  &lt;text class=&quot;active&quot;&gt;精选&lt;/text&gt;
+  &lt;text&gt;手机&lt;/text&gt;
+  &lt;text&gt;食品&lt;/text&gt;
+  &lt;text&gt;内衣&lt;/text&gt;
+  &lt;text&gt;生鲜&lt;/text&gt;
+  &lt;text&gt;母婴&lt;/text&gt;
+&lt;/view&gt;
+</code></pre>
 
-        .navs .active {
-        color: #f5a11c;
-        border-bottom: 4px solid #f5a11c;
-        }
-        ```
+        <pre><code>
+ /* pages/index/index.wxss */
+.navs {
+    display: flex;
+    justify-content: space-around;
+    height: 44px;
+    padding: 0 10px;
+    line-height: 44px;
+    border-top: 1px solid #eee;
+}
+.navs text {
+    color: #333;
+    font-size: 14px;
+}
+.navs .active {
+    color: #f5a11c;
+    border-bottom: 4px solid #f5a11c;
+}
+        </code></pre>
 
-        ::: tip 提示:
-        通过上述的小例子大家要体会在编写小程序页面时与网页布局几乎是一致的，所不同的就是小程序中使用了一些特定的组件（组件），关于样式部分和 css 几乎完全一致。
-        :::
+        <p> tip 提示:
+            通过上述的小例子大家要体会在编写小程序页面时与网页布局几乎是一致的，所不同的就是小程序中使用了一些特定的组件（组件），关于样式部分和 css 几乎完全一致。</p>
 
-        另外大家有没有发现样式文件不需要引入到页面当中，它是自动引入并生效的，但是要求**页面文件的名称和样式的文件必须要一致！**
+        <p>另外大家有没有发现样式文件不需要引入到页面当中，它是自动引入并生效的，但是要求<strong>页面文件的名称和样式的文件必须要一致！</strong></p>
 
         <h3>2.5 小程序适配</h3>
 
-        > 小程序主要是运行在手机端的，它也需要像移动 Web 一样来处理不同大小屏幕的适配，小程序中适配的方法非常简单，它提供了专门的长度单位 `rpx` 它会自动的根据屏幕的大小转换成 `px` 。
+        <blockquote>
+            <p>小程序主要是运行在手机端的，它也需要像移动 Web 一样来处理不同大小屏幕的适配，小程序中适配的方法非常简单，它提供了专门的长度单位 rpx 它会自动的根据屏幕的大小转换成px。</p>
+        </blockquote>
 
-        ```css
-        /* 用 px 定义图片的尺寸 */
-        .preview-image {
-        width: 375px;
-        height: 160px;
-        }
-        ```
+        <pre><code>
+/* 用 px 定义图片的尺寸 */
+.preview-image {
+  width: 375px;
+  height: 160px;
+}
+        </code></pre>
 
-        ```css
-        /* 用 rpx 定义图片的尺寸 */
-        .preview-image {
-        width: 750rpx;
-        height: 320rpx;
-        }
-        ```
+        <pre><code>
+/* 用 rpx 定义图片的尺寸 */
+.preview-image {
+  width: 750rpx;
+  height: 320rpx;
+}
+        </code></pre>
 
-        说明：在小程序模拟器中对比使用 px 和 rpx 的区别后发现，rpx 在不同的设备中折算成 px 的实际大小是变化的，即针对不同尺寸屏幕进行适配的处理。
+        <p>说明：在小程序模拟器中对比使用 px 和 rpx 的区别后发现，rpx 在不同的设备中折算成 px 的实际大小是变化的，即针对不同尺寸屏幕进行适配的处理。</p>
 
-        还有一点非常重要也必须要知道，小程序的屏幕宽度为 750rpx，即一个盒子的宽度如果设置为 750rpx 时会占满整个小程序的屏幕宽度。
+        <p>还有一点非常重要也必须要知道，小程序的屏幕宽度为 750rpx，即一个盒子的宽度如果设置为 750rpx 时会占满整个小程序的屏幕宽度。</p>
 
+        <p>总结：</p>
 
-
-        总结：
-
-        1. 规定所有屏幕都是750rpx宽：实际开发设计稿是 750px，设计稿中是多少 px 在小程序中就写成多少 rpx，即 1 : 1 的关系
-        2. 小程序会根据屏幕大小自动转换rpx为px
+        <ol>
+            <li>规定所有屏幕都是750rpx宽：实际开发设计稿是 750px，设计稿中是多少 px 在小程序中就写成多少 rpx，即 1 : 1 的关系</li>
+            <li>小程序会根据屏幕大小自动转换rpx为px</li>
+        </ol>
 
         <h3>2.6 轮播图交互</h3>
 
-        > 为了让大家对小程序内置组件有更多的了解，我们再来看几个功能强大的组件：
+        <blockquote>
+            <p>为了让大家对小程序内置组件有更多的了解，我们再来看几个功能强大的组件：</p>
+        </blockquote>
 
-        | 组件名（标签） | 作用 | 与 html 对比 |
-        | -------------- | -------------------------------- | ------------------- |
-        | swiper | 滑块视图容器 | 无 |
-        | swiper-item | 可滑动的区块（用在 swiper 内部） | 无 |
-        | image | 加载图片 | img（注意名称区别） |
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>组件名（标签）</th>
+                <th>作用</th>
+                <th>与 html 对比</th>
+            </tr>
+            <tr>
+                <td>swiper</td>
+                <td>滑块视图容器</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>swiper-item</td>
+                <td>可滑动的区块（用在 swiper 内部）</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>image</td>
+                <td>加载图片</td>
+                <td>img（注意名称区别）</td>
+            </tr>
+        </table>
 
-        通过 swiper 组件的属性对轮播图的功能进行配置，常见的属性包括：
+        <p>通过 swiper 组件的属性对轮播图的功能进行配置，常见的属性包括：</p>
 
-        | 属性名 | 默认值 | 作用 |
-        | ------------------------------------------------------------ | ----------------- | -------------------- |
-        | indicator-dots | false | 是否显示面板指示点 |
-        | autoplay | false | 是否自动切换 |
-        | circular | false | 是否采用衔接滑动 |
-        | indicator-color | rgba(0, 0, 0, .3) | 指示点颜色 |
-        | indicator-active-color | \#000000 | 当前选中的指示点颜色 |
-        | ... 还有[更多](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html) | | |
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>属性名</th>
+                <th>默认值</th>
+                <th>作用</th>
+            </tr>
+            <tr>
+                <td>indicator-dots</td>
+                <td>false</td>
+                <td>是否显示面板指示点</td>
+            </tr>
+            <tr>
+                <td>autoplay</td>
+                <td>false</td>
+                <td>是否自动切换</td>
+            </tr>
+            <tr>
+                <td>circular</td>
+                <td>false</td>
+                <td>是否采用衔接滑动</td>
+            </tr>
+            <tr>
+                <td>indicator-color</td>
+                <td>rgba(0, 0, 0, .3)</td>
+                <td>指示点颜色</td>
+            </tr>
+            <tr>
+                <td>indicator-active-color</td>
+                <td>#000000</td>
+                <td>当前选中的指示点颜色</td>
+            </tr>
+            <tr>
+                <td>... 还有<a href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">更多</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 
-        swiper 的功能强大提供的属性也非常多，不过不用头疼，常用的就几个以后根据开发需求随用随查就可以了。
+        <p>swiper 的功能强大提供的属性也非常多，不过不用头疼，常用的就几个以后根据开发需求随用随查就可以了。</p>
 
-        示例：
+        <p>示例：</p>
 
-        ```js
-        <swiper autoplay indicator-dots>
-            <swiper-item>
-                <image class="img" src="https://t7.baidu.com/it/u=508006830,4042443322&fm=193&f=GIF"></image>
-            </swiper-item>
-            <swiper-item>
-                <image class="img" src="https://t7.baidu.com/it/u=508006830,4042443322&fm=193&f=GIF"></image>
-            </swiper-item>
-        </swiper>
-        ```
+        <pre><code>
+&lt;swiper autoplay indicator-dots&gt;
+  &lt;swiper-item&gt;
+    &lt;image class=&quot;img&quot; src=&quot;https://t7.baidu.com/it/u=508006830,4042443322&amp;fm=193&amp;f=GIF&quot;&gt;&lt;/image&gt;
+  &lt;/swiper-item&gt;
+  &lt;swiper-item&gt;
+    &lt;image class=&quot;img&quot; src=&quot;https://t7.baidu.com/it/u=508006830,4042443322&amp;fm=193&amp;f=GIF&quot;&gt;&lt;/image&gt;
+  &lt;/swiper-item&gt;
+&lt;/swiper&gt;
+</code></pre>
 
         <h3>2.7 购物车计数器</h3>
 
-        > 对小程序布局的知识有了一定了解后，我们来学习如何在小程序中处理逻辑，比如数据渲染和事件处理等。
+        <blockquote>
+            <p>对小程序布局的知识有了一定了解后，我们来学习如何在小程序中处理逻辑，比如数据渲染和事件处理等。</p>
+        </blockquote>
 
-        我们以实现购物车计数器功能为例展开学习。
+        <p>我们以实现购物车计数器功能为例展开学习。</p>
 
-        打开 `pages/index/index.js` 将原来的全部内容都删除掉，我们一点点添加代码。
+        <p>打开pages/index/index.js将原来的全部内容都删除掉，我们一点点添加代码。</p>
 
-        在动手前最先要了解的是每个页面的 .js 文件中**必须调用**一个内置全局的函数 `Page` 并且至少要传入一个**空对象**做为它的参数，否则可能会报错，如下图所示：
+        <p>在动手前最先要了解的是每个页面的 .js 文件中<strong>必须调用</strong>一个内置全局的函数 <code>Page</code>,并且至少要传入一个<strong>空对象</strong>做为它的参数，否则可能会报错，如下图所示：</p>
 
-        ![Page调用](assets/picture_7.jpg)
+        <img alt="" src="./images/weixin/picture_7.jpg" />
 
         <h4>响应变量</h4>
 
-        > 如何定义响应变量？
+        <blockquote>
+            <p>如何定义响应变量？</p>
+        </blockquote>
 
-        Page 函数的配置项及其含义：
+        <p>Page 函数的配置项及其含义：</p>
 
-        | 选项 | 含义 | 说明 |
-        | ---- | ---------------- | ------------------------- |
-        | data | 定义页面初始数据 | 类似 vue 组件的 data 函数 |
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>选项</th>
+                <th>含义</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>定义页面初始数据</td>
+                <td>类似 vue 组件的 data 函数</td>
+            </tr>
+        </table>
 
-        **语法：data:{ 变量名: 变量值 }**
+        <p><strong>语法：data:{ 变量名: 变量值 }</strong></p>
 
-        在了解了上述的知识后，我们看看相关的代码：
+        <p>在了解了上述的知识后，我们看看相关的代码：</p>
 
-        ```javascript
-        // pages/index/index.js
-        Page({
-        data: {
-        msg: '大家好，这是我开发的第一个小程序！',
-        },
-        })
-        ```
+        <pre><code>
+// pages/index/index.js
+Page({
+  data: {
+    msg: &#39;大家好，这是我开发的第一个小程序！&#39;,
+  },
+})
+</code></pre>
 
-        上述代码中为 `pages/index/index.wxml` 初始了一个数据 `msg`，那如何才能将它渲染到页面当中呢？非常简单通过插值（即一对双大括号）来将 `msg` 渲染到指定的页面位置：
+        <p>上述代码中为 <code>pages/index/index.wxml</code> 初始了一个数据 <code>msg</code>，那如何才能将它渲染到页面当中呢？非常简单通过插值（即一对双大括号）来将
+            <code>msg</code> 渲染到指定的页面位置：</p>
 
-        ```xml
-        <!-- pages/index/index.wxml -->
-        <!-- 上一小节页面导航和轮播图代码省略了... -->
-        <!-- 添加的新代码 -->
-        <view>{{msg}}</view>
-        ```
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 上一小节页面导航和轮播图代码省略了... --&gt;
+&lt;!-- 添加的新代码 --&gt;
+&lt;view&gt;{{msg}}&lt;/view&gt;
+</code></pre>
 
-        保存代码后就可以在页面中看到 "大家好，这是我开发的第一个小程序！" 这段文字了。
+        <p>保存代码后就可以在页面中看到 &quot;大家好，这是我开发的第一个小程序！&quot; 这段文字了。</p>
 
-        大家自行尝试一下数据类型如果是数组或对象时，如何渲染到页面当中？例如：
+        <p>大家自行尝试一下数据类型如果是数组或对象时，如何渲染到页面当中？例如：</p>
 
-        ```javascript
-        // pages/index/index.js
-        Page({
-        data: {
-        msg: '大家好，这是我开发的第一个小程序！',
-        // 初始对象类型的数据
-        user: {
-        name: '小明',
-        age: 18,
-        },
-        },
-        })
-        ```
+        <pre><code>
+// pages/index/index.js
+Page({
+  data: {
+    msg: &#39;大家好，这是我开发的第一个小程序！&#39;,
+    // 初始对象类型的数据
+    user: {
+      name: &#39;小明&#39;,
+      age: 18,
+    },
+  },
+})
+</code></pre>
 
-        揭晓答案：其实也非常简单跟 Vue 的语法几乎是一样，直接通过 `.` 语法就可以了。
+        <p>揭晓答案：其实也非常简单跟 Vue 的语法几乎是一样，直接通过 <code>.</code> 语法就可以了。</p>
 
         <h4>事件监听</h4>
 
-        > 在对 `data` 的知识有了一个了解之后，再来学习一下小程序中事件监听的处理方式。
+        <blockquote>
+            <p>在对 <code>data</code> 的知识有了一个了解之后，再来学习一下小程序中事件监听的处理方式。</p>
+        </blockquote>
 
-        **语法： bind:事件名称="回调函数" 或者 bind事件名称="回调函数"**
+        <p><strong>语法： bind:事件名称=&quot;回调函数&quot; 或者 bind事件名称=&quot;回调函数&quot;</strong></p>
 
-        小程序中大部分事件类型与网页中一致，如 `blur`、`focus`、`change` 等，也有个特殊的事件类型需要指出，点击事件在小程序不是使用 `click` 事件类型，取而代之的是 `tap` 事件类型。
+        <p> 小程序中大部分事件类型与网页中一致，如 <code>blur</code>、<code>focus</code>、<code>change</code> 等，也有个特殊的事件类型需要指出，点击事件在小程序不是使用
+            <code>click</code> 事件类型，取而代之的是 <code>tap</code> 事件类型。</p>
 
-        ```xml
-        <!-- page/index/index.wxml -->
-        <!-- 省略前面几小节的代码 -->
-        <button bind:tap="sayHi">点击一下</button>
-        ```
+        <pre><code>
+&lt;!-- page/index/index.wxml --&gt;
+&lt;!-- 省略前面几小节的代码 --&gt;
+&lt;button bind:tap=&quot;sayHi&quot;&gt;点击一下&lt;/button&gt;
+</code></pre>
 
-        上述代码中的 `button` 也是小程序中内置组件，通过 `bind:tap="sayHi"` 添加点击事件的监听，`sayHi` 是一个方法会在点击按钮时被调用。
+        <p>上述代码中的 <code>button</code> 也是小程序中内置组件，通过 <code>bind:tap=&quot;sayHi&quot;</code> 添加点击事件的监听，<code>sayHi</code>
+            是一个方法会在点击按钮时被调用。</p>
 
-        那 `sayHi` 这个方法我们定义了吗？
+        <p>那 <code>sayHi</code> 这个方法我们定义了吗？</p>
 
-        在小程序页面的 .ts 文件中直接定义一个方法就可以了，来看具体的用法：
+        <p>在小程序页面的 .ts 文件中直接定义一个方法就可以了，来看具体的用法：</p>
 
-        ```javascript{6-8}
-        // pages/index/index.js
-        Page({
-        data: {
-        msg: '大家好，这是我开发的第一个小程序！',
-        },
-        sayHi() {
-        console.log('按钮被点击了...')
-        },
-        })
-        ```
+        <pre><code>
+// pages/index/index.js
+Page({
+  data: {
+    msg: &#39;大家好，这是我开发的第一个小程序！&#39;,
+  },
+  sayHi() {
+    console.log(&#39;按钮被点击了...&#39;)
+  },
+})
+</code></pre>
 
-        ::: warning 注意:
-        做为对比 Vue 学习，Vue 中方法都是定义在 methods 属性当中，小程序页面中则是直接定义的，这点大家一定要注意区分。
-        :::
+        <p> warning 注意:
+            做为对比 Vue 学习，Vue 中方法都是定义在 methods 属性当中，小程序页面中则是直接定义的，这点大家一定要注意区分。</p>
 
-        此时在页面中点击一下按钮，`sayHi` 方法成功被调用了，以上就是小程序中的事件处理方法了，你学会了吗？
+        <p>此时在页面中点击一下按钮，<code>sayHi</code> 方法成功被调用了，以上就是小程序中的事件处理方法了，你学会了吗？</p>
 
-        ### 更新数据
+        <h4>更新数据</h4>
 
-        > 据我们的经验可以知道 data 中的数据应该是可以根据逻辑的需要进行修改的，那我们就来学习一下小程序中如何修改这些数据吧！
+        <blockquote>
+            <p>据我们的经验可以知道 data 中的数据应该是可以根据逻辑的需要进行修改的，那我们就来学习一下小程序中如何修改这些数据吧！</p>
+        </blockquote>
 
-        **语法：this.setDate({变量名: 变量值})**
+        <p><strong>语法：this.setDate({变量名: 变量值})</strong></p>
 
-        假如用户在点击的时候我们将 `msg` 这个数据修改为 "Hello everybody，this is my first miniprogram!"，如何实现呢？
+        <p>假如用户在点击的时候我们将 <code>msg</code> 这个数据修改为 &quot;Hello everybody，this is my first miniprogram!&quot;，如何实现呢？</p>
 
-        ```javascript
-        // pages/index/index.js
-        Page({
-        data: {
-        msg: '大家好，这是我开发的第一个小程序！',
-        },
+        <pre><code>
+// pages/index/index.js
+Page({
+    data: {
+    msg: &#39;大家好，这是我开发的第一个小程序！&#39;,
+},
 
-        sayHi() {
-        console.log('按钮被点击了...')
-        // 错误的写法！
-        // this.msg = 'Hello everybody，this is my first miniprogram!'
-        // 正确的写法
-        this.setData({
-        msg: 'Hello everybody，this is my first miniprogram!',
-        })
-        },
-        })
-        ```
+sayHi() {
+    console.log(&#39;按钮被点击了...&#39;)
+    // 错误的写法！
+    // this.msg = &#39;Hello everybody，this is my first miniprogram!&#39;
+    // 正确的写法
+    this.setData({
+    msg: &#39;Hello everybody，this is my first miniprogram!&#39;,
+    })
+    },
+})
+        </pre></code>
+        
 
-        ::: warning 注意
-        这里要敲黑板了，小程序中修改数据并不是直接进行赋值，而是要通过调用 `this.setData` 方法才能实现，将需要修改的数据以对象属性/值的形式传给 `this.setData` 方法。
-        :::
+        <p>warning 注意
+            这里要敲黑板了，小程序中修改数据并不是直接进行赋值，而是要通过调用 <code>this.setData</code> 方法才能实现，将需要修改的数据以对象属性/值的形式传给
+            <code>this.setData</code> 方法。</p>
 
         <h4>功能实现</h4>
 
-        > 好了基础知识铺垫完了，接下来我们就可以实现购物车计数器的功能了，分成3个步骤：
+        <blockquote>
+            <p>好了基础知识铺垫完了，接下来我们就可以实现购物车计数器的功能了，分成3个步骤：</p>
+        </blockquote>
 
-        1. 简单布局一下页面，用到两个`button`组件和一个`input`组件
+        <ol>
+            <li>
+                <p>简单布局一下页面，用到两个<code>button</code>组件和一个<code>input</code>组件</p>
+            </li>
+            <li>
+                <p>监听<code>button</code>的点击事件，然后对数值进行加 1 或减 1 操作</p>
+            </li>
+            <li>
+                <p>将按钮修改后的结果显示在<code>input</code>组件中</p>
+            </li>
+        </ol>
 
-        2. 监听`button`的点击事件，然后对数值进行加 1 或减 1 操作
-
-        3. 将按钮修改后的结果显示在`input`组件中
-
-        ```javascript
-        // pages/index/index.js
-        Page({
-        data: {
-        msg: '大家好，这是我开发的第一个小程序！',
+        <pre><code>
+// pages/index/index.js
+Page({
+    data: {
+        msg: &#39;大家好，这是我开发的第一个小程序！&#39;,
         // 初始值为 1
         num: 1,
-        },
-        // 购物车数量加1
-        increment() {
+    },
+    // 购物车数量加1
+    increment() {
         this.setData({
-        num: this.data.num + 1,
+            num: this.data.num + 1,
         })
-        },
+    },
 
-        // 购物车数量减1
-        decrement() {
+    // 购物车数量减1
+    decrement() {
         // 数量最小为1
-        if (this.data.num <= 1) return this.setData({ num: this.data.num - 1 }) }, }) ``` ```xml <!--
-            pages/index/index.wxml -->
-            <!-- 上一小节页面导航和轮播图代码省略了... -->
-            <!-- 购物车 -->
-            <view class="cart">
-                <button type="primary" bind:tap="decrement">-</button>
-                <input value="{{num}}" />
-                <button type="primary" bind:tap="increment">+</button>
-            </view>
-            ```
+        if (this.data.num &lt;= 1) return
+        this.setData({
+            num: this.data.num - 1
+        })
+    },
+})
+        </pre></code>
+        
 
-            ::: warning 注意:
-            为组件的属性绑定数据时也必须使用插值即双大括号 ，这一点与 Vue 的属性绑定也不一致！
-            :::
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 上一小节页面导航和轮播图代码省略了... --&gt;
+&lt;!-- 购物车 --&gt;
+&lt;view class=&quot;cart&quot;&gt;
+  &lt;button type=&quot;primary&quot; bind:tap=&quot;decrement&quot;&gt;-&lt;/button&gt;
+  &lt;input value=&quot;{{num}}&quot; /&gt;
+  &lt;button type=&quot;primary&quot; bind:tap=&quot;increment&quot;&gt;+&lt;/button&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <p>warning 注意:
+            为组件的属性绑定数据时也必须使用插值即双大括号 ，这一点与 Vue 的属性绑定也不一致！</p>
+
+        <h3>2.8 小程序配置</h3>
+
+        <blockquote>
+            <p>小程序的配置如窗口的颜色、标题，自定义组件、底部 tab 栏等都是通过配置文件来实现的，即 <code>.json</code> 类型的文件。</p>
+        </blockquote>
+
+        <p>配置文件又分为：【全局配置】和【页面配置】</p>
+
+        <h4>全局配置</h4>
+
+        <p>全局配置即小程序根目录中的 <code>app.json</code> 它的最外层是一个对象，可以包含一些常见的配置项：</p>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>配置项</th>
+                <th>类型</th>
+                <th>是否必须</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>pages</td>
+                <td>string[]</td>
+                <td>是</td>
+                <td>页面路径列表</td>
+            </tr>
+            <tr>
+                <td>window</td>
+                <td>object</td>
+                <td>否</td>
+                <td>全局的默认窗口表现</td>
+            </tr>
+            <tr>
+                <td>tabBar</td>
+                <td>object</td>
+                <td>否</td>
+                <td>底部 tab 栏的表现</td>
+            </tr>
+            <tr>
+                <td>entryPagePath</td>
+                <td>string</td>
+                <td>否</td>
+                <td>小程序默认启动首页</td>
+            </tr>
+        </table>
+
+        <h5>配置路由</h5>
+
+        <ul>
+            <li><code>pages</code> 的值是一个数组，所有页面的路径都要写在这个数组里，<strong>否则页面无法被访问到</strong>，数组的第一个单元为小程序的启动首页。</li>
+        </ul>
+
+        <pre><code>
+{
+  &quot;pages&quot;: [&quot;pages/index/index&quot;, &quot;pages/logs/logs&quot;]
+}
+        </code></pre>
+
+        <p>下面我们<strong>新建一个页面</strong>来测试 <code>pages</code> 配置项的使用：</p>
+
+        <blockquote>
+            <p>使用微信开发者工具快速创建页面</p>
+        </blockquote>
+
+        <ol>
+            <li>1.首页在pages目录下创建页面的文件夹</li>
+        </ol>
+        <img src="./images/weixin/image-20200327113931259.png" alt="" style="zoom:50%;">
+
+        <ol>
+            <li>2.在新创建的目录下=》选择新建 Page =〉自动生成.js、.json、.wxml、.wxss四个文件，app.json会自动添加新建页面路径</li>
+        </ol>
+        <img src="./images/weixin/image-20200327114213685.png" alt="" style="zoom:50%;">
+
+        <blockquote>
+            <p>那 <code>pages</code> 的作用到底是什么呢？如果没有在 <code>pages</code> 中添加这个页面又会出现什么结果呢？下面我们来通过链接跳转的方式来给大家演示一下效果：</p>
+        </blockquote>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <td>组件名</td>
+                <td>作用</td>
+                <td>与 htm 对比</td>
+            </tr>
+            <tr>
+                <td>navigator</td>
+                <td>地址跳转</td>
+                <td>相当于 html 中的 a 标签</td>
+            </tr>
+        </table>
+
+        <ol>
+            <li>3.在<code>pages/index/index</code>页面中添加一个链接并跳转到刚刚创建的 demo 页面</li>
+        </ol>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 省略前几小节代码 --&gt;
+&lt;!-- 1. 相对路径 --&gt;
+&lt;navigator url=&quot;../demo/demo&quot;&gt;相对路径-跳转到 demo 页面&lt;/navigator&gt;
+&lt;!-- 2. 绝对路径 --&gt;
+&lt;navigator url=&quot;/pages/demo/demo&quot;&gt;绝对路径-跳转到 demo 页面&lt;/navigator&gt;
+&lt;!-- 注意如果 url 地址为空的，小程序会报一个找不到路径的错误（不影响其它功能） --&gt;
+</code></pre>
+
+        <p>上述两种情况都可以正常的跳转到 demo 页面，但是如果将 <code>app.json</code> 中的 demo 页面路径删除后，则不能成功跳转了（点击跳转链接后没有任何反应），因此我们必须要把页面的路径填写到
+            <code>pages</code> 的配置项中。</p>
+
+        <p>总结：
+            小程序页面的跳转既支持相对路径（以 . 或 .. 开头）也支持绝对路径（以 / 开头），绝对路径 / 指的是小程序的根目录。</p>
+
+        <h5>配置窗口</h5>
+
+        <ul>
+            <li><code>window</code> 的值是一个对象，通过它可以全局配置小程序的状态栏、导航条、标题、窗口背景色。</li>
+        </ul>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <td>属性</td>
+                <td>类型</td>
+                <td>默认值</td>
+                <td>说明</td>
+            </tr>
+            <tr>
+                <td>navigationBarTitleText</td>
+                <td>string</td>
+                <td>空白</td>
+                <td>导航栏标题文字内容</td>
+            </tr>
+            <tr>
+                <td>navigationBarTextStyle</td>
+                <td>string</td>
+                <td>black</td>
+                <td>导航栏标题颜色，仅支持 black / white</td>
+            </tr>
+            <tr>
+                <td>navigationBarBackgroundColor</td>
+                <td>16 进制颜色</td>
+                <td>#00000</td>
+                <td>导航栏背景颜色，如 #000000</td>
+            </tr>
+            <tr>
+                <td>navigationStyle</td>
+                <td>string</td>
+                <td>default</td>
+                <td>导航栏样式，仅支持 default / custom</td>
+            </tr>
+            <tr>
+                <td>... 还有<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window">更多</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <pre><code>
+{
+  &quot;pages&quot;: [
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;,
+    &quot;pages/demo/demo&quot;
+  ],
+  &quot;window&quot;: {
+    &quot;navigationBarTitleText&quot;: &quot;小程序示例&quot;,
+    &quot;navigationBarTextStyle&quot;: &quot;white&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#f5a11c&quot;
+  }
+}
+</code></pre>
+
+        <h5>配置菜单</h5>
+
+        <ul>
+            <li><code>tabBar</code> 定义小程序 tab 栏的表现，如下图即所谓的 tab 栏：</li>
+        </ul>
+
+        <p><img alt="" src="./images/weixin/picture_13.jpg" /></p>
+
+        <p>定义 tab 的内容有些多，大家参照着上图和下面的表格来对小程序的 tab 栏进行配置：</p>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>属性</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>是否必须</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>list</td>
+                <td>array</td>
+                <td>无</td>
+                <td>是</td>
+                <td>tab 的列表，详见 list 属性说明，最少 2 个、最多 5 个 tab</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>16 进制颜色</td>
+                <td>无</td>
+                <td>否</td>
+                <td>tab 上的文字默认颜色，仅支持十六进制颜色</td>
+            </tr>
+            <tr>
+                <td>selectedColor</td>
+                <td>16 进制颜色</td>
+                <td>无</td>
+                <td>否</td>
+                <td>tab 上的文字选中时的颜色，仅支持十六进制颜色</td>
+            </tr>
+            <tr>
+                <td>backgroundColor</td>
+                <td>16 进制颜色</td>
+                <td>无</td>
+                <td>否</td>
+                <td>tab 的背景色，仅只持 16 进制颜色</td>
+            </tr>
+            <tr>
+                <td>borderStyle</td>
+                <td>string</td>
+                <td>black</td>
+                <td>否</td>
+                <td>tabbar 上边框的颜色， 仅支持 black / white</td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>string</td>
+                <td>bottom</td>
+                <td>否</td>
+                <td>tabBar 的位置，仅支持 bottom / top</td>
+            </tr>
+        </table>
+
+        <p>上述配置中 <code>list</code> 具体又包含以下内容：</p>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>属性</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>是否必须</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>pagePath</td>
+                <td>string</td>
+                <td></td>
+                <td>是</td>
+                <td>页面路径，必须在 pages 中先定义</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>string</td>
+                <td></td>
+                <td>是</td>
+                <td>tab 上按钮文字</td>
+            </tr>
+            <tr>
+                <td>iconPath</td>
+                <td>string</td>
+                <td></td>
+                <td>否</td>
+                <td>图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片，当 position为top 时，不显示 icon</td>
+            </tr>
+            <tr>
+                <td>selectedIconPath</td>
+                <td>string</td>
+                <td></td>
+                <td>否</td>
+                <td>选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片，当position为 top 时，不显示 icon</td>
+            </tr>
+        </table>
+
+        <p>以上的配置不用刻意的去背，根据需要随时查看文档就可以，以下为完整示例代码：</p>
+
+        <pre><code>
+{
+  &quot;pages&quot;: [
+    &quot;pages/index/index&quot;, 
+    &quot;pages/logs/logs&quot;,
+    &quot;pages/demo/demo&quot;
+  ],
+  &quot;window&quot;: {
+    &quot;navigationBarTitleText&quot;: &quot;小程序示例&quot;,
+    &quot;navigationBarTextStyle&quot;: &quot;white&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#f5a11c&quot;,
+    &quot;enablePullDownRefresh&quot;: true
+  },
+  &quot;tabBar&quot;: {
+    &quot;color&quot;: &quot;#333&quot;,
+    &quot;selectedColor&quot;: &quot;#FFC64B&quot;,
+    &quot;backgroundColor&quot;: &quot;#FFF&quot;,
+    &quot;borderStyle&quot;: &quot;black&quot;,
+    &quot;position&quot;: &quot;bottom&quot;,
+    &quot;list&quot;: [
+      {
+        &quot;text&quot;: &quot;首页&quot;,
+        &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+        &quot;iconPath&quot;: &quot;assets/home.png&quot;,
+        &quot;selectedIconPath&quot;: &quot;assets/home-active.png&quot;
+      },
+      {
+        &quot;text&quot;: &quot;卡券&quot;,
+        &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,
+        &quot;iconPath&quot;: &quot;assets/card.png&quot;,
+        &quot;selectedIconPath&quot;: &quot;assets/card-active.png&quot;
+      },
+      {
+        &quot;text&quot;: &quot;我的&quot;,
+        &quot;pagePath&quot;: &quot;pages/demo/demo&quot;,
+        &quot;iconPath&quot;: &quot;assets/my.png&quot;,
+        &quot;selectedIconPath&quot;: &quot;assets/my-active.png&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+
+        <p>tip 提示:
+            以上是常用的全局配置项，还有更多<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">全局配置</a>的选项，后续学习当中会根据需要进行讲解。</p>
+
+        <h5>扩展-路由导航</h5>
+
+        <blockquote>
+            <p>使用navigator组件导航路由</p>
+        </blockquote>
+
+        <p>语法：<code>  &lt;navigator open-type=&quot;navigate&quot; url=&quot;/pages/pops/pops&quot;&gt;跳转&lt;/navigator&gt;</code>
+        </p>
+
+        <ol>
+            <li>普通页面跳转</li>
+        </ol>
+
+        <pre><code>
+&lt;navigator url=&quot;/pages/pops/pops&quot;&gt;go&lt;/navigator&gt;
+        </code></pre>
+
+        <ol>
+            <li>tabbar页面跳转</li>
+        </ol>
+
+        <pre><code>
+&lt;navigator open-type=&quot;switchTab&quot; url=&quot;/pages/home/home&quot;&gt;go&lt;/navigator&gt;
+        </code></pre>
+
+        <ol>
+            <li>替换当前，然后打开新页面=&gt;不能返回上次浏览页面</li>
+        </ol>
+
+        <pre><code>
+&lt;navigator open-type=&quot;redirect&quot; url=&quot;/pages/news/news&quot;&gt;go&lt;/navigator&gt;
+    </code></pre>
+
+        <h4>页面配置</h4>
+
+        <ul>
+            <li>接下来学习一下<strong>页面配置</strong>，顾名思义页面配置只针对某个页面生效，如 <code>index.json</code> 是针对 <code>index</code>
+                页面生效，<code>demo.json</code> 是针对页面 <code>demo</code> 生效。</li>
+        </ul>
+
+        <p>页面的部分配置可以覆盖全局 <code>app.json</code> 中的配置，常见的配置如下表：</p>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>属性</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>是否必须</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>navigationBarTitleText</td>
+                <td>string</td>
+                <td>空白</td>
+                <td>否</td>
+                <td>导航栏标题文字内容</td>
+            </tr>
+            <tr>
+                <td>navigationBarTextStyle</td>
+                <td>string</td>
+                <td>black</td>
+                <td>否</td>
+                <td>导航栏标题颜色，仅支持 black / white</td>
+            </tr>
+            <tr>
+                <td>navigationBarBackgroundColor</td>
+                <td>16 进制颜色</td>
+                <td>#00000</td>
+                <td>否</td>
+                <td>导航栏背景颜色，如 #000000</td>
+            </tr>
+            <tr>
+                <td>navigationStyle</td>
+                <td>string</td>
+                <td>default</td>
+                <td>否</td>
+                <td>导航栏样式，仅支持 default / custom</td>
+            </tr>
+        </table>
+
+        <p>有没有发现上表中的配置内容其实是全局配置中 <code>window</code> 部分的内容，如果写在 <code>app.json</code>
+            中则属于全局配置，对所有的页面都生效，而如果写在页面中则属于页面配置，只对当前页面生效。</p>
+
+        <p>页面配置的内容相对少一些，不过后续在实际的应用中我们还会再学习到其它的配置内容。</p>
+
+        <h3>2.9 字体图标</h3>
+
+        <blockquote>
+            <p>小程序也可以使用字体图标且与网页中应用字体图标的方法一致，然而有一点要注意小程序样式中的静态资源不支持本地路径，只能使用网络路径（http 或 https）或者 base64，因此在引用字体标时不要写本地路径：
+            </p>
+        </blockquote>
+
+        <p><img alt="image-20221128111855794" src="./images/weixin/image-20221128111855794.png" /></p>
+
+        <p>示例1:</p>
+
+        <pre><code>
+@font-face {
+  font-family: &#39;icomoon&#39;;
+  src: url(&#39;https://static.botue.com/ugo/fonts/icomoon.eot?rnu94l&#39;);
+  src: url(&#39;https://ekafit.oss-cn-beijing.aliyuncs.com/ugo/fonts/icomoon.eot?rnu94l#iefix&#39;)
+      format(&#39;embedded-opentype&#39;),
+    url(&#39;https://static.botue.com/ugo/fonts/icomoon.ttf?rnu94l&#39;)
+      format(&#39;truetype&#39;),
+    url(&#39;https://static.botue.com/ugo/fonts/icomoon.woff?rnu94l&#39;) format(&#39;woff&#39;),
+    url(&#39;https://static.botue.com/ugo/fonts/icomoon.svg?rnu94l#icomoon&#39;)
+      format(&#39;svg&#39;);
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+</code></pre>
+
+        <p>示例2：</p>
+
+        <pre><code>
+.box {
+  width: 200rpx;
+  height: 200rpx;
+  /* 本地路径不支持 */
+  /* background-image: url(&#39;/assets/xxx.jpg&#39;) */
+  background-image: url(&#39;https://xxx.com/uploads/xxx.jpg&#39;)
+}
+</code></pre>
+
+        <p>总结：</p>
+
+        <ol>
+            <li>css中字体图标和图片必须使用网络路径加载</li>
+            <li>全局配置 tabBar 中的图片只能使用本地路径不支持网络路径，切记切记！！！</li>
+        </ol>
+
+        <h2>开发调试</h2>
+
+        <p>任何程序开发都离不开调试，小程序开发者工具自带了调试工具，下面我们就来学习小程序开发者工具的调试功能。</p>
+
+        <h3>3.1 调试器</h3>
+
+        <blockquote>
+            <p>了解小程序调试面板</p>
+        </blockquote>
+
+        <p><img alt="调试器" src="./images/weixin/picture_2.jpg" /></p>
+
+        <p>上图中的 【Wxml】 是用来显示小程序页面的结构和样式，【Console】 控制台，【Network】 查看网络请求，【AppData】 查看组件本地数据，【终端】创建命令行窗口等。</p>
+
+        <h3>3.2 预览和真机调试</h3>
+
+        <blockquote>
+            <p>在大部情况下我们编写的代码会在开发者工具的模拟器中查看到效果，我们还可以在真机中进行预览或调试小程序，这个功能是由小程序开发者工具提供的，如下图所示：</p>
+        </blockquote>
+
+        <p><img alt="预览和真机调试" src="./images/weixin/picture_4-9620768.jpg" /></p>
+
+        <p>warning 注意:
+            在教室由于网络的原因，预览和真机调试功能的功能可能无法演示，回家后自行测试一下！</p>
+
+        <h3>3.3 编译模式</h3>
+
+        <blockquote>
+            <p>编译模式是允许开发者指定某个页面来单独开发调试</p>
+        </blockquote>
+
+        <p>首先要掌握编译模式的添加步骤：</p>
+
+        <p><img alt="编译模式" src="./images/weixin/picture_8.jpg" /></p>
+
+        <p><img alt="编译模式" src="./images/weixin/picture_10.jpg" /></p>
+
+        <p>当添加了编译模式后再对编译模式进行切换就可以单独针对某个页面进行开发调试了。</p>
+
+        <p>tip 提示:
+            这个功能我们暂时还用不到，大家先有个了解，后续项目的开发过程会用到，到时再详细介绍。</p>
+
+        <h3>3.4 刷新和热重载</h3>
+
+        <blockquote>
+            <p>早期小程序开发者工具是没有热重载功能，只有编译功能，即每次修改代码后都会将页面重新编译，这种情况下开发效率比较低</p>
+        </blockquote>
+
+        <p>现在的小程序开发工具中支持了热重载的功能：</p>
+
+        <p><img alt="刷新和热重载" src="./images/weixin/picture_12.jpg" /></p>
+
+        <p>说明：热重载类似热更新，只更新变化部分</p>
+
+        <p>warning 注意:
+            注：<code>.json</code> 类型文件和 <code>app.js</code> 不支持热重载的功能，代码修改后会重新编译整个小程序。</p>
+
+        <h2>发布上线</h2>
+
+        <p>小程序开发完毕后，最后一个环节就是将小程序发布到微信小程序的应用商店中。</p>
+
+        <h3>4.1 小程序上传</h3>
+
+        <blockquote>
+            <p>小程序开发并调试完毕后直接点击【上传】按钮，填写版本信息后小程序会被上传到微信的服务器当中，如下图所示：</p>
+        </blockquote>
+
+        <p><img alt="小程序上传" src="./images/weixin/picture_2-9622133.jpg" /></p>
+
+        <p>在上传小程序代码时有一点大家需要注意，微信官方要求小程序的体积不能超过 2M，超过 2M 时上传不会成功，要解决这个问题可以<strong>采用分包</strong>的功能，这个功能我们在后面再学习。</p>
+
+        <h3>4.2 文件忽略</h3>
+
+        <blockquote>
+            <p>在小程序的开发阶段，项目目录中难免会有一些与代码逻辑无关的文件，如页面中用到的图片、文档等，这些文件会占用小程序的代码体积（不能超过 2M），导致无法实现预览、真机调试和上传等功能。</p>
+        </blockquote>
+        <img src="./images/weixin/image-20221128160142814.png" alt="" style="zoom:50%;">
 
 
-            <h3>2.8 小程序配置</h3>
+        <p>我们有两个方法解决：一种是将不用的图片和文档等删除，另一个种方法是通过配置来忽略这些文件。</p>
 
-            > 小程序的配置如窗口的颜色、标题，自定义组件、底部 tab 栏等都是通过配置文件来实现的，即 `.json` 类型的文件。
+        <p>在 <code>project.config.json</code> 中进行配置忽略文件：</p>
 
-            配置文件又分为：【全局配置】和【页面配置】
+        <pre><code>
+{
+  &quot;miniprogramRoot&quot;: &quot;miniprogram/&quot;,
+  &quot;packOptions&quot;: {
+    &quot;ignore&quot;: [
+      { &quot;type&quot;: &quot;folder&quot;, &quot;value&quot;: &quot;assets/uploads&quot; }
+    ]
+  }
+}
+</code></pre>
 
-            <h4>全局配置</h4>
+        <ul>
+            <li><code>&quot;type&quot;: &quot;folder&quot;</code> 忽略文件目录，<code>&quot;value&quot;</code> 用来指明具体忽略的文件目录
+            </li>
+        </ul>
 
-            全局配置即小程序根目录中的 `app.json` 它的最外层是一个对象，可以包含一些常见的配置项：
+        <p>warning 注意:
+            被忽略的文件不会被打包到小程序项目当中，因此如果项目中引用了这些图片，图片将无法被加载显示。</p>
 
-            | 配置项 | 类型 | 是否必须 | 说明 |
-            | ------------- | -------- | -------- | ------------------- |
-            | pages | string[] | 是 | 页面路径列表 |
-            | window | object | 否 | 全局的默认窗口表现 |
-            | tabBar | object | 否 | 底部 `tab` 栏的表现 |
-            | entryPagePath | string | 否 | 小程序默认启动首页 |
+        <h3>4.3 体验版</h3>
 
-            <h5>>配置路由</h5>
+        <blockquote>
+            <p>上一步骤只是将代码上传到了小程序的官方服务器上，普通用户还是无法通过小程序商店搜索到，此时可以先将小程序设定为【体验版本】，通过添加或申请体验权限来访问小程序。</p>
+        </blockquote>
 
-            * `pages` 的值是一个数组，所有页面的路径都要写在这个数组里，**否则页面无法被访问到**，数组的第一个单元为小程序的启动首页。
+        <ol>
+            <li>每次上传新代码成功后就可以设置【体验版本】了，步骤如下图：</li>
+        </ol>
 
-            ```json
-            {
-            "pages": ["pages/index/index", "pages/logs/logs"]
-            }
-            ```
+        <p><img alt="体验版" src="./images/weixin/picture_3.jpg" /></p>
 
-            下面我们**新建一个页面**来测试 `pages` 配置项的使用：
+        <p>成功设置体验版本后会后自动生成一个二维码，分享这个二维码用户可根据提示申请体验权限，小程序管理员在手机微信中允许后方可访问。</p>
 
-            > 使用微信开发者工具快速创建页面
+        <ol>
+            <li>针对公司内部成员如产品、测试、运营人员，可以事先在后台添加为体验成员，这样直接扫码就可以访问小程序无需再申请权限。如下图所示：</li>
+        </ol>
 
-            1. 首页在pages目录下创建页面的文件夹
+        <p><img alt="体验版" src="./images/weixin/picture_5-9622133.jpg" /></p>
 
-            <img src="assets/image-20200327113931259.png" alt="image-20200327113931259" style="zoom:50%;"
-                align="left" />
+        <p>添加体验成员仍然是通过【微信号】来添加的，大家互相添加一下。</p>
 
-            2. 在新创建的目录下=》选择新建 Page =〉自动生成.js、.json、.wxml、.wxss四个文件，app.json会自动添加新建页面路径
+        <h3>4.4 提交审核</h3>
 
-            <img src="assets/image-20200327114213685.png" align="left" alt="image-20200327114213685"
-                style="zoom:50%;" />
+        <blockquote>
+            <p>小程序全面测试完毕后还需要提交给小程序官方审核，主要是看小程序<a
+                    href="https://developers.weixin.qq.com/community/develop/doc/000c266f094ab00976ad5c0d251809">有无违规的内容</a>。
+            </p>
+        </blockquote>
 
+        <p><img alt="" src="./images/weixin/picture_7-9622133.jpg" /></p>
 
+        <h3>4.5 发布</h3>
 
-            > 那 `pages` 的作用到底是什么呢？如果没有在 `pages` 中添加这个页面又会出现什么结果呢？下面我们来通过链接跳转的方式来给大家演示一下效果：
+        <p>审核通过后就可发布小程序了，发布成功后所有用户都可以在小程序应用商店中找到我们开发的小程序了。</p>
+        <hr><hr><hr><hr>
+        <br><br><br>
+        <h2>---分割线---</h2>
+        <h2>---分割线---</h2>
+        <h2>---分割线---</h2>
 
-            | 组件名 | 作用 | 与 htm 对比 |
-            | --------- | -------- | ----------------------- |
-            | navigator | 地址跳转 | 相当于 html 中的 a 标签 |
+        <p>数据渲染是指通过模板语法把 data 中的数据展示到页面当中，小程序有一套专门的模板语法来实现数据的渲染。</p>
 
-            3. 在`pages/index/index`页面中添加一个链接并跳转到刚刚创建的 demo 页面
+        <h2>1.1 双向绑定</h2>
 
-            ```xml
-            <!-- pages/index/index.wxml -->
-            <!-- 省略前几小节代码 -->
-            <!-- 1. 相对路径 -->
-            <navigator url="../demo/demo">相对路径-跳转到 demo 页面</navigator>
-            <!-- 2. 绝对路径 -->
-            <navigator url="/pages/demo/demo">绝对路径-跳转到 demo 页面</navigator>
-            <!-- 注意如果 url 地址为空的，小程序会报一个找不到路径的错误（不影响其它功能） -->
-            ```
+        <p>小程序中通过插值语法，即双大括号实现数据的绑定，我们来将上一小节定义的数据渲染到页面当中：</p>
 
-            上述两种情况都可以正常的跳转到 demo 页面，但是如果将 `app.json` 中的 demo 页面路径删除后，则不能成功跳转了（点击跳转链接后没有任何反应），因此我们必须要把页面的路径填写到 `pages`
-            的配置项中。
+        <pre><code>
+// pages/index/index.js
+// 调用 Page 函数
+Page({
+  data: {
+    msg: &#39;大家好，这是我的第一个小程序！&#39;,
+  },
+  // 方法
+  sayHi(name = &#39;小明&#39;) {
+    console.log(&#39;你好&#39; + name)
+  },
+})
+        </code></pre>
 
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;view class=&quot;msg&quot;&gt;{{msg}}&lt;/view&gt;
+&lt;!-- 重点注意，属性的绑定也是 {{}} --&gt;
+&lt;input name=&quot;number&quot; value=&quot;{{msg}}&quot; /&gt;
+        </code></pre>
 
+        <p>上述代码就是小程序数据绑定的语法了，重点要注意对【属性的绑定】使用的仍然采用插值语法。</p>
 
-            总结：
-            小程序页面的跳转既支持相对路径（以 . 或 .. 开头）也支持绝对路径（以 / 开头），绝对路径 / 指的是小程序的根目录。
+        <blockquote>
+            <p>小程序支持简易的数据双向绑定，语法如下所示：</p>
+        </blockquote>
 
-            <h5>配置窗口</h5>
+        <p>语法：<code>model:value=&quot;{{变量名}}&quot;</code></p>
 
-            * `window` 的值是一个对象，通过它可以全局配置小程序的状态栏、导航条、标题、窗口背景色。
+        <pre><code>
+&lt;input name=&quot;number&quot; model:value=&quot;{{msg}}&quot; /&gt;
+        </code></pre>
 
-            | 属性 | 类型 | 默认值 | 说明 |
-            | ------------------------------------------------------------ | ----------- | ------- |
-            ---------------------------------------- |
-            | navigationBarTitleText | string | 空白 | 导航栏标题文字内容 |
-            | navigationBarTextStyle | string | black | 导航栏标题颜色，仅支持 `black` / `white` |
-            | navigationBarBackgroundColor | 16 进制颜色 | #00000 | 导航栏背景颜色，如 `#000000` |
-            | navigationStyle | string | default | 导航栏样式，仅支持 `default` / `custom` |
-            | ... 还有[更多](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window) | | |
-            |
+        <p>大家要注意并不是所有的表单元素都支持数据双向绑定，其中 <code>input</code>、<code>textarea</code>、<code>slider</code> 组件可以支持。</p>
 
-            ```json
-            {
-            "pages": [
-            "pages/index/index",
-            "pages/logs/logs",
-            "pages/demo/demo"
-            ],
-            "window": {
-            "navigationBarTitleText": "小程序示例",
-            "navigationBarTextStyle": "white",
-            "navigationBarBackgroundColor": "#f5a11c"
-            }
-            }
-            ```
+        <h2>扩展-属性绑定</h2>
 
-            <h5>配置菜单</h5>
+        <blockquote>
+            <p>对元素上的属性进行动态绑定</p>
+        </blockquote>
 
-            * `tabBar` 定义小程序 tab 栏的表现，如下图即所谓的 tab 栏：
+        <p>语法：<code>属性名=&quot;{{data}}&quot;</code></p>
 
-            ![](assets/picture_13.jpg)
+        <pre><code>
+  data: {
+    addClass: true,
+    url:&#39;/pages/meng/index&#39;,
+  }   
+        </code></pre>
 
-            定义 tab 的内容有些多，大家参照着上图和下面的表格来对小程序的 tab 栏进行配置：
+        <pre><code>
+&lt;view class=&quot;{{addClass?&#39;className1&#39;:&#39;className2&#39;}}&quot;&gt;
+	&lt;text&gt;动态class&lt;/text&gt;
+  &lt;navigator url=&quot;{{url}}&quot;&gt;go&lt;/navigator&gt;
+&lt;/view&gt;
+        </code></pre>
 
-            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
-            | --------------- | ----------- | ------ | -------- |
-            ---------------------------------------------------------- |
-            | list | array | 无 | 是 | tab 的列表，详见 `list` 属性说明，最少 2 个、最多 5 个 tab |
-            | color | 16 进制颜色 | 无 | 否 | tab 上的文字默认颜色，仅支持十六进制颜色 |
-            | selectedColor | 16 进制颜色 | 无 | 否 | tab 上的文字选中时的颜色，仅支持十六进制颜色 |
-            | backgroundColor | 16 进制颜色 | 无 | 否 | tab 的背景色，仅只持 16 进制颜色 |
-            | borderStyle | string | black | 否 | tabbar 上边框的颜色， 仅支持 `black` / `white` |
-            | position | string | bottom | 否 | tabBar 的位置，仅支持 `bottom` / `top` |
+        <h2>1.2 列表渲染</h2>
 
-            上述配置中 `list` 具体又包含以下内容：
+        <blockquote>
+            <p>如果 data 中有一个数组类型的列表数据，我们要如何渲染出来呢？</p>
+        </blockquote>
 
-            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
-            | ---------------- | ------ | ------ | -------- |
-            ------------------------------------------------------------ |
-            | pagePath | string | | 是 | 页面路径，必须在 pages 中先定义 |
-            | text | string | | 是 | tab 上按钮文字 |
-            | iconPath | string | | 否 | 图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片，当 `position` 为 `top` 时，不显示 icon
-            |
-            | selectedIconPath | string | | 否 | 选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片，当 `position` 为 `top`
-            时，不显示 icon |
+        <p>小程序提供了一个指令 <code>wx:for</code> 类似于 Vue 中的 <code>v-for</code>，通过一个小例子来学习：</p>
 
-            以上的配置不用刻意的去背，根据需要随时查看文档就可以，以下为完整示例代码：
+        <pre><code>
+// pages/index/index.js
+// 调用 Page 函数
+Page({
+  data: {
+    msg: &#39;大家好，这是我的第一个小程序！&#39;,
+    number: 1,
+    students: [
+      { id: 1, name: &#39;小明&#39;, age: 18, gender: &#39;男&#39; },
+      { id: 2, name: &#39;小红&#39;, age: 17, gender: &#39;女&#39; },
+      { id: 3, name: &#39;小刚&#39;, age: 19, gender: &#39;男&#39; },
+      { id: 4, name: &#39;小丽&#39;, age: 18, gender: &#39;女&#39; },
+      { id: 5, name: &#39;小米&#39;, age: 19, gender: &#39;女&#39; },
+    ],
+  },
+  // 方法
+  sayHi(name = &#39;小明&#39;) {
+    console.log(&#39;你好&#39; + name)
+  },
+})
+        </code></pre>
 
-            ```json
-            {
-            "pages": [
-            "pages/index/index",
-            "pages/logs/logs",
-            "pages/demo/demo"
-            ],
-            "window": {
-            "navigationBarTitleText": "小程序示例",
-            "navigationBarTextStyle": "white",
-            "navigationBarBackgroundColor": "#f5a11c",
-            "enablePullDownRefresh": true
+        <h3>1.2.1 基本的语法格式</h3>
+
+        <p>语法：<code>wx:for=&quot;{{数据名称}}&quot;</code></p>
+
+        <p>v-pre
+            <code>wx:for</code> 的语法格式为 <code>wx:for=&quot;{{ 数据名称 }}&quot;</code> ，并且<strong>内置默认</strong>通过
+            <code>index</code> 获取数组的<strong>索引值</strong>，<code>item</code> 访问<strong>数组的单元值</strong>，如下代码所示：
+        </p>
+
+        <pre><code>
+&lt;!-- pages/index/index --&gt;
+&lt;view class=&quot;students&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+    &lt;text&gt;序号&lt;/text&gt;
+    &lt;text&gt;姓名&lt;/text&gt;
+    &lt;text&gt;年龄&lt;/text&gt;
+    &lt;text&gt;性别&lt;/text&gt;
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot; wx:for=&quot;{{students}}&quot;&gt;
+    &lt;text&gt;{{index + 1}}&lt;/text&gt;
+    &lt;text&gt;{{item.name}}&lt;/text&gt;
+    &lt;text&gt;{{item.age}}&lt;/text&gt;
+    &lt;text&gt;{{item.gender}}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <p>上述代码中 <code>index</code> 读取的是数组的索引值，<code>item</code> 读取的是数组的单元。</p>
+
+        <p>在使用 <code>wx:for</code> 时会收到一个警告，如下图：</p>
+
+        <p><img alt="没有wx:key" src="./images/weixin/picture_2-9624429.jpg" /></p>
+
+        <p>上述警告是由于在使用 <code>wx:for</code> 时没有指定 <code>wx:key</code> 属性，这个 <code>wx:key</code> 属性的作用于 Vue
+            中一样的，但是语法稍有不同，大家一定要注意，如下所示：</p>
+
+        <pre><code>
+&lt;!-- pages/index/index --&gt;
+&lt;view class=&quot;students&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+    &lt;text&gt;序号&lt;/text&gt;
+    &lt;text&gt;姓名&lt;/text&gt;
+    &lt;text&gt;年龄&lt;/text&gt;
+    &lt;text&gt;性别&lt;/text&gt;
+  &lt;/view&gt;
++ &lt;view class=&quot;item&quot; wx:for=&quot;{{students}}&quot; wx:key=&quot;name&quot;&gt;
+    &lt;text&gt;{{index + 1}}&lt;/text&gt;
+    &lt;text&gt;{{item.name}}&lt;/text&gt;
+    &lt;text&gt;{{item.age}}&lt;/text&gt;
+    &lt;text&gt;{{item.gender}}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
+
+        <p>上述代码中 <code>wx:key</code> 属性的值要求必须具有唯一性，使用时分成两种情形：</p>
+
+        <ul>
+            <li>数组单元为简单类型数据时，使用 <code>*this</code> 指定为 <code>wx:key</code> 的值</li>
+            <li>数组单元是对象类型时，只要写对象的属性名</li>
+        </ul>
+
+        <h3>1.2.2 自定义访问单元值和索引值</h3>
+
+        <blockquote>
+            <p>通过 <code>wx:for-index</code> 和 <code>wx:for-item</code> 来分别指定如何访问数组的索引值和单元值，如下代码所示：</p>
+        </blockquote>
+
+        <p>语法：<code>wx:for-index=&quot;索引名&quot;</code> <code>wx:for-item=&quot;单元名&quot;</code></p>
+
+        <pre><code>
+&lt;!-- pages/index/index --&gt;
+&lt;view class=&quot;students&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+    &lt;text&gt;序号&lt;/text&gt;
+    &lt;text&gt;姓名&lt;/text&gt;
+    &lt;text&gt;年龄&lt;/text&gt;
+    &lt;text&gt;性别&lt;/text&gt;
+  &lt;/view&gt;
+  &lt;view class=&quot;item&quot; wx:for=&quot;{{students}}&quot; wx:for-index=&quot;key&quot; wx:for-item=&quot;student&quot;&gt;
+    &lt;text&gt;{{key + 1}}&lt;/text&gt;
+    &lt;text&gt;{{student.name}}&lt;/text&gt;
+    &lt;text&gt;{{student.age}}&lt;/text&gt;
+    &lt;text&gt;{{student.gender}}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
+</code></pre>
+
+        <p>上述代码中分别指定了 <code>key</code> 获取的是数组的索引值，<code>student</code> 获取的是数组的单元值。</p>
+
+        <h2>1.3 条件渲染</h2>
+
+        <h3>1.3.1 wx:if</h3>
+
+        <blockquote>
+            <p>在对数据进行渲染时经常需要根据条件来处理，如后台暂无数据提示，可以使用 <code>wx:if</code> 来实现，我们来看具体的用法：</p>
+        </blockquote>
+
+        <p>语法：<code>wx:if=&quot;{{布尔值}}&quot;</code></p>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 省略前面小节的代码 --&gt;
++ &lt;view class=&quot;students&quot; wx:if=&quot;{{students.length&gt;0}}&quot;&gt;
+  &lt;view class=&quot;item&quot;&gt;
+    &lt;text&gt;序号&lt;/text&gt;
+    &lt;text&gt;姓名&lt;/text&gt;
+    &lt;text&gt;年龄&lt;/text&gt;
+    &lt;text&gt;性别&lt;/text&gt;
+  &lt;/view&gt;
+  &lt;view
+    class=&quot;item&quot;
+    wx:for=&quot;{{students}}&quot;
+    wx:key=&quot;name&quot;
+  &gt;
+    &lt;text&gt;{{index + 1}}&lt;/text&gt;
+    &lt;text&gt;{{item.name}}&lt;/text&gt;
+    &lt;text&gt;{{item.age}}&lt;/text&gt;
+    &lt;text&gt;{{item.gender}}&lt;/text&gt;
+  &lt;/view&gt;
+&lt;/view&gt;
++ &lt;view wx:else&gt; 暂无数据... &lt;/view&gt;
+</code></pre>
+
+        <h3>1.3.2 hidden</h3>
+
+        <blockquote>
+            <p>除了使用 <code>wx:if</code> 来控制元素的显示外，还可以使用 <code>hidden</code> 属性来实现相同的结果。</p>
+        </blockquote>
+
+        <pre><code>
+// pages/index/index.js
+// 调用 Page 函数
+Page({
+  data: {
+    seen: true,
+  },
+  toggle() {
+    // 切换 seen 的值
+    this.setData({
+      seen: !this.data.seen,
+    })
+  },
+})
+</code></pre>
+
+        <pre><code>
+&lt;!-- 条件数据渲染 --&gt;
+&lt;button type=&quot;primary&quot; bind:tap=&quot;toggle&quot;&gt;显示/隐藏&lt;/button&gt;
+&lt;view wx:if=&quot;{{seen}}&quot;&gt;{{msg}}&lt;/view&gt;
+&lt;view hidden=&quot;{{!seen}}&quot;&gt;{{msg}}&lt;/view&gt;
+</code></pre>
+
+        <p>对比 <code>wx:if</code> 和 <code>hidden</code> 二者的区别：</p>
+
+        <ul>
+            <li>
+                <p><code>wx:if</code> 在条件为 <code>true</code> 时会将内容渲染出来，否则不会进行渲染，是通过【添加/删除】节点的方式来实现的。</p>
+            </li>
+            <li>
+                <p><code>hidden</code> 在条件为 <code>true</code> 时会隐藏内容，否则会显示内容，是通过 <code>display</code> 样式属性来实现的。</p>
+            </li>
+        </ul>
+
+        <h3>1.3.3 block</h3>
+
+        <blockquote>
+            <p><code>block</code> 是小程序中一个特殊的标签，用于分组控制页面元素的渲染，通过会配合 <code>wx:for</code> 和 <code>wx:if</code> 来使用，下面举例来说明：</p>
+        </blockquote>
+
+        <p>需求：假如满足某个条件是显示多个结构。</p>
+
+        <p>方案：就可以使用block包裹需要控制的多个结构进行控制</p>
+
+        <pre><code>
+&lt;block wx:if=&quot;{{isShow}}&quot;&gt;
+  &lt;view class=&quot;msg&quot;&gt;{{msg}}&lt;/view&gt;
+  &lt;input name=&quot;number&quot; value=&quot;{{number}}&quot; /&gt;
+  &lt;view class=&quot;students&quot;&gt;...&lt;/view&gt;
+&lt;/block&gt;
+</code></pre>
+
+        <p>tip 提示:
+            block 标签本身并不会被渲染到页面当中，它一般只用于分组控制内容的渲染，也可以用 wx:for</p>
+
+        <h1>生命周期</h1>
+
+        <p>我们都知道生命周期是一组名称固定且会自动被调用执行的函数，在开发小程序时也有专门的的生命周期函数，分为<strong>应用级别、页面级别和组件级别3种类型</strong>，我们先学习应用级别和页面级别的生命周期。</p>
+
+        <h2>2.1 应用级别</h2>
+
+        <blockquote>
+            <p>首先要知道应用级别的生命周期函数定义在 <code>app.js</code> 当中，且生命周期函数的名称及执行情况如下表所示：</p>
+        </blockquote>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>生命周期</th>
+                <th>必填</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>onLaunch</td>
+                <td>否</td>
+                <td>监听小程序初始化，全局只会执行 1 次</td>
+            </tr>
+            <tr>
+                <td>onShow</td>
+                <td>否</td>
+                <td>监听小程序启动或切前台</td>
+            </tr>
+            <tr>
+                <td>onHide</td>
+                <td>否</td>
+                <td>监听小程序切后台</td>
+            </tr>
+        </table>
+
+        <h3>2.1.1 基本语法</h3>
+
+        <p>通过代码演示用法：</p>
+
+        <pre><code>
+// app.js
+App({
+  onLaunch() {
+    console.log(&#39;小程序启动了，只会执行 1 次！&#39;)
+  },
+  onShow() {
+    console.log(&#39;小程序处于前台状态！&#39;)
+  },
+  onHide() {
+    console.log(&#39;小程序处于后台状态！&#39;)
+  },
+})
+</code></pre>
+
+        <p>tip 提示:</p>
+
+        <ol>
+            <li>
+                <p>用户在点击右上角的胶囊关闭小程序时，小程序并示被销毁，只是将小程序置于后台运行了，因此小 onLaunch 并不会重复执行。当小程序执行停留在后台约5分钟后小程序会自动被销毁，再次打开小程序时 onLaunch 会再次被执行。</p>
+            </li>
+            <li>
+                <p>通过应用级别的生命周期可以进行一些全局性的设置，如检测用户的登录状态（后期项目中会用到）、获取小程序的场景值等。</p>
+            </li>
+        </ol>
+
+        <h3>2.1.2 场景值</h3>
+
+        <blockquote>
+            <p>所谓的场景描述的是用户打开小程序的方式，如扫码、搜索、分享等，并且每个场景都对应了一个数值，即场景值</p>
+        </blockquote>
+
+        <p>根据这个场景值来判断用户打开小程序的方式，进而分析用户的行为，常见的场景值如下表所示：</p>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <th>场景值 ID</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>发现栏小程序主入口</td>
+            </tr>
+            <tr>
+                <td>1011</td>
+                <td>扫描二维码</td>
+            </tr>
+            <tr>
+                <td>1007</td>
+                <td>单人聊天会话中的小程序消息卡片</td>
+            </tr>
+        </table>
+
+        <p>获取小程序的声景值<strong>只能在全局生周期函数 <code>onLaunch</code>、<code>onShow</code> 中获取</strong>，代码如下所示</p>
+
+        <pre><code>javascript
+// app.js
+App({
+  onLaunch(params) {
+    // 1001 发现栏小程序主入口
+    // 1011 扫描二维码
+    // 单人聊天会话中的小程序消息卡片
+    console.log(params.scene)
+  },
+  onShow(params) {
+    // 也可以获取场景值ID
+    console.log(params.scene)
+  },
+})
+</code></pre>
+
+        <p>获取到场景值后就可以确定用户是以<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/scene-list.html">何种方式</a>打开小程序了，进而分析用户的行为，帮助管理者制订合理的营销方案。</p>
+
+        <p>举例说明：比如通过场景值发现最近一段时间大量用户是通过分享的方式打开小程序的，那说明用户分享的意愿很强，营销活动有成效，如果用户主动去搜索小程序，说明小程序的知名度和受欢迎程序都比较高等。</p>
+
+        <h2>2.2 页面级别</h2>
+
+        <blockquote>
+            <p>页面级别的生命周期函数写在页面对应的页面 <code>.js</code> 当中：</p>
+        </blockquote>
+
+        <table border="3" cellspacing="0" cellpadding="3">
+            <tr>
+                <td>生命周期</td>
+                <td>必填</td>
+                <td>说明</td>
+            </tr>
+            <tr>
+                <td>onLoad</td>
+                <td>否</td>
+                <td>监听页面加载，只会执行 1 次</td>
+            </tr>
+            <tr>
+                <td>onShow</td>
+                <td>否</td>
+                <td>监听页面显示</td>
+            </tr>
+            <tr>
+                <td>onReady</td>
+                <td>否</td>
+                <td>监听页面初次渲染完成，只会执行 1 次</td>
+            </tr>
+            <tr>
+                <td>onHide</td>
+                <td>否</td>
+                <td>监听页面隐藏</td>
+            </tr>
+            <tr>
+                <td>onUnload</td>
+                <td>否</td>
+                <td>监听页面卸载</td>
+            </tr>
+        </table>
+
+        <h3>2.2.1 基本语法</h3>
+
+        <p>以首页的 <code>.js</code> 为例演示用法：</p>
+
+        <pre><code>
+// pages/index/index.js
+Page({
+// ...省略前面小节的代码
+    onShow() {
+    // 其次执行
+        console.log(&#39;首页处于显示状态...&#39;)
+    },
+
+    onReady() {
+        console.log(&#39;首页初次渲染完成了...&#39;)
+    },
+
+    onLoad() {
+        // 最先执行
+        console.log(&#39;首页面加载完毕...&#39;)
+   },
+
+    onHide() {
+        console.log(&#39;首页处于隐藏状态...&#39;)
+    },
+
+    onUnload() {
+        console.log(&#39;首页面即将卸载...&#39;)
+    }
+})
+        </code></pre>
+
+        <p>通过上述代码的演示大家要掌握页面生命周期的如下特点：</p>
+
+        <ul>
+            <li>onLoad 和 onReady 只会执行 1 次</li>
+            <li>onShow 和 onHide 会重复执行</li>
+            <li>普通链接跳转及切换 Tab 页面不会卸载，页面处理隐藏的状态</li>
+        </ul>
+
+        <p>在开发中页面的生命周期函数会使用非常频繁，根据生命周期的不同特性用法也千变万化，我们先来看 <code>onLoad</code> 的一般用法，其它生命周期的应用后续开发中结合需求再做介绍。</p>
+
+        <h3>2.2.2 获取地址参数</h3>
+
+        <blockquote>
+            <p>小程序在进行页面跳转时可以在跳转地址上通过 <code>?</code> 来拼凑参数，这些参数通过 <code>onLoad</code> 生命周期函来获取，用法如下所示：</p>
+        </blockquote>
+
+        <p>我们在首页面添加一个链接使其跳转到 <code>logs</code> 页面，并且在地址上通过 <code>?</code> 来拼凑一些参数：</p>
+
+        <p><code>
+&lt;!-- page/index/index.wxml --&gt;
+&lt;!-- 省略前面小节的代码 --&gt;
+&lt;navigator url=&quot;/pages/logs/logs?name=小明&amp;age=18&quot;&gt;跳转到日志页面&lt;/navigator&gt;
+</code></p>
+
+        <p>小程序中通过地址参数与网页是一致的，格式为 <code>?key1=value1&amp;key2=value2</code>，上述示例只是介绍基本用法，参数并没有实际的意义。</p>
+
+        <p>思考：地址上拼凑的参数是传给哪个页面的？</p>
+
+        <p>很容易判断是传给日志页面的，因此获取地址上的参数应该到日志页面的 <code>onLoad</code> 中获取，代码如下所示：</p>
+
+        <pre><code>
+// page/logs/logs.js
+Page({
+  onLoad(params) {
+    // 查看地址中的参数
+    console.log(params)
+  },
+})
+</code></pre>
+
+        <p>注意⚠️：<code>open-type=&quot;switchTab&quot;</code>模式跳转不支持query参数</p>
+
+        <h1>内置 API</h1>
+
+        <p>小程序 API 是小程序<strong>内置提供</strong>的一系列的方法，通过这些方法能够实现许多的功能，比如网络请求、消息提示、本地存储、微信登录、微信支付等，这些 API 通过全局对象
+            <code>wx</code> 进行调用。</p>
+
+        <h2>3.1 网络请求</h2>
+
+        <blockquote>
+            <p><code>wx.request</code> API 是用来发起网络请求的，类似于网页中的 <code>ajax</code>，其用法如下所示：</p>
+        </blockquote>
+
+        <p><strong>语法：</strong><code>wx.request(config:object)</code></p>
+
+        <pre><code>
+// pages/index/index.js
+// 小程序发起网络请求（调用接口）的方法
+wx.request({
+  // 接口地址
+  url: &#39;api/path/xxx&#39;,
+  // 请求的方法
+  method: &#39;GET｜POST|PUT&#39;,
+  // 请求时的数据
+  data: {},
+  success(res) {
+    // 成功响应的回调
+  },
+  // ...
+})
+</code></pre>
+
+        <h3>3.1.1 获取学生列表</h3>
+
+        <p>我们以获取学生列表数据为例来练习 <code>wx.request</code> 的使用：</p>
+
+        <pre><code>
+// pages/index/index.js
+Page({
+  // ...前面小节代码省略
+  onLoad() {
+    // 页面加载完成即获取学生列表
+    this.getStudentList()
+  },
+  // 获取学生表表
+  getStudentList() {
+    // 调用小程序 api
+    wx.request({
+      url: &#39;https://mock.boxuegu.com/mock/3293/students&#39;,
+      method: &#39;GET&#39;,
+      success: (res) =&gt; {
+        console.log(res)
+      },
+    })
+  },
+})
+</code></pre>
+
+        <p>非常不幸，上述代码的执行时会报告一个错误，如下图：</p>
+
+        <p><img alt="错误提示" src="./images/weixin/picture_2-9624490.jpg" /></p>
+
+        <p>小程序规定 <code>wx.request</code> 调用接口的服务器地址（域名）必须事先在小程序的管理后台进行设置，否则是不允许发起网络请求，如何解决这个问题呢？有两种方式：</p>
+
+        <ul>
+            <li>在小程序管理后台进行设置</li>
+            <li>在小程序开发工具中进行设置</li>
+        </ul>
+
+        <p>管理后台设置步骤见下图：</p>
+
+        <p><img alt="" src="./images/weixin/picture_3-9624490.jpg" /></p>
+
+        <p>warning 注意:
+            域名有个严格的要求：<strong>必须</strong>是 <code>https</code> 协议且已备案！</p>
+
+        <p>在开发工具中设置步骤如下：</p>
+
+        <p><img alt="" src="./images/weixin/picture_6-9624490.jpg" /></p>
+
+        <p>warning 注意:
+            在开发工具中设置的方式只适用于开发环境，即只能在小程序开发者工具中生效。</p>
+
+        <p><strong>调用 <code>wx.request</code> 发起请求成功响应后返回的数据格式为：</strong></p>
+
+        <pre><code>
+{
+  cookies: []
+  data: {}
+  errMsg: &quot;request:ok&quot;
+  header: {}
+  statusCode: 200
+}
+</code></pre>
+
+        <p>tip 提示:
+            上述演示接口返回的学生列表信息是随机生成的，即每次调用的结果都是不相同的。</p>
+
+        <h2>3.2 界面交互</h2>
+
+        <p>小程序还提供了一些用于界面交互的 API，如加载提示、信息反馈、确认框等。</p>
+
+        <h3>3.2.1 加载提示</h3>
+
+        <blockquote>
+            <p>加载提示框常配合网络请求来使用，用于增加用户体验，对应的 API 有两个，分别为：</p>
+        </blockquote>
+
+        <ul>
+            <li><code>wx.showLoading</code> 显示加载提示框</li>
+            <li><code>wx.hideLoading</code> 隐藏加载提示框</li>
+        </ul>
+
+        <p>它们的语法如下：</p>
+
+        <pre><code>
+// 显示加载提示
+wx.showLoading({
+  title: &#39;正在加载...&#39;,
+  mask: true,
+})
+// 隐藏加载提示
+wx.hideLoading()
+        </code></pre>
+
+        <p>结合上一节获取学生列表来演示这两个 API 的使用：</p>
+
+        <pre><code>
+// pages/index/index.js
+Page({
+    // ...省略前面小节代码
+    // 获取学生表表
+    getStudentList() {
+        // 显示提示框
+// + wx.showLoading({
+// + title: &#39;正在加载...&#39;
+// + })
+    // 发起请求
+    wx.request
+      url: &#39;https://mock.boxuegu.com/mock/3293/students&#39;,
+      method: &#39;GET&#39;,
+      // 这里注意因为 this 的原因，推荐使用箭头函数
+      success: (res) =&gt; {
+        this.setData({
+          // 更新 students 数组
+          students: res.data.result,
+        })
+      },
+      complete() {
+        // 隐藏提示框
+// wx.hideLoading()
+        
             },
-            "tabBar": {
-            "color": "#333",
-            "selectedColor": "#FFC64B",
-            "backgroundColor": "#FFF",
-            "borderStyle": "black",
-            "position": "bottom",
-            "list": [
-            {
-            "text": "首页",
-            "pagePath": "pages/index/index",
-            "iconPath": "assets/home.png",
-            "selectedIconPath": "assets/home-active.png"
+        })
+     },
+})
+            </code></pre>
+
+
+        <p>在调用 <code>wx.showLoading</code> 时可以传入以下参数：</p>
+
+        <ul>
+            <li><code>title</code> 指定显示的文字提示内容（不能省略）</li>
+            <li><code>mask</code> 提供一个透明层阻止对页面其它内容进行操作</li>
+            <li><code>success</code> 显示加载提示框成功后的回调（很少用到）</li>
+            <li><code>fail</code> 显示加载提示框失败后的回调（很少用到）</li>
+            <li><code>complete</code> 显示加载提示框完成后的回调（包括成功和失败两种情况）</li>
+        </ul>
+
+        <h3>3.2.2 信息反馈</h3>
+
+        <blockquote>
+            <p>信息反馈是指根据用户的某些操作来告知操作的结果，如用户点击加入购物车，提示用户添加成功，用户提交表单提示用户表单验证的结果等，对应的 API 是 <code>wx.showToast</code></p>
+        </blockquote>
+
+        <p>其语法如下：</p>
+
+        <pre><code>
+wx.showToast({
+  title: &#39;姓名只能为汉字!&#39;,
+  duration: 2000,
+  mask: true,
+  icon: &#39;success&#39;
+})
+        </code></pre>
+
+        <p>以表单验证举例说明 API 的使用：</p>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 省略了部分代码 --&gt;
+&lt;input type=&quot;text&quot; model:value=&quot;{{username}}&quot; placeholder=&quot;请填写您的姓名&quot; /&gt;
+&lt;button type=&quot;primary&quot; bind:tap=&quot;submitForm&quot;&gt;提交&lt;/button&gt;
+        </code></pre>
+
+        <pre><code>
+// 调用 Page 函数
+// pages/index/index
+Page({
+    data: {
+        username: &#39;&#39;,
+    },
+    submitForm() {
+        console.log(this.data.username);
+        // 验证用户名只能由英文、数字、下划线组成
+        const reg = /^\w+$/;
+        // 验证结果
+        const valid = reg.test(this.data.username.trim());
+        // 提示验证结果
+        if (!valid) {
+            return wx.showToast({
+                title: &#39;用户名只能由英文、数字、下划线组成!&#39;,
+                icon: &#39;none&#39;,
+            });
+        }
+    },
+});
+            </pre></code>
+
+        <p>在调用 <code>wx.showToast</code> 时可以传入以下参数：</p>
+
+        <ul>
+            <li><code>title</code> 指定显示的文字提示内容（不能省略）</li>
+            <li><code>mask</code> 提供一个透明层阻止对页面其它内容进行操作</li>
+            <li><code>icon</code> 指定图标类型</li>
+            <li><code>duration</code> 指定信息反馈的显示时长</li>
+        </ul>
+
+        <h2>3.3 本地存储</h2>
+
+        <blockquote>
+            <p>小程序中也能够像网页一样支持本地存储数据，用于在本地存一些临时性的数据，比如包含的用户登录状态 token 等，其包含以下 4个主要的 API：</p>
+        </blockquote>
+
+        <ul>
+            <li><code>wx.setStorageSync</code> 在本地存入一个数据</li>
+            <li><code>wx.getStorageSync</code> 读取本地的一个数据</li>
+            <li><code>wx.removeStorageSync</code> 删除本地存储的一个数据</li>
+            <li><code>wx.clearStorageSync</code> 清空本地存储的数据</li>
+        </ul>
+
+        <p>tip 提示:
+            在小程序中 <code>Sync</code> 结尾的 API 指的是同步方式执行，同步方式执行的 API 在使用时简洁比较好，但缺点是同步会阻塞程序执行，执行效率上相较异步版本要差一些。</p>
+
+        <h3>3.3.1 存入数据</h3>
+
+        <blockquote>
+            <p>如下代码所示调用 API <code>wx.setStorageSync</code> 在小程序本地存入数据</p>
+        </blockquote>
+
+        <pre><code>
+// pages/storage/index.js
+Page({
+  // 存入本地数据
+  setStorage() {
+    wx.setStorageSync(&#39;name&#39;, &#39;小明&#39;)
+    // 可以直接存入对象，无需 JSON.stringify 处理
+    wx.setStorageSync(&#39;user&#39;, { name: &#39;小明&#39;, age: 18 })
+  },
+})
+        </code></pre>
+
+        <p>tip
+            注意在小程序中本地存储可以直接存入对象或数组类型的数据，无需要 <code>JSON.stringify</code> 进行处理。</p>
+
+        <h3>3.3.2 读取数据</h3>
+
+        <blockquote>
+            <p>如下代码所示调用 API <code>wx.getStorageSync</code> 读取本地存储中的数据</p>
+        </blockquote>
+
+        <pre><code>
+// pages/storage/index.js
+Page({
+  // 存入本地数据
+  setStorage() {
+    wx.setStorageSync(&#39;name&#39;, &#39;小明&#39;)
+    // 可以直接存入对象，无需 JSON.stringify 处理
+    wx.setStorageSync(&#39;user&#39;, { name: &#39;小明&#39;, age: 18 })
+  },
+  // 读取本地数据
+  getStorage() {
+    const name = wx.getStorageSync(&#39;name&#39;)
+    // 对象类型的数据不必 JSON.parse 处理
+    const user = wx.getStorageSync(&#39;user&#39;)
+  },
+})
+        </code></pre>
+
+        <p>tip
+            注意由于存入本地的数据并没有进行 <code>JSON.stringify</code> 处理，因此取出来的数据也不必进行 <code>JSON.parase</code> 处理了。</p>
+
+        <h3>3.3.3 删除数据</h3>
+
+        <blockquote>
+            <p>如下代码所示调用 API <code>wx.removeStorageSync</code> 删除本地存储的数据</p>
+        </blockquote>
+
+        <pre><code>
+// pages/storage/index.js
+Page({
+  // 存入本地数据
+  setStorage() {
+    wx.setStorageSync(&#39;name&#39;, &#39;小明&#39;)
+    // 可以直接存入对象，无需 JSON.stringify 处理
+    wx.setStorageSync(&#39;user&#39;, { name: &#39;小明&#39;, age: 18 })
+  },
+  // 读取本地数据
+  getStorage() {
+    const name = wx.getStorageSync(&#39;name&#39;)
+    // 对象类型的数据不必 JSON.parse 处理
+    const user = wx.getStorageSync(&#39;user&#39;)
+  },
+  // 删除数据
+  removeStorage() {
+    wx.removeStorageSync(&#39;name&#39;)
+  },
+  // 清空数据
+  clearStorage() {
+    wx.clearStorageSync()
+  },
+})
+        </code></pre>
+
+        <h3>3.3.4 清空数据</h3>
+
+        <blockquote>
+            <p>如下代码所示调用 API <code>wx.clearStorageSync</code> 删除本地存储的数据</p>
+        </blockquote>
+
+        <pre><code>
+// pages/storage/index.js
+Page({
+  // 存入本地数据
+  setStorage() {
+    wx.setStorageSync(&#39;name&#39;, &#39;小明&#39;)
+    // 可以直接存入对象，无需 JSON.stringify 处理
+    wx.setStorageSync(&#39;user&#39;, { name: &#39;小明&#39;, age: 18 })
+  },
+  // 读取本地数据
+  getStorage() {
+    const name = wx.getStorageSync(&#39;name&#39;)
+    // 对象类型的数据不必 JSON.parse 处理
+    const user = wx.getStorageSync(&#39;user&#39;)
+  },
+  // 删除数据
+  removeStorage() {
+    wx.removeStorageSync(&#39;name&#39;)
+  },
+  // 清空数据
+  clearStorage() {
+    wx.clearStorageSync()
+  },
+})
+        </code></pre>
+
+        <blockquote>
+            <p>除了上述的4个 API 外，还有4个与之对应的异步版本的API：</p>
+        </blockquote>
+
+        <ul>
+            <li><code>wx.setStorage</code> 在本地存入一个数据</li>
+            <li><code>wx.getStorage</code> 读取本地的一个数据</li>
+            <li><code>wx.removeStorage</code> 删除本地存储的一个数据</li>
+            <li><code>wx.clearStorage</code> 清空本地存储的数据</li>
+        </ul>
+
+        <p>调用异步方式的 API 传入的是一个对象类型的参数：</p>
+
+        <pre><code>
+Page({
+  setStorage() {
+    wx.setStorage({
+      key: &#39;name&#39;,
+      data: &#39;小明&#39;
+    })
+    // 等同于
+    wx.setStorage(&#39;name&#39;, &#39;小明&#39;)
+  }
+})
+</code></pre>
+
+        <p>tip 提示:
+            在小程序中 <code>Sync</code> 结尾的 API 指的是同步方式执行，同步方式执行的 API 在使用时简洁比较好，但缺点是同步会阻塞程序执行，执行效率上相较异步版本要差一些。</p>
+
+        <h2>3.4 头像昵称填写</h2>
+
+        <p>小程序开发过程中获取用户昵称和头像是比较常见的功能，新建一个页面 <code>profile</code> 来演示该功能的实现步骤。</p>
+
+        <h3>3.4.1 用户头像</h3>
+
+        <blockquote>
+            <p><strong>获取用户头像必须用到 <code>button</code> 组件，且用户必须要主动点击 <code>button</code> 按钮，以下是 <code>button</code>
+                    的使用细节：</strong></p>
+        </blockquote>
+
+        <ul>
+            <li>设置 <code>button</code> 的属性 <code>open-type</code> 值为 <code>chooseAvatar</code></li>
+            <li>监听 <code>button</code> 的 <code>chooseavatar</code> 事件</li>
+        </ul>
+
+        <p>warning 注意:
+            open-type 的属性值 chooseAvatar (有大写字母)，事件类型 chooseavatar (全部小写字母)。</p>
+
+        <p>说明⚠️：基础库2.21.2支持</p>
+            <img src="./images/weixin/image-20221130162304420.png" style="zoom:50%;" alt="">
+
+        <p>如上图所示用户点击了按钮后会弹出一个选择列表，无论是选择微信头像、相册选择、还是拍照都会触发事件 <code>chooseavatar</code>，在事件回调函数中来获取用户头像的图片地址数据。</p>
+
+        <p>在事件回调 <code>getUserAvatar</code> 中获取到用户的头像地址，通过这个地址就可以将用户设置的头像展示到页面当中了。</p>
+
+        <pre><code>
+&lt;view class=&quot;profile&quot;&gt;
+  &lt;image src=&quot;{{profile.avatarUrl}}&quot;&gt;&lt;/image&gt;
+  &lt;button type=&quot;warn&quot; open-type=&quot;chooseAvatar&quot; bindchooseavatar=&quot;getUserAvatar&quot;&gt;
+    头像
+  &lt;/button&gt;
+&lt;/view&gt;
+</code></pre>
+
+        <pre><code>
+// pages/profile/index.js
+Page({
+  data: {
+    profile: {
+      avatarUrl: &#39;/static/images/avatar.png&#39;,
+      nickName: &#39;微信用户&#39;,
+    },
+  },
+  // 获取用户头像
+  getUserAvatar(ev) {
+    // 获取头像对应的地址
+    // console.log(ev.detail.avatarUrl)
+    this.setData({
+      &#39;profile.avatarUrl&#39;: ev.detail.avatarUrl,
+    })
+  },
+})
+</code></pre>
+
+        <p>同学们有没有注意到上面代码中调用 <code>setData</code> 时使用了 <code>&#39;profile.avatarUrl&#39;</code>
+            ，这是小程序特别支持更新数据的用法，它等同于下面的写法：</p>
+
+        <pre><code>
+this.setData({
+  // 这种写法没有上述语法简洁
+  profile: {
+    avatarUrl: ev.detail.avatarUrl,
+  },
+})
+</code></pre>
+
+        <p><strong>此时得到的头像地址是临时地址，只能在小程序内部使用，要实现永久存储需要将这个图片上传给自已的服务端，文件上传会用到 <code>wx.uploadFile</code>。</strong></p>
+
+        <pre><code>
+// pages/profile/index.js
+Page({
+    // 省略部分代码...
+    getUserAvatar(ev) {
+        this.setData({
+            &#39;profile.avatarUrl&#39;: ev.detail.avatarUrl,
+        });
+        // 上传临时文件
+        wx.uploadFile({
+            url: &#39;http://ajax-api.itheima.net/api/file&#39;,
+            filePath: ev.detail.avatarUrl,
+            name: &#39;avatar&#39;,
+            success: (res) =&gt; {
+                console.log(res);
             },
-            {
-            "text": "卡券",
-            "pagePath": "pages/logs/logs",
-            "iconPath": "assets/card.png",
-            "selectedIconPath": "assets/card-active.png"
-            },
-            {
-            "text": "我的",
-            "pagePath": "pages/demo/demo",
-            "iconPath": "assets/my.png",
-            "selectedIconPath": "assets/my-active.png"
-            }
-            ]
-            }
-            }
-            ```
+        });
+    },
+})
+        </code></pre>
+
+
+
+        <p>选择头像组件存在的问题❓：</p>
+
+        <ol>
+            <li>
+                <p>拍照报错提示：&quot;设置失败，请重试&quot;</p>
+            </li>
+            <li>
+                <p>相册选取照片报错提示：&quot;无法使用该头像&quot;</p>
+            </li>
+        </ol>
+
+        <h3>3.4.2 用户昵称</h3>
+
+        <blockquote>
+            <p><strong>获取用户昵称必须用到 <code>input</code> 组件，当 <code>input</code> 获得焦点后小程序会自动展示用户的昵称 以下是 <code>input</code>的使用细节：</strong></p>
+        </blockquote>
+
+        <ul>
+            <li>设置 <code>input</code> 的 <code>type</code> 属性值为 <code>nickname</code></li>
+            <li>监听 <code>input</code> 组件的 <code>input</code> 、<code>blur</code> 、<code>change</code> 等事件获取表单中的值</li>
+        </ul>
+
+        <img src="./images/weixin/image-20221130173950165.png" style="zoom: 50%;" alt="">
+
+        <p>如上图所示当 <code>input</code> 组件获得焦点时，页面的底部自动弹出用户默认的昵称，用户选择后会自动填入表单当中，用户也可以在表单中填写内容对昵称进行自定义。</p>
+
+        <blockquote>
+            <p>那如何获取用户在表单中填写的用户昵称呢？</p>
+        </blockquote>
+
+        <p>用户在表单中填写的内容（昵称）需要事件回调中通过失去焦点blur事件对象来获取</p>
+
+        <pre><code>
+&lt;input type=&quot;nickname&quot; bind:blur=&quot;getUserNickName&quot; /&gt;
+        </code></pre>
+
+        <p>在事件回调 getUserNickName 中获取到用户昵称，然后将昵称展示到页面当中。</p>
+
+            <pre><code>
+// pages/profile/index.js
+Page({
+    data: {
+        profile: {
+            avatarUrl: &#39;/static/images/avatar.png&#39;,
+            nickName: &#39;微信用户&#39;,
+        },
+    },
+    // 获取用户头像...
+
+    // 获取昵称
+    getUserNickName(ev) {
+        // 获取用户设置的昵称
+        this.setData({
+            &#39;profile.nickName&#39;: ev.detail.value,
+        })
+    },
+})
+            </code></pre>
+            
+
+        <p>练习：将获取到的用户头像和昵称存入小程序本地。</p>
 
-            ::: tip 提示:
-            以上是常用的全局配置项，还有更多[全局配置](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html)的选项，后续学习当中会根据需要进行讲解。
-            :::
+        <h2>3.5 路由</h2>
 
-            <h5>扩展-路由导航</h5>
+        <p>小程序中的路由其实单纯只是页面的跳转，一般在页面中使用 <code>navigator</code> 组件来实现，也有很多场景需要在 js 中根据逻辑的执行结果跳转到某个页面，比如检测到用户尚未登录就跳转到登录页面。</p>
 
-            > 使用navigator组件导航路由
+        <h3>3.5.1 wx.navigateTo</h3>
 
-            语法：` <navigator open-type="navigate" url="/pages/pops/pops">跳转</navigator>`
+        <blockquote>
+            <p><code>wx.navigateTo</code> 跳转到一个新的页面，会新增一种历史记录</p>
+        </blockquote>
 
-            1. 普通页面跳转
+        <pre><code>
+// /pages/router/index.js
+Page({
+  // 普通的跳转
+  navigateTo() {
+    wx.navigateTo({
+      url: &#39;/pages/logs/logs?name=小刚&amp;age=19&#39;,
+      success() {}
+    });
+  },
+})
+        </code></pre>
 
-            ```html
-            <navigator url="/pages/pops/pops">go</navigator>
-            ```
+        <p>通过 <code>wx.navigateTo</code> 跳转页面通过左上角的能够实现返回操作，如果要跳转的页面路径是一个 tabBar 的页时，不能使用 <code>wx.navigateTo</code>。
+        </p>
 
-            2. tabbar页面跳转
+        <h3>3.5.2 wx.redirectTo</h3>
 
-            ```html
-            <navigator open-type="switchTab" url="/pages/home/home">go</navigator>
-            ```
+        <p><code>wx.redirectTo</code> 跳转到一个新的页面，<strong>不会新增一种历史记录</strong>，替换掉当前页面。</p>
 
-            3. 替换当前，然后打开新页面=>不能返回上次浏览页面
-
-            ```html
-            <navigator open-type="redirect" url="/pages/news/news">go</navigator>
-            ```
-
-            <h4>页面配置</h4>
-
-            * 接下来学习一下**页面配置**，顾名思义页面配置只针对某个页面生效，如 `index.json` 是针对 `index` 页面生效，`demo.json` 是针对页面 `demo` 生效。
-
-            页面的部分配置可以覆盖全局 `app.json` 中的配置，常见的配置如下表：
-
-            | 属性 | 类型 | 默认值 | 是否必须 | 说明 |
-            | ---------------------------- | ----------- | ------- | -------- | ----------------------------------------
-            |
-            | navigationBarTitleText | string | 空白 | 否 | 导航栏标题文字内容 |
-            | navigationBarTextStyle | string | black | 否 | 导航栏标题颜色，仅支持 `black` / `white` |
-            | navigationBarBackgroundColor | 16 进制颜色 | #00000 | 否 | 导航栏背景颜色，如 `#000000` |
-            | navigationStyle | string | default | 否 | 导航栏样式，仅支持 `default` / `custom` |
-
-            有没有发现上表中的配置内容其实是全局配置中 `window` 部分的内容，如果写在 `app.json` 中则属于全局配置，对所有的页面都生效，而如果写在页面中则属于页面配置，只对当前页面生效。
-
-            页面配置的内容相对少一些，不过后续在实际的应用中我们还会再学习到其它的配置内容。
-
-
-            <h3>2.9 字体图标</h3>
-
-            > 小程序也可以使用字体图标且与网页中应用字体图标的方法一致，然而有一点要注意小程序样式中的静态资源不支持本地路径，只能使用网络路径（http 或 https）或者 base64，因此在引用字体标时不要写本地路径：
-
-            ![image-20221128111855794](assets/image-20221128111855794.png)
-
-            示例1:
-
-            ```css
-            @font-face {
-            font-family: 'icomoon';
-            src: url('https://static.botue.com/ugo/fonts/icomoon.eot?rnu94l');
-            src: url('https://ekafit.oss-cn-beijing.aliyuncs.com/ugo/fonts/icomoon.eot?rnu94l#iefix')
-            format('embedded-opentype'),
-            url('https://static.botue.com/ugo/fonts/icomoon.ttf?rnu94l')
-            format('truetype'),
-            url('https://static.botue.com/ugo/fonts/icomoon.woff?rnu94l') format('woff'),
-            url('https://static.botue.com/ugo/fonts/icomoon.svg?rnu94l#icomoon')
-            format('svg');
-            font-weight: normal;
-            font-style: normal;
-            font-display: block;
-            }
-            ```
-
-            示例2：
-
-            ```css
-            .box {
-            width: 200rpx;
-            height: 200rpx;
-            /* 本地路径不支持 */
-            /* background-image: url('/assets/xxx.jpg') */
-            background-image: url('https://xxx.com/uploads/xxx.jpg')
-            }
-            ```
-
-
-
-            总结：
-
-            1. css中字体图标和图片必须使用网络路径加载
-            2. 全局配置 tabBar 中的图片只能使用本地路径不支持网络路径，切记切记！！！
-
-
-
-
-
-            <h2>开发调试</h2>
-
-            任何程序开发都离不开调试，小程序开发者工具自带了调试工具，下面我们就来学习小程序开发者工具的调试功能。
-
-            <h3>3.1 调试器</h3>
-
-            > 了解小程序调试面板
-
-            ![调试器](assets/picture_2.jpg)
-
-            上图中的 【Wxml】 是用来显示小程序页面的结构和样式，【Console】 控制台，【Network】 查看网络请求，【AppData】 查看组件本地数据，【终端】创建命令行窗口等。
-
-            <h3>3.2 预览和真机调试</h3>
-
-            > 在大部情况下我们编写的代码会在开发者工具的模拟器中查看到效果，我们还可以在真机中进行预览或调试小程序，这个功能是由小程序开发者工具提供的，如下图所示：
-
-            ![预览和真机调试](assets/picture_4-9620768.jpg)
-
-            ::: warning 注意:
-            在教室由于网络的原因，预览和真机调试功能的功能可能无法演示，回家后自行测试一下！
-            :::
-
-            <h3>3.3 编译模式</h3>
-
-            > 编译模式是允许开发者指定某个页面来单独开发调试
-
-            首先要掌握编译模式的添加步骤：
-
-            ![编译模式](assets/picture_8.jpg)
-
-            ![编译模式](assets/picture_10.jpg)
-
-            当添加了编译模式后再对编译模式进行切换就可以单独针对某个页面进行开发调试了。
-
-            ::: tip 提示:
-            这个功能我们暂时还用不到，大家先有个了解，后续项目的开发过程会用到，到时再详细介绍。
-            :::
-
-            <h3>3.4 刷新和热重载</h3>
-
-            > 早期小程序开发者工具是没有热重载功能，只有编译功能，即每次修改代码后都会将页面重新编译，这种情况下开发效率比较低
-
-            现在的小程序开发工具中支持了热重载的功能：
-
-            ![刷新和热重载](assets/picture_12.jpg)
-
-            说明：热重载类似热更新，只更新变化部分
-
-            ::: warning 注意:
-            注：`.json` 类型文件和 `app.js` 不支持热重载的功能，代码修改后会重新编译整个小程序。
-            :::
-
-            <h2>发布上线</h2>
-
-            小程序开发完毕后，最后一个环节就是将小程序发布到微信小程序的应用商店中。
-
-            <h3>4.1 小程序上传</h3>
-
-            > 小程序开发并调试完毕后直接点击【上传】按钮，填写版本信息后小程序会被上传到微信的服务器当中，如下图所示：
-
-            ![小程序上传](assets/picture_2-9622133.jpg)
-
-            在上传小程序代码时有一点大家需要注意，微信官方要求小程序的体积不能超过 2M，超过 2M 时上传不会成功，要解决这个问题可以**采用分包**的功能，这个功能我们在后面再学习。
-
-            <h3>4.2 文件忽略</h3>
-
-            > 在小程序的开发阶段，项目目录中难免会有一些与代码逻辑无关的文件，如页面中用到的图片、文档等，这些文件会占用小程序的代码体积（不能超过 2M），导致无法实现预览、真机调试和上传等功能。
-
-            <img src="assets/image-20221128160142814.png" alt="image-20221128160142814" style="zoom:50%;" />
-
-            我们有两个方法解决：一种是将不用的图片和文档等删除，另一个种方法是通过配置来忽略这些文件。
-
-            在 `project.config.json` 中进行配置忽略文件：
-
-            ```json
-            {
-            "miniprogramRoot": "miniprogram/",
-            "packOptions": {
-            "ignore": [
-            { "type": "folder", "value": "assets/uploads" }
-            ]
-            }
-            }
-            ```
-
-            - `"type": "folder"` 忽略文件目录，`"value"` 用来指明具体忽略的文件目录
-
-            ::: warning 注意:
-            被忽略的文件不会被打包到小程序项目当中，因此如果项目中引用了这些图片，图片将无法被加载显示。
-            :::
-
-            <h3>4.3 体验版</h3>
-
-            > 上一步骤只是将代码上传到了小程序的官方服务器上，普通用户还是无法通过小程序商店搜索到，此时可以先将小程序设定为【体验版本】，通过添加或申请体验权限来访问小程序。
-
-            1. 每次上传新代码成功后就可以设置【体验版本】了，步骤如下图：
-
-            ![体验版](assets/picture_3.jpg)
-
-            成功设置体验版本后会后自动生成一个二维码，分享这个二维码用户可根据提示申请体验权限，小程序管理员在手机微信中允许后方可访问。
-
-            2. 针对公司内部成员如产品、测试、运营人员，可以事先在后台添加为体验成员，这样直接扫码就可以访问小程序无需再申请权限。如下图所示：
-
-            ![体验版](assets/picture_5-9622133.jpg)
-
-            添加体验成员仍然是通过【微信号】来添加的，大家互相添加一下。
-
-            <h3>4.4 提交审核</h3>
-
-            >
-            小程序全面测试完毕后还需要提交给小程序官方审核，主要是看小程序[有无违规的内容](https://developers.weixin.qq.com/community/develop/doc/000c266f094ab00976ad5c0d251809)。
-
-            ![](assets/picture_7-9622133.jpg)
-
-            <h3>4.5 发布</h3>
-
-            审核通过后就可发布小程序了，发布成功后所有用户都可以在小程序应用商店中找到我们开发的小程序了。
-
-
-
-            # 第一天
-
-
-
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
-
-
-            <h2>标题</h2>
-            <div>
-                <table border="3" cellspacing="0" cellpadding="3">
-                    <caption>列表</caption>
-                    <tr>
-                        <th>功能</th>
-                        <th>用法</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <br><br><br>
-            </div>
+        <pre><code>javascript
+// /pages/router/index.js
+Page({
+  // 和 navigateTo 很类似，区别在于不会新增历史记录
+  redirectTo() {
+    wx.redirectTo({
+      url: &#39;/pages/logs/logs?name=小刚&amp;age=19&#39;,
+    });
+  },
+});
+</code></pre>
+
+        <h3>3.5.5 wx.navigateBack</h3>
+
+        <p><code>wx.navigateBack</code> 返回页面。</p>
+
+        <pre><code>
+// /pages/router/index.js
+    Page({
+        // 返回页面
+        navigateBack() {
+            wx.navigateBack();
+        },
+    });
+        </code></pre>
+        
+
+        <h2>3.6 其它</h2>
+
+        <p>总结：</p>
+
+        <ol>
+            <li>
+                <p>小程序中大部分的 API 都是异步方式执行，异步 API 传入的都是对象类型的参数，且都可以传入
+                    <code>success</code>、<code>fail</code>、<code>complete</code> 回调函数。</p>
+            </li>
+            <li>
+                <p>也有少部分 API 是同步方式执行，同步方式的 API 有个特点就是均以 <code>Sync</code> 结尾。</p>
+            </li>
+            <li>善于利用文档</li>
+        </ol>
+
+        <h1>npm 支持</h1>
+
+        <h2>4.1 默认构建</h2>
+
+        <blockquote>
+            <p>小程序不能直接使用在 npm 下载的模块包，必须经过小程序开发者工具进行构建后才可以使用，这一节我们来学习支持 npm 模块包的步骤：</p>
+        </blockquote>
+
+        <ol>
+            <li>打开终端窗口</li>
+        </ol>
+
+        <img src="./images/weixin/image-20221130181511711.png" style="zoom: 50%;" alt="">
+
+        <ol>
+            <li>安装一个 npm 模块包，以 <code>dayjs</code> 为例</li>
+        </ol>
+
+        <p><code></code>`bash</p>
+
+        <h1>创建 package.json</h1>
+
+        <p>npm init -y</p>
+
+        <h1>安装一个模块</h1>
+
+        <p><pre><code>npm install dayjs</code></pre></p>
+
+        <p>这一步操作是与以往的 npm 模块安装没有任何的区别，会将模块安装到 <code>node_modules</code> 当中，但是下载的模块无法直接导入到小程序中，如下图所示：</p>
+
+        <img src="./images/weixin/image-20221130181838197.png" style="zoom: 50%;" alt="">
+
+        <ol>
+            <li>构建 npm，步骤如下图所示</li>
+        </ol>
+
+        <img src="./images/weixin/image-20221130182022786.png" style="zoom: 50%;" alt="">
+
+        <p>构建 npm 的结果会创建一个新的目录 <code>miniprogram_npm</code> 把构建后的 npm 模块放到了这个目录之下，此时在小程序中便可以成功导入 npm 的模块包了。</p>
+
+        <h2>4.2 自定义构建</h2>
+
+        <blockquote>
+            <p>默认情况下项目目录的最外层是小程序的根目录，通过 <code>project.config.json</code> 可以指定小程序的根目录，这样做的好处是能够优化目录结构，更好的管理项目的代码:</p>
+        </blockquote>
+
+        <p>场景：</p>
+
+        <ol>
+            <li>
+                <p>1.公司中小程序代码单独放到一个目录维护，这时候需要自定义项目根目录</p>
+                <pre><code>
+{
+    "setting": {
+      ...
+    },
+  + "miniprogramRoot": "src/",
+    "compileType": "miniprogram",
+    "libVersion": "2.19.4",
+    "appid": "wx3eb80995b7e84924",
+    "projectname": "demo",
+}  
+                </code></pre>
+            </li>
+
+            <li>
+                <p>2.如果项目中有npm依赖，也需要自定义npm目录</p>
+                <pre><code>
+{
+    "setting": {
+  //-    "ignoreDevUnusedFiles": false,
+  //-    "ignoreUploadUnusedFiles": false,
+      ...
+  //+    "packNpmManually": true,
+  //+    "packNpmRelationList": [
+        {
+  //+        "packageJsonPath": "./package.json",
+  //+        "miniprogramNpmDistDir": "./src"
+        }
+      ],
+      ...
+    },
+    "libVersion": "2.19.4",
+    "miniprogramRoot": "src/",
+    "compileType": "miniprogram",
+    "appid": "wx3eb80995b7e84924",
+    "projectname": "demo",
+}
+                </code></pre>
+            </li>
+        </ol>
+
+        <p>说明：</p>
+
+        <ul>
+            <li><code>miniprogramRoot</code> 自定义小程序的根目录</li>
+            <li><code>packNpmManually</code> 启用 npm 构建手动配置</li>
+            <li><code>packNpmRelationList</code> 手动构建 npm 配置详情：</li>
+            <li><code>packageJsonPath</code>包管理文件位置</li>
+            <li><code>miniprogramNpmDistDir</code>构建npm文件存储位置</li>
+        </ul>
+
+        <p>问题：<a href="https://developers.weixin.qq.com/community/develop/article/doc/00020631afc6c8c6f62e7b91855c13?idescene=6">如何解决“Error:xxx.js 已被代码依赖分析忽略，无法被其他模块引用”报错？</a></p>
+
+        <h1>自定义组件</h1>
+
+        <p>小程序有许多的<a href="https://developers.weixin.qq.com/miniprogram/dev/component/">内置组件</a>，比如之前学习过的
+            <code>view</code>、<code>image</code>、<code>scroll-view</code>、<code>swiper</code>等，除此之外小程序也允许开发者自定义组件。</p>
+
+        <h2>5.1 组件基础</h2>
+
+        <blockquote>
+            <p>自定义组件的结构与页面是一致的，即也包含有4个部分，分别为:</p>
+        </blockquote>
+
+        <ul>
+            <li><code>.wxml</code> 组件的布局结构</li>
+            <li><code>.js</code> 组件的处理逻辑</li>
+            <li><code>.json</code> 组件的配置文件</li>
+            <li><code>.wxss</code> 组件的布局样式</li>
+        </ul>
+
+        <h3>5.1.1 创建组件</h3>
+
+        <blockquote>
+            <p>通常习惯将组件放到独立的目录 <code>components</code> 当中，这个目录需要我们手动进行创建。</p>
+        </blockquote>
+
+        <p>创建一个叫 <code>authorization</code> 的组件来学习组件创建的步骤，在 <code>components</code> 目录中新建 <code>authorization</code>
+            目录，然后在右键在菜单中找到【新建 Component】，输入<strong>组件名称</strong>后会自动创建组件。</p>
+
+            <img src="./images/weixin/image-20221201163554282.png" style="zoom: 50%;" alt="">
+
+        <blockquote>
+            <p>组件和页面的结构是一致的，但也是有区别的，先简单有个了解：</p>
+        </blockquote>
+
+        <ul>
+            <li>组件的配置文件中配置项 <code>component: true</code></li>
+            <li>组件的 <code>.js</code> 文件中调用 <code>Component</code> 函数</li>
+        </ul>
+
+        <h3>5.1.2 注册组件</h3>
+
+        <blockquote>
+            <p>组件的注册分为<strong>页面注册</strong>和<strong>全局注册</strong>两种情况：</p>
+        </blockquote>
+
+        <ol>
+            <li>页面注册是在使用组件的页面配置中通过 <code>usingComponents</code> 进行注册，只能在当前页面中使用注册的组件，如下代码所示：</li>
+        </ol>
+
+        <pre><code>
+{
+  &quot;usingComponents&quot;: {
+    &quot;authorization&quot;: &quot;/components/authorization/index&quot;
+  }
+}
+        </code></pre>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;!-- 双标签用法 --&gt;
+&lt;authorization&gt;&lt;/authorization&gt;
+&lt;!-- 单标签用法(一定要闭合) --&gt;
+&lt;authorization /&gt;
+        </code></pre>
+
+        <ol>
+            <li>全局注册是在 <code>app.json</code> 文件中通过 <code>usingComponents</code> 对自定义组件进行注册，注册的组件可以任意页面中使用全局注册的组件，如下代码所示：</li>
+        </ol>
+
+        <pre><code>
+{
+  &quot;pages&quot;: [...],
+  &quot;window&quot;: {...},
+//+  &quot;usingComponents&quot;: {
+//+    &quot;authorization&quot;: &quot;/components/authorization/index&quot;
+//+  },
+  &quot;sitemapLocation&quot;: &quot;sitemap.json&quot;
+}
+        </code></pre>
+
+        <p>以上示例重点演示了组件的创建及注册步骤，组件功能并不同我们的重心，因此关于组件的布局结构、样式以并未详细展开，不过关于布局和样式部分和页面并没有太大的差别，同学们课下自行练习一下。</p>
+
+        <p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">文档：https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/</a></p>
+
+        <h2>5.2 组件进阶</h2>
+
+        <p>本节来学习如何处理组件的逻辑。</p>
+
+        <h3>5.2.1 数据变量和方法</h3>
+
+        <blockquote>
+            <p>了解数据变量、方法定义和使用</p>
+        </blockquote>
+
+        <ul>
+            <li><code>data</code> 组件本身内部定义的数据</li>
+            <li><code>methods</code>中定义组件的方法</li>
+        </ul>
+
+        <pre><code>
+// components/authorization/index
+Component({
+  // 初始组件内部数据
+  data: {
+    message: &#39;组件中初始的数据&#39;
+  },
+  methods: {
+    // 定义事件回调函数
+    handlerClick() {
+   	  console.log(&#39;clicked&#39;)
+    },
+  },
+})
+</code></pre>
+
+        <h3>5.2.2 组件通信</h3>
+
+        <blockquote>
+            <p>自定义组件有自已的作用域，然而在实际开发中，父子组件之间的数据传递是不可避免的。</p>
+        </blockquote>
+
+        <h4>父传子</h4>
+
+        <ol>
+            <li>父组件通过属性赋值为子组件传递数组</li>
+        </ol>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;view class=&quot;box&quot;&gt;
+   &lt;!-- 应用自定义组件 --&gt;
+  &lt;header isLogin=&quot;{{true}}&quot; tips=&quot;{{msg}}&quot; /&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <ol>
+            <li>子组件通过<code>properties</code>接收父组件数据</li>
+        </ol>
+
+        <pre><code>
+Component({
+  // 接收父组件数据
+  properties: {
+    isLogin: Boolean, 
+    tips: {
+      // 属性的数据类型
+      type: String,
+      // 属性的默认值
+      value: &#39;hello&#39;
+    }
+  },
+})
+        </code></pre>
+
+        <ol>
+            <li>查看或调试传入组件的数据与页面数据的查看方式不同，具体查看如下图所示：
+                说明❓：选中要查看的组件，通过右侧component data面板查看</li>
+        </ol>
+
+        <p><img alt="image-20221201174645441" style="zoom: 50%;" src="./images/weixin/image-20221201174645441.png" /></p>
+
+        <p>注意：可以直接修改父组件传递的数据（父组件不受影响）</p>
+
+        <h4>子传父</h4>
+
+        <ol>
+            <li>
+                <p>父组件在子组件上绑定自定义事件，提供自定义事件回调方法</p>
+                <p>在自定义事件回调方法中，通过默认形参<code>event.detail</code>获取数据</p>
+            </li>
+        </ol>
+
+        <pre><code>
+&lt;!-- pages/index/index.wxml --&gt;
+&lt;view class=&quot;box&quot;&gt;
+   &lt;!-- 应用自定义组件 --&gt;
+  &lt;header isLogin=&quot;{{true}}&quot; tips=&quot;{{msg}}&quot;
+ + bind:事件名=&quot;mycallback&quot; /&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <pre><code>
+// pages/index/index.js
+Page({
+  // 父组件中的数据
+  data: {
+  },
+  // 自定义事件的回调
+//+  mycallback: function (e) {
+//+    console.log(&#39;我是父组件中的回调函数...&#39;,e);
+//+  }
+})
+        </code></pre>
+
+        <ol>
+            <li>
+                <p>子组件触发父组件自定义事件</p>
+                <p>通过<code>this.triggerEvent(&#39;自定义事件名称&#39;,data)</code>触发和传递数据</p>
+            </li>
+        </ol>
+
+        <pre><code>
+// components/header/index.js
+Component({
+  // ...
+  // 组件方法，可用于事件监听回调函数
+  methods: {
+    sayHi: function () {
+      // 并且将 {name: &#39;小明&#39;, age: 18} 做为参数，传给父组件自定义事件的回调函数
+//+      this.triggerEvent(&#39;事件名&#39;, {name: &#39;小明&#39;, age: 18});
+    }
+  }
+})
+</code></pre>
+
+        <h3>5.2.3 生命周期</h3>
+
+        <blockquote>
+            <p>前面我们分别学习了应用级别和页面级别的生命周期，组件也有生命周期函数，通过 <code>lifetimes</code> 来定义，主要的生命周期函数有：</p>
+        </blockquote>
+
+        <ul>
+            <li><code>attached</code> 在组件实例进入页面节点树时执行</li>
+            <li><code>detached</code>在组件实例被从页面节点树移除时执行</li>
+        </ul>
+
+        <pre><code>
+// components/authorization/index.js
+Component({
+  // ...
+  // 组件生命周期
+  lifetimes: {
+    attached: function() {
+      // 在组件实例进入页面节点树时执行
+    },
+    detached: function() {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
+});
+        </code></pre>
+
+        <h3>扩展-组件模板</h3>
+
+        <blockquote>
+            <p>小程序的组件模板其实就是插槽功能，通过 <code>&lt;slot&gt;</code> 在组件内部定义插槽位置，以 <code>authorization</code> 组件为例其用法如下所示：</p>
+        </blockquote>
+
+        <ol>
+            <li>在组件内定定义 <code>slot</code> 插槽，插槽其实就是个占位符号</li>
+        </ol>
+
+        <pre><code>
+&lt;view class=&quot;container&quot;&gt;
+  &lt;slot&gt;&lt;/slot&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <ol>
+            <li>在首页面应用组件并在组件开始和结束位置中间插入内容，被插入的内容就会被渲染到插槽的位置上：</li>
+        </ol>
+
+        <pre><code>
+&lt;authorization is-login=&quot;{{true}}&quot; tips=&quot;用户未登录&quot;&gt;
+  &lt;view&gt;默认slot 插槽&lt;/view&gt;
+  &lt;view&gt;默认slot 插槽&lt;/view&gt;
+&lt;/authorization&gt;
+        </code></pre>
+
+        <blockquote>
+            <p>默认情况小程序在一个组件中只能支持一个插槽，如果需要多个插槽需要启用多 <code>slot</code> 支持，启用方式如下所示：</p>
+        </blockquote>
+
+        <ol>
+            <li>启用多插槽支持</li>
+        </ol>
+
+        <pre><code>
+Component({
+  options: {
+    // 启用多插槽支持
+    multipleSlots: true
+  }
+  // ...
+})
+        </code></pre>
+
+        <ol>
+            <li>启用了多插槽支持后通过 <code>name</code> 为插槽命名：</li>
+        </ol>
+
+        <pre><code>
+&lt;view class=&quot;container&quot;&gt;
+  &lt;slot name=&quot;content&quot;&gt;&lt;/slot&gt;
+&lt;/view&gt;
+&lt;view class=&quot;layout&quot;&gt;
+  &lt;slot name=&quot;number&quot;&gt;&lt;/slot&gt;
+&lt;/view&gt;
+        </code></pre>
+
+        <ol>
+            <li>在应用组件时通过 <code>slot</code> 属性指定将内容放入哪个插槽的位置：</li>
+        </ol>
+
+        <pre><code>
+&lt;authorization is-login=&quot;{{true}}&quot; tips=&quot;用户未登录&quot;&gt;
+  &lt;view slot=&quot;content&quot;&gt;
+    &lt;view&gt;具名slot 插槽的位置&lt;/view&gt;
+    &lt;view&gt;具名slot 插槽的位置&lt;/view&gt;
+  &lt;/view&gt;
+  &lt;text slot=&quot;number&quot;&gt;1000&lt;/text&gt;
+&lt;/authorization&gt;
+        </code></pre>
+
+        <h2>5.3 Vant 组件</h2>
+
+        <p>Vant 提供了微信小程序版本的<a href="https://vant-contrib.gitee.io/vant-weapp/#/home">组件库</a>，它本质上就是自定义的小程序组件，我们来学习如何在小程序中引入 Vant 组件库。</p>
+
+        <h3>5.3.1 快速上手</h3>
+
+        <p>第 1 步：安装 vant 组件库</p>
+
+        <pre><code>
+npm i @vant/weapp -S --production
+        </code></pre>
+
+        <p>第 2 步：如下图所示构建 Vant 组件库，构建时会去检查 <code>package.json</code> 中记录的依赖，因此一定要有 <code>package.json</code> 文件的存在。</p>
+
+        <img src="./images/weixin/image-20221130182022786.png" style="zoom: 50%;" alt="">
+
+        <p>第 3 步：以按钮组件为例，演示使用 Vant 组件的使用方法，推荐全局注册组件 Vant 组件</p>
+
+        <pre><code>
+{
+  &quot;usingComponents&quot;: {
+    &quot;van-button&quot;: &quot;@vant/weapp/button/index&quot;
+  }
+}
+        </code></pre>
+
+        <p>注意：将 app.json 中的 <code>&quot;style&quot;: &quot;v2&quot;</code> 去除，小程序的<a
+                href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style">新版基础组件</a>强行加上了许多样式，难以覆盖，不关闭将造成部分组件样式混乱。
+        </p>
+
+        <h3>5.3.2 Cell 单元格</h3>
+
+        <blockquote>
+            <p>介绍常用组件使用方法</p>
+        </blockquote>
+
+        <ol>
+            <li>首先要在 <code>app.json</code> 中全局注册组件：</li>
+        </ol>
+
+        <pre><code>
+{
+  &quot;usingComponents&quot;: {
+    &quot;van-cell&quot;: &quot;@vant/weapp/cell/index&quot;,
+    &quot;van-cell-group&quot;: &quot;@vant/weapp/cell-group/index&quot;
+  }
+}
+        </code></pre>
+
+        <ol>
+            <li><code>van-cell</code> 组件可以独立使用，也可以配置 <code>van-cell-group</code> 一起使用：</li>
+        </ol>
+
+        <pre><code>
+&lt;van-cell-group custom-class=&quot;cell-group&quot; inset&gt;
+  &lt;van-cell size=&quot;large&quot; title=&quot;北京富力家园&quot;&gt;
+    &lt;text class=&quot;tags fail&quot;&gt;审核失败&lt;/text&gt;
+  &lt;/van-cell&gt;
+  &lt;van-cell title=&quot;房间号&quot; value=&quot;1号楼1单元101室&quot; border=&quot;{{ false }}&quot; /&gt;
+  &lt;van-cell title=&quot;业主&quot; value=&quot;内容&quot; border=&quot;{{ false }}&quot; /&gt;
+&lt;/van-cell-group&gt;
+        </code></pre>
+
+        <h3>5.3.3 SwipeCell 滑动单元格</h3>
+
+        <ol>
+            <li>同样的先在 <code>app.json</code> 中全局注册组件：</li>
+        </ol>
+
+        <pre><code>
+{
+  &quot;usingComponents&quot;: {
+    &quot;van-swipe-cell&quot;: &quot;@vant/weapp/swipe-cell/index&quot;
+  },
+}
+        </code></pre>
+
+        <ol>
+            <li>然后将需要侧向滑动的盒子用 <code>van-swipe-cell</code> 组件包裹起来即可：</li>
+        </ol>
+
+        <pre><code>
+&lt;van-swipe-cell right-width=&quot;{{ 65 }}&quot;&gt;
+  &lt;van-cell-group&gt;
+    &lt;van-cell size=&quot;large&quot; title=&quot;北京富力家园&quot;&gt;
+      &lt;text class=&quot;tags fail&quot;&gt;审核失败&lt;/text&gt;
+    &lt;/van-cell&gt;
+    &lt;van-cell title=&quot;房间号&quot; value=&quot;1号楼1单元101室&quot; border=&quot;{{ false }}&quot; /&gt;
+    &lt;van-cell title=&quot;业主&quot; value=&quot;内容&quot; border=&quot;{{ false }}&quot; /&gt;
+  &lt;/van-cell-group&gt;
+<!-- -  &lt;!-- 右侧滑动显示的按钮 --&gt; -->
+<!-- +  &lt;view slot=&quot;right&quot;&gt;删除&lt;/view&gt; -->
+&lt;/van-swipe-cell&gt;
+        </code></pre>
+
+        <h3>扩展-样式覆盖</h3>
+
+        <blockquote>
+            <p>Vant 组件中的组件提供了非常整齐美观的样式，但是开发中在所难免需要对原有样式进行个修改</p>
+        </blockquote>
+
+        <ul>
+            <li>简单粗暴，通过调试工具查找要修改样式的盒子，找到已定义的类名，然后强制覆盖原有的样式</li>
+        </ul>
+
+        <pre><code>
+.van-swipe-cell__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px !important;
+  margin-left: -20px;
+  text-align: center;
+  color: #fff;
+  background-color: #eb5757;
+}
+        </code></pre>
+
+        <p>::: tip 提示:
+            在进行样式覆盖时优先不够的情况下使用 !important
+            :::</p>
+
+        <ul>
+            <li>使用样式变量</li>
+        </ul>
+
+        <blockquote>
+            <p>新版本的 css 支持定义变量，其语法样式为: <code>--变量名: 值</code>，定义的变量通过 <code>var</code> 关键字来使用：</p>
+        </blockquote>
+
+        <ol>
+            <li><strong>局部变量</strong></li>
+        </ol>
+
+        <p>举例说明：</p>
+
+        <pre><code>
+.box {
+  --my-cusotm-color: pink;
+  backgound-color: var(--my-cusotm-color);
+}
+        </code></pre>
+
+        <p>上述代码中定义的变量只能用在 <code>.box</code> 盒子及后代元素上</p>
+
+        <ol>
+            <li><strong>全局变量</strong></li>
+        </ol>
+
+        <p>如果希望整个页面都能使用这个变量，可以这样定义：</p>
+
+        <pre><code>
+page {
+    --my-cusotm-color: pink;
+}
+    
+.box {
+    backgound-color: var(--my-cusotm-color);
+}
+.navs {
+    backgound-color: var(--my-cusotm-color);
+}
+        </code></pre>
+            
+            
+        
+
+        <ol>
+            <li>了解了 css 变量的基本用法后，咱们修改 vant 中 css 变量覆盖原来样式：</li>
+        </ol>
+
+        <p>说明❓：通过调式面板，查看组件元素中用到的css变量进行覆盖</p>
+
+        <p><img alt="image-20221202184958647" src="./images/weixin/image-20221202184958647.png" /></p>
+
+        <pre><code>
+page {
+  --cell-large-title-font-size: 30rpx;
+  --cell-text-color: #c3c3c5;
+  --cell-value-color: #686868;
+}
+</code></pre>
+
+        <h1>分包加载</h1>
+
+        <blockquote>
+            <p>分包加载有点类似 Vue 中的按需加载的功能，将小程序拆分成若干个部分叫做分包</p>
+        </blockquote>
+
+        <ol>
+            <li>在分包的基础上能够实现按需加载当前所需部分小程序代码，在一定程序能够提升小程序的加载速度</li>
+            <li>同时也能解决小程序代码包大小不能超过 2M 的限制</li>
+        </ol>
+
+        <h2>6.1 使用分包</h2>
+
+        <blockquote>
+            <p>分包从形式上来看就是将某些功能相关的页面及其依赖的资源放到独立的文件夹中，然后在 app.json 文件通过 <code>subPackages</code> 配置要加载的分包：</p>
+        </blockquote>
+
+        <p><code>app.json</code></p>
+
+        <pre><code>
+{
+  &quot;pages&quot;:[...],
+  // 省略部分代码...
++  &quot;subPackages&quot;: [
+    {
++      &quot;root&quot;: &quot;分包的根路径&quot;,
++      &quot;name&quot;: &quot;分包名称&quot;,
++      &quot;pages&quot;: [
+        // 分页页面的路径
++      ]
+    }
+  ]
+}
+</code></pre>
+
+        <p><code>subPackages</code> 的值是数组类型，可以指定多个分包，每个分包含3部分信息，分别为：</p>
+
+        <ul>
+            <li><code>root</code> 分包对应的代码根目录，即分包的代码放在哪个文件夹中</li>
+            <li><code>name</code> 分包的名称，可以省略</li>
+            <li><code>pages</code> 分包中所包含的页面路径</li>
+        </ul>
+
+        <p>下面咱们来定义一个分包，要求分包的代码位于 <code>goods_pkg</code> 目录中，分包中包含两个页面：</p>
+
+        <pre><code>
+{
+  &quot;subPackages&quot;: [
+    {
+      &quot;root&quot;: &quot;good_pkg&quot;,
+      &quot;pages&quot;: [
+        &quot;pages/list/index&quot;,
+        &quot;pages/detail/index&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+        <p>上述代码中定义了一个分包的目录名为 <code>good_pkg</code> （这个名称可以任意起），这个分包下面包含了两个页面，分别是 <code>pages/list/index</code> 和
+            <code>pages/detail/index</code>。</p>
+
+        <p>tip 提示:
+            如果配置分包的根目录及页面路径不存在，小程序将会自动创建。</p>
+
+            <img src="./images/weixin/image-20221205094957069.png" style="zoom: 50%;" alt="">
+
+        <p>总结：</p>
+
+        <ol>
+            <li>分包中的页面只有被访问到时小程序才会去下载相应的代码包</li>
+            <li>小程序分包对应的是主包，主包就是除了分包以外的代码，<code>tabBar</code> 的页面只能放在主包当中</li>
+            <li>
+                <p>使用分包也不是对代码体积完全没有限制：</p>
+            </li>
+            <li>
+                <p>整个小程序所有分包大小不超过 20M</p>
+            </li>
+            <li>单个分包/主包大小不能超过 2M</li>
+        </ol>
+
+        <h2>6.2 分包预下载</h2>
+
+        <blockquote>
+            <p>分包加载在打开小程序启动的时候<strong>只下载主包代码</strong>，分包并不会下载，因此能够提升小程序启动时的打开速度，分包的代码只有在访问到分包的页面时才去下载，这样用户就需要有一定时间的等待（一般不太影响），通过分包预加载技术可以实现提前去下载分包的代码，这样分包页面的访问速度也会得到提升。
+            </p>
+        </blockquote>
+
+        <p>小程序通过 <code>preloadRule</code> 配置需要预加载的分包，在 <code>app.json</code> 中进行配置：</p>
+
+        <ul>
+            <li>指定某个页面路径做为 <code>key</code>，含义是当<strong>访问这个页面时会去预下载一个分包</strong></li>
+            <li><code>network</code> 预下载分包的网络条件，可选值为 <code>all</code>、<code>wifi</code>，默认为 <code>wifi</code></li>
+            <li><code>packages</code> 指定要预下载的分包名或根路径</li>
+        </ul>
+
+        <p><code>app.json</code></p>
+
+        <pre><code>
+{
+  &quot;preloadRule&quot;: {
+    &quot;pages/index/index&quot;: {
+      &quot;network&quot;: &quot;wifi&quot;,
+      &quot;packages&quot;: [&quot;good_pkg&quot;]
+    }
+  },
+}
+        </code></pre>
+
+        <p>上述的代码代表的含义是当用户访问到 <code>pages/index/index</code> 时，在 <code>wifi</code> 网络前提下预先下载 <code>good_pkg</code> 分包的代码。
+        </p>
+
+        <h1>框架接口</h1>
+
+        <p>框架接口指的是小程序提供的一些全局函数，如之前学习到的 <code>App</code>、<code>Page</code>、<code>Component</code> 函数，本节再来学习另外几个有用的函数。</p>
+
+        <h2>7.1 getApp</h2>
+
+        <blockquote>
+            <p><code>getApp</code> 是一个全局的函数，调用该函数可以获取小程序应用实例，通过小程序应用实例可实现数据或方法的共享。</p>
+        </blockquote>
+
+        <pre><code>
+// app.js
+App({
+  // 读取本地存储的token数据
+  token: wx.getStorageSync(&#39;token&#39;),
+  http(params) {
+    // 举例封装网络请求
+    wx.request({
+      ...params,
+      header: {},
+    })
+  }
+})
+        </code></pre>
+
+        <p>在任意页面和组件中调用 <code>getApp</code> 就可以获取小程序的实例（即上述代码）：</p>
+
+        <pre><code>
+// pages/index/index.js
+// 获取小程序实例
+const app = getApp()
+
+Page({
+  onLoad() {
+    // 能够读取到全局实全名定义的 token 数据
+    console.log(app.token)
+
+    // 调用全局实例中定义的方法
+    app.http({
+      url: '',
+      method: 'GET'
+    })
+  },
+})
+        </code></pre>
+
+        <h2>7.2 getCurrentPages</h2>
+
+        <blockquote>
+            <p><code>getCurrentPages</code> 获取当前页面栈，页面栈中包含的是页面的实例，数组中第一个元素为首页，最后一个元素为当前页面。</p>
+        </blockquote>
+
+        <p>warning 注意:
+            不要在 App.onLaunch 的时候调用 getCurrentPages()，此时 page 还没有生成。</p>
+
+        <pre><code>
+// /pages/index/index.js
+Page({
+  onLoad() {
+    // 获取页面历史栈
+    const pageStack = getCurrentPages()
+    // 获取当前页面的实例
+    const currPage = pageStack[pageStack.length - 1]
+  }
+})
+        </code></pre>
+
+        <p>获取到页面栈后根据数组的索引值可以获取到页面实例，通过页面实例可以获取页面中的路由信息。</p>
+
+        <h2>扩展-behavior</h2>
+
+        <blockquote>
+            <p><code>behaviors</code>字段可以为页面或组件混入可复用的数据和方法</p>
+        </blockquote>
+
+        <ol>
+            <li>
+                <p>1.通过<code>Behavior</code>函数定义混入的数据或方法</p>
+                <pre><code>
+const mixin = Behavior({
+    data: {
+      share: '我是共享数据'
+    },
+    methods: {
+      getShare() {
+        console.log('获取共享数据：', this.data.share)
+      }
+    }
+})
+  
+export { mixin }
+                </code></pre>
+            </li>
+            <li>
+                <p>2.页面中通过<code>behaviors</code>属性引入使用</p>
+                <pre><code>
+import { mixin } from '../../utils/mixin'
+Page({
+  behaviors: [mixin],
+})
+                </code></pre>
+            </li>
+        </ol>
+
+
+
+
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
+
+
+        <h3>标题</h3>
+        <div>
+            <table border="3" cellspacing="0" cellpadding="3">
+                <caption>列表</caption>
+                <tr>
+                    <th>功能</th>
+                    <th>用法</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br><br><br>
+        </div>
 
 
 
@@ -1450,7 +3691,7 @@
         contentSelector: '.js-toc-content',
 
         // 要在内容选择器元素内获取哪些标题。
-        headingSelector: 'h2,h3,h4,h5',//对h2和h3元素进行生成目录
+        headingSelector: 'h2,h3,h4,h5',//对h3和h4元素进行生成目录
 
         //对于内容中相对或绝对位置的容器内的标题。
         hasInnerContainers: true,
