@@ -48,7 +48,7 @@
 
 
     <div class="zhuTi js-toc-content">
-        mkdir a b c  //分别创建 a文件夹 b文件夹 c文件夹
+        mkdir a b c //分别创建 a文件夹 b文件夹 c文件夹
         <h3>备注</h3>
         <div>
             <pre><code>
@@ -72,8 +72,181 @@ git branch 分支名
 
 #  合并分支 将名称为name的分支与当前分支合并
 git merge name
+
+# 更改远程仓库  后面的网址就是新的远程仓库
+$ git remote set-url origin https://gitee.com/dd223344/enjoy-plus.git
             </code></pre>
         </div>
+
+        
+
+        <h2>整理完好</h2>
+        <div>
+            <pre><code>
+1.安装：GitLens
+# 此插件可以显示他人的提交记录
+
+2.快捷键打开终端：ctrl+`
+
+3.cd 项目文件下；如cd gitlab/learngit
+
+4.命令行：创建版本库，版本提交，版本回退，管理修改，撤销修改，删除文件
+
+0、创建版本库（选择一个合适的地方,创建一个空目录gitlab/learngit。进入gitlab/learngit文件夹中）
+    $ cd gitlab/learngit
+    $ git init // 通过git init命令把这个目录变成Git可以管理的仓库
+    或者直接拉取克隆版本库项目
+    $ git clone 链接，类似git@github.com：yourname/test.git的
+
+1、版本提交
+    git add <文件名或文件夹名称>文件名或文件夹名称或者 . 代表所有
+    git commit -m "这次的提交描述备注"
+    git status 查看提交修改的文件
+    git branch 查看当前分支
+    git branch <分支名字>创建分支
+    git checkout <分支名字>切换分支
+    git merge <分支名字>（不是当前的分支）合并某分支到当前分支
+    git branch -d <分支名字>删除分支
+    $ git push origin master 上传本地指定分支到远程仓库
+    $ git pull [branch] 取回远程仓库的变化，并与本地分支合并
+
+2、版本回退
+    回退到上一个版本（可以多次使用）
+    $ git reset --hard HEAD^
+    回退到上两个版本
+    $ git reset --hard HEAD^^
+    git log查看提交历史，然后git reset 回退到指定版本 。这也是每次commit -m" "中写内容的重要性，说不定什么时候就拯救了你写了好几天的代码。hard后面跟的版本号没必要全部写出来，git会自动去补全匹配。
+    $ git log 
+    $ git reset --hard 
+
+3、管理修改
+    我们来一个操作，第一次修改 -> git add -> 第二次修改 -> git commit
+    然后git status查看状态，咦，怎么第二次的修改没有被提交？
+    Git管理的是修改，当你用git add命令后，在工作区的第一次修改被放入暂存区，准备提交，但是，在工作区的第二次修改并没有放入暂存区，所以，git commit只负责把暂存区的修改提交了，也就是第一次的修改被提交了，第二次的修改不会被提交。
+    提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别。
+    那怎么提交第二次修改呢？你可以继续git add再git commit，也可以别着急提交第一次修改，先git add第二次修改，再git commit，就相当于把两次修改合并后一块提交了：
+    第一次修改 -> git add -> 第二次修改 -> git add -> git commit
+
+4、撤销修改
+    $ git checkout -- readme.txt
+    令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+    一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+    一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+    总之，就是让这个文件回到最近一次git commit或git add时的状态。
+    git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令。
+
+5、删除文件
+    $ git rm test.txt
+    $ git commit -m "remove test.txt"
+
+**bug分支**
+情景：undong.txt 工作还没做完（暂存区有很多add文件，这时还没有commit），这时接收到一个必须在两小时内完成的bug文件（和之前的工作无关）
+    1 这时就要保存工作现场 git stash
+    2 添加新分支 git branch fixbug
+    3 切换到这个分支 git checkout fixbug
+    4 git add bug文件
+    5 提交 git commit
+    6 删除该分支（一般情况应该合并）
+    查看分支现场 git
+    7 修复之前的分支 git stash pop
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>1.远程仓库相关命令</h2>
+        <div>
+            <pre><code>
+1.远程仓库相关命令
+    检出仓库：$ git clone git://github.com/jquery/jquery.git
+    查看远程仓库：$ git remote -v
+    添加远程仓库：$ git remote add [name] [url]
+    删除远程仓库：$ git remote rm [name]
+    修改远程仓库：$ git remote set-url --push[name][newUrl]
+    拉取远程仓库：$ git pull [remoteName] [localBranchName]
+    推送远程仓库：$ git push [remoteName] [localBranchName]
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>2.分支(branch)操作相关命令</h2>
+        <div>
+            <pre><code>
+查看本地分支：$ git branch
+查看远程分支：$ git branch -r
+创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支
+切换分支：$ git checkout [name]
+创建新分支并立即切换到新分支：$ git checkout -b [name]
+删除分支：$ git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项
+合并分支：$ git merge [name] ----将名称为[name]的分支与当前分支合并
+创建远程分支(本地分支push到远程)：$ git push origin [name]
+删除远程分支：$ git push origin :heads/[name]
+我从master分支创建了一个issue5560分支，做了一些修改后，使用git push origin master提交，但是显示的结果却是’Everything up-to-date’，发生问题的原因是git push origin master 在没有track远程分支的本地分支中默认提交的master分支，因为master分支默认指向了origin master 分支，这里要使用git push origin issue5560：master 就可以把issue5560推送到远程的master分支了
+
+如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，那么可以这么做。
+$ git push origin test:master // 提交本地test分支作为远程的master分支 //好像只写这一句，远程的github就会自动创建一个test分支
+$ git push origin test:test // 提交本地test分支作为远程的test分支
+
+如果想删除远程的分支呢？类似于上面，如果:左边的分支为空，那么将删除:右边的远程的分支。
+$ git push origin :test // 刚提交到远程的test将被删除，但是本地还会保存的，不用担心            
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>3.版本(tag)操作相关命令</h2>
+        <div>
+            <pre><code>
+3.版本(tag)操作相关命令
+    查看版本：$ git tag
+    创建版本：$ git tag [name]
+    删除版本：$ git tag -d [name]
+    查看远程版本：$ git tag -r
+    创建远程版本(本地版本push到远程)：$ git push origin [name]
+    删除远程版本：$ git push origin :refs/tags/[name]
+            </code></pre>
+            <br><br><br>
+        </div>
+
+
+        <h2>4.子模块(submodule)相关操作命令</h2>
+        <div>
+            <pre><code>
+子模块(submodule)相关操作命令
+添加子模块：$ git submodule add [url] [path]
+如：$ git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs
+初始化子模块：$ git submodule init ----只在首次检出仓库时运行一次就行
+更新子模块：$ git submodule update ----每次更新或切换分支后都需要运行一下
+删除子模块：（分4步走哦）
+1)$ git rm --cached [path]  
+            </code></pre>
+            <br><br><br>
+        </div>
+
+        <h2>5.编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</h2>
+        <div>
+            <pre><code>
+
+            </code></pre>
+            <br><br><br>
+        </div>
+
+        <h2>6.编辑“.git/config”文件，将子模块的相关配置节点删除掉</h2>
+        <div>
+            <pre><code>
+
+            </code></pre>
+            <br><br><br>
+        </div>
+
+        <h2>7.手动删除子模块残留的目录</h2>
+
+
+        <br><br><br><br><br><br>
+
+
+        
 
 
 
@@ -460,175 +633,6 @@ git push
 
 
 
-
-
-
-
-
-
-        <h2>整理完好</h2>
-        <div>
-            <pre><code>
-1.安装：GitLens
-# 此插件可以显示他人的提交记录
-
-2.快捷键打开终端：ctrl+`
-
-3.cd 项目文件下；如cd gitlab/learngit
-
-4.命令行：创建版本库，版本提交，版本回退，管理修改，撤销修改，删除文件
-
-0、创建版本库（选择一个合适的地方,创建一个空目录gitlab/learngit。进入gitlab/learngit文件夹中）
-    $ cd gitlab/learngit
-    $ git init // 通过git init命令把这个目录变成Git可以管理的仓库
-    或者直接拉取克隆版本库项目
-    $ git clone 链接，类似git@github.com：yourname/test.git的
-
-1、版本提交
-    git add <文件名或文件夹名称>文件名或文件夹名称或者 . 代表所有
-    git commit -m "这次的提交描述备注"
-    git status 查看提交修改的文件
-    git branch 查看当前分支
-    git branch <分支名字>创建分支
-    git checkout <分支名字>切换分支
-    git merge <分支名字>（不是当前的分支）合并某分支到当前分支
-    git branch -d <分支名字>删除分支
-    $ git push origin master 上传本地指定分支到远程仓库
-    $ git pull [branch] 取回远程仓库的变化，并与本地分支合并
-
-2、版本回退
-    回退到上一个版本（可以多次使用）
-    $ git reset --hard HEAD^
-    回退到上两个版本
-    $ git reset --hard HEAD^^
-    git log查看提交历史，然后git reset 回退到指定版本 。这也是每次commit -m" "中写内容的重要性，说不定什么时候就拯救了你写了好几天的代码。hard后面跟的版本号没必要全部写出来，git会自动去补全匹配。
-    $ git log 
-    $ git reset --hard 
-
-3、管理修改
-    我们来一个操作，第一次修改 -> git add -> 第二次修改 -> git commit
-    然后git status查看状态，咦，怎么第二次的修改没有被提交？
-    Git管理的是修改，当你用git add命令后，在工作区的第一次修改被放入暂存区，准备提交，但是，在工作区的第二次修改并没有放入暂存区，所以，git commit只负责把暂存区的修改提交了，也就是第一次的修改被提交了，第二次的修改不会被提交。
-    提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别。
-    那怎么提交第二次修改呢？你可以继续git add再git commit，也可以别着急提交第一次修改，先git add第二次修改，再git commit，就相当于把两次修改合并后一块提交了：
-    第一次修改 -> git add -> 第二次修改 -> git add -> git commit
-
-4、撤销修改
-    $ git checkout -- readme.txt
-    令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
-    一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
-    一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-    总之，就是让这个文件回到最近一次git commit或git add时的状态。
-    git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令。
-
-5、删除文件
-    $ git rm test.txt
-    $ git commit -m "remove test.txt"
-
-**bug分支**
-情景：undong.txt 工作还没做完（暂存区有很多add文件，这时还没有commit），这时接收到一个必须在两小时内完成的bug文件（和之前的工作无关）
-    1 这时就要保存工作现场 git stash
-    2 添加新分支 git branch fixbug
-    3 切换到这个分支 git checkout fixbug
-    4 git add bug文件
-    5 提交 git commit
-    6 删除该分支（一般情况应该合并）
-    查看分支现场 git
-    7 修复之前的分支 git stash pop
-            </code></pre>
-            <br><br><br>
-        </div>
-
-
-        <h2>1.远程仓库相关命令</h2>
-        <div>
-            <pre><code>
-1.远程仓库相关命令
-    检出仓库：$ git clone git://github.com/jquery/jquery.git
-    查看远程仓库：$ git remote -v
-    添加远程仓库：$ git remote add [name] [url]
-    删除远程仓库：$ git remote rm [name]
-    修改远程仓库：$ git remote set-url --push[name][newUrl]
-    拉取远程仓库：$ git pull [remoteName] [localBranchName]
-    推送远程仓库：$ git push [remoteName] [localBranchName]
-            </code></pre>
-            <br><br><br>
-        </div>
-
-
-        <h2>2.分支(branch)操作相关命令</h2>
-        <div>
-            <pre><code>
-查看本地分支：$ git branch
-查看远程分支：$ git branch -r
-创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支
-切换分支：$ git checkout [name]
-创建新分支并立即切换到新分支：$ git checkout -b [name]
-删除分支：$ git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项
-合并分支：$ git merge [name] ----将名称为[name]的分支与当前分支合并
-创建远程分支(本地分支push到远程)：$ git push origin [name]
-删除远程分支：$ git push origin :heads/[name]
-我从master分支创建了一个issue5560分支，做了一些修改后，使用git push origin master提交，但是显示的结果却是’Everything up-to-date’，发生问题的原因是git push origin master 在没有track远程分支的本地分支中默认提交的master分支，因为master分支默认指向了origin master 分支，这里要使用git push origin issue5560：master 就可以把issue5560推送到远程的master分支了
-
-如果想把本地的某个分支test提交到远程仓库，并作为远程仓库的master分支，或者作为另外一个名叫test的分支，那么可以这么做。
-$ git push origin test:master // 提交本地test分支作为远程的master分支 //好像只写这一句，远程的github就会自动创建一个test分支
-$ git push origin test:test // 提交本地test分支作为远程的test分支
-
-如果想删除远程的分支呢？类似于上面，如果:左边的分支为空，那么将删除:右边的远程的分支。
-$ git push origin :test // 刚提交到远程的test将被删除，但是本地还会保存的，不用担心            
-            </code></pre>
-            <br><br><br>
-        </div>
-
-
-        <h2>3.版本(tag)操作相关命令</h2>
-        <div>
-            <pre><code>
-3.版本(tag)操作相关命令
-    查看版本：$ git tag
-    创建版本：$ git tag [name]
-    删除版本：$ git tag -d [name]
-    查看远程版本：$ git tag -r
-    创建远程版本(本地版本push到远程)：$ git push origin [name]
-    删除远程版本：$ git push origin :refs/tags/[name]
-            </code></pre>
-            <br><br><br>
-        </div>
-
-
-        <h2>4.子模块(submodule)相关操作命令</h2>
-        <div>
-            <pre><code>
-子模块(submodule)相关操作命令
-添加子模块：$ git submodule add [url] [path]
-如：$ git submodule add git://github.com/soberh/ui-libs.git src/main/webapp/ui-libs
-初始化子模块：$ git submodule init ----只在首次检出仓库时运行一次就行
-更新子模块：$ git submodule update ----每次更新或切换分支后都需要运行一下
-删除子模块：（分4步走哦）
-1)$ git rm --cached [path]  
-            </code></pre>
-            <br><br><br>
-        </div>
-
-        <h2>5.编辑“.gitmodules”文件，将子模块的相关配置节点删除掉</h2>
-        <div>
-            <pre><code>
-
-            </code></pre>
-            <br><br><br>
-        </div>
-
-        <h2>6.编辑“.git/config”文件，将子模块的相关配置节点删除掉</h2>
-        <div>
-            <pre><code>
-
-            </code></pre>
-            <br><br><br>
-        </div>
-
-        <h2>7.手动删除子模块残留的目录</h2>
-
-
         <h2>标题</h2>
         <div>
             <table border="3" cellspacing="0" cellpadding="3">
@@ -663,277 +667,7 @@ $ git push origin :test // 刚提交到远程的test将被删除，但是本地�
         </div>
 
 
-        <h2>标题</h2>
-        <div>
 
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
-
-
-        <h2>标题</h2>
-        <div>
-            <table border="3" cellspacing="0" cellpadding="3">
-                <caption>列表</caption>
-                <tr>
-                    <th>功能</th>
-                    <th>用法</th>
-                    <th>备注</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-            <br><br><br>
-        </div>
 
 
 
